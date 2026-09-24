@@ -439,6 +439,64 @@ body.menu-open { overflow: hidden; }
 .check-list li { position: relative; padding-left: 22px; color: #2a2f37; font-size: 0.95rem; line-height: 1.42; }
 .check-list li::before { position: absolute; left: 0; color: var(--pen); content: "—"; font-family: var(--mono); }
 
+/* ---------- Diplomas ---------- */
+.diploma-summary { display: flex; flex-wrap: wrap; gap: 10px 40px; margin-bottom: 26px; color: var(--muted); font-size: 0.95rem; }
+.diploma-summary strong { color: var(--pen); font-family: var(--serif); font-size: 2.1rem; font-style: italic; font-weight: 400; line-height: 1; }
+.diploma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.diploma {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  overflow: hidden;
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--radius);
+  background: var(--glass);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  padding: 18px 20px 20px;
+  animation: rise 420ms var(--ease-out) both;
+  transition: box-shadow 300ms var(--ease-out), transform 300ms var(--ease-out);
+}
+/* A faint ruled line at the top, like the header strip of a printed certificate. */
+.diploma::before { position: absolute; top: 0; right: 0; left: 0; height: 3px; background: linear-gradient(90deg, rgba(var(--pen-rgb), 0.5), rgba(var(--accent-rgb), 0.4), transparent); content: ""; }
+.diploma:hover { box-shadow: inset 0 1px 0 white, 0 0 0 1px rgba(var(--pen-rgb), 0.28), 0 24px 46px rgba(33, 62, 128, 0.15); transform: translateY(-4px); }
+.diploma.is-featured { grid-column: span 2; background: linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(var(--accent-rgb), 0.16)); }
+.diploma.is-featured h3 { font-size: 1.28rem; }
+.diploma-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+/* Ink stamp: a slightly rotated double circle with the issuer's initials. */
+.diploma-seal {
+  display: inline-flex;
+  width: 54px;
+  height: 54px;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(var(--pen-rgb), 0.7);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.6), inset 0 0 0 4px rgba(var(--pen-rgb), 0.35);
+  color: var(--pen);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transform: rotate(-9deg);
+  transition: transform 400ms var(--ease-out), background-color 300ms ease;
+}
+.diploma:hover .diploma-seal { background: rgba(var(--pen-rgb), 0.08); transform: rotate(0deg) scale(1.06); }
+.diploma-badge { width: 56px; height: 56px; object-fit: contain; transition: transform 400ms var(--ease-out); }
+.diploma:hover .diploma-badge { transform: rotate(-6deg) scale(1.06); }
+.diploma-year { color: var(--faint); font-family: var(--mono); font-size: 0.74rem; }
+.diploma h3 { font-size: 1.04rem; font-weight: 760; line-height: 1.25; }
+.diploma-issuer { color: var(--muted); font-size: 0.9rem; }
+.diploma-meta { width: fit-content; border-radius: 6px; background: rgba(var(--accent-rgb), 0.22); color: #1d3a73; font-family: var(--mono); font-size: 0.7rem; padding: 3px 8px; }
+.diploma-verify { margin-top: 4px; font-size: 0.86rem; }
+@media (max-width: 620px) {
+  .diploma.is-featured { grid-column: auto; }
+  .tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .tabs button { flex: none; }
+}
+
 /* ---------- Skills ---------- */
 .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 16px; }
 .lang-list, .soft-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }

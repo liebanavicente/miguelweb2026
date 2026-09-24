@@ -8,6 +8,7 @@ const LINKS = [
   { id: "proyectos", label: "Proyectos" },
   { id: "puestos", label: "Puestos" },
   { id: "formacion", label: "Formación" },
+  { id: "titulos", label: "Títulos" },
   { id: "trayectoria", label: "Trayectoria" },
   { id: "contacto", label: "Contacto" },
 ];

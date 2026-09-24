@@ -21,6 +21,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { CodeCard } from "../components/CodeCard";
+import { DiplomaWall } from "../components/DiplomaWall";
 import { EducationExplorer } from "../components/EducationExplorer";
 import { Header } from "../components/Header";
 import { OfferRotator } from "../components/OfferRotator";
@@ -91,8 +92,8 @@ export default function Home() {
               </h1>
               <p className="lede">
                 Soy Miguel Liébana. Me estoy formando como <strong>desarrollador full-stack con IA en Upgrade Hub</strong> y en{" "}
-                <strong>Confección y publicación de páginas web</strong> en el Centro Coliseum de Cornellà. Además tengo el certificado de
-                profesionalidad de Administración y Gestión y llevo 14 años enseñando, experiencia que hoy aplico a la formación digital de adultos.
+                <strong>Confección y publicación de páginas web</strong> en el Centro Coliseum de Cornellà. Además soy maestro titulado por la
+                Universitat de Barcelona, tengo el certificado de profesionalidad de gestión administrativa y llevo 14 años enseñando, experiencia que hoy aplico a la formación digital de adultos.
               </p>
               <div className="actions">
                 <a className="btn btn-ink" href="#puestos">
@@ -287,12 +288,25 @@ export default function Home() {
             <EducationExplorer />
           </section>
 
+          {/* Diplomas */}
+          <section aria-labelledby="titulos-titulo" className="section" id="titulos">
+            <Chapter
+              accent="títulos"
+              id="titulos"
+              index="05"
+              intro="Todo lo que he ido acreditando por el camino: títulos oficiales, idiomas, tecnología, marketing y formación docente."
+              label="archivo"
+              title="Archivo de"
+            />
+            <DiplomaWall />
+          </section>
+
           {/* Experience */}
           <section aria-labelledby="trayectoria-titulo" className="section" id="trayectoria">
             <Chapter
               accent="profesional"
               id="trayectoria"
-              index="05"
+              index="06"
               intro="Administración, atención al público y educación: más de veinte años aprendiendo a organizar, comunicar y resolver."
               label="trayectoria"
               title="Experiencia"
@@ -334,7 +348,7 @@ export default function Home() {
 
           {/* Skills */}
           <section aria-labelledby="competencias-titulo" className="section" id="competencias">
-            <Chapter accent="herramientas" id="competencias" index="06" label="competencias" title="Idiomas, habilidades y" />
+            <Chapter accent="herramientas" id="competencias" index="07" label="competencias" title="Idiomas, habilidades y" />
             <div className="skills-grid">
               <section className="sheet">
                 <h3>Idiomas</h3>
@@ -389,7 +403,7 @@ export default function Home() {
             <div className="contact-card">
               <div className="contact-copy">
                 <p className="kicker">
-                  <span>07</span> contacto
+                  <span>08</span> contacto
                 </p>
                 <h2 className="section-title" id="contacto-titulo">
                   ¿Hablamos de <Scribble>tu equipo?</Scribble>

@@ -53,7 +53,7 @@ export const OFFERS: Offer[] = [
   {
     icon: "Briefcase",
     title: "Administración y gestión",
-    text: "Certificado de profesionalidad de Administración y Gestión (nivel 2): tesorería, registros contables, archivo, gestión de personal, grabación de datos y operaciones comerciales.",
+    text: "Certificado de profesionalidad ADGD0308, Actividades de gestión administrativa (nivel 2): tesorería, registros contables, archivo, gestión de personal, grabación de datos y operaciones comerciales.",
     tags: ["Contabilidad", "Tesorería", "Gestión de personal"],
   },
   {
@@ -115,13 +115,13 @@ export const ROLE_GROUPS: RoleGroup[] = [
   {
     area: "Administración digital",
     icon: "Files",
-    intro: "Certificado de profesionalidad de Administración y Gestión, experiencia en oficina y recepción, y un perfil muy digital.",
+    intro: "Certificado de profesionalidad de gestión administrativa (ADGD0308), experiencia en oficina y recepción, y un perfil muy digital.",
     roles: [
-      { title: "Administrativo con perfil digital", fit: "alta", why: "CP de Administración y Gestión, Office experto y capacidad para automatizar procesos." },
+      { title: "Administrativo con perfil digital", fit: "alta", why: "CP de gestión administrativa, Office experto y capacidad para automatizar procesos." },
       { title: "Auxiliar administrativo / recepción", fit: "alta", why: "Experiencia en el Club de Polo Ampurdán y en recepción y atención al público." },
       { title: "Técnico de contabilidad y tesorería junior", fit: "media", why: "Registros contables, tesorería y Contaplus a nivel alto." },
       { title: "Asistente de dirección / office manager", fit: "media", why: "Organización, coordinación de equipos y ofimática experta." },
-      { title: "Oposiciones de administración pública", fit: "media", why: "Formación administrativa acreditada, ofimática experta y experiencia real en oficina.", note: "Plazas administrativas del Estado, la Generalitat o ayuntamientos; el grupo depende de la titulación que exija cada convocatoria." },
+      { title: "Oposiciones de administración pública", fit: "media", why: "Título universitario con nivel de Grado (MECES 2), CP administrativo, ofimática experta y experiencia en oficina.", note: "Plazas administrativas del Estado, la Generalitat o ayuntamientos; cada convocatoria fija su titulación." },
     ],
   },
 ];
@@ -197,11 +197,11 @@ export const EDUCATION: Education[] = [
   {
     id: "cp-admin",
     year: "2022",
-    title: "Certificado de profesionalidad de Administración y Gestión",
-    area: "The Corner · Cornellà de Llobregat · nivel 2, equivalente a grado medio",
+    title: "Certificado de profesionalidad ADGD0308: Actividades de gestión administrativa",
+    area: "The Corner · Cornellà de Llobregat · familia Administración y Gestión, nivel 2 (equivalente a grado medio)",
     logo: { src: "/logos/thecorner.png", alt: "The Corner, centre d'estudis", width: 380, height: 366 },
     detail: {
-      heading: "Módulos del CP de Administración y Gestión",
+      heading: "Módulos del CP ADGD0308",
       groups: [
         {
           items: [
@@ -222,8 +222,8 @@ export const EDUCATION: Education[] = [
   {
     id: "ub",
     year: "2007",
-    title: "Estudios universitarios de Educación primaria y musical",
-    area: "Universitat de Barcelona (UB)",
+    title: "Maestro, especialidad de Educación Musical",
+    area: "Universitat de Barcelona (UB) · con correspondencia a nivel de Grado (MECES 2)",
     logo: { src: "/logos/ub.png", alt: "Universitat de Barcelona", width: 984, height: 250 },
     detail: {
       heading: "Formación en magisterio",

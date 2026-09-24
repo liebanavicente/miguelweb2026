@@ -77,7 +77,7 @@ const children = [
     spacing: { after: 40 },
     alignment: AlignmentType.JUSTIFIED,
     children: [
-      run("Desarrollador web full-stack junior en formación (Bootcamp Full Stack con IA en Upgrade Hub; certificado de Confección y publicación de páginas web), con certificado de profesionalidad de Administración y Gestión, 14 años de experiencia docente y más de 20 años de trayectoria laboral. Construyo y despliego aplicaciones web con HTML, CSS, JavaScript, TypeScript, React, Next.js y Supabase, e integro la inteligencia artificial en el desarrollo y la automatización de tareas. Aporto comunicación clara, capacidad de enseñar y experiencia en administración y atención al cliente. Español y catalán nativos, alemán C2 e inglés B2."),
+      run("Desarrollador web full-stack junior en formación (Bootcamp Full Stack con IA en Upgrade Hub; certificado de Confección y publicación de páginas web), maestro titulado por la Universitat de Barcelona, 14 años de experiencia docente y más de 20 años de trayectoria laboral. Construyo y despliego aplicaciones web con HTML, CSS, JavaScript, TypeScript, React, Next.js y Supabase, e integro la inteligencia artificial en el desarrollo y la automatización de tareas. Aporto comunicación clara, capacidad de enseñar y experiencia en administración y atención al cliente. Español y catalán nativos, alemán C2 e inglés B2."),
     ],
   }),
 
@@ -88,8 +88,8 @@ const children = [
   ...entry("Centro Coliseum, Cornellà de Llobregat", "En curso", "Certificado de profesionalidad: Confección y publicación de páginas web (IFCD0110)", ""),
   bullet("HTML, CSS, diseño responsive, accesibilidad y usabilidad web, y publicación de sitios web."),
   ...entry("Universidad Internacional de Valencia (VIU)", "2023", "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación", ""),
-  ...entry("The Corner, Cornellà de Llobregat", "2022", "Certificado de profesionalidad de Administración y Gestión (nivel 2, equivalente a grado medio)", "", 60),
-  ...entry("Universitat de Barcelona (UB)", "2007", "Estudios universitarios de Educación Primaria y Educación Musical", "", 60),
+  ...entry("The Corner, Cornellà de Llobregat", "2022", "Certificado de profesionalidad ADGD0308: Actividades de gestión administrativa (nivel 2)", "", 60),
+  ...entry("Universitat de Barcelona (UB)", "2007", "Maestro, especialidad de Educación Musical (nivel de Grado, MECES 2)", "", 60),
 
   section("Experiencia profesional"),
   ...entry("CTTI", "", "Recepcionista / Administrativo", "Nov 2025 – Jul 2026"),
@@ -130,11 +130,14 @@ const children = [
   skill("Ofimática", "Microsoft Word, Excel, Outlook y PowerPoint (experto); Access y Contaplus (alto); Teams; Canva; Photoshop (medio)"),
   skill("Administración", "contabilidad, tesorería, gestión auxiliar de personal, gestión de archivos, grabación de datos, operaciones comerciales"),
   skill("Competencias", "formación de adultos, comunicación, liderazgo, trabajo en equipo, escucha activa, resolución de problemas"),
-  skill("Idiomas", "español y catalán (nativos), alemán (C2), inglés (B2)"),
+  skill("Idiomas", "español y catalán (nativos; certificado de nivel C de catalán), alemán (C2, Goethe-Institut ZOP; Abitur del Colegio Alemán de Barcelona), inglés (B2; Linguaskill: lectura C1)"),
 
   section("Certificaciones"),
-  skill("Módulos del CP de Administración y Gestión", "actividades de gestión administrativa; gestión auxiliar de personal; gestión de archivos; gestión operativa de tesorería; grabación de datos; ofimática; operaciones administrativas comerciales; registros contables"),
-  skill("Otras", "ACTIC nivel 1 y nivel 2 (competencias digitales, Generalitat de Catalunya); permiso de conducir B"),
+  skill("Módulos del CP ADGD0308", "actividades de gestión administrativa; gestión auxiliar de personal; gestión de archivos; gestión operativa de tesorería; grabación de datos; ofimática; operaciones administrativas comerciales; registros contables"),
+  skill("Tecnología e IA", "ACTIC nivel 1 y 2 (Generalitat de Catalunya); IBM Artificial Intelligence Essentials y Watson AI Essentials (Coursera, 2023); Big Data (60 h, 2024); Microsoft MIE Trainer Academy (2022)"),
+  skill("Marketing digital", "Digital Marketing & Automation Marketing (60 h); Community Manager (50 h); Plan de marketing digital (50 h); Neuromarketing (35 h); 2024"),
+  skill("Docencia y personas", "Formación permanente del profesorado, 31 actividades y 696 h (2007–2018); Counseling y Terapia Gestalt (140 h, 2023); Agente de Igualdad (50 h, 2024)"),
+  skill("Otras", "permiso de conducir B"),
 ];
 
 const doc = new Document({
