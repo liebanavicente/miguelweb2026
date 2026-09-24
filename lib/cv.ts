@@ -1,3 +1,6 @@
+// Facts that read the same in every language: links, logos, dates and stacks.
+// The words around them live in lib/dictionaries, keyed by the ids below.
+
 export const CONTACT = {
   name: "Miguel Liébana",
   phone: "+34 685 396 609",
@@ -9,247 +12,53 @@ export const CONTACT = {
   cv: "/CV-Miguel-Liebana.pdf",
 };
 
-export const CURRENT_ROLE = "Bootcamp Full Stack con IA · Upgrade Hub";
-
-export const STATS = [
-  { value: "2", unit: "formaciones en curso", label: "Bootcamp Full Stack con IA en Upgrade Hub y certificado de Confección y publicación de páginas web" },
-  { value: "+20", unit: "años", label: "de experiencia laboral en administración, atención al público y educación" },
-  { value: "4", unit: "idiomas", label: "Español y catalán nativos, alemán C2 e inglés B2" },
-];
-
-/** What I can bring. *Asterisks* mark the key words, set in the display serif. */
-export const OFFER_ROTATOR = [
-  "construir *webs full-stack* con IA",
-  "maquetar *páginas accesibles* y responsive",
-  "conectar *bases de datos* y APIs",
-  "automatizar *avisos y correos*",
-  "llevar la *administración y la tesorería*",
-  "dominar *Microsoft Office* a nivel experto",
-  "enseñar *competencias digitales* a adultos",
-  "atender en *cuatro idiomas*",
-];
-
-export type Offer = { title: string; text: string; icon: string; tags: string[] };
-
-export const OFFERS: Offer[] = [
-  {
-    icon: "Code",
-    title: "Desarrollo web full-stack",
-    text: "Me estoy formando en el Bootcamp Full Stack con IA de Upgrade Hub. Construyo aplicaciones con base de datos, autenticación y correos automáticos, y las despliego en Vercel.",
-    tags: ["JavaScript", "Supabase", "IA"],
-  },
-  {
-    icon: "Browser",
-    title: "Maquetación y publicación web",
-    text: "Curso el certificado de profesionalidad Confección y publicación de páginas web: HTML, CSS, diseño responsive, accesibilidad, usabilidad y puesta en producción.",
-    tags: ["HTML y CSS", "Responsive", "Accesibilidad"],
-  },
-  {
-    icon: "Robot",
-    title: "Automatización con IA",
-    text: "Uso la IA como herramienta de trabajo diaria para programar, resumir y automatizar tareas repetitivas de oficina: avisos, correos y flujos de datos.",
-    tags: ["IA generativa", "APIs", "Automatización"],
-  },
-  {
-    icon: "Briefcase",
-    title: "Administración y gestión",
-    text: "Certificado de profesionalidad ADGD0308, Actividades de gestión administrativa (nivel 2): tesorería, registros contables, archivo, gestión de personal, grabación de datos y operaciones comerciales.",
-    tags: ["Contabilidad", "Tesorería", "Gestión de personal"],
-  },
-  {
-    icon: "MicrosoftExcelLogo",
-    title: "Ofimática experta",
-    text: "Word, Excel, Outlook y PowerPoint a nivel experto; Access y Contaplus a nivel alto. Acreditado con ACTIC nivel 1 y nivel 2.",
-    tags: ["Office", "Contaplus", "ACTIC"],
-  },
-  {
-    icon: "ChalkboardTeacher",
-    title: "Formación digital para adultos",
-    text: "14 años de experiencia docente y un máster en TIC aplicadas a la educación. Enseño ofimática, competencias digitales, HTML y CSS e IA con paciencia y a partir de casos reales.",
-    tags: ["Competencias digitales", "Ofimática", "IA"],
-  },
-];
+export const OFFER_ICONS = ["Code", "Browser", "Robot", "Briefcase", "MicrosoftExcelLogo", "ChalkboardTeacher"] as const;
 
 export type Fit = "alta" | "media";
 
-export type Role = { title: string; why: string; fit: Fit; note?: string };
+export const ROLE_AREAS = [
+  { id: "web", icon: "Code" },
+  { id: "teaching", icon: "ChalkboardTeacher" },
+  { id: "support", icon: "Headset" },
+  { id: "admin", icon: "Files" },
+] as const;
 
-export type RoleGroup = { area: string; icon: string; intro: string; roles: Role[] };
-
-export const ROLE_GROUPS: RoleGroup[] = [
-  {
-    area: "Desarrollo web",
-    icon: "Code",
-    intro: "Mi objetivo principal: Bootcamp Full Stack con IA en Upgrade Hub y certificado de Confección y publicación de páginas web en el Centro Coliseum de Cornellà.",
-    roles: [
-      { title: "Maquetador / desarrollador front-end junior", fit: "alta", why: "HTML, CSS y JavaScript con diseño responsive y accesible: el núcleo de mis dos formaciones." },
-      { title: "Desarrollador web full-stack junior", fit: "alta", why: "Proyectos publicados con base de datos, autenticación y despliegue continuo.", note: "Disponible al terminar el bootcamp." },
-      { title: "Gestor de contenidos y publicación web", fit: "alta", why: "Publicar, mantener y actualizar webs es justo lo que acredita mi certificado." },
-      { title: "Desarrollador de automatizaciones e IA", fit: "media", why: "Automatizo notificaciones y flujos con APIs externas y asistentes de IA." },
-      { title: "Tester / QA junior", fit: "media", why: "Ojo para el detalle, orientación al usuario y base técnica para reproducir errores." },
-    ],
-  },
-  {
-    area: "Formación digital",
-    icon: "ChalkboardTeacher",
-    intro: "Formación para personas adultas: mi experiencia docente al servicio de las competencias digitales, la ofimática y la web.",
-    roles: [
-      { title: "Formador de competencias digitales para adultos", fit: "alta", why: "14 años de docencia, máster en TIC educativas y ACTIC nivel 2." },
-      { title: "Formador de ofimática", fit: "alta", why: "Word, Excel, Outlook y PowerPoint a nivel experto, y experiencia explicándolos." },
-      { title: "Dinamizador de espacios TIC y telecentros", fit: "alta", why: "Acompaño a personas sin experiencia digital con claridad y sin prisas." },
-      { title: "Formador de HTML, CSS e IA para principiantes", fit: "media", why: "Ya he creado material didáctico propio para aprender HTML y CSS desde cero.", note: "Para impartir certificados de profesionalidad se exige acreditar el certificado correspondiente." },
-      { title: "Formador en IA para equipos de oficina", fit: "media", why: "Uso la IA a diario y sé traducirla a tareas concretas de administración." },
-    ],
-  },
-  {
-    area: "Tecnología y soporte",
-    icon: "Headset",
-    intro: "Puestos donde la parte técnica se une a la atención a las personas, mi punto fuerte de siempre.",
-    roles: [
-      { title: "Soporte técnico / helpdesk N1", fit: "alta", why: "Base técnica, paciencia y experiencia real en atención telefónica y presencial." },
-      { title: "Customer success en empresas de software", fit: "alta", why: "Sé explicar herramientas digitales a quien no es técnico y acompañarle." },
-      { title: "Implantación y onboarding de software", fit: "media", why: "Ofimática experta, experiencia en coordinación TIC y facilidad para documentar." },
-      { title: "Soporte y formación en plataformas edtech", fit: "alta", why: "Conozco por dentro cómo trabaja un centro educativo y sé formar a sus usuarios." },
-    ],
-  },
-  {
-    area: "Administración digital",
-    icon: "Files",
-    intro: "Certificado de profesionalidad de gestión administrativa (ADGD0308), experiencia en oficina y recepción, y un perfil muy digital.",
-    roles: [
-      { title: "Administrativo con perfil digital", fit: "alta", why: "CP de gestión administrativa, Office experto y capacidad para automatizar procesos." },
-      { title: "Auxiliar administrativo / recepción", fit: "alta", why: "Experiencia en el Club de Polo Ampurdán y en recepción y atención al público." },
-      { title: "Técnico de contabilidad y tesorería junior", fit: "media", why: "Registros contables, tesorería y Contaplus a nivel alto." },
-      { title: "Asistente de dirección / office manager", fit: "media", why: "Organización, coordinación de equipos y ofimática experta." },
-      { title: "Oposiciones de administración pública", fit: "media", why: "Título universitario con nivel de Grado (MECES 2), CP administrativo, ofimática experta y experiencia en oficina.", note: "Plazas administrativas del Estado, la Generalitat o ayuntamientos; cada convocatoria fija su titulación." },
-    ],
-  },
-];
+export type RoleAreaId = (typeof ROLE_AREAS)[number]["id"];
 
 export type Logo = { src: string; alt: string; width: number; height: number };
 
 const GENCAT: Logo = { src: "/logos/gencat.svg", alt: "Generalitat de Catalunya", width: 124, height: 33 };
 
-export type Job = { role: string; company: string; from: string; to: string; area: "edu" | "admin" | "tech" | "music" | "service"; logos?: Logo[]; icon?: "cafe" };
+export type JobArea = "edu" | "admin" | "tech" | "music" | "service";
 
-export const JOBS: Job[] = [
-  { role: "Recepcionista / administrativo", company: "CTTI · Generalitat de Catalunya", from: "Nov 2025", to: "Jul 2026", area: "admin", logos: [GENCAT] },
-  { role: "Compositor, músico y cantante", company: "Grupo musical No Flag Patriots", from: "Ene 2022", to: "Ene 2024", area: "music", logos: [{ src: "/logos/nfp.png", alt: "No Flag Patriots", width: 298, height: 300 }] },
-  { role: "Teleoperador", company: "Konecta · AMBici · Securitas Direct", from: "Ene 2023", to: "Sep 2023", area: "service", logos: [{ src: "/logos/ambici.svg", alt: "AMBici", width: 450, height: 50 }, { src: "/logos/securitas-direct.png", alt: "Securitas Direct", width: 380, height: 300 }] },
-  { role: "Administrativo", company: "Club de Polo Ampurdán", from: "Ene 2022", to: "Oct 2022", area: "admin", logos: [{ src: "/logos/polo-ampurdan.png", alt: "Club de Polo Ampurdán", width: 61, height: 66 }] },
-  { role: "Especialista en métodos didácticos (Coordinador T.I.C.)", company: "Escola Joan Maragall", from: "Sep 2017", to: "Jun 2020", area: "edu", logos: [GENCAT] },
-  { role: "Profesor de educación primaria", company: "Escoles Gornal · Bernat Metge · Torre de la Miranda · Joan Maragall", from: "Sep 2006", to: "Jun 2020", area: "edu", logos: [GENCAT] },
-  { role: "Camarero", company: "Bar La Concha", from: "Jun 2003", to: "Sep 2005", area: "service", icon: "cafe" },
-  { role: "Vendedor", company: "El Corte Inglés · Boulangerie · comercio", from: "Ene 2003", to: "Ene 2005", area: "service", logos: [{ src: "/logos/el-corte-ingles.svg", alt: "El Corte Inglés", width: 1040, height: 586 }] },
-];
+/** Dates are [year, month]; the month name comes from the dictionary. */
+export type YearMonth = [number, number];
 
-export type EducationDetail = { heading: string; groups: { title?: string; items: string[] }[]; note?: string };
+export const JOBS = [
+  { id: "ctti", from: [2025, 11], to: [2026, 7], area: "admin", logos: [GENCAT] },
+  { id: "nfp", from: [2022, 1], to: [2024, 1], area: "music", logos: [{ src: "/logos/nfp.png", alt: "No Flag Patriots", width: 298, height: 300 }] },
+  { id: "konecta", from: [2023, 1], to: [2023, 9], area: "service", logos: [{ src: "/logos/ambici.svg", alt: "AMBici", width: 450, height: 50 }, { src: "/logos/securitas-direct.png", alt: "Securitas Direct", width: 380, height: 300 }] },
+  { id: "polo", from: [2022, 1], to: [2022, 10], area: "admin", logos: [{ src: "/logos/polo-ampurdan.png", alt: "Club de Polo Ampurdán", width: 61, height: 66 }] },
+  { id: "tic", from: [2017, 9], to: [2020, 6], area: "edu", logos: [GENCAT] },
+  { id: "teacher", from: [2006, 9], to: [2020, 6], area: "edu", logos: [GENCAT] },
+  { id: "bar", from: [2003, 6], to: [2005, 9], area: "service", icon: "cafe" },
+  { id: "sales", from: [2003, 1], to: [2005, 1], area: "service", logos: [{ src: "/logos/el-corte-ingles.svg", alt: "El Corte Inglés", width: 1040, height: 586 }] },
+] as const satisfies ReadonlyArray<{ id: string; from: YearMonth; to: YearMonth; area: JobArea; logos?: Logo[]; icon?: "cafe" }>;
 
-export type Education = { id: string; year: string; title: string; area: string; current?: boolean; logo?: Logo; detail: EducationDetail };
+export type JobId = (typeof JOBS)[number]["id"];
 
-export const EDUCATION: Education[] = [
-  {
-    id: "bootcamp",
-    year: "En curso",
-    title: "Bootcamp Full Stack con IA",
-    area: "Upgrade Hub · sep 2026 – feb 2027 · Git, SQL y MongoDB, Node.js, JavaScript, React, automatización y despliegue",
-    current: true,
-    logo: { src: "/logos/upgrade-hub.svg", alt: "Upgrade Hub", width: 5282, height: 1163 },
-    detail: {
-      heading: "Temario del bootcamp",
-      groups: [
-        { title: "Base", items: ["Entorno de desarrollo e IA: prompt engineering", "Git y GitHub", "Fundamentos: lógica, control de flujo, funciones y arrays"] },
-        { title: "Back-end y datos", items: ["Bases de datos SQL y MongoDB", "Node.js"] },
-        { title: "Front-end", items: ["HTML y CSS", "JavaScript: DOM, eventos, asincronía y Fetch", "React"] },
-        { title: "Cierre", items: ["Automatización y despliegue", "Proyectos finales", "Competencias profesionales y talento"] },
-      ],
-    },
-  },
-  {
-    id: "ifcd0110",
-    year: "En curso",
-    title: "Certificado de profesionalidad: Confección y publicación de páginas web (IFCD0110)",
-    area: "Centro Coliseum · Cornellà de Llobregat",
-    current: true,
-    logo: { src: "/logos/coliseum.svg", alt: "Centro de Formación Coliseum", width: 282, height: 65 },
-    detail: {
-      heading: "Módulos del certificado IFCD0110",
-      groups: [
-        { title: "MF0950_2 · Construcción de páginas web", items: ["Creación de páginas web con lenguajes de marcas", "Elaboración de hojas de estilo", "Elaboración de plantillas y formularios"] },
-        { title: "MF0951_2 · Integración de componentes software", items: ["Programación con lenguajes de guion en páginas web", "Pruebas de funcionalidades y optimización de páginas web"] },
-        { title: "MF0952_2 · Publicación de páginas web", items: ["Publicación y mantenimiento de sitios web"] },
-        { title: "MP0278", items: ["Módulo de prácticas profesionales no laborales"] },
-      ],
-    },
-  },
-  {
-    id: "master",
-    year: "2023",
-    title: "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación",
-    area: "Universidad Internacional de Valencia (VIU)",
-    logo: { src: "/logos/viu.svg", alt: "Universidad Internacional de Valencia", width: 1508, height: 208 },
-    detail: {
-      heading: "Áreas del máster",
-      groups: [{ items: ["Integración de las TIC en el aula", "Competencia digital docente", "Diseño de materiales y entornos digitales de aprendizaje", "Innovación e investigación educativa con tecnología"] }],
-      note: "Me ha dado la base para enseñar competencias digitales y diseñar material didáctico como «HTML y CSS desde cero».",
-    },
-  },
-  {
-    id: "cp-admin",
-    year: "2022",
-    title: "Certificado de profesionalidad ADGD0308: Actividades de gestión administrativa",
-    area: "The Corner · Cornellà de Llobregat · familia Administración y Gestión, nivel 2 (equivalente a grado medio)",
-    logo: { src: "/logos/thecorner.png", alt: "The Corner, centre d'estudis", width: 380, height: 366 },
-    detail: {
-      heading: "Módulos del CP ADGD0308",
-      groups: [
-        {
-          items: [
-            "Actividades de gestión administrativa",
-            "Gestión auxiliar de personal",
-            "Gestión de archivos",
-            "Gestión operativa de tesorería",
-            "Grabación de datos",
-            "Ofimática",
-            "Operaciones administrativas comerciales",
-            "Registros contables",
-            "Módulo de prácticas profesionales no laborales",
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: "ub",
-    year: "2007",
-    title: "Maestro, especialidad de Educación Musical",
-    area: "Universitat de Barcelona (UB) · con correspondencia a nivel de Grado (MECES 2)",
-    logo: { src: "/logos/ub.png", alt: "Universitat de Barcelona", width: 984, height: 250 },
-    detail: {
-      heading: "Formación en magisterio",
-      groups: [
-        { title: "Educación primaria", items: ["Didáctica y organización escolar", "Psicología del desarrollo y del aprendizaje", "Didácticas específicas de las áreas de primaria"] },
-        { title: "Educación musical", items: ["Lenguaje musical y formación instrumental", "Didáctica de la música", "Pedagogía musical"] },
-      ],
-      note: "La base de mis 14 años como maestro y especialista de música.",
-    },
-  },
-];
+/** `year: null` marks a course still in progress. */
+export const EDUCATION = [
+  { id: "bootcamp", year: null, logo: { src: "/logos/upgrade-hub.svg", alt: "Upgrade Hub", width: 5282, height: 1163 } },
+  { id: "ifcd0110", year: null, logo: { src: "/logos/coliseum.svg", alt: "Centro de Formación Coliseum", width: 282, height: 65 } },
+  { id: "master", year: "2023", logo: { src: "/logos/viu.svg", alt: "Universidad Internacional de Valencia", width: 1508, height: 208 } },
+  { id: "cp-admin", year: "2022", logo: { src: "/logos/thecorner.png", alt: "The Corner, centre d'estudis", width: 380, height: 366 } },
+  { id: "ub", year: "2007", logo: { src: "/logos/ub.png", alt: "Universitat de Barcelona", width: 984, height: 250 } },
+] as const satisfies ReadonlyArray<{ id: string; year: string | null; logo: Logo }>;
 
-export const CERTIFICATES = [
-  "Actividades de gestión administrativa",
-  "Gestión auxiliar de personal",
-  "Gestión de archivos",
-  "Gestión operativa de tesorería",
-  "Grabación de datos",
-  "Ofimática",
-  "Operaciones administrativas comerciales",
-  "Registros contables",
-  "Módulo de prácticas profesionales no laborales",
-];
+export type EducationId = (typeof EDUCATION)[number]["id"];
 
-export const LICENSES = ["ACTIC nivel 1 · certificado básico", "ACTIC nivel 2 · certificado medio", "Permiso de conducir B"];
-
+/** Endonyms on purpose: each language is named in itself. */
 export const LANGUAGES = [
   { name: "Español", level: "Nativo", dots: 5 },
   { name: "Català", level: "Nadiu", dots: 5 },
@@ -257,85 +66,38 @@ export const LANGUAGES = [
   { name: "English", level: "B2", dots: 4 },
 ];
 
-export const SOFT_SKILLS = [
-  { name: "Liderazgo", value: 85 },
-  { name: "Manejo de equipo", value: 85 },
-  { name: "Visión de negocio", value: 80 },
-  { name: "Escucha activa", value: 80 },
-];
+export type SoftwareLevel = "experto" | "alto" | "medio";
 
-export const SOFTWARE = [
-  { name: "Microsoft Word", level: "Experto" },
-  { name: "Microsoft Excel", level: "Experto" },
-  { name: "Microsoft Outlook", level: "Experto" },
-  { name: "Microsoft PowerPoint", level: "Experto" },
-  { name: "Microsoft Office (paquete)", level: "Experto" },
-  { name: "Microsoft Access", level: "Alto" },
-  { name: "Contaplus", level: "Alto" },
-  { name: "Adobe Photoshop", level: "Medio" },
-  { name: "Canva", level: "Experto" },
+export const SOFTWARE: Array<{ name: string; level: SoftwareLevel }> = [
+  { name: "Microsoft Word", level: "experto" },
+  { name: "Microsoft Excel", level: "experto" },
+  { name: "Microsoft Outlook", level: "experto" },
+  { name: "Microsoft PowerPoint", level: "experto" },
+  { name: "Microsoft Office", level: "experto" },
+  { name: "Microsoft Access", level: "alto" },
+  { name: "Contaplus", level: "alto" },
+  { name: "Adobe Photoshop", level: "medio" },
+  { name: "Canva", level: "experto" },
 ];
-
-export const TECH = [
-  "HTML, CSS y JavaScript",
-  "Diseño responsive, accesibilidad y usabilidad",
-  "Bases de datos SQL y MongoDB",
-  "Supabase · Auth, Database, Storage, Edge Functions",
-  "Asistentes de IA para programar",
-  "Git y GitHub",
-  "Vercel · despliegue continuo",
-  "APIs externas · Resend, Formspree",
-];
-
-export type Project = { name: string; kind: string; text: string; stack: string[]; demo?: string; code?: string; note?: string };
 
 /** Featured work, picked from github.com/liebanavicente. Code links only for public repositories. */
-export const PROJECTS: Project[] = [
-  {
-    name: "ENERPRO",
-    kind: "Portal del empleado",
-    text: "Portal privado para una empresa de seguridad: documentos, cuadrantes, turnos, vacaciones y solicitudes, con acceso por usuario y avisos automáticos.",
-    stack: ["JavaScript", "Supabase", "Resend", "Vercel"],
-    demo: "https://enerpro.vercel.app",
-    code: "https://github.com/liebanavicente/enerpro",
-  },
-  {
-    name: "BandManager",
-    kind: "SaaS de gestión",
-    text: "Plataforma para gestionar una banda: eventos, repertorio, setlists, tareas, archivos y merchandising, con base de datos relacional.",
-    stack: ["Next.js 16", "TypeScript", "Prisma", "PostgreSQL", "shadcn/ui"],
-    demo: "https://bandmanager-nine.vercel.app",
-    code: "https://github.com/liebanavicente/bandmanager",
-  },
-  {
-    name: "HTML y CSS desde cero",
-    kind: "Material didáctico interactivo",
-    text: "Curso web en español para aprender los fundamentos de HTML y CSS partiendo de cero, con actividades guiadas paso a paso.",
-    stack: ["HTML", "CSS", "Didáctica"],
-    demo: "https://materialdidacticocpweb.vercel.app",
-  },
-  {
-    name: "Apuntes Upgrade",
-    kind: "App web con IA · bootcamp",
-    text: "Archivo de resúmenes del Bootcamp Full Stack con IA: importa Word, PDF o transcripciones, los resume con IA y genera tests, tarjetas de repaso y un glosario.",
-    stack: ["Next.js", "AI SDK", "Vercel Blob", "TypeScript"],
-    note: "Uso privado del curso",
-  },
-  {
-    name: "Suscripscan",
-    kind: "Herramienta de finanzas personales",
-    text: "Controla el gasto real en suscripciones: panel mensual, anual y diario, avisos de renovación, gráficas y exportación a PDF.",
-    stack: ["Next.js", "Recharts", "jsPDF"],
-    demo: "https://suscripscan.vercel.app",
-    code: "https://github.com/liebanavicente/suscripscan",
-  },
-];
+export const PROJECTS = [
+  { id: "enerpro", name: "ENERPRO", stack: ["JavaScript", "Supabase", "Resend", "Vercel"], demo: "https://enerpro.vercel.app", code: "https://github.com/liebanavicente/enerpro" },
+  { id: "bandmanager", name: "BandManager", stack: ["Next.js 16", "TypeScript", "Prisma", "PostgreSQL", "shadcn/ui"], demo: "https://bandmanager-nine.vercel.app", code: "https://github.com/liebanavicente/bandmanager" },
+  { id: "htmlcss", stack: ["HTML", "CSS"], demo: "https://materialdidacticocpweb.vercel.app" },
+  { id: "apuntes", name: "Apuntes Upgrade", stack: ["Next.js", "AI SDK", "Vercel Blob", "TypeScript"] },
+  { id: "suscripscan", name: "Suscripscan", stack: ["Next.js", "Recharts", "jsPDF"], demo: "https://suscripscan.vercel.app", code: "https://github.com/liebanavicente/suscripscan" },
+] as const satisfies ReadonlyArray<{ id: string; name?: string; stack: string[]; demo?: string; code?: string }>;
+
+export type ProjectId = (typeof PROJECTS)[number]["id"];
 
 export const MORE_PROJECTS = [
-  { name: "La Llar del Dolç", kind: "Web de lotes y packs regalo", url: "https://lallardeldolc.vercel.app" },
-  { name: "No Flag Patriots", kind: "Tienda online con pagos Stripe", url: "https://nfpclothing.vercel.app" },
-  { name: "Darío Campos", kind: "Web de guitarrista y productor", url: "https://dariocampos.vercel.app" },
-  { name: "Construcciones Florystan", kind: "Web corporativa", url: "https://florystan-web.vercel.app" },
-  { name: "Reas0nance", kind: "Web de DJ", url: "https://danielsommm.vercel.app" },
-  { name: "Apuntes del curso web", kind: "Apuntes de desarrollo web", url: "https://apuntes-web.vercel.app" },
-];
+  { id: "llar", name: "La Llar del Dolç", url: "https://lallardeldolc.vercel.app" },
+  { id: "nfp", name: "No Flag Patriots", url: "https://nfpclothing.vercel.app" },
+  { id: "dario", name: "Darío Campos", url: "https://dariocampos.vercel.app" },
+  { id: "florystan", name: "Construcciones Florystan", url: "https://florystan-web.vercel.app" },
+  { id: "reas0nance", name: "Reas0nance", url: "https://danielsommm.vercel.app" },
+  { id: "apuntesweb", url: "https://apuntes-web.vercel.app" },
+] as const satisfies ReadonlyArray<{ id: string; name?: string; url: string }>;
+
+export type MoreProjectId = (typeof MORE_PROJECTS)[number]["id"];

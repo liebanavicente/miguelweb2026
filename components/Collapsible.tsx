@@ -10,7 +10,7 @@ export const OPEN_SECTION_EVENT = "open-section";
  * Chapter body folded behind a glass bar, so the page reads as a table of contents first.
  * It opens on click, when the URL hash points at the chapter, or when the header asks for it.
  */
-export function Collapsible({ id, summary, children, defaultOpen = false }: { id: string; summary: string; children: ReactNode; defaultOpen?: boolean }) {
+export function Collapsible({ id, summary, labels, children, defaultOpen = false }: { id: string; summary: string; labels: { open: string; close: string }; children: ReactNode; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
   // Only once fully open may the content overflow (hover lifts, shadows, sticky panels).
   const [settled, setSettled] = useState(defaultOpen);
@@ -47,7 +47,7 @@ export function Collapsible({ id, summary, children, defaultOpen = false }: { id
       <button aria-controls={`${id}-cuerpo`} aria-expanded={open} className="fold-bar" onClick={toggle} ref={barRef} type="button">
         <span className="fold-summary">{summary}</span>
         <span className="fold-action">
-          {open ? "Plegar" : "Desplegar"}
+          {open ? labels.close : labels.open}
           <CaretDown aria-hidden className="fold-caret" size={15} weight="bold" />
         </span>
       </button>

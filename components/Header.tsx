@@ -3,20 +3,17 @@
 import { List, X } from "@phosphor-icons/react";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
 
+import type { Dictionary } from "../lib/dictionaries";
+import type { Locale } from "../lib/i18n";
 import { OPEN_SECTION_EVENT } from "./Collapsible";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
-const LINKS = [
-  { id: "ofrezco", label: "Qué ofrezco" },
-  { id: "proyectos", label: "Proyectos" },
-  { id: "puestos", label: "Puestos" },
-  { id: "formacion", label: "Formación" },
-  { id: "titulos", label: "Títulos" },
-  { id: "trayectoria", label: "Trayectoria" },
-  { id: "contacto", label: "Contacto" },
-];
+// Section anchors stay the same in every language, so shared links keep working.
+const SECTION_IDS = ["ofrezco", "proyectos", "puestos", "formacion", "titulos", "trayectoria", "contacto"] as const;
 
 /** Sticky header: an ink underline slides to the hovered link and rests on the section in view. */
-export function Header() {
+export function Header({ t, locale }: { t: Dictionary["header"]; locale: Locale }) {
+  const LINKS = SECTION_IDS.map((id) => ({ id, label: t.nav[id] }));
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState<string | null>(null);
@@ -30,7 +27,7 @@ export function Header() {
     const onScroll = () => {
       setScrolled(window.scrollY > 12);
       // Above the first chapter nothing is current, so the underline does not linger on the last section seen.
-      const first = document.getElementById(LINKS[0].id);
+      const first = document.getElementById(SECTION_IDS[0]);
       if (first && first.getBoundingClientRect().top > window.innerHeight * 0.35) setCurrent(null);
     };
     onScroll();
@@ -40,7 +37,7 @@ export function Header() {
 
   // The section crossing the upper third of the screen is the current one.
   useEffect(() => {
-    const sections = LINKS.map(({ id }) => document.getElementById(id)).filter((node): node is HTMLElement => Boolean(node));
+    const sections = SECTION_IDS.map((id) => document.getElementById(id)).filter((node): node is HTMLElement => Boolean(node));
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) if (entry.isIntersecting) setCurrent(entry.target.id);
@@ -70,7 +67,7 @@ export function Header() {
     <>
     <header className="topbar" data-scrolled={scrolled}>
       <a className="skip-link" href="#contenido">
-        Saltar al contenido
+        {t.skip}
       </a>
       <div className="container topbar-inner">
         <a className="brand" href="#inicio" onClick={() => setOpen(false)}>
@@ -79,11 +76,11 @@ export function Header() {
           </span>
           <span className="brand-copy">
             <strong>Miguel Liébana</strong>
-            <span>Web · IA · Admin · Office</span>
+            <span>{t.tagline}</span>
           </span>
         </a>
 
-        <nav aria-label="Secciones" className="site-nav">
+        <nav aria-label={t.sectionsLabel} className="site-nav">
           <div className="nav-track" onMouseLeave={() => setHovered(null)}>
             <span
               aria-hidden
@@ -102,15 +99,18 @@ export function Header() {
           </div>
         </nav>
 
-        <button aria-controls="menu-movil" aria-expanded={open} className="menu-toggle" onClick={() => setOpen(!open)} type="button">
-          {open ? <X aria-hidden size={18} weight="bold" /> : <List aria-hidden size={18} weight="bold" />}
-          Menú
-        </button>
+        <div className="topbar-tools">
+          <LanguageSwitcher label={t.languageLabel} locale={locale} />
+          <button aria-controls="menu-movil" aria-expanded={open} className="menu-toggle" onClick={() => setOpen(!open)} type="button">
+            {open ? <X aria-hidden size={18} weight="bold" /> : <List aria-hidden size={18} weight="bold" />}
+            {t.menu}
+          </button>
+        </div>
       </div>
     </header>
 
       {open ? (
-        <nav aria-label="Secciones" className="mobile-menu" id="menu-movil">
+        <nav aria-label={t.sectionsLabel} className="mobile-menu" id="menu-movil">
           <ul>
             {LINKS.map(({ id, label }, index) => (
               <li key={id} style={{ "--i": index } as CSSProperties}>
@@ -128,7 +128,7 @@ export function Header() {
             ))}
           </ul>
           <a className="button primary mobile-cta" href="mailto:mlieban3@gmail.com">
-            Escríbeme
+            {t.write}
           </a>
         </nav>
       ) : null}

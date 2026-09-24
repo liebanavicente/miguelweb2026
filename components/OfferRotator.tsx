@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 
-import { OFFER_ROTATOR } from "../lib/cv";
+import type { Dictionary } from "../lib/dictionaries";
 
 type Letter = { char: string; key: boolean };
 
@@ -32,7 +32,8 @@ function subscribeReducedMotion(onChange: () => void) {
 }
 
 /** A terminal prompt that types one thing I can offer at a time, holds it, erases it and moves on. */
-export function OfferRotator() {
+export function OfferRotator({ t }: { t: Dictionary["rotator"] }) {
+  const items = t.items;
   const reduceMotion = useSyncExternalStore(
     subscribeReducedMotion,
     () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
@@ -43,7 +44,7 @@ export function OfferRotator() {
   const [phase, setPhase] = useState<"typing" | "holding" | "erasing">("typing");
   const [paused, setPaused] = useState(false);
 
-  const letters = lettersOf(OFFER_ROTATOR[index]);
+  const letters = lettersOf(items[index]);
   const length = letters.length;
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export function OfferRotator() {
       delay = ERASE_MS;
       step = () => {
         if (count > 0) return setCount(count - 1);
-        setIndex((index + 1) % OFFER_ROTATOR.length);
+        setIndex((index + 1) % items.length);
         setPhase("typing");
       };
     }
@@ -76,7 +77,7 @@ export function OfferRotator() {
 
   const everything = (
     <ul className="term-list">
-      {OFFER_ROTATOR.map((item) => (
+      {items.map((item) => (
         <li key={item}>{plainLabel(item)}</li>
       ))}
     </ul>
@@ -97,10 +98,10 @@ export function OfferRotator() {
           <i />
           <i />
         </span>
-        <span>miguel@portfolio: ~/tu-equipo</span>
+        <span>miguel@portfolio: {t.path}</span>
       </div>
       <div className="term-body">
-        <p className="term-comment"># en tu equipo puedo…</p>
+        <p className="term-comment">{t.comment}</p>
         {reduceMotion ? (
           everything
         ) : (
@@ -118,8 +119,8 @@ export function OfferRotator() {
                 <span className={`term-caret${phase === "holding" || paused ? " is-blinking" : ""}`} />
               </span>
             </p>
-            <div className="term-tabs" role="group" aria-label="Qué puedo aportar">
-              {OFFER_ROTATOR.map((item, dot) => (
+            <div className="term-tabs" role="group" aria-label={t.groupLabel}>
+              {items.map((item, dot) => (
                 <button aria-current={dot === index} aria-label={plainLabel(item)} key={item} onClick={() => show(dot)} type="button">
                   {String(dot + 1).padStart(2, "0")}
                 </button>

@@ -84,10 +84,10 @@ function ToolItem({ tool }: { tool: Tool }) {
 }
 
 /** Quiet strip of the tools I work with: greyed logos drifting sideways, each one takes its colour on hover. */
-export function TechMarquee() {
+export function TechMarquee({ t }: { t: { label: string; title: string } }) {
   return (
-    <section aria-label="Herramientas y tecnologías que uso" className="marquee">
-      <p className="marquee-label">Herramientas del día a día</p>
+    <section aria-label={t.label} className="marquee">
+      <p className="marquee-label">{t.title}</p>
       <div className="marquee-viewport">
         <ul className="marquee-track">
           {TOOLS.map((tool) => (

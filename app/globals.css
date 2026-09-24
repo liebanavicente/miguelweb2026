@@ -229,6 +229,23 @@ h1, h2, h3, h4 { line-height: 1.05; }
 
 .menu-toggle { display: none; min-height: 42px; align-items: center; gap: 8px; border: 1px solid var(--glass-edge); border-radius: 999px; background: var(--glass-flat); box-shadow: var(--glass-shadow); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); color: var(--ink); cursor: pointer; font-weight: 650; padding: 8px 16px; }
 .menu-toggle[aria-expanded="true"] { border-color: var(--pen); color: var(--pen); }
+
+.topbar-tools { display: flex; flex: none; align-items: center; gap: 10px; }
+.lang { position: relative; }
+.lang-toggle { display: inline-flex; min-height: 42px; align-items: center; gap: 7px; border: 1px solid var(--glass-edge); border-radius: 999px; background: var(--glass-flat); box-shadow: var(--glass-shadow); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); color: var(--ink); cursor: pointer; padding: 8px 13px; transition: border-color 160ms ease, color 160ms ease; }
+.lang-toggle:hover, .lang-toggle[aria-expanded="true"] { border-color: var(--pen); color: var(--pen); }
+.lang-code { font-family: var(--mono); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+.lang-caret { transition: transform 220ms var(--ease-out); }
+.lang-toggle[aria-expanded="true"] .lang-caret { transform: rotate(180deg); }
+/* Nested inside the blurred topbar, a backdrop-filter here would not frost anything: the menu stays nearly opaque instead. */
+.lang-menu { position: absolute; z-index: 30; top: calc(100% + 8px); right: 0; display: grid; min-width: 184px; gap: 2px; margin: 0; border: 1px solid var(--glass-edge); border-radius: 16px; background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(250, 251, 253, 0.95)); box-shadow: var(--glass-shadow), 0 18px 40px rgba(33, 62, 128, 0.14); list-style: none; opacity: 0; padding: 6px; pointer-events: none; transform: translateY(-6px) scale(0.98); transform-origin: top right; transition: opacity 160ms ease, transform 220ms var(--ease-out); }
+.lang-menu[data-open="true"] { opacity: 1; pointer-events: auto; transform: none; }
+.lang-menu a { display: flex; min-height: 42px; align-items: center; gap: 12px; border-radius: 11px; color: var(--ink); font-weight: 550; padding: 8px 12px; transition: background-color 140ms ease, color 140ms ease; }
+.lang-menu a:hover, .lang-menu a:focus-visible { background: rgba(var(--pen-rgb), 0.08); color: var(--pen); }
+.lang-menu .lang-code { width: 22px; color: var(--faint); }
+.lang-menu a[aria-current="true"] { color: var(--pen); }
+.lang-menu a[aria-current="true"] .lang-code { color: var(--pen); }
+.lang-check { margin-left: auto; }
 .mobile-menu { position: fixed; z-index: 19; inset: 0; display: flex; flex-direction: column; gap: 28px; overflow-y: auto; background: rgba(247, 248, 250, 0.72); -webkit-backdrop-filter: blur(28px) saturate(180%); backdrop-filter: blur(28px) saturate(180%); padding: calc(var(--header-mobile) + 20px) 20px 28px; }
 .mobile-menu ul { display: grid; margin: 0; padding: 0; list-style: none; counter-reset: menu; }
 .mobile-menu li { border-bottom: 1px dashed var(--line); counter-increment: menu; animation: rise 380ms var(--ease-out) both; animation-delay: calc(var(--i) * 40ms); }
