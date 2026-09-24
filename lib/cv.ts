@@ -140,7 +140,7 @@ export const JOBS: Job[] = [
 ];
 
 export const EDUCATION = [
-  { year: "En curso · sep 2026 – feb 2027", title: "Bootcamp Full Stack con IA", area: "Upgrade Hub · Git, bases de datos, Node.js, JavaScript, React, automatización y despliegue", current: true },
+  { year: "En curso · sep 2026 – feb 2027", title: "Bootcamp Full Stack con IA", area: "Upgrade Hub · Git, SQL y MongoDB, Node.js, JavaScript, React, automatización y despliegue", current: true },
   { year: "En curso", title: "Certificado de profesionalidad: Confección y publicación de páginas web (IFCD0110)", area: "Centro Coliseum · Cornellà de Llobregat", current: true },
   { year: "2023", title: "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación", area: "Universidad Internacional de Valencia (VIU)" },
   { year: "2022", title: "Técnico superior en Administración y finanzas", area: "Formación profesional de grado superior" },
@@ -191,6 +191,7 @@ export const SOFTWARE = [
 export const TECH = [
   "HTML, CSS y JavaScript",
   "Diseño responsive, accesibilidad y usabilidad",
+  "Bases de datos SQL y MongoDB",
   "Supabase · Auth, Database, Storage, Edge Functions",
   "Asistentes de IA para programar",
   "Git y GitHub",

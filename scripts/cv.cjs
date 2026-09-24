@@ -83,7 +83,7 @@ const children = [
 
   section("Formación"),
   ...entry("Upgrade Hub", "Sep 2026 – Feb 2027 (en curso)", "Bootcamp Full Stack con IA", ""),
-  bullet("Entorno de desarrollo e IA (prompt engineering), Git y GitHub, fundamentos de programación (lógica, control de flujo, funciones y arrays) y bases de datos."),
+  bullet("Entorno de desarrollo e IA (prompt engineering), Git y GitHub, fundamentos de programación (lógica, control de flujo, funciones y arrays) y bases de datos SQL y MongoDB."),
   bullet("Back-end con Node.js; front-end con HTML, CSS y JavaScript (DOM, eventos, asincronía y Fetch) y React; automatización, despliegue y proyectos finales."),
   ...entry("Centro Coliseum, Cornellà de Llobregat", "En curso", "Certificado de profesionalidad: Confección y publicación de páginas web (IFCD0110)", ""),
   bullet("HTML, CSS, diseño responsive, accesibilidad y usabilidad web, y publicación de sitios web."),
@@ -94,7 +94,8 @@ const children = [
 
   section("Experiencia profesional"),
   ...entry("CTTI", "", "Recepcionista / Administrativo", "Nov 2025 – Jul 2026"),
-  bullet("Atención presencial y telefónica, y tareas administrativas de apoyo."),
+  bullet("Registro y control de visitas, y acompañamiento de visitantes a los despachos de dirección."),
+  bullet("Organización de reuniones, gestión y mantenimiento de salas, y atención telefónica."),
   ...entry("Grupo musical No Flag Patriots", "", "Compositor, músico y cantante", "Ene 2022 – Ene 2024"),
   bullet("Composición, interpretación y directo con el grupo."),
   bullet("Desarrollo de la tienda online de merchandising del grupo con Next.js y pagos Stripe."),
@@ -124,7 +125,7 @@ const children = [
 
   section("Habilidades"),
   skill("Desarrollo web", "HTML5, CSS3, JavaScript (DOM, eventos, asincronía, Fetch), TypeScript, React, Next.js, Tailwind CSS, diseño responsive, accesibilidad web"),
-  skill("Back-end y datos", "Node.js, Supabase (Auth, Database, Storage, Edge Functions), PostgreSQL, Prisma, APIs REST, Resend, Stripe"),
+  skill("Back-end y datos", "Node.js, SQL, PostgreSQL, MongoDB, Supabase (Auth, Database, Storage, Edge Functions), Prisma, APIs REST, Resend, Stripe"),
   skill("Herramientas", "Git, GitHub, VS Code, Warp, Vercel, FileZilla, Figma, Framer, WordPress"),
   skill("Inteligencia artificial", "Claude, ChatGPT, Gemini; prompt engineering; IA aplicada a la programación y a la automatización de tareas"),
   skill("Ofimática", "Microsoft Word, Excel, Outlook y PowerPoint (experto); Access y Contaplus (alto); Teams; Canva; Photoshop (medio)"),
