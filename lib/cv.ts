@@ -129,7 +129,7 @@ export const ROLE_GROUPS: RoleGroup[] = [
 export type Job = { role: string; company: string; from: string; to: string; area: "edu" | "admin" | "tech" | "music" | "service" };
 
 export const JOBS: Job[] = [
-  { role: "Recepcionista / administrativo", company: "CTTI", from: "Reciente", to: "", area: "admin" },
+  { role: "Recepcionista / administrativo", company: "CTTI", from: "Nov 2025", to: "Jul 2026", area: "admin" },
   { role: "Compositor, músico y cantante", company: "Grupo musical No Flag Patriots", from: "Ene 2022", to: "Ene 2024", area: "music" },
   { role: "Teleoperador", company: "Konecta · AMB Bicing · Securitas Direct", from: "Ene 2023", to: "Sep 2023", area: "service" },
   { role: "Administrativo", company: "Club de Polo Empordà", from: "Ene 2022", to: "Oct 2022", area: "admin" },
@@ -140,9 +140,9 @@ export const JOBS: Job[] = [
 ];
 
 export const EDUCATION = [
-  { year: "En curso", title: "Bootcamp Full Stack con IA", area: "Upgrade Hub", current: true },
+  { year: "En curso · sep 2026 – feb 2027", title: "Bootcamp Full Stack con IA", area: "Upgrade Hub · Git, bases de datos, Node.js, JavaScript, React, automatización y despliegue", current: true },
   { year: "En curso", title: "Certificado de profesionalidad: Confección y publicación de páginas web (IFCD0110)", area: "Centro Coliseum · Cornellà de Llobregat", current: true },
-  { year: "Máster", title: "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación", area: "Formación y ciencias de la educación" },
+  { year: "2023", title: "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación", area: "Universidad Internacional de Valencia (VIU)" },
   { year: "2022", title: "Técnico superior en Administración y finanzas", area: "Formación profesional de grado superior" },
   { year: "2022", title: "Técnico en Gestión administrativa", area: "Formación profesional de grado medio" },
   { year: "2007", title: "Estudios universitarios de Educación primaria y musical", area: "Magisterio" },
