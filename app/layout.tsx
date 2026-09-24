@@ -6,12 +6,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://miguelweb2026.vercel.app"),
-  title: "Miguel Liébana · Educación, administración e IA",
+  title: "Miguel Liébana · Desarrollo web, IA y administración",
   description:
-    "Portfolio de Miguel Liébana: maestro de primaria y coordinador TIC, técnico superior en Administración y finanzas y desarrollador web con IA. Qué ofrece y a qué puestos puede aspirar.",
+    "Portfolio de Miguel Liébana: desarrollador web full-stack con IA en formación (Upgrade Hub), técnico superior en Administración y finanzas. Qué ofrece y a qué puestos puede aspirar.",
   openGraph: {
-    title: "Miguel Liébana · Educación, administración e IA",
-    description: "Enseño, organizo y construyo con IA. Portfolio y CV.",
+    title: "Miguel Liébana · Desarrollo web, IA y administración",
+    description: "Construyo webs y ordeno procesos con IA. Portfolio y CV.",
     images: ["/fotos/retrato.jpg"],
     locale: "es_ES",
     type: "profile",

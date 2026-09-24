@@ -1,12 +1,12 @@
 "use client";
 
 import type { Icon } from "@phosphor-icons/react";
-import { Briefcase, Buildings, ChalkboardTeacher, ChatsCircle, Code, EnvelopeSimple, MicrosoftExcelLogo, UsersThree } from "@phosphor-icons/react";
+import { Briefcase, Browser, ChalkboardTeacher, ChatsCircle, Code, Database, EnvelopeSimple, MicrosoftExcelLogo } from "@phosphor-icons/react";
 import { useEffect, useState, useSyncExternalStore } from "react";
 
 import { OFFER_ROTATOR } from "../lib/cv";
 
-const ICONS: Icon[] = [ChalkboardTeacher, UsersThree, Briefcase, MicrosoftExcelLogo, Code, EnvelopeSimple, ChatsCircle, Buildings];
+const ICONS: Icon[] = [Code, Browser, Database, EnvelopeSimple, Briefcase, MicrosoftExcelLogo, ChalkboardTeacher, ChatsCircle];
 
 type Letter = { char: string; key: boolean };
 

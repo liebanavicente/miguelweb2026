@@ -7,40 +7,46 @@ export const CONTACT = {
   cv: "/cv-miguel-liebana.jpg",
 };
 
-export const CURRENT_ROLE = "Recepcionista / administrativo en CTTI";
+export const CURRENT_ROLE = "Bootcamp Full Stack con IA · Upgrade Hub";
 
 export const STATS = [
-  { value: "14", unit: "años", label: "en el aula como maestro de primaria y coordinador TIC" },
-  { value: "+20", unit: "años", label: "de experiencia laboral en educación, oficina y atención al público" },
+  { value: "2", unit: "formaciones en curso", label: "Bootcamp Full Stack con IA en Upgrade Hub y certificado de Confección y publicación de páginas web" },
+  { value: "+20", unit: "años", label: "de experiencia laboral en administración, atención al público y educación" },
   { value: "4", unit: "idiomas", label: "Español y catalán nativos, alemán C2 e inglés B2" },
 ];
 
 /** What I can bring. *Asterisks* mark the key words, set in the display serif. */
 export const OFFER_ROTATOR = [
-  "enseñar *cualquier concepto* a cualquier edad",
-  "coordinar *programas y equipos*",
+  "construir *webs full-stack* con IA",
+  "maquetar *páginas accesibles* y responsive",
+  "conectar *bases de datos* y APIs",
+  "automatizar *avisos y correos*",
   "llevar la *administración y la tesorería*",
   "dominar *Microsoft Office* a nivel experto",
-  "construir *webs full-stack* con IA",
-  "automatizar *avisos y correos*",
+  "explicar *lo técnico* con claridad",
   "atender en *cuatro idiomas*",
-  "digitalizar *un centro educativo*",
 ];
 
 export type Offer = { title: string; text: string; icon: string; tags: string[] };
 
 export const OFFERS: Offer[] = [
   {
-    icon: "ChalkboardTeacher",
-    title: "Docencia y pedagogía",
-    text: "Catorce años explicando conceptos a alumnado de todas las edades y niveles. Diseño actividades, gestiono el aula y adapto el ritmo a cada grupo.",
-    tags: ["Primaria", "Música", "Metodologías activas"],
+    icon: "Code",
+    title: "Desarrollo web full-stack",
+    text: "Me estoy formando en el Bootcamp Full Stack con IA de Upgrade Hub. Construyo aplicaciones con base de datos, autenticación y correos automáticos, y las despliego en Vercel.",
+    tags: ["JavaScript", "Supabase", "IA"],
   },
   {
-    icon: "Laptop",
-    title: "Tecnología educativa",
-    text: "Coordinador T.I.C. en la Escola Joan Maragall y máster en TIC aplicadas a la educación. Llevo herramientas digitales al aula y formo al claustro.",
-    tags: ["Coordinación TIC", "Formación docente", "EdTech"],
+    icon: "Browser",
+    title: "Maquetación y publicación web",
+    text: "Curso el certificado de profesionalidad Confección y publicación de páginas web: HTML, CSS, diseño responsive, accesibilidad, usabilidad y puesta en producción.",
+    tags: ["HTML y CSS", "Responsive", "Accesibilidad"],
+  },
+  {
+    icon: "Robot",
+    title: "Automatización con IA",
+    text: "Uso la IA como herramienta de trabajo diaria para programar, resumir y automatizar tareas repetitivas de oficina: avisos, correos y flujos de datos.",
+    tags: ["IA generativa", "APIs", "Automatización"],
   },
   {
     icon: "Briefcase",
@@ -55,16 +61,10 @@ export const OFFERS: Offer[] = [
     tags: ["Office", "Contaplus", "ACTIC"],
   },
   {
-    icon: "Code",
-    title: "Desarrollo web con IA",
-    text: "Construyo webs y portales con HTML, CSS, JavaScript y Supabase, con despliegue continuo en Vercel y correos automáticos mediante APIs externas.",
-    tags: ["Supabase", "Vercel", "APIs"],
-  },
-  {
     icon: "UsersThree",
-    title: "Atención y comunicación",
-    text: "Recepción, teleoperación y trato con familias. Me comunico con claridad con alumnado, clientes y equipos, y escucho antes de resolver.",
-    tags: ["Recepción", "Atención al cliente", "Escucha activa"],
+    title: "Comunicación y trato con personas",
+    text: "Años de aula, recepción y teleoperación me han enseñado a escuchar, explicar lo complejo con palabras sencillas y coordinarme con equipos diversos.",
+    tags: ["Escucha activa", "Atención al cliente", "Trabajo en equipo"],
   },
 ];
 
@@ -76,41 +76,38 @@ export type RoleGroup = { area: string; icon: string; intro: string; roles: Role
 
 export const ROLE_GROUPS: RoleGroup[] = [
   {
-    area: "Educación",
-    icon: "GraduationCap",
-    intro: "Mi base: título universitario en Educación primaria y musical, máster en TIC educativas y 14 años de aula.",
+    area: "Desarrollo web",
+    icon: "Code",
+    intro: "Mi objetivo principal: Bootcamp Full Stack con IA en Upgrade Hub y certificado de Confección y publicación de páginas web en el Centro Coliseum de Cornellà.",
     roles: [
-      { title: "Maestro de educación primaria", fit: "alta", why: "Titulación y 14 años de experiencia en varias escuelas.", note: "Centros privados y concertados, o por oposición en la pública." },
-      { title: "Especialista de música", fit: "alta", why: "Mención musical, pedagogía musical y experiencia como músico y compositor." },
-      { title: "Coordinador TIC / TAC de centro", fit: "alta", why: "Ya lo he sido (2017–2020) y tengo un máster específico." },
-      { title: "Formador de ofimática y competencias digitales", fit: "alta", why: "Docente, Office a nivel experto y ACTIC 2: sé enseñar lo que domino." },
-      { title: "Diseñador instruccional / e-learning", fit: "media", why: "Pedagogía, TIC educativas y capacidad para montar contenidos web." },
-      { title: "Tutor de formación online", fit: "media", why: "Experiencia docente y soltura con plataformas digitales." },
+      { title: "Maquetador / desarrollador front-end junior", fit: "alta", why: "HTML, CSS y JavaScript con diseño responsive y accesible: el núcleo de mis dos formaciones." },
+      { title: "Desarrollador web full-stack junior", fit: "alta", why: "Proyectos publicados con base de datos, autenticación y despliegue continuo.", note: "Disponible al terminar el bootcamp." },
+      { title: "Gestor de contenidos y publicación web", fit: "alta", why: "Publicar, mantener y actualizar webs es justo lo que acredita mi certificado." },
+      { title: "Desarrollador de automatizaciones e IA", fit: "media", why: "Automatizo notificaciones y flujos con APIs externas y asistentes de IA." },
+      { title: "Tester / QA junior", fit: "media", why: "Ojo para el detalle, orientación al usuario y base técnica para reproducir errores." },
     ],
   },
   {
-    area: "Administración y oficina",
-    icon: "Files",
-    intro: "Técnico superior en Administración y finanzas, técnico en Gestión administrativa y certificados de profesionalidad.",
+    area: "Tecnología y soporte",
+    icon: "Headset",
+    intro: "Puestos donde la parte técnica se une a la atención a las personas, mi punto fuerte de siempre.",
     roles: [
-      { title: "Administrativo / auxiliar administrativo", fit: "alta", why: "Doble FP administrativa y experiencia en el Club de Polo Empordà." },
-      { title: "Recepcionista administrativo", fit: "alta", why: "Es mi puesto actual en CTTI." },
-      { title: "Administrativo de centro educativo (PAS)", fit: "alta", why: "Une lo que sé de gestión con lo que sé de escuelas." },
+      { title: "Soporte técnico / helpdesk N1", fit: "alta", why: "Base técnica, paciencia y experiencia real en atención telefónica y presencial." },
+      { title: "Customer success en empresas de software", fit: "alta", why: "Sé explicar herramientas digitales a quien no es técnico y acompañarle." },
+      { title: "Implantación y onboarding de software", fit: "media", why: "Ofimática experta, experiencia en coordinación TIC y facilidad para documentar." },
+      { title: "Técnico de soporte en plataformas edtech", fit: "media", why: "Conozco por dentro cómo trabaja un centro educativo y qué necesita." },
+    ],
+  },
+  {
+    area: "Administración digital",
+    icon: "Files",
+    intro: "Técnico superior en Administración y finanzas y técnico en Gestión administrativa, con un perfil muy digital.",
+    roles: [
+      { title: "Administrativo con perfil digital", fit: "alta", why: "Doble FP administrativa, Office experto y capacidad para automatizar procesos." },
+      { title: "Auxiliar administrativo / recepción", fit: "alta", why: "Experiencia en el Club de Polo Empordà y en recepción y atención al público." },
       { title: "Técnico de contabilidad y tesorería junior", fit: "media", why: "Registros contables, tesorería y Contaplus a nivel alto." },
       { title: "Asistente de dirección / office manager", fit: "media", why: "Organización, coordinación de equipos y ofimática experta." },
       { title: "Oposiciones de administración pública", fit: "media", why: "El título de técnico superior permite presentarse a plazas del grupo C1.", note: "Cuerpos administrativos del Estado, la Generalitat o ayuntamientos." },
-    ],
-  },
-  {
-    area: "Tecnología",
-    icon: "Code",
-    intro: "Mi crecimiento actual: desarrollo web full-stack con IA y automatización de procesos de oficina.",
-    roles: [
-      { title: "Desarrollador web junior", fit: "media", why: "Proyectos publicados con Supabase, JavaScript y Vercel." },
-      { title: "Especialista en EdTech", fit: "alta", why: "Pocas personas juntan aula, pedagogía y código." },
-      { title: "Soporte técnico / helpdesk N1", fit: "media", why: "Atención al usuario, experiencia en CTTI y base técnica sólida." },
-      { title: "Automatización e IA para oficinas", fit: "media", why: "Automatizo notificaciones y flujos con APIs externas." },
-      { title: "Customer success en empresas edtech", fit: "alta", why: "Sé qué necesita un colegio y sé explicarlo." },
     ],
   },
 ];
@@ -118,7 +115,7 @@ export const ROLE_GROUPS: RoleGroup[] = [
 export type Job = { role: string; company: string; from: string; to: string; area: "edu" | "admin" | "tech" | "music" | "service" };
 
 export const JOBS: Job[] = [
-  { role: "Recepcionista / administrativo", company: "CTTI", from: "Actualidad", to: "", area: "admin" },
+  { role: "Recepcionista / administrativo", company: "CTTI", from: "Reciente", to: "", area: "admin" },
   { role: "Compositor, músico y cantante", company: "Grupo musical No Flag Patriots", from: "Ene 2022", to: "Ene 2024", area: "music" },
   { role: "Teleoperador", company: "Konecta · AMB Bicing · Securitas Direct", from: "Ene 2023", to: "Sep 2023", area: "service" },
   { role: "Administrativo", company: "Club de Polo Empordà", from: "Ene 2022", to: "Oct 2022", area: "admin" },
@@ -129,6 +126,8 @@ export const JOBS: Job[] = [
 ];
 
 export const EDUCATION = [
+  { year: "En curso", title: "Bootcamp Full Stack con IA", area: "Upgrade Hub", current: true },
+  { year: "En curso", title: "Certificado de profesionalidad: Confección y publicación de páginas web (IFCD0110)", area: "Centro Coliseum · Cornellà de Llobregat", current: true },
   { year: "Máster", title: "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación", area: "Formación y ciencias de la educación" },
   { year: "2022", title: "Técnico superior en Administración y finanzas", area: "Formación profesional de grado superior" },
   { year: "2022", title: "Técnico en Gestión administrativa", area: "Formación profesional de grado medio" },
@@ -176,14 +175,23 @@ export const SOFTWARE = [
 ];
 
 export const TECH = [
-  "Supabase · Auth, Database, Storage, Edge Functions",
   "HTML, CSS y JavaScript",
+  "Diseño responsive, accesibilidad y usabilidad",
+  "Supabase · Auth, Database, Storage, Edge Functions",
+  "Asistentes de IA para programar",
   "Git y GitHub",
   "Vercel · despliegue continuo",
   "APIs externas · Resend, Formspree",
 ];
 
-export const PROJECTS = [
+export const PROJECTS: Array<{ name: string; kind: string; text: string; stack: string[]; url?: string }> = [
+  {
+    name: "Apuntes Upgrade",
+    kind: "App web con IA · bootcamp",
+    text: "Archivo de resúmenes del Bootcamp Full Stack con IA: importa Word, PDF o transcripciones, los resume con IA y genera tests, tarjetas de repaso y un glosario.",
+    stack: ["Next.js", "AI SDK", "Vercel Blob", "TypeScript"],
+    url: "https://github.com/liebanavicente/apuntes-upgrade",
+  },
   {
     name: "ENERPRO",
     kind: "Portal web · seguridad privada",
@@ -201,5 +209,6 @@ export const PROJECTS = [
     kind: "Página personal",
     text: "La página que estás leyendo: mi CV convertido en web, con lo que ofrezco y los puestos que encajan conmigo.",
     stack: ["Next.js", "React", "Vercel"],
+    url: "https://github.com/liebanavicente/miguelweb2026",
   },
 ];

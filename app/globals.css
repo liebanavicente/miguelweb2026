@@ -243,6 +243,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.02; }
 h1 { max-width: 900px; font-size: clamp(2.7rem, 6vw, 4.6rem); font-weight: 850; }
 h3 { font-size: 1.15rem; font-weight: 780; }
 
+.page-intro strong { font-weight: 750; }
 .page-intro { max-width: 640px; margin: 20px 0 0; font-size: 1.08rem; line-height: 1.58; }
 
 .badge {
@@ -627,6 +628,8 @@ h3 { font-size: 1.15rem; font-weight: 780; }
 }
 .history-list li:not(:last-child) .history-item::after { position: absolute; top: 36px; bottom: -20px; left: 21px; width: 1px; background: rgba(9, 9, 9, 0.2); content: ""; }
 .history-item:hover { background: rgba(var(--accent-rgb), 0.3); }
+.history-item.is-current { background: rgba(var(--accent-rgb), 0.45); }
+.history-item.is-current::before { background: var(--accent-strong); animation: pulse-ring 1600ms ease-out infinite; }
 .history-item:hover::before { background: var(--accent); }
 .history-when { color: var(--accent-ink); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; }
 .history-kind { font-size: 1.15rem; font-weight: 780; line-height: 1.25; }
@@ -672,7 +675,7 @@ h3 { font-size: 1.15rem; font-weight: 780; }
 .tech-label { margin-top: 26px; }
 
 /* Projects */
-.project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
 .project-card {
   position: relative;
   display: grid;
@@ -699,6 +702,8 @@ h3 { font-size: 1.15rem; font-weight: 780; }
   pointer-events: none;
   transition: color 200ms ease, transform 300ms var(--ease-out);
 }
+.project-link { display: inline-flex; align-items: center; gap: 6px; justify-self: start; font-weight: 750; background: linear-gradient(var(--accent), var(--accent)) no-repeat 0 100% / 100% 0.3em; transition: background-size 200ms var(--ease-out); }
+.project-link:hover { background-size: 100% 100%; }
 .project-card:hover { box-shadow: 6px 6px 0 var(--accent), 6px 6px 0 1px var(--line); transform: translate(-3px, -3px); }
 .project-card:hover .project-index { color: rgba(var(--accent-rgb), 0.85); transform: rotate(-6deg); }
 

@@ -5,10 +5,10 @@ import { type CSSProperties, useEffect, useRef, useState } from "react";
 
 const LINKS = [
   { id: "ofrezco", label: "Qué ofrezco" },
-  { id: "puestos", label: "Puestos" },
-  { id: "trayectoria", label: "Trayectoria" },
-  { id: "formacion", label: "Formación" },
   { id: "proyectos", label: "Proyectos" },
+  { id: "puestos", label: "Puestos" },
+  { id: "formacion", label: "Formación" },
+  { id: "trayectoria", label: "Trayectoria" },
   { id: "contacto", label: "Contacto" },
 ];
 
@@ -69,7 +69,7 @@ export function Header() {
           </span>
           <span className="brand-copy">
             <strong>Miguel Liébana</strong>
-            <span>Edu · Admin · IA · Office</span>
+            <span>Web · IA · Admin · Office</span>
           </span>
         </a>
 
