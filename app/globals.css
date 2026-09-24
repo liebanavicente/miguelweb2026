@@ -362,6 +362,13 @@ body.menu-open { overflow: hidden; }
 .timeline li.is-current .tl-date { color: var(--pen); font-weight: 500; }
 .timeline li.is-current .tl-body::before { background: var(--sky); animation: pulse-ring 1800ms ease-out infinite; }
 @keyframes pulse-ring { from { box-shadow: 0 0 0 0 rgba(var(--pen-rgb), 0.45); } to { box-shadow: 0 0 0 10px rgba(var(--pen-rgb), 0); } }
+.job-logos { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 6px; }
+.job-logos img { width: auto; max-width: 140px; height: 24px; object-fit: contain; object-position: left; filter: grayscale(0.15); transition: transform 250ms var(--ease-out); }
+.job-logos img[src*="nfp"], .job-logos img[src*="polo"] { height: 42px; }
+.job-logos img[src*="securitas"], .job-logos img[src*="corte"] { height: 38px; }
+.job-logos img[src*="gencat"] { height: 30px; }
+.timeline li:hover .job-logos img { transform: translateY(-1px) scale(1.04); }
+.job-icon { display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center; border: 1px solid var(--glass-edge); border-radius: 10px; background: rgba(255, 255, 255, 0.7); box-shadow: inset 0 1px 0 white; color: var(--pen); }
 .edu-logo { width: auto; max-width: 150px; height: 20px; margin-bottom: 4px; object-fit: contain; object-position: left; }
 .edu-logo[src*="thecorner"] { height: 40px; }
 .edu-logo[src*="viu"] { max-width: 210px; height: 28px; }

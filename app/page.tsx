@@ -8,6 +8,7 @@ import {
   Certificate,
   ChalkboardTeacher,
   Code,
+  Coffee,
   DownloadSimple,
   EnvelopeSimple,
   GithubLogo,
@@ -340,6 +341,18 @@ export default function Home() {
                 <li key={`${job.role}-${job.from}`}>
                   <span className="tl-date">{job.to ? `${job.from} — ${job.to}` : job.from}</span>
                   <div className="tl-body">
+                    {job.logos || job.icon ? (
+                      <div className="job-logos">
+                        {job.logos?.map((logo) => (
+                          <Image alt={logo.alt} height={logo.height} key={logo.src} src={logo.src} unoptimized width={logo.width} />
+                        ))}
+                        {job.icon === "cafe" ? (
+                          <span className="job-icon" title="Hostelería">
+                            <Coffee aria-hidden size={20} />
+                          </span>
+                        ) : null}
+                      </div>
+                    ) : null}
                     <p className="tl-area">{AREA_LABEL[job.area]}</p>
                     <h3>{job.role}</h3>
                     <p>{job.company}</p>

@@ -118,7 +118,7 @@ export const ROLE_GROUPS: RoleGroup[] = [
     intro: "Certificado de profesionalidad de Administración y Gestión, experiencia en oficina y recepción, y un perfil muy digital.",
     roles: [
       { title: "Administrativo con perfil digital", fit: "alta", why: "CP de Administración y Gestión, Office experto y capacidad para automatizar procesos." },
-      { title: "Auxiliar administrativo / recepción", fit: "alta", why: "Experiencia en el Club de Polo Empordà y en recepción y atención al público." },
+      { title: "Auxiliar administrativo / recepción", fit: "alta", why: "Experiencia en el Club de Polo Ampurdán y en recepción y atención al público." },
       { title: "Técnico de contabilidad y tesorería junior", fit: "media", why: "Registros contables, tesorería y Contaplus a nivel alto." },
       { title: "Asistente de dirección / office manager", fit: "media", why: "Organización, coordinación de equipos y ofimática experta." },
       { title: "Oposiciones de administración pública", fit: "media", why: "Formación administrativa acreditada, ofimática experta y experiencia real en oficina.", note: "Plazas administrativas del Estado, la Generalitat o ayuntamientos; el grupo depende de la titulación que exija cada convocatoria." },
@@ -126,20 +126,24 @@ export const ROLE_GROUPS: RoleGroup[] = [
   },
 ];
 
-export type Job = { role: string; company: string; from: string; to: string; area: "edu" | "admin" | "tech" | "music" | "service" };
+export type Logo = { src: string; alt: string; width: number; height: number };
+
+const GENCAT: Logo = { src: "/logos/gencat.svg", alt: "Generalitat de Catalunya", width: 124, height: 33 };
+
+export type Job = { role: string; company: string; from: string; to: string; area: "edu" | "admin" | "tech" | "music" | "service"; logos?: Logo[]; icon?: "cafe" };
 
 export const JOBS: Job[] = [
-  { role: "Recepcionista / administrativo", company: "CTTI", from: "Nov 2025", to: "Jul 2026", area: "admin" },
-  { role: "Compositor, músico y cantante", company: "Grupo musical No Flag Patriots", from: "Ene 2022", to: "Ene 2024", area: "music" },
-  { role: "Teleoperador", company: "Konecta · AMB Bicing · Securitas Direct", from: "Ene 2023", to: "Sep 2023", area: "service" },
-  { role: "Administrativo", company: "Club de Polo Empordà", from: "Ene 2022", to: "Oct 2022", area: "admin" },
-  { role: "Especialista en métodos didácticos (Coordinador T.I.C.)", company: "Escola Joan Maragall", from: "Sep 2017", to: "Jun 2020", area: "edu" },
-  { role: "Profesor de educación primaria", company: "Escoles Gornal · Bernat Metge · Torre de la Miranda · Joan Maragall", from: "Sep 2006", to: "Jun 2020", area: "edu" },
-  { role: "Camarero", company: "Bar La Concha", from: "Jun 2003", to: "Sep 2005", area: "service" },
-  { role: "Vendedor", company: "El Corte Inglés · Boulangerie · comercio", from: "Ene 2003", to: "Ene 2005", area: "service" },
+  { role: "Recepcionista / administrativo", company: "CTTI · Generalitat de Catalunya", from: "Nov 2025", to: "Jul 2026", area: "admin", logos: [GENCAT] },
+  { role: "Compositor, músico y cantante", company: "Grupo musical No Flag Patriots", from: "Ene 2022", to: "Ene 2024", area: "music", logos: [{ src: "/logos/nfp.png", alt: "No Flag Patriots", width: 298, height: 300 }] },
+  { role: "Teleoperador", company: "Konecta · AMBici · Securitas Direct", from: "Ene 2023", to: "Sep 2023", area: "service", logos: [{ src: "/logos/ambici.svg", alt: "AMBici", width: 450, height: 50 }, { src: "/logos/securitas-direct.png", alt: "Securitas Direct", width: 380, height: 300 }] },
+  { role: "Administrativo", company: "Club de Polo Ampurdán", from: "Ene 2022", to: "Oct 2022", area: "admin", logos: [{ src: "/logos/polo-ampurdan.png", alt: "Club de Polo Ampurdán", width: 61, height: 66 }] },
+  { role: "Especialista en métodos didácticos (Coordinador T.I.C.)", company: "Escola Joan Maragall", from: "Sep 2017", to: "Jun 2020", area: "edu", logos: [GENCAT] },
+  { role: "Profesor de educación primaria", company: "Escoles Gornal · Bernat Metge · Torre de la Miranda · Joan Maragall", from: "Sep 2006", to: "Jun 2020", area: "edu", logos: [GENCAT] },
+  { role: "Camarero", company: "Bar La Concha", from: "Jun 2003", to: "Sep 2005", area: "service", icon: "cafe" },
+  { role: "Vendedor", company: "El Corte Inglés · Boulangerie · comercio", from: "Ene 2003", to: "Ene 2005", area: "service", logos: [{ src: "/logos/el-corte-ingles.svg", alt: "El Corte Inglés", width: 1040, height: 586 }] },
 ];
 
-export type Education = { year: string; title: string; area: string; current?: boolean; logo?: { src: string; alt: string; width: number; height: number } };
+export type Education = { year: string; title: string; area: string; current?: boolean; logo?: Logo };
 
 export const EDUCATION: Education[] = [
   { year: "En curso", title: "Bootcamp Full Stack con IA", area: "Upgrade Hub · sep 2026 – feb 2027 · Git, SQL y MongoDB, Node.js, JavaScript, React, automatización y despliegue", current: true, logo: { src: "/logos/upgrade-hub.svg", alt: "Upgrade Hub", width: 5282, height: 1163 } },
