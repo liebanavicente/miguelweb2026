@@ -7,6 +7,7 @@ import type { Dictionary } from "../lib/dictionaries";
 import type { Locale } from "../lib/i18n";
 import { OPEN_SECTION_EVENT } from "./Collapsible";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 
 // Section anchors stay the same in every language, so shared links keep working.
 const SECTION_IDS = ["ofrezco", "proyectos", "puestos", "formacion", "titulos", "trayectoria", "contacto"] as const;
@@ -100,6 +101,7 @@ export function Header({ t, locale }: { t: Dictionary["header"]; locale: Locale 
         </nav>
 
         <div className="topbar-tools">
+          <ThemeToggle label={t.darkMode} />
           <LanguageSwitcher label={t.languageLabel} locale={locale} />
           <button aria-controls="menu-movil" aria-expanded={open} className="menu-toggle" onClick={() => setOpen(!open)} type="button">
             {open ? <X aria-hidden size={18} weight="bold" /> : <List aria-hidden size={18} weight="bold" />}

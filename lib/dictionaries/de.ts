@@ -15,6 +15,7 @@ export const de: Dictionary = {
     menu: "Menü",
     write: "Schreib mir",
     languageLabel: "Sprache",
+    darkMode: "Dunkelmodus",
     nav: { ofrezco: "Angebot", proyectos: "Projekte", puestos: "Stellen", formacion: "Ausbildung", titulos: "Zeugnisse", trayectoria: "Werdegang", contacto: "Kontakt" },
   },
   fold: { open: "Aufklappen", close: "Zuklappen" },

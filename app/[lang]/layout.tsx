@@ -9,6 +9,7 @@ import "../globals.css";
 
 import { getDictionary } from "../../lib/dictionaries";
 import { isLocale, localePath, LOCALES } from "../../lib/i18n";
+import { THEME_SCRIPT } from "../../lib/theme";
 
 // Only the four languages exist; any other first segment is a 404.
 export const dynamicParams = false;
@@ -37,13 +38,22 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   };
 }
 
-export const viewport: Viewport = { themeColor: "#f7f8fa" };
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f7f8fa" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0f17" },
+  ],
+};
 
 export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   return (
-    <html lang={lang}>
+    // data-theme is set by the head script before React hydrates, so it differs from the server HTML on purpose.
+    <html lang={lang} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body>
         {/* Aurora: soft colour fields under the notebook grid, so the glass surfaces have something to frost. */}
         <div aria-hidden className="aurora">

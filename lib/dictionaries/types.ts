@@ -20,6 +20,7 @@ export type Dictionary = {
     menu: string;
     write: string;
     languageLabel: string;
+    darkMode: string;
     nav: { ofrezco: string; proyectos: string; puestos: string; formacion: string; titulos: string; trayectoria: string; contacto: string };
   };
   fold: { open: string; close: string };

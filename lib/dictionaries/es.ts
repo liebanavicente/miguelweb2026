@@ -15,6 +15,7 @@ export const es: Dictionary = {
     menu: "Menú",
     write: "Escríbeme",
     languageLabel: "Idioma",
+    darkMode: "Modo oscuro",
     nav: { ofrezco: "Qué ofrezco", proyectos: "Proyectos", puestos: "Puestos", formacion: "Formación", titulos: "Títulos", trayectoria: "Trayectoria", contacto: "Contacto" },
   },
   fold: { open: "Desplegar", close: "Plegar" },

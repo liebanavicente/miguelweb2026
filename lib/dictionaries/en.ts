@@ -15,6 +15,7 @@ export const en: Dictionary = {
     menu: "Menu",
     write: "Email me",
     languageLabel: "Language",
+    darkMode: "Dark mode",
     nav: { ofrezco: "What I offer", proyectos: "Projects", puestos: "Roles", formacion: "Education", titulos: "Diplomas", trayectoria: "Experience", contacto: "Contact" },
   },
   fold: { open: "Expand", close: "Collapse" },
