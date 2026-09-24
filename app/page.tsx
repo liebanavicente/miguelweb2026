@@ -91,6 +91,15 @@ export default function Home() {
                   <DownloadSimple aria-hidden size={16} weight="bold" /> Descargar CV
                 </a>
               </div>
+              <div className="school-row">
+                <span>Me formo en</span>
+                <a href="https://www.upgrade-hub.com" rel="noreferrer" target="_blank">
+                  <Image alt="Upgrade Hub" height={1163} src="/logos/upgrade-hub.svg" unoptimized width={5282} />
+                </a>
+                <a href="https://centrocoliseum.com" rel="noreferrer" target="_blank">
+                  <Image alt="Centro de Formación Coliseum" height={65} src="/logos/coliseum.svg" unoptimized width={282} />
+                </a>
+              </div>
               <div className="social-row">
                 <a aria-label="LinkedIn" className="social-link" href={CONTACT.linkedin} rel="noreferrer" target="_blank">
                   <LinkedinLogo aria-hidden size={20} weight="bold" /> LinkedIn
@@ -251,7 +260,8 @@ export default function Home() {
               <ol className="history-list edu-list">
                 {EDUCATION.map((item) => (
                   <li key={item.title}>
-                    <div className={`history-item${"current" in item && item.current ? " is-current" : ""}`}>
+                    <div className={`history-item${item.current ? " is-current" : ""}`}>
+                      {item.logo ? <Image alt={item.logo.alt} className="edu-logo" height={item.logo.height} src={item.logo.src} unoptimized width={item.logo.width} /> : null}
                       <span className="history-when">{item.year}</span>
                       <span className="history-kind">{item.title}</span>
                       <span className="history-detail">{item.area}</span>

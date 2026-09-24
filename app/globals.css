@@ -710,6 +710,11 @@ h3 { font-size: 1.15rem; font-weight: 780; }
 .project-card:hover { box-shadow: 6px 6px 0 var(--accent), 6px 6px 0 1px var(--line); transform: translate(-3px, -3px); }
 .project-card:hover .project-index { color: rgba(var(--accent-rgb), 0.85); transform: rotate(-6deg); }
 
+.school-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--hairline); }
+.school-row span { color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.school-row img { width: auto; height: 22px; filter: grayscale(1); opacity: 0.6; transition: filter 400ms ease, opacity 400ms ease, transform 300ms var(--ease-out); }
+.school-row a:hover img { filter: none; opacity: 1; transform: translateY(-1px); }
+.edu-logo { width: auto; height: 18px; margin-bottom: 4px; }
 .social-row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 20px; }
 .social-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 750; transition: color 180ms ease, transform 200ms var(--ease-out); }
 .social-link:hover { color: var(--accent-ink); transform: translateY(-2px); }

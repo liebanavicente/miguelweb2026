@@ -139,9 +139,11 @@ export const JOBS: Job[] = [
   { role: "Vendedor", company: "El Corte Inglés · Boulangerie · comercio", from: "Ene 2003", to: "Ene 2005", area: "service" },
 ];
 
-export const EDUCATION = [
-  { year: "En curso · sep 2026 – feb 2027", title: "Bootcamp Full Stack con IA", area: "Upgrade Hub · Git, SQL y MongoDB, Node.js, JavaScript, React, automatización y despliegue", current: true },
-  { year: "En curso", title: "Certificado de profesionalidad: Confección y publicación de páginas web (IFCD0110)", area: "Centro Coliseum · Cornellà de Llobregat", current: true },
+export type Education = { year: string; title: string; area: string; current?: boolean; logo?: { src: string; alt: string; width: number; height: number } };
+
+export const EDUCATION: Education[] = [
+  { year: "En curso · sep 2026 – feb 2027", title: "Bootcamp Full Stack con IA", area: "Upgrade Hub · Git, SQL y MongoDB, Node.js, JavaScript, React, automatización y despliegue", current: true, logo: { src: "/logos/upgrade-hub.svg", alt: "Upgrade Hub", width: 5282, height: 1163 } },
+  { year: "En curso", title: "Certificado de profesionalidad: Confección y publicación de páginas web (IFCD0110)", area: "Centro Coliseum · Cornellà de Llobregat", current: true, logo: { src: "/logos/coliseum.svg", alt: "Centro de Formación Coliseum", width: 282, height: 65 } },
   { year: "2023", title: "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación", area: "Universidad Internacional de Valencia (VIU)" },
   { year: "2022", title: "Técnico superior en Administración y finanzas", area: "Formación profesional de grado superior" },
   { year: "2022", title: "Técnico en Gestión administrativa", area: "Formación profesional de grado medio" },
