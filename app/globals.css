@@ -706,6 +706,7 @@ h3 { font-size: 1.15rem; font-weight: 780; }
 .project-note { color: var(--muted); font-size: 0.85rem; font-weight: 650; }
 .project-link { display: inline-flex; align-items: center; gap: 6px; justify-self: start; font-weight: 750; background: linear-gradient(var(--accent), var(--accent)) no-repeat 0 100% / 100% 0.3em; transition: background-size 200ms var(--ease-out); }
 .project-link:hover { background-size: 100% 100%; }
+.project-card:first-child { grid-column: 1 / -1; }
 .project-card:hover { box-shadow: 6px 6px 0 var(--accent), 6px 6px 0 1px var(--line); transform: translate(-3px, -3px); }
 .project-card:hover .project-index { color: rgba(var(--accent-rgb), 0.85); transform: rotate(-6deg); }
 
@@ -756,6 +757,56 @@ h3 { font-size: 1.15rem; font-weight: 780; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
 .footer-links a:hover { color: var(--accent-ink); }
 .site-footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 0.85rem; font-weight: 650; padding: 24px 0; }
+
+/* Tech marquee: greyed logos drift slowly, faded at both edges; hovering pauses it and colours the logo. */
+.marquee { margin-top: 72px; }
+.marquee-label { margin: 0 0 14px; color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-align: center; text-transform: uppercase; opacity: 0.8; }
+.marquee-viewport {
+  display: flex;
+  overflow: hidden;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+}
+.marquee-track { display: flex; flex: none; margin: 0; padding: 0; list-style: none; animation: marquee-slide 90s linear infinite; }
+.marquee-viewport:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee-slide { to { transform: translateX(-100%); } }
+.tool { display: flex; flex: none; align-items: center; gap: 10px; padding: 18px 26px; color: var(--muted); font-size: 0.86rem; font-weight: 650; opacity: 0.55; transition: opacity 400ms ease, color 400ms ease; }
+.tool-logo { width: 22px; height: 22px; flex: none; fill: currentColor; transition: fill 400ms ease, transform 400ms var(--ease-out), filter 400ms ease; }
+.tool:hover { color: var(--foreground); opacity: 1; }
+.tool:hover .tool-logo { fill: var(--brand); filter: drop-shadow(0 4px 10px rgba(var(--accent-rgb), 0.45)); transform: scale(1.15); }
+
+/* Hairline reading progress at the very top. */
+.reading-progress { display: none; }
+@supports (animation-timeline: scroll()) {
+  .reading-progress {
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-ink), var(--accent-strong), var(--accent));
+    transform-origin: left;
+    animation: read-progress linear both;
+    animation-timeline: scroll(root);
+  }
+  @keyframes read-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+}
+
+/* Film grain: a barely-there texture so flat areas feel printed rather than digital. */
+body::after {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  content: "";
+  mix-blend-mode: multiply;
+  opacity: 0.045;
+  pointer-events: none;
+}
 
 /* Ambient blue: soft gradient patches along the whole page, drifting slowly, seen through the glass. */
 .ambient { position: absolute; z-index: -1; inset: 0; overflow: hidden; pointer-events: none; }
@@ -837,4 +888,8 @@ h3 { font-size: 1.15rem; font-weight: 780; }
   }
   .typed-letter { animation: none !important; }
   .typed-letter::after, .typed-caret { display: none; }
+  .marquee-viewport { flex-wrap: wrap; justify-content: center; -webkit-mask-image: none; mask-image: none; }
+  .marquee-track { flex-wrap: wrap; justify-content: center; }
+  .marquee-track[aria-hidden] { display: none; }
+  .reading-progress { display: none; }
 }

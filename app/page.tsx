@@ -23,6 +23,7 @@ import { Header } from "../components/Header";
 import { HeroBalls } from "../components/HeroBalls";
 import { OfferRotator } from "../components/OfferRotator";
 import { RoleExplorer } from "../components/RoleExplorer";
+import { TechMarquee } from "../components/TechMarquee";
 import { TypedHeading } from "../components/TypedHeading";
 import {
   CERTIFICATES,
@@ -218,6 +219,8 @@ export default function Home() {
               </ul>
             </div>
           </section>
+
+          <TechMarquee />
 
           {/* Photo band */}
           <div aria-label="Fotografías" className="photo-band" role="group">

@@ -24,6 +24,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es">
       <body>
+        {/* Hairline reading progress, driven by scroll in CSS alone. */}
+        <div aria-hidden className="reading-progress" />
         {/* Soft blue patches spread down the page so every section has some colour behind its glass. */}
         <div aria-hidden className="ambient">
           <span />

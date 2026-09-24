@@ -240,14 +240,6 @@ export const PROJECTS: Project[] = [
     demo: "https://suscripscan.vercel.app",
     code: "https://github.com/liebanavicente/suscripscan",
   },
-  {
-    name: "DiscaLove",
-    kind: "App social accesible",
-    text: "Comunidad de amistad y conexión para personas con discapacidad, diseñada con accesibilidad, autonomía y seguridad como prioridades.",
-    stack: ["Next.js", "Prisma", "Neon Postgres", "Tailwind"],
-    demo: "https://discalove.vercel.app",
-    code: "https://github.com/liebanavicente/discalove",
-  },
 ];
 
 export const MORE_PROJECTS = [
