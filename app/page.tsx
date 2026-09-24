@@ -5,14 +5,12 @@ import {
   ArrowUpRight,
   Briefcase,
   Browser,
-  Certificate,
   ChalkboardTeacher,
   Code,
   Coffee,
   DownloadSimple,
   EnvelopeSimple,
   GithubLogo,
-  IdentificationCard,
   LinkSimple,
   LinkedinLogo,
   MicrosoftExcelLogo,
@@ -23,18 +21,16 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { CodeCard } from "../components/CodeCard";
+import { EducationExplorer } from "../components/EducationExplorer";
 import { Header } from "../components/Header";
 import { OfferRotator } from "../components/OfferRotator";
 import { RoleExplorer } from "../components/RoleExplorer";
 import { MarginNote, Scribble } from "../components/Scribble";
 import { TechMarquee } from "../components/TechMarquee";
 import {
-  CERTIFICATES,
   CONTACT,
-  EDUCATION,
   JOBS,
   LANGUAGES,
-  LICENSES,
   MORE_PROJECTS,
   OFFERS,
   PROJECTS,
@@ -288,42 +284,7 @@ export default function Home() {
           {/* Education */}
           <section aria-labelledby="formacion-titulo" className="section" id="formacion">
             <Chapter accent="acreditaciones" id="formacion" index="04" label="formación" title="Estudios y" />
-            <div className="edu-layout">
-              <ol className="timeline">
-                {EDUCATION.map((item) => (
-                  <li className={item.current ? "is-current" : undefined} key={item.title}>
-                    <span className="tl-date">{item.year}</span>
-                    <div className="tl-body">
-                      {item.logo ? <Image alt={item.logo.alt} className="edu-logo" height={item.logo.height} src={item.logo.src} unoptimized width={item.logo.width} /> : null}
-                      <h3>{item.title}</h3>
-                      <p>{item.area}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-              <div className="edu-side">
-                <section className="sheet">
-                  <h3>
-                    <Certificate aria-hidden size={18} /> Módulos del CP de Administración y Gestión
-                  </h3>
-                  <ul className="check-list">
-                    {CERTIFICATES.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </section>
-                <section className="sheet">
-                  <h3>
-                    <IdentificationCard aria-hidden size={18} /> Carnets profesionales
-                  </h3>
-                  <ul className="check-list">
-                    {LICENSES.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </section>
-              </div>
-            </div>
+            <EducationExplorer />
           </section>
 
           {/* Experience */}
@@ -339,6 +300,15 @@ export default function Home() {
             <ol className="timeline jobs">
               {JOBS.map((job) => (
                 <li key={`${job.role}-${job.from}`}>
+                  {/* Desktop: the company logo drifts in large and soft from the right while the row is hovered. */}
+                  {job.logos?.length || job.icon ? (
+                    <span aria-hidden className="job-mark">
+                      {job.logos?.map((logo) => (
+                        <Image alt="" height={logo.height} key={logo.src} src={logo.src} unoptimized width={logo.width} />
+                      ))}
+                      {job.icon === "cafe" ? <Coffee size={120} weight="thin" /> : null}
+                    </span>
+                  ) : null}
                   <span className="tl-date">{job.to ? `${job.from} — ${job.to}` : job.from}</span>
                   <div className="tl-body">
                     {job.logos || job.icon ? (

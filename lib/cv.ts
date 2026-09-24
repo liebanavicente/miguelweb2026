@@ -143,14 +143,97 @@ export const JOBS: Job[] = [
   { role: "Vendedor", company: "El Corte Inglés · Boulangerie · comercio", from: "Ene 2003", to: "Ene 2005", area: "service", logos: [{ src: "/logos/el-corte-ingles.svg", alt: "El Corte Inglés", width: 1040, height: 586 }] },
 ];
 
-export type Education = { year: string; title: string; area: string; current?: boolean; logo?: Logo };
+export type EducationDetail = { heading: string; groups: { title?: string; items: string[] }[]; note?: string };
+
+export type Education = { id: string; year: string; title: string; area: string; current?: boolean; logo?: Logo; detail: EducationDetail };
 
 export const EDUCATION: Education[] = [
-  { year: "En curso", title: "Bootcamp Full Stack con IA", area: "Upgrade Hub · sep 2026 – feb 2027 · Git, SQL y MongoDB, Node.js, JavaScript, React, automatización y despliegue", current: true, logo: { src: "/logos/upgrade-hub.svg", alt: "Upgrade Hub", width: 5282, height: 1163 } },
-  { year: "En curso", title: "Certificado de profesionalidad: Confección y publicación de páginas web (IFCD0110)", area: "Centro Coliseum · Cornellà de Llobregat", current: true, logo: { src: "/logos/coliseum.svg", alt: "Centro de Formación Coliseum", width: 282, height: 65 } },
-  { year: "2023", title: "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación", area: "Universidad Internacional de Valencia (VIU)", logo: { src: "/logos/viu.svg", alt: "Universidad Internacional de Valencia", width: 1508, height: 208 } },
-  { year: "2022", title: "Certificado de profesionalidad de Administración y Gestión", area: "The Corner · Cornellà de Llobregat · nivel 2, equivalente a grado medio", logo: { src: "/logos/thecorner.png", alt: "The Corner, centre d'estudis", width: 380, height: 366 } },
-  { year: "2007", title: "Estudios universitarios de Educación primaria y musical", area: "Universitat de Barcelona (UB)", logo: { src: "/logos/ub.png", alt: "Universitat de Barcelona", width: 984, height: 250 } },
+  {
+    id: "bootcamp",
+    year: "En curso",
+    title: "Bootcamp Full Stack con IA",
+    area: "Upgrade Hub · sep 2026 – feb 2027 · Git, SQL y MongoDB, Node.js, JavaScript, React, automatización y despliegue",
+    current: true,
+    logo: { src: "/logos/upgrade-hub.svg", alt: "Upgrade Hub", width: 5282, height: 1163 },
+    detail: {
+      heading: "Temario del bootcamp",
+      groups: [
+        { title: "Base", items: ["Entorno de desarrollo e IA: prompt engineering", "Git y GitHub", "Fundamentos: lógica, control de flujo, funciones y arrays"] },
+        { title: "Back-end y datos", items: ["Bases de datos SQL y MongoDB", "Node.js"] },
+        { title: "Front-end", items: ["HTML y CSS", "JavaScript: DOM, eventos, asincronía y Fetch", "React"] },
+        { title: "Cierre", items: ["Automatización y despliegue", "Proyectos finales", "Competencias profesionales y talento"] },
+      ],
+    },
+  },
+  {
+    id: "ifcd0110",
+    year: "En curso",
+    title: "Certificado de profesionalidad: Confección y publicación de páginas web (IFCD0110)",
+    area: "Centro Coliseum · Cornellà de Llobregat",
+    current: true,
+    logo: { src: "/logos/coliseum.svg", alt: "Centro de Formación Coliseum", width: 282, height: 65 },
+    detail: {
+      heading: "Módulos del certificado IFCD0110",
+      groups: [
+        { title: "MF0950_2 · Construcción de páginas web", items: ["Creación de páginas web con lenguajes de marcas", "Elaboración de hojas de estilo", "Elaboración de plantillas y formularios"] },
+        { title: "MF0951_2 · Integración de componentes software", items: ["Programación con lenguajes de guion en páginas web", "Pruebas de funcionalidades y optimización de páginas web"] },
+        { title: "MF0952_2 · Publicación de páginas web", items: ["Publicación y mantenimiento de sitios web"] },
+        { title: "MP0278", items: ["Módulo de prácticas profesionales no laborales"] },
+      ],
+    },
+  },
+  {
+    id: "master",
+    year: "2023",
+    title: "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación",
+    area: "Universidad Internacional de Valencia (VIU)",
+    logo: { src: "/logos/viu.svg", alt: "Universidad Internacional de Valencia", width: 1508, height: 208 },
+    detail: {
+      heading: "Áreas del máster",
+      groups: [{ items: ["Integración de las TIC en el aula", "Competencia digital docente", "Diseño de materiales y entornos digitales de aprendizaje", "Innovación e investigación educativa con tecnología"] }],
+      note: "Me ha dado la base para enseñar competencias digitales y diseñar material didáctico como «HTML y CSS desde cero».",
+    },
+  },
+  {
+    id: "cp-admin",
+    year: "2022",
+    title: "Certificado de profesionalidad de Administración y Gestión",
+    area: "The Corner · Cornellà de Llobregat · nivel 2, equivalente a grado medio",
+    logo: { src: "/logos/thecorner.png", alt: "The Corner, centre d'estudis", width: 380, height: 366 },
+    detail: {
+      heading: "Módulos del CP de Administración y Gestión",
+      groups: [
+        {
+          items: [
+            "Actividades de gestión administrativa",
+            "Gestión auxiliar de personal",
+            "Gestión de archivos",
+            "Gestión operativa de tesorería",
+            "Grabación de datos",
+            "Ofimática",
+            "Operaciones administrativas comerciales",
+            "Registros contables",
+            "Módulo de prácticas profesionales no laborales",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "ub",
+    year: "2007",
+    title: "Estudios universitarios de Educación primaria y musical",
+    area: "Universitat de Barcelona (UB)",
+    logo: { src: "/logos/ub.png", alt: "Universitat de Barcelona", width: 984, height: 250 },
+    detail: {
+      heading: "Formación en magisterio",
+      groups: [
+        { title: "Educación primaria", items: ["Didáctica y organización escolar", "Psicología del desarrollo y del aprendizaje", "Didácticas específicas de las áreas de primaria"] },
+        { title: "Educación musical", items: ["Lenguaje musical y formación instrumental", "Didáctica de la música", "Pedagogía musical"] },
+      ],
+      note: "La base de mis 14 años como maestro y especialista de música.",
+    },
+  },
 ];
 
 export const CERTIFICATES = [
