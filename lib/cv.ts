@@ -6,7 +6,7 @@ export const CONTACT = {
   linktree: "https://linktr.ee/liebanavicente",
   linkedin: "https://www.linkedin.com/in/mliebanavicente",
   github: "https://github.com/liebanavicente",
-  cv: "/cv-miguel-liebana.jpg",
+  cv: "/CV-Miguel-Liebana.pdf",
 };
 
 export const CURRENT_ROLE = "Bootcamp Full Stack con IA · Upgrade Hub";
