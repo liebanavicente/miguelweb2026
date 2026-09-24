@@ -702,10 +702,24 @@ h3 { font-size: 1.15rem; font-weight: 780; }
   pointer-events: none;
   transition: color 200ms ease, transform 300ms var(--ease-out);
 }
+.project-links { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.project-note { color: var(--muted); font-size: 0.85rem; font-weight: 650; }
 .project-link { display: inline-flex; align-items: center; gap: 6px; justify-self: start; font-weight: 750; background: linear-gradient(var(--accent), var(--accent)) no-repeat 0 100% / 100% 0.3em; transition: background-size 200ms var(--ease-out); }
 .project-link:hover { background-size: 100% 100%; }
 .project-card:hover { box-shadow: 6px 6px 0 var(--accent), 6px 6px 0 1px var(--line); transform: translate(-3px, -3px); }
 .project-card:hover .project-index { color: rgba(var(--accent-rgb), 0.85); transform: rotate(-6deg); }
+
+.social-row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 20px; }
+.social-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 750; transition: color 180ms ease, transform 200ms var(--ease-out); }
+.social-link:hover { color: var(--accent-ink); transform: translateY(-2px); }
+
+.more-projects { margin-top: 32px; }
+.more-projects ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+.more-projects li { border-bottom: 1px solid var(--line); }
+.more-projects a { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding: 14px 8px; transition: background-color 160ms ease, padding 200ms var(--ease-out); }
+.more-projects a span { color: var(--muted); font-size: 0.88rem; }
+.more-projects a:hover { background: var(--accent); padding-left: 16px; }
+.more-projects a:hover .contact-arrow { transform: translate(2px, -2px) scale(1.2); }
 
 /* Contact */
 .contact-card {
@@ -739,6 +753,8 @@ h3 { font-size: 1.15rem; font-weight: 780; }
 .contact-photo img { object-fit: cover; }
 
 .site-footer { border-top: 1px solid var(--hairline); background: rgba(255, 255, 255, 0.58); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
+.footer-links a:hover { color: var(--accent-ink); }
 .site-footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 0.85rem; font-weight: 650; padding: 24px 0; }
 
 /* Ambient blue: soft gradient patches along the whole page, drifting slowly, seen through the glass. */

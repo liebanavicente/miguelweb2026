@@ -5,15 +5,17 @@ import {
   Briefcase,
   Browser,
   Certificate,
+  ChalkboardTeacher,
   Code,
   DownloadSimple,
   EnvelopeSimple,
+  GithubLogo,
   GraduationCap,
   LinkSimple,
+  LinkedinLogo,
   MicrosoftExcelLogo,
   Phone,
   Robot,
-  UsersThree,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 
@@ -30,6 +32,7 @@ import {
   JOBS,
   LANGUAGES,
   LICENSES,
+  MORE_PROJECTS,
   OFFERS,
   PROJECTS,
   SOFTWARE,
@@ -38,7 +41,7 @@ import {
   TECH,
 } from "../lib/cv";
 
-const OFFER_ICONS: Record<string, Icon> = { Code, Browser, Robot, Briefcase, MicrosoftExcelLogo, UsersThree };
+const OFFER_ICONS: Record<string, Icon> = { Code, Browser, Robot, Briefcase, MicrosoftExcelLogo, ChalkboardTeacher };
 
 const AREA_LABEL = { edu: "Educación", admin: "Administración", tech: "Tecnología", music: "Música", service: "Atención al público" } as const;
 
@@ -69,12 +72,12 @@ export default function Home() {
           {/* Hero */}
           <div className="page-head hero">
             <div className="hero-copy">
-              <p className="eyebrow">Desarrollo web · IA · Administración · Office</p>
+              <p className="eyebrow">Desarrollo web · IA · Formación digital · Administración</p>
               <TypedHeading accent="con IA." text="Construyo webs y ordeno procesos" />
               <p className="page-intro">
                 Soy Miguel Liébana. Me estoy formando como <strong>desarrollador full-stack con IA en Upgrade Hub</strong> y en{" "}
                 <strong>Confección y publicación de páginas web</strong> en el Centro Coliseum de Cornellà. Además soy técnico superior en
-                Administración y finanzas y tengo más de 20 años de experiencia tratando con personas.
+                Administración y finanzas y llevo 14 años enseñando, experiencia que hoy aplico a la formación digital de adultos.
               </p>
               <div className="nav hero-actions">
                 <a className="button primary" href="#puestos">
@@ -85,6 +88,14 @@ export default function Home() {
                 </a>
                 <a className="button" download href={CONTACT.cv}>
                   <DownloadSimple aria-hidden size={16} weight="bold" /> Descargar CV
+                </a>
+              </div>
+              <div className="social-row">
+                <a aria-label="LinkedIn" className="social-link" href={CONTACT.linkedin} rel="noreferrer" target="_blank">
+                  <LinkedinLogo aria-hidden size={20} weight="bold" /> LinkedIn
+                </a>
+                <a aria-label="GitHub" className="social-link" href={CONTACT.github} rel="noreferrer" target="_blank">
+                  <GithubLogo aria-hidden size={20} weight="bold" /> GitHub
                 </a>
               </div>
             </div>
@@ -122,7 +133,7 @@ export default function Home() {
               accent="aportar"
               eyebrow="Qué ofrezco"
               id="ofrezco"
-              intro="Lo que aprendo en mis dos formaciones de desarrollo web, sumado a lo que ya he demostrado en oficinas y en el trato con personas."
+              intro="Lo que aprendo en mis dos formaciones de desarrollo web, sumado a lo que ya he demostrado en oficinas y en el aula."
               title="Lo que puedo"
             />
             <ul className="offer-grid">
@@ -155,7 +166,7 @@ export default function Home() {
                 accent="publicados"
                 eyebrow="Proyectos"
                 id="proyectos"
-                intro="Webs reales construidas y desplegadas por mí, de la base de datos al correo automático."
+                intro="Una selección de lo que he construido y publicado. El código público está en mi GitHub."
                 title="Proyectos"
               />
               <figure className="side-photo">
@@ -169,11 +180,19 @@ export default function Home() {
                   <p className="muted">{project.kind}</p>
                   <h3>{project.name}</h3>
                   <p>{project.text}</p>
-                  {project.url ? (
-                    <a className="project-link" href={project.url} rel="noreferrer" target="_blank">
-                      Ver código <ArrowUpRight aria-hidden size={16} weight="bold" />
-                    </a>
-                  ) : null}
+                  <div className="project-links">
+                    {project.demo ? (
+                      <a className="project-link" href={project.demo} rel="noreferrer" target="_blank">
+                        Ver web <ArrowUpRight aria-hidden size={16} weight="bold" />
+                      </a>
+                    ) : null}
+                    {project.code ? (
+                      <a className="project-link" href={project.code} rel="noreferrer" target="_blank">
+                        <GithubLogo aria-hidden size={16} weight="bold" /> Código
+                      </a>
+                    ) : null}
+                    {project.note ? <span className="project-note">{project.note}</span> : null}
+                  </div>
                   <div className="tag-row">
                     {project.stack.map((tag) => (
                       <span className="badge" key={tag}>
@@ -184,6 +203,20 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <div className="more-projects">
+              <p className="muted">Más webs publicadas</p>
+              <ul>
+                {MORE_PROJECTS.map((item) => (
+                  <li key={item.url}>
+                    <a href={item.url} rel="noreferrer" target="_blank">
+                      <strong>{item.name}</strong>
+                      <span>{item.kind}</span>
+                      <ArrowUpRight aria-hidden className="contact-arrow" size={16} weight="bold" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </section>
 
           {/* Photo band */}
@@ -334,7 +367,7 @@ export default function Home() {
                 <h2 className="section-title" id="contacto-titulo">
                   ¿Hablamos de <em>tu equipo?</em>
                 </h2>
-                <p className="page-intro">Busco mi primer puesto en desarrollo web, soporte técnico o administración con perfil digital. Cuéntame qué necesitas y te respondo.</p>
+                <p className="page-intro">Busco puesto en desarrollo web, formación digital para adultos, soporte técnico o administración con perfil digital. Cuéntame qué necesitas y te respondo.</p>
                 <ul className="contact-list">
                   <li>
                     <a href={`mailto:${CONTACT.email}`}>
@@ -347,6 +380,20 @@ export default function Home() {
                     <a href={CONTACT.phoneHref}>
                       <Phone aria-hidden size={20} weight="bold" />
                       {CONTACT.phone}
+                      <ArrowUpRight aria-hidden className="contact-arrow" size={16} weight="bold" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href={CONTACT.linkedin} rel="noreferrer" target="_blank">
+                      <LinkedinLogo aria-hidden size={20} weight="bold" />
+                      linkedin.com/in/mliebanavicente
+                      <ArrowUpRight aria-hidden className="contact-arrow" size={16} weight="bold" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href={CONTACT.github} rel="noreferrer" target="_blank">
+                      <GithubLogo aria-hidden size={20} weight="bold" />
+                      github.com/liebanavicente
                       <ArrowUpRight aria-hidden className="contact-arrow" size={16} weight="bold" />
                     </a>
                   </li>
@@ -377,7 +424,11 @@ export default function Home() {
       <footer className="site-footer">
         <div className="container">
           <span>© {new Date().getFullYear()} Miguel Liébana</span>
-          <span>Desarrollo web · IA · Administración · Office</span>
+          <span className="footer-links">
+            <a href={CONTACT.linkedin} rel="noreferrer" target="_blank">LinkedIn</a>
+            <a href={CONTACT.github} rel="noreferrer" target="_blank">GitHub</a>
+            <a href="https://github.com/liebanavicente/miguelweb2026" rel="noreferrer" target="_blank">Código de esta web</a>
+          </span>
         </div>
       </footer>
     </div>

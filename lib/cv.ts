@@ -4,6 +4,8 @@ export const CONTACT = {
   phoneHref: "tel:+34685396609",
   email: "mlieban3@gmail.com",
   linktree: "https://linktr.ee/liebanavicente",
+  linkedin: "https://www.linkedin.com/in/mliebanavicente",
+  github: "https://github.com/liebanavicente",
   cv: "/cv-miguel-liebana.jpg",
 };
 
@@ -23,7 +25,7 @@ export const OFFER_ROTATOR = [
   "automatizar *avisos y correos*",
   "llevar la *administración y la tesorería*",
   "dominar *Microsoft Office* a nivel experto",
-  "explicar *lo técnico* con claridad",
+  "enseñar *competencias digitales* a adultos",
   "atender en *cuatro idiomas*",
 ];
 
@@ -61,10 +63,10 @@ export const OFFERS: Offer[] = [
     tags: ["Office", "Contaplus", "ACTIC"],
   },
   {
-    icon: "UsersThree",
-    title: "Comunicación y trato con personas",
-    text: "Años de aula, recepción y teleoperación me han enseñado a escuchar, explicar lo complejo con palabras sencillas y coordinarme con equipos diversos.",
-    tags: ["Escucha activa", "Atención al cliente", "Trabajo en equipo"],
+    icon: "ChalkboardTeacher",
+    title: "Formación digital para adultos",
+    text: "14 años de experiencia docente y un máster en TIC aplicadas a la educación. Enseño ofimática, competencias digitales, HTML y CSS e IA con paciencia y a partir de casos reales.",
+    tags: ["Competencias digitales", "Ofimática", "IA"],
   },
 ];
 
@@ -88,6 +90,18 @@ export const ROLE_GROUPS: RoleGroup[] = [
     ],
   },
   {
+    area: "Formación digital",
+    icon: "ChalkboardTeacher",
+    intro: "Formación para personas adultas: mi experiencia docente al servicio de las competencias digitales, la ofimática y la web.",
+    roles: [
+      { title: "Formador de competencias digitales para adultos", fit: "alta", why: "14 años de docencia, máster en TIC educativas y ACTIC nivel 2." },
+      { title: "Formador de ofimática", fit: "alta", why: "Word, Excel, Outlook y PowerPoint a nivel experto, y experiencia explicándolos." },
+      { title: "Dinamizador de espacios TIC y telecentros", fit: "alta", why: "Acompaño a personas sin experiencia digital con claridad y sin prisas." },
+      { title: "Formador de HTML, CSS e IA para principiantes", fit: "media", why: "Ya he creado material didáctico propio para aprender HTML y CSS desde cero.", note: "Para impartir certificados de profesionalidad se exige acreditar el certificado correspondiente." },
+      { title: "Formador en IA para equipos de oficina", fit: "media", why: "Uso la IA a diario y sé traducirla a tareas concretas de administración." },
+    ],
+  },
+  {
     area: "Tecnología y soporte",
     icon: "Headset",
     intro: "Puestos donde la parte técnica se une a la atención a las personas, mi punto fuerte de siempre.",
@@ -95,7 +109,7 @@ export const ROLE_GROUPS: RoleGroup[] = [
       { title: "Soporte técnico / helpdesk N1", fit: "alta", why: "Base técnica, paciencia y experiencia real en atención telefónica y presencial." },
       { title: "Customer success en empresas de software", fit: "alta", why: "Sé explicar herramientas digitales a quien no es técnico y acompañarle." },
       { title: "Implantación y onboarding de software", fit: "media", why: "Ofimática experta, experiencia en coordinación TIC y facilidad para documentar." },
-      { title: "Técnico de soporte en plataformas edtech", fit: "media", why: "Conozco por dentro cómo trabaja un centro educativo y qué necesita." },
+      { title: "Soporte y formación en plataformas edtech", fit: "alta", why: "Conozco por dentro cómo trabaja un centro educativo y sé formar a sus usuarios." },
     ],
   },
   {
@@ -184,31 +198,63 @@ export const TECH = [
   "APIs externas · Resend, Formspree",
 ];
 
-export const PROJECTS: Array<{ name: string; kind: string; text: string; stack: string[]; url?: string }> = [
+export type Project = { name: string; kind: string; text: string; stack: string[]; demo?: string; code?: string; note?: string };
+
+/** Featured work, picked from github.com/liebanavicente. Code links only for public repositories. */
+export const PROJECTS: Project[] = [
+  {
+    name: "ENERPRO",
+    kind: "Portal del empleado",
+    text: "Portal privado para una empresa de seguridad: documentos, cuadrantes, turnos, vacaciones y solicitudes, con acceso por usuario y avisos automáticos.",
+    stack: ["JavaScript", "Supabase", "Resend", "Vercel"],
+    demo: "https://enerpro.vercel.app",
+    code: "https://github.com/liebanavicente/enerpro",
+  },
+  {
+    name: "BandManager",
+    kind: "SaaS de gestión",
+    text: "Plataforma para gestionar una banda: eventos, repertorio, setlists, tareas, archivos y merchandising, con base de datos relacional.",
+    stack: ["Next.js 16", "TypeScript", "Prisma", "PostgreSQL", "shadcn/ui"],
+    demo: "https://bandmanager-nine.vercel.app",
+    code: "https://github.com/liebanavicente/bandmanager",
+  },
+  {
+    name: "HTML y CSS desde cero",
+    kind: "Material didáctico interactivo",
+    text: "Curso web en español para aprender los fundamentos de HTML y CSS partiendo de cero, con actividades guiadas paso a paso.",
+    stack: ["HTML", "CSS", "Didáctica"],
+    demo: "https://materialdidacticocpweb.vercel.app",
+  },
   {
     name: "Apuntes Upgrade",
     kind: "App web con IA · bootcamp",
     text: "Archivo de resúmenes del Bootcamp Full Stack con IA: importa Word, PDF o transcripciones, los resume con IA y genera tests, tarjetas de repaso y un glosario.",
     stack: ["Next.js", "AI SDK", "Vercel Blob", "TypeScript"],
-    url: "https://github.com/liebanavicente/apuntes-upgrade",
+    note: "Uso privado del curso",
   },
   {
-    name: "ENERPRO",
-    kind: "Portal web · seguridad privada",
-    text: "Portal para una empresa de seguridad privada con autenticación de usuarios, gestión documental y notificaciones automáticas.",
-    stack: ["Supabase", "JavaScript", "Resend", "Vercel"],
+    name: "Suscripscan",
+    kind: "Herramienta de finanzas personales",
+    text: "Controla el gasto real en suscripciones: panel mensual, anual y diario, avisos de renovación, gráficas y exportación a PDF.",
+    stack: ["Next.js", "Recharts", "jsPDF"],
+    demo: "https://suscripscan.vercel.app",
+    code: "https://github.com/liebanavicente/suscripscan",
   },
   {
-    name: "La Llar del Dolç",
-    kind: "Web corporativa · regalos personalizados",
-    text: "Web corporativa para un negocio de regalos personalizados, con formulario de contacto y despliegue continuo.",
-    stack: ["HTML", "CSS", "Formspree", "Vercel"],
+    name: "DiscaLove",
+    kind: "App social accesible",
+    text: "Comunidad de amistad y conexión para personas con discapacidad, diseñada con accesibilidad, autonomía y seguridad como prioridades.",
+    stack: ["Next.js", "Prisma", "Neon Postgres", "Tailwind"],
+    demo: "https://discalove.vercel.app",
+    code: "https://github.com/liebanavicente/discalove",
   },
-  {
-    name: "Este portfolio",
-    kind: "Página personal",
-    text: "La página que estás leyendo: mi CV convertido en web, con lo que ofrezco y los puestos que encajan conmigo.",
-    stack: ["Next.js", "React", "Vercel"],
-    url: "https://github.com/liebanavicente/miguelweb2026",
-  },
+];
+
+export const MORE_PROJECTS = [
+  { name: "La Llar del Dolç", kind: "Web de lotes y packs regalo", url: "https://lallardeldolc.vercel.app" },
+  { name: "No Flag Patriots", kind: "Tienda online con pagos Stripe", url: "https://nfpclothing.vercel.app" },
+  { name: "Darío Campos", kind: "Web de guitarrista y productor", url: "https://dariocampos.vercel.app" },
+  { name: "Construcciones Florystan", kind: "Web corporativa", url: "https://florystan-web.vercel.app" },
+  { name: "Reas0nance", kind: "Web de DJ", url: "https://danielsommm.vercel.app" },
+  { name: "Apuntes del curso web", kind: "Apuntes de desarrollo web", url: "https://apuntes-web.vercel.app" },
 ];

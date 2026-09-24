@@ -1,12 +1,12 @@
 "use client";
 
 import type { Icon } from "@phosphor-icons/react";
-import { ArrowUpRight, Code, Files, Headset } from "@phosphor-icons/react";
+import { ArrowUpRight, ChalkboardTeacher, Code, Files, Headset } from "@phosphor-icons/react";
 import { useState } from "react";
 
 import { ROLE_GROUPS } from "../lib/cv";
 
-const ICONS: Record<string, Icon> = { Code, Headset, Files };
+const ICONS: Record<string, Icon> = { Code, ChalkboardTeacher, Headset, Files };
 
 const FIT_LABEL = { alta: "Encaje alto", media: "Encaje bueno" } as const;
 
