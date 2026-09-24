@@ -3,6 +3,8 @@
 import { List, X } from "@phosphor-icons/react";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
 
+import { OPEN_SECTION_EVENT } from "./Collapsible";
+
 const LINKS = [
   { id: "ofrezco", label: "Qué ofrezco" },
   { id: "proyectos", label: "Proyectos" },
@@ -20,6 +22,8 @@ export function Header() {
   const [current, setCurrent] = useState<string | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
   const [pill, setPill] = useState<{ x: number; w: number } | null>(null);
+  // Chapters are folded: following a link also unfolds the chapter it points to.
+  const openSection = (id: string) => window.dispatchEvent(new CustomEvent(OPEN_SECTION_EVENT, { detail: id }));
   const listRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
@@ -89,7 +93,7 @@ export function Header() {
             <ul ref={listRef}>
               {LINKS.map(({ id, label }) => (
                 <li key={id}>
-                  <a aria-current={current === id ? "location" : undefined} href={`#${id}`} onFocus={() => setHovered(id)} onBlur={() => setHovered(null)} onMouseEnter={() => setHovered(id)}>
+                  <a aria-current={current === id ? "location" : undefined} href={`#${id}`} onClick={() => openSection(id)} onFocus={() => setHovered(id)} onBlur={() => setHovered(null)} onMouseEnter={() => setHovered(id)}>
                     <span className="nav-label">{label}</span>
                   </a>
                 </li>
@@ -110,7 +114,14 @@ export function Header() {
           <ul>
             {LINKS.map(({ id, label }, index) => (
               <li key={id} style={{ "--i": index } as CSSProperties}>
-                <a aria-current={current === id ? "location" : undefined} href={`#${id}`} onClick={() => setOpen(false)}>
+                <a
+                  aria-current={current === id ? "location" : undefined}
+                  href={`#${id}`}
+                  onClick={() => {
+                    openSection(id);
+                    setOpen(false);
+                  }}
+                >
                   {label}
                 </a>
               </li>

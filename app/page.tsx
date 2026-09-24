@@ -21,6 +21,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { CodeCard } from "../components/CodeCard";
+import { Collapsible } from "../components/Collapsible";
 import { DiplomaWall } from "../components/DiplomaWall";
 import { EducationExplorer } from "../components/EducationExplorer";
 import { Header } from "../components/Header";
@@ -160,30 +161,32 @@ export default function Home() {
               label="qué ofrezco"
               title="Lo que puedo"
             />
-            <ol className="offer-grid">
-              {OFFERS.map((offer, index) => {
-                const OfferIcon = OFFER_ICONS[offer.icon];
-                return (
-                  <li className="offer-card" key={offer.title}>
-                    <div className="offer-top">
-                      <span className="offer-icon">
-                        <OfferIcon aria-hidden size={22} weight="regular" />
-                      </span>
-                      <span className="offer-num">{String(index + 1).padStart(2, "0")}</span>
-                    </div>
-                    <h3>{offer.title}</h3>
-                    <p>{offer.text}</p>
-                    <div className="tag-row">
-                      {offer.tags.map((tag) => (
-                        <span className="tag" key={tag}>
-                          {tag}
+            <Collapsible id="ofrezco" summary="6 capacidades · desarrollo web, formación digital y administración">
+              <ol className="offer-grid">
+                {OFFERS.map((offer, index) => {
+                  const OfferIcon = OFFER_ICONS[offer.icon];
+                  return (
+                    <li className="offer-card" key={offer.title}>
+                      <div className="offer-top">
+                        <span className="offer-icon">
+                          <OfferIcon aria-hidden size={22} weight="regular" />
                         </span>
-                      ))}
-                    </div>
-                  </li>
-                );
-              })}
-            </ol>
+                        <span className="offer-num">{String(index + 1).padStart(2, "0")}</span>
+                      </div>
+                      <h3>{offer.title}</h3>
+                      <p>{offer.text}</p>
+                      <div className="tag-row">
+                        {offer.tags.map((tag) => (
+                          <span className="tag" key={tag}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ol>
+            </Collapsible>
           </section>
 
           {/* Projects */}
@@ -205,53 +208,55 @@ export default function Home() {
                 <figcaption>programando</figcaption>
               </figure>
             </div>
-            <ol className="project-grid">
-              {PROJECTS.map((project, index) => (
-                <li className="project-card" key={project.name}>
-                  <p className="project-kind">
-                    <span>#{String(index + 1).padStart(2, "0")}</span> {project.kind}
-                  </p>
-                  <h3>{project.name}</h3>
-                  <p className="project-text">{project.text}</p>
-                  <div className="tag-row">
-                    {project.stack.map((tag) => (
-                      <span className="tag" key={tag}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="project-links">
-                    {project.demo ? (
-                      <a className="text-link" href={project.demo} rel="noreferrer" target="_blank">
-                        Ver web <ArrowUpRight aria-hidden size={15} weight="bold" />
-                      </a>
-                    ) : null}
-                    {project.code ? (
-                      <a className="text-link" href={project.code} rel="noreferrer" target="_blank">
-                        <GithubLogo aria-hidden size={15} weight="bold" /> Código
-                      </a>
-                    ) : null}
-                    {project.note ? <span className="project-note">{project.note}</span> : null}
-                  </div>
-                </li>
-              ))}
-            </ol>
-            <div className="more-projects">
-              <p className="kicker small">
-                <span>+</span> más webs publicadas
-              </p>
-              <ul>
-                {MORE_PROJECTS.map((item) => (
-                  <li key={item.url}>
-                    <a href={item.url} rel="noreferrer" target="_blank">
-                      <strong>{item.name}</strong>
-                      <span>{item.kind}</span>
-                      <ArrowUpRight aria-hidden className="row-arrow" size={15} weight="bold" />
-                    </a>
+            <Collapsible id="proyectos" summary="5 proyectos destacados · 6 webs más publicadas">
+              <ol className="project-grid">
+                {PROJECTS.map((project, index) => (
+                  <li className="project-card" key={project.name}>
+                    <p className="project-kind">
+                      <span>#{String(index + 1).padStart(2, "0")}</span> {project.kind}
+                    </p>
+                    <h3>{project.name}</h3>
+                    <p className="project-text">{project.text}</p>
+                    <div className="tag-row">
+                      {project.stack.map((tag) => (
+                        <span className="tag" key={tag}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="project-links">
+                      {project.demo ? (
+                        <a className="text-link" href={project.demo} rel="noreferrer" target="_blank">
+                          Ver web <ArrowUpRight aria-hidden size={15} weight="bold" />
+                        </a>
+                      ) : null}
+                      {project.code ? (
+                        <a className="text-link" href={project.code} rel="noreferrer" target="_blank">
+                          <GithubLogo aria-hidden size={15} weight="bold" /> Código
+                        </a>
+                      ) : null}
+                      {project.note ? <span className="project-note">{project.note}</span> : null}
+                    </div>
                   </li>
                 ))}
-              </ul>
-            </div>
+              </ol>
+              <div className="more-projects">
+                <p className="kicker small">
+                  <span>+</span> más webs publicadas
+                </p>
+                <ul>
+                  {MORE_PROJECTS.map((item) => (
+                    <li key={item.url}>
+                      <a href={item.url} rel="noreferrer" target="_blank">
+                        <strong>{item.name}</strong>
+                        <span>{item.kind}</span>
+                        <ArrowUpRight aria-hidden className="row-arrow" size={15} weight="bold" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Collapsible>
           </section>
 
           <TechMarquee />
@@ -279,13 +284,17 @@ export default function Home() {
               label="puestos"
               title="A qué puedo"
             />
-            <RoleExplorer />
+            <Collapsible id="puestos" summary="19 puestos en 4 áreas · con nivel de encaje">
+              <RoleExplorer />
+            </Collapsible>
           </section>
 
           {/* Education */}
           <section aria-labelledby="formacion-titulo" className="section" id="formacion">
             <Chapter accent="acreditaciones" id="formacion" index="04" label="formación" title="Estudios y" />
-            <EducationExplorer />
+            <Collapsible id="formacion" summary="5 formaciones · 2 en curso · contenido desplegable">
+              <EducationExplorer />
+            </Collapsible>
           </section>
 
           {/* Diplomas */}
@@ -298,7 +307,9 @@ export default function Home() {
               label="archivo"
               title="Archivo de"
             />
-            <DiplomaWall />
+            <Collapsible id="titulos" summary="25 títulos y certificados · +1.100 horas acreditadas">
+              <DiplomaWall />
+            </Collapsible>
           </section>
 
           {/* Experience */}
@@ -311,91 +322,95 @@ export default function Home() {
               label="trayectoria"
               title="Experiencia"
             />
-            <ol className="timeline jobs">
-              {JOBS.map((job) => (
-                <li key={`${job.role}-${job.from}`}>
-                  {/* Desktop: the company logo drifts in large and soft from the right while the row is hovered. */}
-                  {job.logos?.length || job.icon ? (
-                    <span aria-hidden className="job-mark">
-                      {job.logos?.map((logo) => (
-                        <Image alt="" height={logo.height} key={logo.src} src={logo.src} unoptimized width={logo.width} />
-                      ))}
-                      {job.icon === "cafe" ? <Coffee size={120} weight="thin" /> : null}
-                    </span>
-                  ) : null}
-                  <span className="tl-date">{job.to ? `${job.from} — ${job.to}` : job.from}</span>
-                  <div className="tl-body">
-                    {job.logos || job.icon ? (
-                      <div className="job-logos">
+            <Collapsible id="trayectoria" summary="8 puestos · de 2003 a 2026">
+              <ol className="timeline jobs">
+                {JOBS.map((job) => (
+                  <li key={`${job.role}-${job.from}`}>
+                    {/* Desktop: the company logo drifts in large and soft from the right while the row is hovered. */}
+                    {job.logos?.length || job.icon ? (
+                      <span aria-hidden className="job-mark">
                         {job.logos?.map((logo) => (
-                          <Image alt={logo.alt} height={logo.height} key={logo.src} src={logo.src} unoptimized width={logo.width} />
+                          <Image alt="" height={logo.height} key={logo.src} src={logo.src} unoptimized width={logo.width} />
                         ))}
-                        {job.icon === "cafe" ? (
-                          <span className="job-icon" title="Hostelería">
-                            <Coffee aria-hidden size={20} />
-                          </span>
-                        ) : null}
-                      </div>
+                        {job.icon === "cafe" ? <Coffee size={120} weight="thin" /> : null}
+                      </span>
                     ) : null}
-                    <p className="tl-area">{AREA_LABEL[job.area]}</p>
-                    <h3>{job.role}</h3>
-                    <p>{job.company}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+                    <span className="tl-date">{job.to ? `${job.from} — ${job.to}` : job.from}</span>
+                    <div className="tl-body">
+                      {job.logos || job.icon ? (
+                        <div className="job-logos">
+                          {job.logos?.map((logo) => (
+                            <Image alt={logo.alt} height={logo.height} key={logo.src} src={logo.src} unoptimized width={logo.width} />
+                          ))}
+                          {job.icon === "cafe" ? (
+                            <span className="job-icon" title="Hostelería">
+                              <Coffee aria-hidden size={20} />
+                            </span>
+                          ) : null}
+                        </div>
+                      ) : null}
+                      <p className="tl-area">{AREA_LABEL[job.area]}</p>
+                      <h3>{job.role}</h3>
+                      <p>{job.company}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </Collapsible>
           </section>
 
           {/* Skills */}
           <section aria-labelledby="competencias-titulo" className="section" id="competencias">
             <Chapter accent="herramientas" id="competencias" index="07" label="competencias" title="Idiomas, habilidades y" />
-            <div className="skills-grid">
-              <section className="sheet">
-                <h3>Idiomas</h3>
-                <ul className="lang-list">
-                  {LANGUAGES.map((lang) => (
-                    <li key={lang.name}>
-                      <span>
-                        <strong>{lang.name}</strong> <em>{lang.level}</em>
-                      </span>
-                      <span aria-label={`${lang.dots} de 5`} className="dots" role="img">
-                        {[1, 2, 3, 4, 5].map((dot) => (
-                          <i className={dot <= lang.dots ? "on" : undefined} key={dot} />
-                        ))}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <h3 className="sheet-sub">Habilidades</h3>
-                {SOFT_SKILLS.map((skill) => (
-                  <div className="skill" key={skill.name}>
-                    <span>{skill.name}</span>
-                    <div className="meter">
-                      <span style={{ width: `${skill.value}%` }} />
+            <Collapsible id="competencias" summary="4 idiomas · habilidades · informática · tecnologías web">
+              <div className="skills-grid">
+                <section className="sheet">
+                  <h3>Idiomas</h3>
+                  <ul className="lang-list">
+                    {LANGUAGES.map((lang) => (
+                      <li key={lang.name}>
+                        <span>
+                          <strong>{lang.name}</strong> <em>{lang.level}</em>
+                        </span>
+                        <span aria-label={`${lang.dots} de 5`} className="dots" role="img">
+                          {[1, 2, 3, 4, 5].map((dot) => (
+                            <i className={dot <= lang.dots ? "on" : undefined} key={dot} />
+                          ))}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <h3 className="sheet-sub">Habilidades</h3>
+                  {SOFT_SKILLS.map((skill) => (
+                    <div className="skill" key={skill.name}>
+                      <span>{skill.name}</span>
+                      <div className="meter">
+                        <span style={{ width: `${skill.value}%` }} />
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </section>
-              <section className="sheet">
-                <h3>Informática</h3>
-                <ul className="soft-list">
-                  {SOFTWARE.map((item) => (
-                    <li key={item.name}>
-                      <span>{item.name}</span>
-                      <span className={`level level-${item.level.toLowerCase()}`}>{item.level}</span>
-                    </li>
                   ))}
-                </ul>
-              </section>
-              <section className="sheet">
-                <h3>Tecnologías web</h3>
-                <ul className="check-list">
-                  {TECH.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </section>
-            </div>
+                </section>
+                <section className="sheet">
+                  <h3>Informática</h3>
+                  <ul className="soft-list">
+                    {SOFTWARE.map((item) => (
+                      <li key={item.name}>
+                        <span>{item.name}</span>
+                        <span className={`level level-${item.level.toLowerCase()}`}>{item.level}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+                <section className="sheet">
+                  <h3>Tecnologías web</h3>
+                  <ul className="check-list">
+                    {TECH.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </section>
+              </div>
+            </Collapsible>
           </section>
 
           {/* Contact */}
