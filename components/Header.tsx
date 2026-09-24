@@ -12,7 +12,7 @@ const LINKS = [
   { id: "contacto", label: "Contacto" },
 ];
 
-/** Sticky glass header: a blue pill slides to the hovered link and rests on the section in view. */
+/** Sticky header: an ink underline slides to the hovered link and rests on the section in view. */
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -22,7 +22,12 @@ export function Header() {
   const listRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 12);
+      // Above the first chapter nothing is current, so the underline does not linger on the last section seen.
+      const first = document.getElementById(LINKS[0].id);
+      if (first && first.getBoundingClientRect().top > window.innerHeight * 0.35) setCurrent(null);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -65,7 +70,7 @@ export function Header() {
       <div className="container topbar-inner">
         <a className="brand" href="#inicio" onClick={() => setOpen(false)}>
           <span aria-hidden className="brand-mark">
-            ML
+            ml<i>_</i>
           </span>
           <span className="brand-copy">
             <strong>Miguel Liébana</strong>

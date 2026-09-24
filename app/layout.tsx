@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 
 import "@fontsource-variable/archivo";
 import "@fontsource/instrument-serif/400-italic.css";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/500.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = { themeColor: "#f5f8fb" };
+export const viewport: Viewport = { themeColor: "#f7f8fa" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -26,15 +28,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         {/* Hairline reading progress, driven by scroll in CSS alone. */}
         <div aria-hidden className="reading-progress" />
-        {/* Soft blue patches spread down the page so every section has some colour behind its glass. */}
-        <div aria-hidden className="ambient">
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
         {children}
       </body>
     </html>

@@ -1,12 +1,8 @@
 "use client";
 
-import type { Icon } from "@phosphor-icons/react";
-import { Briefcase, Browser, ChalkboardTeacher, ChatsCircle, Code, Database, EnvelopeSimple, MicrosoftExcelLogo } from "@phosphor-icons/react";
 import { useEffect, useState, useSyncExternalStore } from "react";
 
 import { OFFER_ROTATOR } from "../lib/cv";
-
-const ICONS: Icon[] = [Code, Browser, Database, EnvelopeSimple, Briefcase, MicrosoftExcelLogo, ChalkboardTeacher, ChatsCircle];
 
 type Letter = { char: string; key: boolean };
 
@@ -23,11 +19,11 @@ function lettersOf(label: string): Letter[] {
 
 const plainLabel = (label: string) => label.replace(/\*/g, "");
 
-// Typewriter timing: letters appear one by one, the phrase holds, then is erased letter by letter.
-const TYPE_MS = 70;
-const ERASE_MS = 32;
-const HOLD_MS = 2600;
-const GAP_MS = 420;
+// Typewriter timing: letters appear one by one, the command holds, then is erased letter by letter.
+const TYPE_MS = 62;
+const ERASE_MS = 26;
+const HOLD_MS = 2400;
+const GAP_MS = 380;
 
 function subscribeReducedMotion(onChange: () => void) {
   const query = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -35,7 +31,7 @@ function subscribeReducedMotion(onChange: () => void) {
   return () => query.removeEventListener("change", onChange);
 }
 
-/** Types one thing I can offer at a time, holds it, erases it and moves on to the next. */
+/** A terminal prompt that types one thing I can offer at a time, holds it, erases it and moves on. */
 export function OfferRotator() {
   const reduceMotion = useSyncExternalStore(
     subscribeReducedMotion,
@@ -79,62 +75,58 @@ export function OfferRotator() {
   }
 
   const everything = (
-    <ul className="rotator-list">
-      {OFFER_ROTATOR.map((item, position) => {
-        const ItemIcon = ICONS[position % ICONS.length];
-        const text = plainLabel(item);
-        return (
-          <li key={item}>
-            <ItemIcon aria-hidden size={20} weight="bold" />
-            {text.charAt(0).toUpperCase() + text.slice(1)}
-          </li>
-        );
-      })}
+    <ul className="term-list">
+      {OFFER_ROTATOR.map((item) => (
+        <li key={item}>{plainLabel(item)}</li>
+      ))}
     </ul>
   );
 
-  if (reduceMotion) {
-    return (
-      <div className="rotator is-static">
-        <p className="rotator-lead">En tu equipo puedo:</p>
-        {everything}
-      </div>
-    );
-  }
-
-  const CurrentIcon = ICONS[index % ICONS.length];
   return (
     <div
-      className="rotator"
+      className="terminal"
       onBlur={() => setPaused(false)}
-      // Pause for keyboard users only: a mouse click on a dot should jump there and keep typing.
+      // Pause for keyboard users only: a mouse click on a tab should jump there and keep typing.
       onFocus={(event) => event.target.matches(":focus-visible") && setPaused(true)}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <p className="rotator-lead">En tu equipo puedo</p>
-      {/* Screen readers get the whole list once instead of text that keeps being typed. */}
-      <div className="visually-hidden">{everything}</div>
-      <p aria-hidden className="rotator-stage">
-        <span className="rotator-phrase">
-          <CurrentIcon className="rotator-icon" key={index} size={30} weight="bold" />
-          <span className="rotator-text">
-            {letters.slice(0, count).map(({ char, key }, position) => (
-              // Keyed by position so only the newest letter animates in.
-              <span className={`rotator-letter${key ? " is-key" : ""}`} key={position}>
-                {char}
-              </span>
-            ))}
-            <span className={`rotator-caret${phase === "holding" || paused ? " is-blinking" : ""}`} />
-          </span>
+      <div aria-hidden className="term-bar">
+        <span className="code-dots">
+          <i />
+          <i />
+          <i />
         </span>
-      </p>
-      <div className="rotator-dots" role="group" aria-label="Qué puedo aportar">
-        {OFFER_ROTATOR.map((item, dot) => (
-          <button aria-current={dot === index} aria-label={plainLabel(item)} className={dot === index ? "is-active" : undefined} key={item} onClick={() => show(dot)} type="button">
-            <span />
-          </button>
-        ))}
+        <span>miguel@portfolio: ~/tu-equipo</span>
+      </div>
+      <div className="term-body">
+        <p className="term-comment"># en tu equipo puedo…</p>
+        {reduceMotion ? (
+          everything
+        ) : (
+          <>
+            {/* Screen readers get the whole list once instead of text that keeps being typed. */}
+            <div className="visually-hidden">{everything}</div>
+            <p aria-hidden className="term-line">
+              <span className="term-prompt">❯</span>
+              <span className="term-text">
+                {letters.slice(0, count).map(({ char, key }, position) => (
+                  <span className={key ? "is-key" : undefined} key={position}>
+                    {char}
+                  </span>
+                ))}
+                <span className={`term-caret${phase === "holding" || paused ? " is-blinking" : ""}`} />
+              </span>
+            </p>
+            <div className="term-tabs" role="group" aria-label="Qué puedo aportar">
+              {OFFER_ROTATOR.map((item, dot) => (
+                <button aria-current={dot === index} aria-label={plainLabel(item)} key={item} onClick={() => show(dot)} type="button">
+                  {String(dot + 1).padStart(2, "0")}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

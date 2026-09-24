@@ -1,6 +1,7 @@
 import type { Icon } from "@phosphor-icons/react";
 import {
   ArrowDown,
+  ArrowRight,
   ArrowUpRight,
   Briefcase,
   Browser,
@@ -10,7 +11,7 @@ import {
   DownloadSimple,
   EnvelopeSimple,
   GithubLogo,
-  GraduationCap,
+  IdentificationCard,
   LinkSimple,
   LinkedinLogo,
   MicrosoftExcelLogo,
@@ -18,17 +19,17 @@ import {
   Robot,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import type { ReactNode } from "react";
 
+import { CodeCard } from "../components/CodeCard";
 import { Header } from "../components/Header";
-import { HeroBalls } from "../components/HeroBalls";
 import { OfferRotator } from "../components/OfferRotator";
 import { RoleExplorer } from "../components/RoleExplorer";
+import { MarginNote, Scribble } from "../components/Scribble";
 import { TechMarquee } from "../components/TechMarquee";
-import { TypedHeading } from "../components/TypedHeading";
 import {
   CERTIFICATES,
   CONTACT,
-  CURRENT_ROLE,
   EDUCATION,
   JOBS,
   LANGUAGES,
@@ -44,22 +45,26 @@ import {
 
 const OFFER_ICONS: Record<string, Icon> = { Code, Browser, Robot, Briefcase, MicrosoftExcelLogo, ChalkboardTeacher };
 
-const AREA_LABEL = { edu: "Educación", admin: "Administración", tech: "Tecnología", music: "Música", service: "Atención al público" } as const;
+const AREA_LABEL = { edu: "educación", admin: "administración", tech: "tecnología", music: "música", service: "atención al público" } as const;
 
 const GALLERY = [
-  { src: "/fotos/escenario.jpg", alt: "Miguel hablando ante un auditorio", word: "Comunicar" },
-  { src: "/fotos/oficina.jpg", alt: "Miguel de pie en una oficina diáfana", word: "Coordinar" },
-  { src: "/fotos/retrato-bn.jpg", alt: "Retrato de Miguel en blanco y negro", word: "Escuchar" },
+  { src: "/fotos/escenario.jpg", alt: "Miguel hablando ante un auditorio", word: "comunicar" },
+  { src: "/fotos/oficina.jpg", alt: "Miguel de pie en una oficina diáfana", word: "coordinar" },
+  { src: "/fotos/retrato-bn.jpg", alt: "Retrato de Miguel en blanco y negro", word: "escuchar" },
 ];
 
-function SectionHead({ id, eyebrow, title, accent, intro }: { id: string; eyebrow: string; title: string; accent?: string; intro?: string }) {
+/** Chapter heading: mono index, the title with one scribbled word, and an optional intro. */
+function Chapter({ id, index, label, title, accent, intro, aside }: { id: string; index: string; label: string; title: string; accent?: string; intro?: string; aside?: ReactNode }) {
   return (
-    <div className="section-head">
-      <p className="eyebrow">{eyebrow}</p>
+    <div className="chapter">
+      <p className="kicker">
+        <span>{index}</span> {label}
+      </p>
       <h2 className="section-title" id={`${id}-titulo`}>
-        {title} {accent ? <em>{accent}</em> : null}
+        {title} {accent ? <Scribble>{accent}</Scribble> : null}
       </h2>
-      {intro ? <p className="page-intro">{intro}</p> : null}
+      {intro ? <p className="lede">{intro}</p> : null}
+      {aside}
     </div>
   );
 }
@@ -71,94 +76,108 @@ export default function Home() {
       <main className="main" id="contenido" tabIndex={-1}>
         <div className="container">
           {/* Hero */}
-          <div className="page-head hero">
+          <header className="hero">
             <div className="hero-copy">
-              <p className="eyebrow">Desarrollo web · IA · Formación digital · Administración</p>
-              <TypedHeading accent="con IA." text="Construyo webs y ordeno procesos" />
-              <p className="page-intro">
+              <p className="kicker">
+                <span>00</span> desarrollo web · ia · formación digital · administración
+              </p>
+              <h1 className="hero-title">
+                <span className="rise" style={{ animationDelay: "60ms" }}>
+                  Construyo webs
+                </span>{" "}
+                <span className="rise" style={{ animationDelay: "160ms" }}>
+                  y ordeno procesos
+                </span>{" "}
+                <span className="rise" style={{ animationDelay: "260ms" }}>
+                  <Scribble onLoad>con IA.</Scribble>
+                </span>
+              </h1>
+              <p className="lede">
                 Soy Miguel Liébana. Me estoy formando como <strong>desarrollador full-stack con IA en Upgrade Hub</strong> y en{" "}
                 <strong>Confección y publicación de páginas web</strong> en el Centro Coliseum de Cornellà. Además soy técnico superior en
                 Administración y finanzas y llevo 14 años enseñando, experiencia que hoy aplico a la formación digital de adultos.
               </p>
-              <div className="nav hero-actions">
-                <a className="button primary" href="#puestos">
-                  Puestos que encajan <ArrowDown aria-hidden size={16} weight="bold" />
+              <div className="actions">
+                <a className="btn btn-ink" href="#puestos">
+                  Puestos que encajan <ArrowDown aria-hidden className="btn-arrow" size={16} weight="bold" />
                 </a>
-                <a className="button" href={`mailto:${CONTACT.email}`}>
+                <a className="btn" href={`mailto:${CONTACT.email}`}>
                   <EnvelopeSimple aria-hidden size={16} weight="bold" /> Escríbeme
                 </a>
-                <a className="button" download href={CONTACT.cv}>
-                  <DownloadSimple aria-hidden size={16} weight="bold" /> Descargar CV
+                <a className="btn" download href={CONTACT.cv}>
+                  <DownloadSimple aria-hidden size={16} weight="bold" /> CV en PDF
                 </a>
               </div>
-              <div className="school-row">
-                <span>Me formo en</span>
-                <a href="https://www.upgrade-hub.com" rel="noreferrer" target="_blank">
-                  <Image alt="Upgrade Hub" height={1163} src="/logos/upgrade-hub.svg" unoptimized width={5282} />
-                </a>
-                <a href="https://centrocoliseum.com" rel="noreferrer" target="_blank">
-                  <Image alt="Centro de Formación Coliseum" height={65} src="/logos/coliseum.svg" unoptimized width={282} />
-                </a>
-              </div>
-              <div className="social-row">
-                <a aria-label="LinkedIn" className="social-link" href={CONTACT.linkedin} rel="noreferrer" target="_blank">
-                  <LinkedinLogo aria-hidden size={20} weight="bold" /> LinkedIn
-                </a>
-                <a aria-label="GitHub" className="social-link" href={CONTACT.github} rel="noreferrer" target="_blank">
-                  <GithubLogo aria-hidden size={20} weight="bold" /> GitHub
-                </a>
+              <div className="hero-meta">
+                <div className="school-row">
+                  <span>me formo en</span>
+                  <a href="https://www.upgrade-hub.com" rel="noreferrer" target="_blank">
+                    <Image alt="Upgrade Hub" height={1163} src="/logos/upgrade-hub.svg" unoptimized width={5282} />
+                  </a>
+                  <a href="https://centrocoliseum.com" rel="noreferrer" target="_blank">
+                    <Image alt="Centro de Formación Coliseum" height={65} src="/logos/coliseum.svg" unoptimized width={282} />
+                  </a>
+                </div>
+                <div className="social-row">
+                  <a className="social-link" href={CONTACT.linkedin} rel="noreferrer" target="_blank">
+                    <LinkedinLogo aria-hidden size={18} weight="bold" /> LinkedIn
+                  </a>
+                  <a className="social-link" href={CONTACT.github} rel="noreferrer" target="_blank">
+                    <GithubLogo aria-hidden size={18} weight="bold" /> GitHub
+                  </a>
+                </div>
               </div>
             </div>
-            <figure className="hero-photo" data-obstacle>
-              <Image alt="Retrato de Miguel Liébana con americana azul y los brazos cruzados" height={1600} priority sizes="(max-width: 960px) 80vw, 420px" src="/fotos/retrato.jpg" width={1600} />
-              <figcaption className="status-chip">
-                <span aria-hidden className="status-dot" />
-                <span>
-                  <small>Ahora mismo me formo en</small>
-                  {CURRENT_ROLE}
-                </span>
-              </figcaption>
-            </figure>
-            <HeroBalls />
-          </div>
+
+            <div className="hero-visual">
+              <figure className="hero-photo">
+                <Image alt="Retrato de Miguel Liébana con americana azul y los brazos cruzados" height={1600} priority sizes="(max-width: 960px) 80vw, 400px" src="/fotos/retrato.jpg" width={1600} />
+              </figure>
+              <CodeCard />
+            </div>
+          </header>
 
           {/* Key numbers */}
-          <div className="grid dashboard-grid">
+          <dl className="stats">
             {STATS.map((stat) => (
-              <section className="panel" key={stat.label}>
-                <p className="muted">{stat.unit}</p>
-                <p className="progress-value">{stat.value}</p>
-                <p>{stat.label}</p>
-              </section>
+              <div className="stat" key={stat.label}>
+                <dt>{stat.unit}</dt>
+                <dd>
+                  <span className="stat-value">{stat.value}</span>
+                  <span className="stat-label">{stat.label}</span>
+                </dd>
+              </div>
             ))}
-          </div>
+          </dl>
 
-          <div className="rotator-wrap">
-            <OfferRotator />
-          </div>
+          <OfferRotator />
 
           {/* What I offer */}
           <section aria-labelledby="ofrezco-titulo" className="section" id="ofrezco">
-            <SectionHead
+            <Chapter
               accent="aportar"
-              eyebrow="Qué ofrezco"
               id="ofrezco"
+              index="01"
               intro="Lo que aprendo en mis dos formaciones de desarrollo web, sumado a lo que ya he demostrado en oficinas y en el aula."
+              label="qué ofrezco"
               title="Lo que puedo"
             />
-            <ul className="offer-grid">
-              {OFFERS.map((offer) => {
+            <ol className="offer-grid">
+              {OFFERS.map((offer, index) => {
                 const OfferIcon = OFFER_ICONS[offer.icon];
                 return (
                   <li className="offer-card" key={offer.title}>
-                    <span className="offer-icon">
-                      <OfferIcon aria-hidden size={26} weight="bold" />
-                    </span>
+                    <div className="offer-top">
+                      <span className="offer-icon">
+                        <OfferIcon aria-hidden size={22} weight="regular" />
+                      </span>
+                      <span className="offer-num">{String(index + 1).padStart(2, "0")}</span>
+                    </div>
                     <h3>{offer.title}</h3>
                     <p>{offer.text}</p>
                     <div className="tag-row">
                       {offer.tags.map((tag) => (
-                        <span className="badge" key={tag}>
+                        <span className="tag" key={tag}>
                           {tag}
                         </span>
                       ))}
@@ -166,62 +185,70 @@ export default function Home() {
                   </li>
                 );
               })}
-            </ul>
+            </ol>
           </section>
 
           {/* Projects */}
           <section aria-labelledby="proyectos-titulo" className="section" id="proyectos">
-            <div className="split-head">
-              <SectionHead
+            <div className="chapter-split">
+              <Chapter
                 accent="publicados"
-                eyebrow="Proyectos"
+                aside={<MarginNote arrow="down">todo en línea y funcionando</MarginNote>}
                 id="proyectos"
+                index="02"
                 intro="Una selección de lo que he construido y publicado. El código público está en mi GitHub."
+                label="proyectos"
                 title="Proyectos"
               />
-              <figure className="side-photo">
-                <Image alt="Miguel programando con un portátil junto a una ventana" fill sizes="(max-width: 960px) 100vw, 360px" src="/fotos/portatil.jpg" />
+              <figure className="polaroid side-polaroid">
+                <div className="polaroid-img">
+                  <Image alt="Miguel programando con un portátil junto a una ventana" fill sizes="(max-width: 960px) 90vw, 340px" src="/fotos/portatil.jpg" />
+                </div>
+                <figcaption>programando</figcaption>
               </figure>
             </div>
-            <ul className="project-grid">
+            <ol className="project-grid">
               {PROJECTS.map((project, index) => (
                 <li className="project-card" key={project.name}>
-                  <span className="project-index">{String(index + 1).padStart(2, "0")}</span>
-                  <p className="muted">{project.kind}</p>
+                  <p className="project-kind">
+                    <span>#{String(index + 1).padStart(2, "0")}</span> {project.kind}
+                  </p>
                   <h3>{project.name}</h3>
-                  <p>{project.text}</p>
-                  <div className="project-links">
-                    {project.demo ? (
-                      <a className="project-link" href={project.demo} rel="noreferrer" target="_blank">
-                        Ver web <ArrowUpRight aria-hidden size={16} weight="bold" />
-                      </a>
-                    ) : null}
-                    {project.code ? (
-                      <a className="project-link" href={project.code} rel="noreferrer" target="_blank">
-                        <GithubLogo aria-hidden size={16} weight="bold" /> Código
-                      </a>
-                    ) : null}
-                    {project.note ? <span className="project-note">{project.note}</span> : null}
-                  </div>
+                  <p className="project-text">{project.text}</p>
                   <div className="tag-row">
                     {project.stack.map((tag) => (
-                      <span className="badge" key={tag}>
+                      <span className="tag" key={tag}>
                         {tag}
                       </span>
                     ))}
                   </div>
+                  <div className="project-links">
+                    {project.demo ? (
+                      <a className="text-link" href={project.demo} rel="noreferrer" target="_blank">
+                        Ver web <ArrowUpRight aria-hidden size={15} weight="bold" />
+                      </a>
+                    ) : null}
+                    {project.code ? (
+                      <a className="text-link" href={project.code} rel="noreferrer" target="_blank">
+                        <GithubLogo aria-hidden size={15} weight="bold" /> Código
+                      </a>
+                    ) : null}
+                    {project.note ? <span className="project-note">{project.note}</span> : null}
+                  </div>
                 </li>
               ))}
-            </ul>
+            </ol>
             <div className="more-projects">
-              <p className="muted">Más webs publicadas</p>
+              <p className="kicker small">
+                <span>+</span> más webs publicadas
+              </p>
               <ul>
                 {MORE_PROJECTS.map((item) => (
                   <li key={item.url}>
                     <a href={item.url} rel="noreferrer" target="_blank">
                       <strong>{item.name}</strong>
                       <span>{item.kind}</span>
-                      <ArrowUpRight aria-hidden className="contact-arrow" size={16} weight="bold" />
+                      <ArrowUpRight aria-hidden className="row-arrow" size={15} weight="bold" />
                     </a>
                   </li>
                 ))}
@@ -231,11 +258,13 @@ export default function Home() {
 
           <TechMarquee />
 
-          {/* Photo band */}
+          {/* Photos pinned to the notebook */}
           <div aria-label="Fotografías" className="photo-band" role="group">
             {GALLERY.map((photo) => (
-              <figure className="photo-tile" key={photo.src}>
-                <Image alt={photo.alt} fill sizes="(max-width: 620px) 70vw, 33vw" src={photo.src} />
+              <figure className="polaroid" key={photo.src}>
+                <div className="polaroid-img">
+                  <Image alt={photo.alt} fill sizes="(max-width: 620px) 70vw, 30vw" src={photo.src} />
+                </div>
                 <figcaption>{photo.word}</figcaption>
               </figure>
             ))}
@@ -243,11 +272,13 @@ export default function Home() {
 
           {/* Roles */}
           <section aria-labelledby="puestos-titulo" className="section" id="puestos">
-            <SectionHead
+            <Chapter
               accent="aspirar"
-              eyebrow="Puestos"
+              aside={<MarginNote arrow="down">empieza por aquí</MarginNote>}
               id="puestos"
+              index="03"
               intro="Según mis estudios actuales y mi experiencia, estos son los puestos en los que puedo rendir, empezando por el desarrollo web."
+              label="puestos"
               title="A qué puedo"
             />
             <RoleExplorer />
@@ -255,24 +286,24 @@ export default function Home() {
 
           {/* Education */}
           <section aria-labelledby="formacion-titulo" className="section" id="formacion">
-            <SectionHead accent="acreditaciones" eyebrow="Formación" id="formacion" title="Estudios y" />
+            <Chapter accent="acreditaciones" id="formacion" index="04" label="formación" title="Estudios y" />
             <div className="edu-layout">
-              <ol className="history-list edu-list">
+              <ol className="timeline">
                 {EDUCATION.map((item) => (
-                  <li key={item.title}>
-                    <div className={`history-item${item.current ? " is-current" : ""}`}>
+                  <li className={item.current ? "is-current" : undefined} key={item.title}>
+                    <span className="tl-date">{item.year}</span>
+                    <div className="tl-body">
                       {item.logo ? <Image alt={item.logo.alt} className="edu-logo" height={item.logo.height} src={item.logo.src} unoptimized width={item.logo.width} /> : null}
-                      <span className="history-when">{item.year}</span>
-                      <span className="history-kind">{item.title}</span>
-                      <span className="history-detail">{item.area}</span>
+                      <h3>{item.title}</h3>
+                      <p>{item.area}</p>
                     </div>
                   </li>
                 ))}
               </ol>
               <div className="edu-side">
-                <section className="glass-card">
+                <section className="sheet">
                   <h3>
-                    <Certificate aria-hidden size={20} weight="bold" /> Certificados de profesionalidad
+                    <Certificate aria-hidden size={18} /> Certificados de profesionalidad
                   </h3>
                   <ul className="check-list">
                     {CERTIFICATES.map((item) => (
@@ -280,9 +311,9 @@ export default function Home() {
                     ))}
                   </ul>
                 </section>
-                <section className="glass-card">
+                <section className="sheet">
                   <h3>
-                    <GraduationCap aria-hidden size={20} weight="bold" /> Carnets profesionales
+                    <IdentificationCard aria-hidden size={18} /> Carnets profesionales
                   </h3>
                   <ul className="check-list">
                     {LICENSES.map((item) => (
@@ -296,24 +327,22 @@ export default function Home() {
 
           {/* Experience */}
           <section aria-labelledby="trayectoria-titulo" className="section" id="trayectoria">
-            <SectionHead
+            <Chapter
               accent="profesional"
-              eyebrow="Trayectoria"
               id="trayectoria"
+              index="05"
               intro="Administración, atención al público y educación: más de veinte años aprendiendo a organizar, comunicar y resolver."
+              label="trayectoria"
               title="Experiencia"
             />
-            <ol className="class-list">
-              {JOBS.map((job, index) => (
-                <li className={`class-card${job.from === "Actualidad" ? " is-current" : ""}`} key={`${job.role}-${job.from}`}>
-                  <span className="step-mark">{String(index + 1).padStart(2, "0")}</span>
-                  <div className="class-card-copy">
-                    <p className="muted">{AREA_LABEL[job.area]}</p>
+            <ol className="timeline jobs">
+              {JOBS.map((job) => (
+                <li key={`${job.role}-${job.from}`}>
+                  <span className="tl-date">{job.to ? `${job.from} — ${job.to}` : job.from}</span>
+                  <div className="tl-body">
+                    <p className="tl-area">{AREA_LABEL[job.area]}</p>
                     <h3>{job.role}</h3>
-                    <p className="job-company">{job.company}</p>
-                  </div>
-                  <div className="card-meta">
-                    <span className={`badge${job.from === "Actualidad" ? " resumida" : ""}`}>{job.to ? `${job.from} – ${job.to}` : job.from}</span>
+                    <p>{job.company}</p>
                   </div>
                 </li>
               ))}
@@ -322,15 +351,15 @@ export default function Home() {
 
           {/* Skills */}
           <section aria-labelledby="competencias-titulo" className="section" id="competencias">
-            <SectionHead accent="herramientas" eyebrow="Competencias" id="competencias" title="Idiomas, habilidades y" />
-            <div className="grid skills-grid">
-              <section className="panel">
-                <p className="muted">Idiomas</p>
+            <Chapter accent="herramientas" id="competencias" index="06" label="competencias" title="Idiomas, habilidades y" />
+            <div className="skills-grid">
+              <section className="sheet">
+                <h3>Idiomas</h3>
                 <ul className="lang-list">
                   {LANGUAGES.map((lang) => (
                     <li key={lang.name}>
                       <span>
-                        <strong>{lang.name}</strong> {lang.level}
+                        <strong>{lang.name}</strong> <em>{lang.level}</em>
                       </span>
                       <span aria-label={`${lang.dots} de 5`} className="dots" role="img">
                         {[1, 2, 3, 4, 5].map((dot) => (
@@ -340,30 +369,30 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </section>
-              <section className="panel">
-                <p className="muted">Habilidades</p>
+                <h3 className="sheet-sub">Habilidades</h3>
                 {SOFT_SKILLS.map((skill) => (
                   <div className="skill" key={skill.name}>
                     <span>{skill.name}</span>
-                    <div className="progress-bar">
+                    <div className="meter">
                       <span style={{ width: `${skill.value}%` }} />
                     </div>
                   </div>
                 ))}
               </section>
-              <section className="panel">
-                <p className="muted">Informática</p>
+              <section className="sheet">
+                <h3>Informática</h3>
                 <ul className="soft-list">
                   {SOFTWARE.map((item) => (
                     <li key={item.name}>
                       <span>{item.name}</span>
-                      <span className={`badge level-${item.level.toLowerCase()}`}>{item.level}</span>
+                      <span className={`level level-${item.level.toLowerCase()}`}>{item.level}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="muted tech-label">Tecnologías web</p>
-                <ul className="check-list compact">
+              </section>
+              <section className="sheet">
+                <h3>Tecnologías web</h3>
+                <ul className="check-list">
                   {TECH.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -373,62 +402,67 @@ export default function Home() {
           </section>
 
           {/* Contact */}
-          <section aria-labelledby="contacto-titulo" className="section contact" id="contacto">
+          <section aria-labelledby="contacto-titulo" className="section" id="contacto">
             <div className="contact-card">
               <div className="contact-copy">
-                <p className="eyebrow">Contacto</p>
+                <p className="kicker">
+                  <span>07</span> contacto
+                </p>
                 <h2 className="section-title" id="contacto-titulo">
-                  ¿Hablamos de <em>tu equipo?</em>
+                  ¿Hablamos de <Scribble>tu equipo?</Scribble>
                 </h2>
-                <p className="page-intro">Busco puesto en desarrollo web, formación digital para adultos, soporte técnico o administración con perfil digital. Cuéntame qué necesitas y te respondo.</p>
+                <p className="lede">Busco puesto en desarrollo web, formación digital para adultos, soporte técnico o administración con perfil digital. Cuéntame qué necesitas y te respondo.</p>
                 <ul className="contact-list">
                   <li>
                     <a href={`mailto:${CONTACT.email}`}>
-                      <EnvelopeSimple aria-hidden size={20} weight="bold" />
+                      <EnvelopeSimple aria-hidden size={19} />
                       {CONTACT.email}
-                      <ArrowUpRight aria-hidden className="contact-arrow" size={16} weight="bold" />
+                      <ArrowRight aria-hidden className="row-arrow" size={16} weight="bold" />
                     </a>
                   </li>
                   <li>
                     <a href={CONTACT.phoneHref}>
-                      <Phone aria-hidden size={20} weight="bold" />
+                      <Phone aria-hidden size={19} />
                       {CONTACT.phone}
-                      <ArrowUpRight aria-hidden className="contact-arrow" size={16} weight="bold" />
+                      <ArrowRight aria-hidden className="row-arrow" size={16} weight="bold" />
                     </a>
                   </li>
                   <li>
                     <a href={CONTACT.linkedin} rel="noreferrer" target="_blank">
-                      <LinkedinLogo aria-hidden size={20} weight="bold" />
+                      <LinkedinLogo aria-hidden size={19} />
                       linkedin.com/in/mliebanavicente
-                      <ArrowUpRight aria-hidden className="contact-arrow" size={16} weight="bold" />
+                      <ArrowUpRight aria-hidden className="row-arrow" size={16} weight="bold" />
                     </a>
                   </li>
                   <li>
                     <a href={CONTACT.github} rel="noreferrer" target="_blank">
-                      <GithubLogo aria-hidden size={20} weight="bold" />
+                      <GithubLogo aria-hidden size={19} />
                       github.com/liebanavicente
-                      <ArrowUpRight aria-hidden className="contact-arrow" size={16} weight="bold" />
+                      <ArrowUpRight aria-hidden className="row-arrow" size={16} weight="bold" />
                     </a>
                   </li>
                   <li>
                     <a href={CONTACT.linktree} rel="noreferrer" target="_blank">
-                      <LinkSimple aria-hidden size={20} weight="bold" />
+                      <LinkSimple aria-hidden size={19} />
                       linktr.ee/liebanavicente
-                      <ArrowUpRight aria-hidden className="contact-arrow" size={16} weight="bold" />
+                      <ArrowUpRight aria-hidden className="row-arrow" size={16} weight="bold" />
                     </a>
                   </li>
                 </ul>
-                <div className="nav hero-actions">
-                  <a className="button primary" href={`mailto:${CONTACT.email}`}>
-                    Escríbeme un correo
+                <div className="actions">
+                  <a className="btn btn-ink" href={`mailto:${CONTACT.email}`}>
+                    Escríbeme un correo <ArrowRight aria-hidden className="btn-arrow" size={16} weight="bold" />
                   </a>
-                  <a className="button" download href={CONTACT.cv}>
-                    <DownloadSimple aria-hidden size={16} weight="bold" /> Descargar CV
+                  <a className="btn" download href={CONTACT.cv}>
+                    <DownloadSimple aria-hidden size={16} weight="bold" /> CV en PDF
                   </a>
                 </div>
               </div>
-              <figure className="contact-photo">
-                <Image alt="Miguel apoyado en una barandilla con rascacielos al atardecer" fill sizes="(max-width: 960px) 100vw, 420px" src="/fotos/ciudad.jpg" />
+              <figure className="polaroid contact-polaroid">
+                <div className="polaroid-img">
+                  <Image alt="Miguel apoyado en una barandilla con rascacielos al atardecer" fill sizes="(max-width: 960px) 90vw, 380px" src="/fotos/ciudad.jpg" />
+                </div>
+                <figcaption>nos vemos pronto</figcaption>
               </figure>
             </div>
           </section>
@@ -436,11 +470,17 @@ export default function Home() {
       </main>
       <footer className="site-footer">
         <div className="container">
-          <span>© {new Date().getFullYear()} Miguel Liébana</span>
+          <span>© {new Date().getFullYear()} Miguel Liébana · hecho a mano, con código e IA</span>
           <span className="footer-links">
-            <a href={CONTACT.linkedin} rel="noreferrer" target="_blank">LinkedIn</a>
-            <a href={CONTACT.github} rel="noreferrer" target="_blank">GitHub</a>
-            <a href="https://github.com/liebanavicente/miguelweb2026" rel="noreferrer" target="_blank">Código de esta web</a>
+            <a href={CONTACT.linkedin} rel="noreferrer" target="_blank">
+              LinkedIn
+            </a>
+            <a href={CONTACT.github} rel="noreferrer" target="_blank">
+              GitHub
+            </a>
+            <a href="https://github.com/liebanavicente/miguelweb2026" rel="noreferrer" target="_blank">
+              Código de esta web
+            </a>
           </span>
         </div>
       </footer>

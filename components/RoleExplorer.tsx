@@ -18,7 +18,7 @@ export function RoleExplorer() {
 
   return (
     <div className="roles">
-      <div className="study-tabs" role="tablist" aria-label="Áreas">
+      <div className="tabs" role="tablist" aria-label="Áreas">
         <button aria-selected={area === "todas"} onClick={() => setArea("todas")} role="tab" type="button">
           Todas <span className="tab-count">{total}</span>
         </button>
@@ -51,7 +51,7 @@ export function RoleExplorer() {
                 {group.roles.map((role, index) => (
                   <li className="role-card" key={role.title} style={{ animationDelay: `${index * 50}ms` }}>
                     <div className="role-card-top">
-                      <span className={`badge fit-${role.fit}`}>{FIT_LABEL[role.fit]}</span>
+                      <span className={`fit fit-${role.fit}`}>{FIT_LABEL[role.fit]}</span>
                       <ArrowUpRight aria-hidden className="role-arrow" size={18} weight="bold" />
                     </div>
                     <h4>{role.title}</h4>
