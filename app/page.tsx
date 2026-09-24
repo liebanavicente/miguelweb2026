@@ -94,8 +94,8 @@ export default function Home() {
               </h1>
               <p className="lede">
                 Soy Miguel Liébana. Me estoy formando como <strong>desarrollador full-stack con IA en Upgrade Hub</strong> y en{" "}
-                <strong>Confección y publicación de páginas web</strong> en el Centro Coliseum de Cornellà. Además soy técnico superior en
-                Administración y finanzas y llevo 14 años enseñando, experiencia que hoy aplico a la formación digital de adultos.
+                <strong>Confección y publicación de páginas web</strong> en el Centro Coliseum de Cornellà. Además tengo el certificado de
+                profesionalidad de Administración y Gestión y llevo 14 años enseñando, experiencia que hoy aplico a la formación digital de adultos.
               </p>
               <div className="actions">
                 <a className="btn btn-ink" href="#puestos">
@@ -303,7 +303,7 @@ export default function Home() {
               <div className="edu-side">
                 <section className="sheet">
                   <h3>
-                    <Certificate aria-hidden size={18} /> Certificados de profesionalidad
+                    <Certificate aria-hidden size={18} /> Módulos del CP de Administración y Gestión
                   </h3>
                   <ul className="check-list">
                     {CERTIFICATES.map((item) => (

@@ -77,7 +77,7 @@ const children = [
     spacing: { after: 40 },
     alignment: AlignmentType.JUSTIFIED,
     children: [
-      run("Desarrollador web full-stack junior en formación (Bootcamp Full Stack con IA en Upgrade Hub; certificado de Confección y publicación de páginas web) y técnico superior en Administración y Finanzas, con 14 años de experiencia docente y más de 20 años de trayectoria laboral. Construyo y despliego aplicaciones web con HTML, CSS, JavaScript, TypeScript, React, Next.js y Supabase, e integro la inteligencia artificial en el desarrollo y la automatización de tareas. Aporto comunicación clara, capacidad de enseñar y experiencia en administración y atención al cliente. Español y catalán nativos, alemán C2 e inglés B2."),
+      run("Desarrollador web full-stack junior en formación (Bootcamp Full Stack con IA en Upgrade Hub; certificado de Confección y publicación de páginas web), con certificado de profesionalidad de Administración y Gestión, 14 años de experiencia docente y más de 20 años de trayectoria laboral. Construyo y despliego aplicaciones web con HTML, CSS, JavaScript, TypeScript, React, Next.js y Supabase, e integro la inteligencia artificial en el desarrollo y la automatización de tareas. Aporto comunicación clara, capacidad de enseñar y experiencia en administración y atención al cliente. Español y catalán nativos, alemán C2 e inglés B2."),
     ],
   }),
 
@@ -88,9 +88,8 @@ const children = [
   ...entry("Centro Coliseum, Cornellà de Llobregat", "En curso", "Certificado de profesionalidad: Confección y publicación de páginas web (IFCD0110)", ""),
   bullet("HTML, CSS, diseño responsive, accesibilidad y usabilidad web, y publicación de sitios web."),
   ...entry("Universidad Internacional de Valencia (VIU)", "2023", "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación", ""),
-  ...entry("Técnico Superior en Administración y Finanzas", "2022", "Formación Profesional de Grado Superior", "", 60),
-  ...entry("Técnico en Gestión Administrativa", "2022", "Formación Profesional de Grado Medio", "", 60),
-  ...entry("Estudios universitarios de Educación Primaria y Educación Musical", "2007", null, null, 60),
+  ...entry("The Corner, Cornellà de Llobregat", "2022", "Certificado de profesionalidad de Administración y Gestión (nivel 2, equivalente a grado medio)", "", 60),
+  ...entry("Universitat de Barcelona (UB)", "2007", "Estudios universitarios de Educación Primaria y Educación Musical", "", 60),
 
   section("Experiencia profesional"),
   ...entry("CTTI", "", "Recepcionista / Administrativo", "Nov 2025 – Jul 2026"),
@@ -134,7 +133,7 @@ const children = [
   skill("Idiomas", "español y catalán (nativos), alemán (C2), inglés (B2)"),
 
   section("Certificaciones"),
-  skill("Certificados de profesionalidad (módulos)", "actividades de gestión administrativa; gestión auxiliar de personal; gestión de archivos; gestión operativa de tesorería; grabación de datos; ofimática; operaciones administrativas comerciales; registros contables"),
+  skill("Módulos del CP de Administración y Gestión", "actividades de gestión administrativa; gestión auxiliar de personal; gestión de archivos; gestión operativa de tesorería; grabación de datos; ofimática; operaciones administrativas comerciales; registros contables"),
   skill("Otras", "ACTIC nivel 1 y nivel 2 (competencias digitales, Generalitat de Catalunya); permiso de conducir B"),
 ];
 

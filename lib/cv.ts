@@ -52,8 +52,8 @@ export const OFFERS: Offer[] = [
   },
   {
     icon: "Briefcase",
-    title: "Administración y finanzas",
-    text: "Técnico superior en Administración y finanzas y técnico en Gestión administrativa: tesorería, registros contables, archivo, personal y operaciones comerciales.",
+    title: "Administración y gestión",
+    text: "Certificado de profesionalidad de Administración y Gestión (nivel 2): tesorería, registros contables, archivo, gestión de personal, grabación de datos y operaciones comerciales.",
     tags: ["Contabilidad", "Tesorería", "Gestión de personal"],
   },
   {
@@ -115,13 +115,13 @@ export const ROLE_GROUPS: RoleGroup[] = [
   {
     area: "Administración digital",
     icon: "Files",
-    intro: "Técnico superior en Administración y finanzas y técnico en Gestión administrativa, con un perfil muy digital.",
+    intro: "Certificado de profesionalidad de Administración y Gestión, experiencia en oficina y recepción, y un perfil muy digital.",
     roles: [
-      { title: "Administrativo con perfil digital", fit: "alta", why: "Doble FP administrativa, Office experto y capacidad para automatizar procesos." },
+      { title: "Administrativo con perfil digital", fit: "alta", why: "CP de Administración y Gestión, Office experto y capacidad para automatizar procesos." },
       { title: "Auxiliar administrativo / recepción", fit: "alta", why: "Experiencia en el Club de Polo Empordà y en recepción y atención al público." },
       { title: "Técnico de contabilidad y tesorería junior", fit: "media", why: "Registros contables, tesorería y Contaplus a nivel alto." },
       { title: "Asistente de dirección / office manager", fit: "media", why: "Organización, coordinación de equipos y ofimática experta." },
-      { title: "Oposiciones de administración pública", fit: "media", why: "El título de técnico superior permite presentarse a plazas del grupo C1.", note: "Cuerpos administrativos del Estado, la Generalitat o ayuntamientos." },
+      { title: "Oposiciones de administración pública", fit: "media", why: "Formación administrativa acreditada, ofimática experta y experiencia real en oficina.", note: "Plazas administrativas del Estado, la Generalitat o ayuntamientos; el grupo depende de la titulación que exija cada convocatoria." },
     ],
   },
 ];
@@ -144,10 +144,9 @@ export type Education = { year: string; title: string; area: string; current?: b
 export const EDUCATION: Education[] = [
   { year: "En curso", title: "Bootcamp Full Stack con IA", area: "Upgrade Hub · sep 2026 – feb 2027 · Git, SQL y MongoDB, Node.js, JavaScript, React, automatización y despliegue", current: true, logo: { src: "/logos/upgrade-hub.svg", alt: "Upgrade Hub", width: 5282, height: 1163 } },
   { year: "En curso", title: "Certificado de profesionalidad: Confección y publicación de páginas web (IFCD0110)", area: "Centro Coliseum · Cornellà de Llobregat", current: true, logo: { src: "/logos/coliseum.svg", alt: "Centro de Formación Coliseum", width: 282, height: 65 } },
-  { year: "2023", title: "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación", area: "Universidad Internacional de Valencia (VIU)" },
-  { year: "2022", title: "Técnico superior en Administración y finanzas", area: "Formación profesional de grado superior" },
-  { year: "2022", title: "Técnico en Gestión administrativa", area: "Formación profesional de grado medio" },
-  { year: "2007", title: "Estudios universitarios de Educación primaria y musical", area: "Magisterio" },
+  { year: "2023", title: "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación", area: "Universidad Internacional de Valencia (VIU)", logo: { src: "/logos/viu.svg", alt: "Universidad Internacional de Valencia", width: 1508, height: 208 } },
+  { year: "2022", title: "Certificado de profesionalidad de Administración y Gestión", area: "The Corner · Cornellà de Llobregat · nivel 2, equivalente a grado medio", logo: { src: "/logos/thecorner.png", alt: "The Corner, centre d'estudis", width: 380, height: 366 } },
+  { year: "2007", title: "Estudios universitarios de Educación primaria y musical", area: "Universitat de Barcelona (UB)", logo: { src: "/logos/ub.png", alt: "Universitat de Barcelona", width: 984, height: 250 } },
 ];
 
 export const CERTIFICATES = [

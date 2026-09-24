@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://miguelweb2026.vercel.app"),
   title: "Miguel Liébana · Desarrollo web, IA y administración",
   description:
-    "Portfolio de Miguel Liébana: desarrollador web full-stack con IA en formación (Upgrade Hub), técnico superior en Administración y finanzas. Qué ofrece y a qué puestos puede aspirar.",
+    "Portfolio de Miguel Liébana: desarrollador web full-stack con IA en formación (Upgrade Hub), con certificado de profesionalidad de Administración y Gestión. Qué ofrece y a qué puestos puede aspirar.",
   openGraph: {
     title: "Miguel Liébana · Desarrollo web, IA y administración",
     description: "Construyo webs y ordeno procesos con IA. Portfolio y CV.",
@@ -26,6 +26,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es">
       <body>
+        {/* Aurora: soft colour fields under the notebook grid, so the glass surfaces have something to frost. */}
+        <div aria-hidden className="aurora">
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
         {/* Hairline reading progress, driven by scroll in CSS alone. */}
         <div aria-hidden className="reading-progress" />
         {children}
