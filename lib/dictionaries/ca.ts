@@ -122,19 +122,19 @@ export const ca: Dictionary = {
       enerpro: {
         kind: "Portal de l'empleat",
         text: "Portal privat per a una empresa de seguretat: documents, quadrants, torns, vacances i sol·licituds, amb accés per usuari i avisos automàtics.",
-        imageAlt: "Pantalla d'accés del portal de l'empleat d'ENERPRO",
+        imageAlt: "Escut d'ENERPRO amb halo daurat",
       },
       bandmanager: {
         kind: "SaaS de gestió",
         text: "Plataforma per gestionar una banda: esdeveniments, repertori, setlists, tasques, arxius i marxandatge, amb base de dades relacional.",
-        imageAlt: "Presentació de BandManager sobre un fons de concert",
+        imageAlt: "Símbol musical i llista de tasques de BandManager",
       },
       htmlcss: {
         name: "HTML i CSS des de zero",
         kind: "Material didàctic interactiu",
         text: "Curs web en castellà per aprendre els fonaments d'HTML i CSS partint de zero, amb activitats guiades pas a pas.",
         tags: ["Didàctica"],
-        imageAlt: "Portada del curs interactiu Aprende HTML y CSS desde cero",
+        imageAlt: "Símbols de codi HTML i CSS",
       },
       apuntes: {
         kind: "App web amb IA · bootcamp",
@@ -145,7 +145,7 @@ export const ca: Dictionary = {
       suscripscan: {
         kind: "Eina de finances personals",
         text: "Controla la despesa real en subscripcions: tauler mensual, anual i diari, avisos de renovació, gràfics i exportació a PDF.",
-        imageAlt: "Portada de Suscripscan sobre la despesa mensual en subscripcions",
+        imageAlt: "Gràfic circular i símbol de l'euro de Suscripscan",
       },
     },
     moreItems: {

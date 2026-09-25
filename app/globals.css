@@ -377,15 +377,23 @@ body.menu-open { overflow: hidden; }
 .project-logo { width: 40px; height: 40px; flex: none; border-radius: 10px; background: white; box-shadow: 0 0 0 1px var(--line), 0 6px 16px rgba(220, 38, 38, 0.18); object-fit: contain; transition: transform 300ms var(--ease-out); }
 .project-card:hover .project-logo { transform: rotate(-6deg) scale(1.06); }
 
-.project-thumb { position: relative; overflow: hidden; height: clamp(190px, 22vw, 260px); margin: 0; border-bottom: 1px solid var(--glass-edge); background: var(--well); isolation: isolate; }
-.project-thumb::after { position: absolute; z-index: 2; inset: 0; border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24), 0 18px 32px rgba(18, 40, 96, 0.18); content: ""; margin: 14px; pointer-events: none; }
-.project-thumb img { transition: filter 500ms ease, opacity 500ms ease, transform 700ms var(--ease-out); }
-.project-thumb-glow { object-fit: cover; filter: blur(30px) saturate(145%); opacity: 0.62; transform: scale(1.18); }
-.project-thumb-img { z-index: 1; border-radius: 20px; object-fit: cover; object-position: top center; padding: 14px; filter: saturate(0.92) contrast(0.98); }
-.project-thumb.is-logo .project-thumb-glow { filter: blur(42px) saturate(125%); opacity: 0.5; transform: scale(0.72); }
-.project-thumb.is-logo .project-thumb-img { object-fit: contain; padding: 54px 18%; }
-.project-card:hover .project-thumb-glow { filter: blur(24px) saturate(170%); opacity: 0.78; transform: scale(1.24); }
-.project-card:hover .project-thumb-img { filter: saturate(1.04) contrast(1); transform: scale(1.015); }
+.project-art { --art-primary: var(--pen); --art-secondary: var(--sky); position: relative; display: grid; overflow: hidden; height: clamp(210px, 22vw, 270px); place-items: center; margin: 0; border-bottom: 1px solid var(--glass-edge); background: rgba(var(--neutral-rgb), 0.025); isolation: isolate; }
+.project-art::after { position: absolute; z-index: 2; inset: 14px; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 18px 32px rgba(18, 40, 96, 0.12); content: ""; pointer-events: none; }
+.project-art-layer { display: flex; grid-area: 1 / 1; align-items: center; justify-content: center; color: var(--art-primary); transition: filter 500ms ease, opacity 500ms ease, transform 700ms var(--ease-out); }
+.project-art-layer svg { flex: none; }
+.project-art-glow { filter: blur(28px) saturate(170%); opacity: 0.4; transform: scale(1.18); }
+.project-art-symbol { z-index: 1; filter: drop-shadow(0 18px 28px rgba(18, 40, 96, 0.22)); transform: rotate(-3deg); }
+.project-art-primary { width: 132px; height: 132px; }
+.project-art-secondary { width: 64px; height: 64px; margin: 58px 0 0 -28px; color: var(--art-secondary); }
+.project-art-logo { width: min(58%, 340px); height: auto; max-height: 138px; object-fit: contain; }
+.art-enerpro { --art-primary: #d6a31f; --art-secondary: #b52c2f; }
+.art-enerpro .project-art-logo { width: 138px; height: 138px; border: 10px solid rgba(255, 255, 255, 0.88); border-radius: 32px; box-shadow: 0 18px 32px rgba(105, 49, 23, 0.18); object-fit: cover; }
+.art-bandmanager { --art-primary: #e7645e; --art-secondary: #f2a19c; }
+.art-htmlcss { --art-primary: #e44d26; --art-secondary: #1572b6; }
+.art-suscripscan { --art-primary: #7c5cff; --art-secondary: #3ec7c2; }
+.art-upgrade { --art-primary: var(--pen); --art-secondary: var(--sky); }
+.project-card:hover .project-art-glow { filter: blur(22px) saturate(190%); opacity: 0.58; transform: scale(1.28); }
+.project-card:hover .project-art-symbol { filter: drop-shadow(0 22px 32px rgba(18, 40, 96, 0.28)); transform: rotate(0deg) scale(1.055); }
 
 /* Featured project: copy on the left, artwork bleeding out of the card on the right */
 .project-card.is-featured { position: relative; overflow: hidden; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: center; gap: 12px 28px; min-height: 340px; padding: 34px 0 34px 34px; }
@@ -727,10 +735,11 @@ body::after {
   .chapter-split .side-polaroid { justify-self: end; width: min(62%, 196px); margin-top: -4px; padding: 8px 8px 0; }
   .chapter-split .side-polaroid::before { top: -10px; width: 72px; height: 20px; }
   .chapter-split .side-polaroid figcaption { font-size: 1.08rem; padding: 7px 4px 9px; }
-  .project-thumb { height: 184px; }
-  .project-thumb::after { margin: 10px; }
-  .project-thumb-img { border-radius: 16px; padding: 10px; }
-  .project-thumb.is-logo .project-thumb-img { padding: 48px 16%; }
+  .project-art { height: 190px; }
+  .project-art::after { inset: 10px; }
+  .project-art-primary { width: 104px; height: 104px; }
+  .project-art-secondary { width: 52px; height: 52px; margin-top: 46px; }
+  .art-enerpro .project-art-logo { width: 112px; height: 112px; border-width: 8px; border-radius: 26px; }
   .project-card:not(.is-featured) .project-body { padding: 20px; }
   .contact-list a { font-size: 0.9rem; gap: 12px; }
 }
@@ -811,7 +820,7 @@ body::after {
 :root[data-theme="dark"] .school-row img, :root[data-theme="dark"] .school-row a:hover img, :root[data-theme="dark"] .job-mark img { filter: grayscale(1) invert(1); }
 :root[data-theme="dark"] .status-live { background: rgba(64, 196, 126, 0.12); color: #74d9a4; }
 :root[data-theme="dark"] .status-learning { background: rgba(245, 158, 73, 0.12); color: #f0ad6b; }
-:root[data-theme="dark"] .project-thumb.is-logo .project-thumb-img { filter: invert(1); }
+:root[data-theme="dark"] .art-upgrade .project-art-symbol .project-art-logo { filter: invert(1); }
 
 /* Theme toggle: a round glass button; the moon shows on light paper, the sun on dark. */
 .theme-toggle { display: inline-flex; width: 42px; height: 42px; flex: none; align-items: center; justify-content: center; border: 1px solid var(--glass-edge); border-radius: 50%; background: var(--glass-flat); box-shadow: var(--glass-shadow); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); color: var(--ink); cursor: pointer; padding: 0; transition: border-color 160ms ease, color 160ms ease; }

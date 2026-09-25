@@ -3,17 +3,22 @@ import {
   ArrowDown,
   ArrowRight,
   ArrowUpRight,
+  BracketsAngle,
   Briefcase,
   Browser,
   ChalkboardTeacher,
+  ChartDonut,
   Code,
   Coffee,
+  CurrencyEur,
   DownloadSimple,
   EnvelopeSimple,
   GithubLogo,
   LinkSimple,
+  ListChecks,
   LinkedinLogo,
   MicrosoftExcelLogo,
+  MusicNotesPlus,
   Phone,
   Robot,
   Trophy,
@@ -32,13 +37,55 @@ import { Rich } from "../../components/Rich";
 import { RoleExplorer } from "../../components/RoleExplorer";
 import { MarginNote, Scribble } from "../../components/Scribble";
 import { TechMarquee } from "../../components/TechMarquee";
-import { CONTACT, JOBS, LANGUAGES, MORE_PROJECTS, OFFER_ICONS, PROJECTS, SOFTWARE, type YearMonth } from "../../lib/cv";
+import { CONTACT, JOBS, LANGUAGES, MORE_PROJECTS, OFFER_ICONS, PROJECTS, SOFTWARE, type ProjectArt, type YearMonth } from "../../lib/cv";
 import { fill, getDictionary } from "../../lib/dictionaries";
 import { isLocale } from "../../lib/i18n";
 
 const ICONS: Record<(typeof OFFER_ICONS)[number], Icon> = { Code, Browser, Robot, Briefcase, MicrosoftExcelLogo, ChalkboardTeacher };
 
 const GALLERY = ["/fotos/escenario.jpg", "/fotos/oficina.jpg", "/fotos/retrato-bn.jpg"];
+
+type IconProjectArt = Exclude<ProjectArt, "nfp" | "enerpro" | "upgrade">;
+
+const PROJECT_ART_ICONS: Record<IconProjectArt, [Icon, Icon]> = {
+  bandmanager: [MusicNotesPlus, ListChecks],
+  htmlcss: [BracketsAngle, Code],
+  suscripscan: [ChartDonut, CurrencyEur],
+};
+
+function ProjectIconPair({ art }: { art: IconProjectArt }) {
+  const [Primary, Secondary] = PROJECT_ART_ICONS[art];
+  return (
+    <>
+      <Primary className="project-art-primary" size={128} weight="duotone" />
+      <Secondary className="project-art-secondary" size={72} weight="bold" />
+    </>
+  );
+}
+
+function ProjectArtwork({ alt, art, featured = false, logo, preview }: { alt: string; art: ProjectArt; featured?: boolean; logo?: string; preview?: string }) {
+  if (featured && preview) {
+    return (
+      <figure className="project-visual">
+        <Image alt="" className="project-visual-glow" fill sizes="(max-width: 960px) 80vw, 420px" src={preview} />
+        <Image alt={alt} className="project-visual-img" fill sizes="(max-width: 960px) 80vw, 420px" src={preview} />
+      </figure>
+    );
+  }
+
+  const isLogoArt = art === "enerpro" || art === "upgrade";
+  const logoSize = art === "enerpro" ? { height: 100, width: 100 } : { height: 1163, width: 5282 };
+  return (
+    <figure aria-label={alt} className={`project-art art-${art}`} role="img">
+      <div aria-hidden className="project-art-layer project-art-glow">
+        {isLogoArt && logo ? <Image alt="" className="project-art-logo" height={logoSize.height} src={logo} width={logoSize.width} /> : <ProjectIconPair art={art as IconProjectArt} />}
+      </div>
+      <div aria-hidden className="project-art-layer project-art-symbol">
+        {isLogoArt && logo ? <Image alt="" className="project-art-logo" height={logoSize.height} src={logo} width={logoSize.width} /> : <ProjectIconPair art={art as IconProjectArt} />}
+      </div>
+    </figure>
+  );
+}
 
 /** Chapter heading: mono index, the title with one scribbled word, and an optional intro. */
 function Chapter({ id, index, label, title, accent, intro, aside }: { id: string; index: string; label: string; title: string; accent?: string; intro?: string; aside?: ReactNode }) {
@@ -189,16 +236,11 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 {PROJECTS.map((project, index) => {
                   const text = t.projects.items[project.id];
                   const isFeatured = "featured" in project && project.featured;
-                  const isLogoOnly = !("preview" in project);
-                  const visualSrc = "preview" in project ? project.preview : "logo" in project ? project.logo : null;
+                  const logo = "logo" in project ? project.logo : undefined;
+                  const preview = "preview" in project ? project.preview : undefined;
                   return (
                   <li className={isFeatured ? "project-card is-featured" : "project-card"} key={project.id}>
-                    {!isFeatured && visualSrc ? (
-                      <figure className={isLogoOnly ? "project-thumb is-logo" : "project-thumb"}>
-                        <Image alt="" className="project-thumb-glow" fill sizes="(max-width: 960px) calc(100vw - 64px), 520px" src={visualSrc} />
-                        <Image alt={text.imageAlt ?? ""} className="project-thumb-img" fill sizes="(max-width: 960px) calc(100vw - 64px), 520px" src={visualSrc} />
-                      </figure>
-                    ) : null}
+                    {!isFeatured ? <ProjectArtwork alt={text.imageAlt ?? ""} art={project.art} logo={logo} /> : null}
                     <div className="project-body">
                     <div className="project-meta">
                       <p className="project-kind">
@@ -232,12 +274,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                       {text.note ? <span className="project-note">{text.note}</span> : null}
                     </div>
                     </div>
-                    {isFeatured && visualSrc ? (
-                      <figure className="project-visual">
-                        <Image alt="" className="project-visual-glow" fill sizes="(max-width: 960px) 80vw, 420px" src={visualSrc} />
-                        <Image alt={text.imageAlt ?? ""} className="project-visual-img" fill sizes="(max-width: 960px) 80vw, 420px" src={visualSrc} />
-                      </figure>
-                    ) : null}
+                    {isFeatured ? <ProjectArtwork alt={text.imageAlt ?? ""} art={project.art} featured preview={preview} /> : null}
                   </li>
                   );
                 })}

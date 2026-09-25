@@ -122,19 +122,19 @@ export const en: Dictionary = {
       enerpro: {
         kind: "Employee portal",
         text: "Private portal for a security company: documents, rosters, shifts, holidays and requests, with per-user access and automated alerts.",
-        imageAlt: "ENERPRO employee portal sign-in screen",
+        imageAlt: "ENERPRO shield with a golden glow",
       },
       bandmanager: {
         kind: "Management SaaS",
         text: "Platform for running a band: gigs, repertoire, setlists, tasks, files and merchandise, backed by a relational database.",
-        imageAlt: "BandManager presentation over a concert backdrop",
+        imageAlt: "BandManager music symbol and task list",
       },
       htmlcss: {
         name: "HTML y CSS desde cero",
         kind: "Interactive learning material",
         text: "Web course in Spanish for learning the basics of HTML and CSS from scratch, with step-by-step guided activities.",
         tags: ["Teaching"],
-        imageAlt: "Cover of the interactive Learn HTML and CSS from scratch course",
+        imageAlt: "HTML and CSS code symbols",
       },
       apuntes: {
         kind: "AI web app · bootcamp",
@@ -145,7 +145,7 @@ export const en: Dictionary = {
       suscripscan: {
         kind: "Personal finance tool",
         text: "Tracks what subscriptions really cost: monthly, yearly and daily dashboard, renewal alerts, charts and PDF export.",
-        imageAlt: "Suscripscan cover about monthly subscription spending",
+        imageAlt: "Suscripscan donut chart and euro symbol",
       },
     },
     moreItems: {

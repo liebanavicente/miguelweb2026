@@ -122,19 +122,19 @@ export const de: Dictionary = {
       enerpro: {
         kind: "Mitarbeiterportal",
         text: "Privates Portal für ein Sicherheitsunternehmen: Dokumente, Dienstpläne, Schichten, Urlaub und Anträge, mit Zugang pro Benutzer und automatischen Benachrichtigungen.",
-        imageAlt: "Anmeldebildschirm des ENERPRO-Mitarbeiterportals",
+        imageAlt: "ENERPRO-Wappen mit goldenem Schein",
       },
       bandmanager: {
         kind: "Verwaltungs-SaaS",
         text: "Plattform zur Organisation einer Band: Auftritte, Repertoire, Setlists, Aufgaben, Dateien und Merchandise, mit relationaler Datenbank.",
-        imageAlt: "BandManager-Präsentation vor einem Konzerthintergrund",
+        imageAlt: "Musiksymbol und Aufgabenliste von BandManager",
       },
       htmlcss: {
         name: "HTML y CSS desde cero",
         kind: "Interaktives Lernmaterial",
         text: "Webkurs auf Spanisch, um die Grundlagen von HTML und CSS von null an zu lernen, mit Schritt-für-Schritt-Übungen.",
         tags: ["Didaktik"],
-        imageAlt: "Startseite des interaktiven HTML-und-CSS-Kurses",
+        imageAlt: "HTML- und CSS-Codesymbole",
       },
       apuntes: {
         kind: "KI-Web-App · Bootcamp",
@@ -145,7 +145,7 @@ export const de: Dictionary = {
       suscripscan: {
         kind: "Tool für persönliche Finanzen",
         text: "Zeigt, was Abos wirklich kosten: Übersicht pro Monat, Jahr und Tag, Verlängerungshinweise, Diagramme und PDF-Export.",
-        imageAlt: "Suscripscan-Startseite zu monatlichen Abo-Ausgaben",
+        imageAlt: "Ringdiagramm und Euro-Symbol von Suscripscan",
       },
     },
     moreItems: {
