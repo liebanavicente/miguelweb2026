@@ -68,7 +68,7 @@ const children = [
       link("mlieban3@gmail.com", "mailto:mlieban3@gmail.com"), sep(),
       link("linkedin.com/in/mliebanavicente", "https://www.linkedin.com/in/mliebanavicente"), sep(),
       link("github.com/liebanavicente", "https://github.com/liebanavicente"), sep(),
-      link("miguelweb2026.vercel.app", "https://miguelweb2026.vercel.app"),
+      link("miguelliebana.com", "https://www.miguelliebana.com"),
     ],
   }),
 

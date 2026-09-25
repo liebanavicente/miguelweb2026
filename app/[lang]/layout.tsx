@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   if (!isLocale(lang)) return {};
   const t = getDictionary(lang).meta;
   return {
-    metadataBase: new URL("https://miguelweb2026.vercel.app"),
+    metadataBase: new URL("https://www.miguelliebana.com"),
     title: t.title,
     description: t.description,
     alternates: {
