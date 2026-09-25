@@ -103,7 +103,7 @@ export const ca: Dictionary = {
       title: "Projectes",
       accent: "publicats",
       intro: "Una selecció del que he construït i publicat. El codi públic és al meu GitHub.",
-      summary: "5 projectes destacats · 7 webs més publicades",
+      summary: "6 projectes destacats · 6 webs més publicades",
     },
     marginNote: "tot en línia i funcionant",
     photoAlt: "En Miguel programant amb un portàtil al costat d'una finestra",
@@ -112,6 +112,12 @@ export const ca: Dictionary = {
     code: "Codi",
     more: "més webs publicades",
     items: {
+      nfpshop: {
+        kind: "Botiga de marxandatge del grup",
+        text: "Botiga online de roba de No Flag Patriots: catàleg, cistella i pagament amb Stripe. Cada comanda pagada s'envia per API a Gelato, que la imprimeix i la fa arribar al client sense estoc propi.",
+        note: "En producció · domini propi",
+        imageAlt: "Dofí amb dents esmolades dins d'un carro de la compra, sota una bandera amb creus",
+      },
       enerpro: {
         kind: "Portal de l'empleat",
         text: "Portal privat per a una empresa de seguretat: documents, quadrants, torns, vacances i sol·licituds, amb accés per usuari i avisos automàtics.",
@@ -139,7 +145,6 @@ export const ca: Dictionary = {
     moreItems: {
       llar: { kind: "Web de lots i paquets de regal" },
       nfp: { kind: "Web oficial del grup" },
-      nfpshop: { kind: "Botiga de roba amb pagaments Stripe, connectada a Gelato per API" },
       dario: { kind: "Web de guitarrista i productor" },
       florystan: { kind: "Web corporativa" },
       reas0nance: { kind: "Web de DJ" },

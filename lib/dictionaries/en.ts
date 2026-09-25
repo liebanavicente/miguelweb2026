@@ -103,7 +103,7 @@ export const en: Dictionary = {
       title: "Published",
       accent: "projects",
       intro: "A selection of what I've built and published. The public code is on my GitHub.",
-      summary: "5 featured projects · 7 more published sites",
+      summary: "6 featured projects · 6 more published sites",
     },
     marginNote: "all live and working",
     photoAlt: "Miguel coding on a laptop by a window",
@@ -112,6 +112,12 @@ export const en: Dictionary = {
     code: "Code",
     more: "more published sites",
     items: {
+      nfpshop: {
+        kind: "The band's merch shop",
+        text: "No Flag Patriots' online clothing store: catalogue, cart and Stripe checkout. Every paid order is sent via API to Gelato, which prints and ships it on demand, with no stock held.",
+        note: "Live · custom domain",
+        imageAlt: "A sharp-toothed dolphin riding in a shopping cart under a flag of crosses",
+      },
       enerpro: {
         kind: "Employee portal",
         text: "Private portal for a security company: documents, rosters, shifts, holidays and requests, with per-user access and automated alerts.",
@@ -139,7 +145,6 @@ export const en: Dictionary = {
     moreItems: {
       llar: { kind: "Gift hampers and boxes site" },
       nfp: { kind: "Official band website" },
-      nfpshop: { kind: "Clothing shop with Stripe payments, connected to Gelato via API" },
       dario: { kind: "Guitarist and producer site" },
       florystan: { kind: "Corporate website" },
       reas0nance: { kind: "DJ website" },

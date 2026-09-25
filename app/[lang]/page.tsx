@@ -189,11 +189,15 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 {PROJECTS.map((project, index) => {
                   const text = t.projects.items[project.id];
                   return (
-                  <li className="project-card" key={project.id}>
+                  <li className={"image" in project ? "project-card is-featured" : "project-card"} key={project.id}>
+                    <div className="project-body">
                     <p className="project-kind">
                       <span>#{String(index + 1).padStart(2, "0")}</span> {text.kind}
                     </p>
-                    <h3>{"name" in project ? project.name : text.name}</h3>
+                    <h3 className="project-title">
+                      {"logo" in project ? <Image alt="" className="project-logo" height={40} src={project.logo} width={40} /> : null}
+                      {"name" in project ? project.name : text.name}
+                    </h3>
                     <p className="project-text">{text.text}</p>
                     <div className="tag-row">
                       {[...project.stack, ...(text.tags ?? [])].map((tag) => (
@@ -215,6 +219,13 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                       ) : null}
                       {text.note ? <span className="project-note">{text.note}</span> : null}
                     </div>
+                    </div>
+                    {"image" in project ? (
+                      <figure className="project-visual">
+                        <Image alt="" className="project-visual-glow" fill sizes="(max-width: 960px) 80vw, 420px" src={project.image} />
+                        <Image alt={text.imageAlt ?? ""} className="project-visual-img" fill sizes="(max-width: 960px) 80vw, 420px" src={project.image} />
+                      </figure>
+                    ) : null}
                   </li>
                   );
                 })}

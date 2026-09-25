@@ -83,19 +83,19 @@ export const SOFTWARE: Array<{ name: string; level: SoftwareLevel }> = [
 
 /** Featured work, picked from github.com/liebanavicente. Code links only for public repositories. */
 export const PROJECTS = [
-  { id: "enerpro", name: "ENERPRO", stack: ["JavaScript", "Supabase", "Resend", "Vercel"], demo: "https://enerpro.vercel.app", code: "https://github.com/liebanavicente/enerpro" },
+  { id: "nfpshop", name: "NFP Clothing", stack: ["Next.js 16", "Stripe", "Gelato API", "Tailwind CSS", "Vercel"], demo: "https://www.nfpclothing.com", image: "/proyectos/nfp-clothing.webp" },
+  { id: "enerpro", name: "ENERPRO", logo: "/logos/enerpro.jpg", stack: ["JavaScript", "Supabase", "Resend", "Vercel"], demo: "https://enerpro.vercel.app", code: "https://github.com/liebanavicente/enerpro" },
   { id: "bandmanager", name: "BandManager", stack: ["Next.js 16", "TypeScript", "Prisma", "PostgreSQL", "shadcn/ui"], demo: "https://bandmanager-nine.vercel.app", code: "https://github.com/liebanavicente/bandmanager" },
   { id: "htmlcss", stack: ["HTML", "CSS"], demo: "https://materialdidacticocpweb.vercel.app" },
   { id: "apuntes", name: "Apuntes Upgrade", stack: ["Next.js", "AI SDK", "Vercel Blob", "TypeScript"] },
   { id: "suscripscan", name: "Suscripscan", stack: ["Next.js", "Recharts", "jsPDF"], demo: "https://suscripscan.vercel.app", code: "https://github.com/liebanavicente/suscripscan" },
-] as const satisfies ReadonlyArray<{ id: string; name?: string; stack: string[]; demo?: string; code?: string }>;
+] as const satisfies ReadonlyArray<{ id: string; name?: string; stack: string[]; demo?: string; code?: string; image?: string; logo?: string }>;
 
 export type ProjectId = (typeof PROJECTS)[number]["id"];
 
 export const MORE_PROJECTS = [
   { id: "llar", name: "La Llar del Dolç", url: "https://lallardeldolc.vercel.app" },
   { id: "nfp", name: "No Flag Patriots", url: "https://www.noflagpatriots.com" },
-  { id: "nfpshop", name: "NFP Clothing", url: "https://www.nfpclothing.com" },
   { id: "dario", name: "Darío Campos", url: "https://dariocampos.vercel.app" },
   { id: "florystan", name: "Construcciones Florystan", url: "https://florystan-web.vercel.app" },
   { id: "reas0nance", name: "Reas0nance", url: "https://danielsommm.vercel.app" },

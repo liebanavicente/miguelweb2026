@@ -52,7 +52,7 @@ export type Dictionary = {
     viewSite: string;
     code: string;
     more: string;
-    items: Record<ProjectId, { name?: string; kind: string; text: string; tags?: string[]; note?: string }>;
+    items: Record<ProjectId, { name?: string; kind: string; text: string; tags?: string[]; note?: string; imageAlt?: string }>;
     moreItems: Record<MoreProjectId, { name?: string; kind: string }>;
   };
   marquee: { label: string; title: string };

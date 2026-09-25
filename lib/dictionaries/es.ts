@@ -103,7 +103,7 @@ export const es: Dictionary = {
       title: "Proyectos",
       accent: "publicados",
       intro: "Una selección de lo que he construido y publicado. El código público está en mi GitHub.",
-      summary: "5 proyectos destacados · 7 webs más publicadas",
+      summary: "6 proyectos destacados · 6 webs más publicadas",
     },
     marginNote: "todo en línea y funcionando",
     photoAlt: "Miguel programando con un portátil junto a una ventana",
@@ -112,6 +112,12 @@ export const es: Dictionary = {
     code: "Código",
     more: "más webs publicadas",
     items: {
+      nfpshop: {
+        kind: "Tienda de merchandising del grupo",
+        text: "Tienda online de ropa de No Flag Patriots: catálogo, carrito y pago con Stripe. Cada pedido pagado se envía por API a Gelato, que lo imprime y lo manda al cliente sin stock propio.",
+        note: "En producción · dominio propio",
+        imageAlt: "Delfín con dientes afilados dentro de un carrito de la compra, bajo una bandera con aspas",
+      },
       enerpro: {
         kind: "Portal del empleado",
         text: "Portal privado para una empresa de seguridad: documentos, cuadrantes, turnos, vacaciones y solicitudes, con acceso por usuario y avisos automáticos.",
@@ -139,7 +145,6 @@ export const es: Dictionary = {
     moreItems: {
       llar: { kind: "Web de lotes y packs regalo" },
       nfp: { kind: "Web oficial del grupo" },
-      nfpshop: { kind: "Tienda de ropa con pagos Stripe, conectada a Gelato por API" },
       dario: { kind: "Web de guitarrista y productor" },
       florystan: { kind: "Web corporativa" },
       reas0nance: { kind: "Web de DJ" },

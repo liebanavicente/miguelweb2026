@@ -103,7 +103,7 @@ export const de: Dictionary = {
       title: "Veröffentlichte",
       accent: "Projekte",
       intro: "Eine Auswahl dessen, was ich gebaut und veröffentlicht habe. Der öffentliche Code liegt auf meinem GitHub.",
-      summary: "5 ausgewählte Projekte · 7 weitere veröffentlichte Websites",
+      summary: "6 ausgewählte Projekte · 6 weitere veröffentlichte Websites",
     },
     marginNote: "alles online und in Betrieb",
     photoAlt: "Miguel programmiert am Laptop neben einem Fenster",
@@ -112,6 +112,12 @@ export const de: Dictionary = {
     code: "Code",
     more: "weitere veröffentlichte Websites",
     items: {
+      nfpshop: {
+        kind: "Merch-Shop der Band",
+        text: "Online-Modeshop von No Flag Patriots: Katalog, Warenkorb und Bezahlung über Stripe. Jede bezahlte Bestellung geht per API an Gelato, das sie on demand druckt und verschickt, ganz ohne eigenes Lager.",
+        note: "Live · eigene Domain",
+        imageAlt: "Ein Delfin mit spitzen Zähnen in einem Einkaufswagen unter einer Flagge mit Kreuzen",
+      },
       enerpro: {
         kind: "Mitarbeiterportal",
         text: "Privates Portal für ein Sicherheitsunternehmen: Dokumente, Dienstpläne, Schichten, Urlaub und Anträge, mit Zugang pro Benutzer und automatischen Benachrichtigungen.",
@@ -139,7 +145,6 @@ export const de: Dictionary = {
     moreItems: {
       llar: { kind: "Website für Geschenkkörbe und -sets" },
       nfp: { kind: "Offizielle Website der Band" },
-      nfpshop: { kind: "Modeshop mit Stripe-Zahlungen, per API an Gelato angebunden" },
       dario: { kind: "Website eines Gitarristen und Produzenten" },
       florystan: { kind: "Unternehmenswebsite" },
       reas0nance: { kind: "DJ-Website" },
