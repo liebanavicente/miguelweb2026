@@ -110,6 +110,7 @@ export const ca: Dictionary = {
     photoCaption: "programant",
     viewSite: "Veure web",
     code: "Codi",
+    status: { live: "En producció", public: "Codi públic", private: "Privat", learning: "Formació" },
     more: "més webs publicades",
     items: {
       nfpshop: {
@@ -121,25 +122,30 @@ export const ca: Dictionary = {
       enerpro: {
         kind: "Portal de l'empleat",
         text: "Portal privat per a una empresa de seguretat: documents, quadrants, torns, vacances i sol·licituds, amb accés per usuari i avisos automàtics.",
+        imageAlt: "Pantalla d'accés del portal de l'empleat d'ENERPRO",
       },
       bandmanager: {
         kind: "SaaS de gestió",
         text: "Plataforma per gestionar una banda: esdeveniments, repertori, setlists, tasques, arxius i marxandatge, amb base de dades relacional.",
+        imageAlt: "Presentació de BandManager sobre un fons de concert",
       },
       htmlcss: {
         name: "HTML i CSS des de zero",
         kind: "Material didàctic interactiu",
         text: "Curs web en castellà per aprendre els fonaments d'HTML i CSS partint de zero, amb activitats guiades pas a pas.",
         tags: ["Didàctica"],
+        imageAlt: "Portada del curs interactiu Aprende HTML y CSS desde cero",
       },
       apuntes: {
         kind: "App web amb IA · bootcamp",
         text: "Arxiu de resums del Bootcamp Full Stack amb IA: importa Word, PDF o transcripcions, els resumeix amb IA i genera tests, targetes de repàs i un glossari.",
         note: "Ús privat del curs",
+        imageAlt: "Identitat visual d'Upgrade Hub",
       },
       suscripscan: {
         kind: "Eina de finances personals",
         text: "Controla la despesa real en subscripcions: tauler mensual, anual i diari, avisos de renovació, gràfics i exportació a PDF.",
+        imageAlt: "Portada de Suscripscan sobre la despesa mensual en subscripcions",
       },
     },
     moreItems: {

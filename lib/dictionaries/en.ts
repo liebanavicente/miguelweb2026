@@ -110,6 +110,7 @@ export const en: Dictionary = {
     photoCaption: "coding",
     viewSite: "Visit site",
     code: "Code",
+    status: { live: "In production", public: "Public code", private: "Private", learning: "Learning" },
     more: "more published sites",
     items: {
       nfpshop: {
@@ -121,25 +122,30 @@ export const en: Dictionary = {
       enerpro: {
         kind: "Employee portal",
         text: "Private portal for a security company: documents, rosters, shifts, holidays and requests, with per-user access and automated alerts.",
+        imageAlt: "ENERPRO employee portal sign-in screen",
       },
       bandmanager: {
         kind: "Management SaaS",
         text: "Platform for running a band: gigs, repertoire, setlists, tasks, files and merchandise, backed by a relational database.",
+        imageAlt: "BandManager presentation over a concert backdrop",
       },
       htmlcss: {
         name: "HTML y CSS desde cero",
         kind: "Interactive learning material",
         text: "Web course in Spanish for learning the basics of HTML and CSS from scratch, with step-by-step guided activities.",
         tags: ["Teaching"],
+        imageAlt: "Cover of the interactive Learn HTML and CSS from scratch course",
       },
       apuntes: {
         kind: "AI web app · bootcamp",
         text: "Archive of notes from the Full Stack with AI bootcamp: imports Word, PDF or transcripts, summarises them with AI and generates quizzes, flashcards and a glossary.",
         note: "Private, for the course",
+        imageAlt: "Upgrade Hub visual identity",
       },
       suscripscan: {
         kind: "Personal finance tool",
         text: "Tracks what subscriptions really cost: monthly, yearly and daily dashboard, renewal alerts, charts and PDF export.",
+        imageAlt: "Suscripscan cover about monthly subscription spending",
       },
     },
     moreItems: {

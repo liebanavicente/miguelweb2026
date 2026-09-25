@@ -110,6 +110,7 @@ export const es: Dictionary = {
     photoCaption: "programando",
     viewSite: "Ver web",
     code: "Código",
+    status: { live: "En producción", public: "Código público", private: "Privado", learning: "Formación" },
     more: "más webs publicadas",
     items: {
       nfpshop: {
@@ -121,25 +122,30 @@ export const es: Dictionary = {
       enerpro: {
         kind: "Portal del empleado",
         text: "Portal privado para una empresa de seguridad: documentos, cuadrantes, turnos, vacaciones y solicitudes, con acceso por usuario y avisos automáticos.",
+        imageAlt: "Pantalla de acceso del portal del empleado de ENERPRO",
       },
       bandmanager: {
         kind: "SaaS de gestión",
         text: "Plataforma para gestionar una banda: eventos, repertorio, setlists, tareas, archivos y merchandising, con base de datos relacional.",
+        imageAlt: "Presentación de BandManager sobre un fondo de concierto",
       },
       htmlcss: {
         name: "HTML y CSS desde cero",
         kind: "Material didáctico interactivo",
         text: "Curso web en español para aprender los fundamentos de HTML y CSS partiendo de cero, con actividades guiadas paso a paso.",
         tags: ["Didáctica"],
+        imageAlt: "Portada del curso interactivo Aprende HTML y CSS desde cero",
       },
       apuntes: {
         kind: "App web con IA · bootcamp",
         text: "Archivo de resúmenes del Bootcamp Full Stack con IA: importa Word, PDF o transcripciones, los resume con IA y genera tests, tarjetas de repaso y un glosario.",
         note: "Uso privado del curso",
+        imageAlt: "Identidad visual de Upgrade Hub",
       },
       suscripscan: {
         kind: "Herramienta de finanzas personales",
         text: "Controla el gasto real en suscripciones: panel mensual, anual y diario, avisos de renovación, gráficas y exportación a PDF.",
+        imageAlt: "Portada de Suscripscan sobre el gasto mensual en suscripciones",
       },
     },
     moreItems: {

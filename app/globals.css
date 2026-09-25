@@ -369,12 +369,23 @@ body.menu-open { overflow: hidden; }
 
 /* ---------- Projects ---------- */
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
-.project-card { display: grid; align-content: start; gap: 14px; padding: 26px 26px 24px; transition: border-color 220ms ease, box-shadow 300ms var(--ease-out), transform 300ms var(--ease-out); }
+.project-card { display: grid; overflow: hidden; align-content: start; gap: 0; padding: 0; transition: border-color 220ms ease, box-shadow 300ms var(--ease-out), transform 300ms var(--ease-out); }
 .project-card:first-child, .project-card:nth-child(even):last-child { grid-column: 1 / -1; }
 .project-body { display: grid; align-content: start; gap: 14px; }
+.project-card:not(.is-featured) .project-body { padding: 22px 24px 24px; }
 .project-title { display: flex; align-items: center; gap: 12px; }
 .project-logo { width: 40px; height: 40px; flex: none; border-radius: 10px; background: white; box-shadow: 0 0 0 1px var(--line), 0 6px 16px rgba(220, 38, 38, 0.18); object-fit: contain; transition: transform 300ms var(--ease-out); }
 .project-card:hover .project-logo { transform: rotate(-6deg) scale(1.06); }
+
+.project-thumb { position: relative; overflow: hidden; height: clamp(190px, 22vw, 260px); margin: 0; border-bottom: 1px solid var(--glass-edge); background: var(--well); isolation: isolate; }
+.project-thumb::after { position: absolute; z-index: 2; inset: 0; border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24), 0 18px 32px rgba(18, 40, 96, 0.18); content: ""; margin: 14px; pointer-events: none; }
+.project-thumb img { transition: filter 500ms ease, opacity 500ms ease, transform 700ms var(--ease-out); }
+.project-thumb-glow { object-fit: cover; filter: blur(30px) saturate(145%); opacity: 0.62; transform: scale(1.18); }
+.project-thumb-img { z-index: 1; border-radius: 20px; object-fit: cover; object-position: top center; padding: 14px; filter: saturate(0.92) contrast(0.98); }
+.project-thumb.is-logo .project-thumb-glow { filter: blur(42px) saturate(125%); opacity: 0.5; transform: scale(0.72); }
+.project-thumb.is-logo .project-thumb-img { object-fit: contain; padding: 54px 18%; }
+.project-card:hover .project-thumb-glow { filter: blur(24px) saturate(170%); opacity: 0.78; transform: scale(1.24); }
+.project-card:hover .project-thumb-img { filter: saturate(1.04) contrast(1); transform: scale(1.015); }
 
 /* Featured project: copy on the left, artwork bleeding out of the card on the right */
 .project-card.is-featured { position: relative; overflow: hidden; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: center; gap: 12px 28px; min-height: 340px; padding: 34px 0 34px 34px; }
@@ -388,8 +399,14 @@ body.menu-open { overflow: hidden; }
 .project-visual-img { z-index: 1; padding: 22px 18px 22px 0; filter: drop-shadow(0 18px 28px rgba(18, 40, 96, 0.28)); -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 18%, #000 88%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 18%, #000 88%, transparent 100%); transform: rotate(-3deg); transition: transform 700ms var(--ease-out), filter 400ms ease; animation: cart-bob 6s ease-in-out infinite; }
 .project-card.is-featured:hover .project-visual-img { transform: rotate(0deg) translateX(-10px) scale(1.04); }
 @keyframes cart-bob { 50% { translate: 0 -8px; } }
+.project-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; }
 .project-kind { color: var(--muted); font-family: var(--mono); font-size: 0.74rem; }
 .project-kind span { margin-right: 6px; color: var(--pen); }
+.project-status { display: inline-flex; align-items: center; width: fit-content; border: 1px solid currentColor; border-radius: 999px; font-family: var(--mono); font-size: 0.66rem; font-weight: 700; line-height: 1; padding: 5px 9px; }
+.status-live { background: rgba(29, 135, 80, 0.09); color: #137044; }
+.status-public { background: rgba(var(--pen-rgb), 0.09); color: var(--pen); }
+.status-private { background: rgba(var(--neutral-rgb), 0.06); color: var(--muted); }
+.status-learning { background: rgba(196, 105, 33, 0.09); color: #a64f16; }
 .project-card h3 { font-size: 1.65rem; font-weight: 800; letter-spacing: -0.01em; }
 .project-text { color: var(--text-3); line-height: 1.6; }
 .project-links { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 2px; }
@@ -706,6 +723,15 @@ body::after {
   .code-body { font-size: 0.68rem; }
   .fold-bar { flex-direction: column; align-items: flex-start; padding: 14px 16px; }
   .fold-action { align-self: stretch; justify-content: center; }
+  .chapter-split { gap: 24px; }
+  .chapter-split .side-polaroid { justify-self: end; width: min(62%, 196px); margin-top: -4px; padding: 8px 8px 0; }
+  .chapter-split .side-polaroid::before { top: -10px; width: 72px; height: 20px; }
+  .chapter-split .side-polaroid figcaption { font-size: 1.08rem; padding: 7px 4px 9px; }
+  .project-thumb { height: 184px; }
+  .project-thumb::after { margin: 10px; }
+  .project-thumb-img { border-radius: 16px; padding: 10px; }
+  .project-thumb.is-logo .project-thumb-img { padding: 48px 16%; }
+  .project-card:not(.is-featured) .project-body { padding: 20px; }
   .contact-list a { font-size: 0.9rem; gap: 12px; }
 }
 
@@ -783,6 +809,9 @@ body::after {
 /* Logos are drawn for white paper. Small ones sit on a light chip so their colours survive; the faint ones become light silhouettes. */
 :root[data-theme="dark"] .job-logos img, :root[data-theme="dark"] .edu-logo { box-sizing: content-box; border-radius: 7px; background: rgba(255, 255, 255, 0.92); padding: 4px 8px; }
 :root[data-theme="dark"] .school-row img, :root[data-theme="dark"] .school-row a:hover img, :root[data-theme="dark"] .job-mark img { filter: grayscale(1) invert(1); }
+:root[data-theme="dark"] .status-live { background: rgba(64, 196, 126, 0.12); color: #74d9a4; }
+:root[data-theme="dark"] .status-learning { background: rgba(245, 158, 73, 0.12); color: #f0ad6b; }
+:root[data-theme="dark"] .project-thumb.is-logo .project-thumb-img { filter: invert(1); }
 
 /* Theme toggle: a round glass button; the moon shows on light paper, the sun on dark. */
 .theme-toggle { display: inline-flex; width: 42px; height: 42px; flex: none; align-items: center; justify-content: center; border: 1px solid var(--glass-edge); border-radius: 50%; background: var(--glass-flat); box-shadow: var(--glass-shadow); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); color: var(--ink); cursor: pointer; padding: 0; transition: border-color 160ms ease, color 160ms ease; }

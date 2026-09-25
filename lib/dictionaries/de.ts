@@ -110,6 +110,7 @@ export const de: Dictionary = {
     photoCaption: "beim Programmieren",
     viewSite: "Website ansehen",
     code: "Code",
+    status: { live: "Produktiv", public: "Öffentlicher Code", private: "Privat", learning: "Weiterbildung" },
     more: "weitere veröffentlichte Websites",
     items: {
       nfpshop: {
@@ -121,25 +122,30 @@ export const de: Dictionary = {
       enerpro: {
         kind: "Mitarbeiterportal",
         text: "Privates Portal für ein Sicherheitsunternehmen: Dokumente, Dienstpläne, Schichten, Urlaub und Anträge, mit Zugang pro Benutzer und automatischen Benachrichtigungen.",
+        imageAlt: "Anmeldebildschirm des ENERPRO-Mitarbeiterportals",
       },
       bandmanager: {
         kind: "Verwaltungs-SaaS",
         text: "Plattform zur Organisation einer Band: Auftritte, Repertoire, Setlists, Aufgaben, Dateien und Merchandise, mit relationaler Datenbank.",
+        imageAlt: "BandManager-Präsentation vor einem Konzerthintergrund",
       },
       htmlcss: {
         name: "HTML y CSS desde cero",
         kind: "Interaktives Lernmaterial",
         text: "Webkurs auf Spanisch, um die Grundlagen von HTML und CSS von null an zu lernen, mit Schritt-für-Schritt-Übungen.",
         tags: ["Didaktik"],
+        imageAlt: "Startseite des interaktiven HTML-und-CSS-Kurses",
       },
       apuntes: {
         kind: "KI-Web-App · Bootcamp",
         text: "Archiv mit Zusammenfassungen aus dem Full-Stack-Bootcamp mit KI: importiert Word, PDF oder Transkripte, fasst sie mit KI zusammen und erstellt Tests, Lernkarten und ein Glossar.",
         note: "Privat, für den Kurs",
+        imageAlt: "Visuelle Identität von Upgrade Hub",
       },
       suscripscan: {
         kind: "Tool für persönliche Finanzen",
         text: "Zeigt, was Abos wirklich kosten: Übersicht pro Monat, Jahr und Tag, Verlängerungshinweise, Diagramme und PDF-Export.",
+        imageAlt: "Suscripscan-Startseite zu monatlichen Abo-Ausgaben",
       },
     },
     moreItems: {

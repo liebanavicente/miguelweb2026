@@ -1,5 +1,5 @@
 import type { DiplomaCategory, DiplomaId } from "../diplomas";
-import type { EducationId, Fit, JobArea, JobId, MoreProjectId, ProjectId, RoleAreaId, SoftwareLevel } from "../cv";
+import type { EducationId, Fit, JobArea, JobId, MoreProjectId, ProjectId, ProjectStatus, RoleAreaId, SoftwareLevel } from "../cv";
 
 /** Chapter heading: `title` is followed by `accent`, the word that gets the pen stroke. */
 export type Chapter = { label: string; title: string; accent: string; intro?: string; summary: string };
@@ -51,6 +51,7 @@ export type Dictionary = {
     photoCaption: string;
     viewSite: string;
     code: string;
+    status: Record<ProjectStatus, string>;
     more: string;
     items: Record<ProjectId, { name?: string; kind: string; text: string; tags?: string[]; note?: string; imageAlt?: string }>;
     moreItems: Record<MoreProjectId, { name?: string; kind: string }>;

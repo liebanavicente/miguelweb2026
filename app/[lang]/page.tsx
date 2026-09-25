@@ -188,12 +188,24 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               <ol className="project-grid">
                 {PROJECTS.map((project, index) => {
                   const text = t.projects.items[project.id];
+                  const isFeatured = "featured" in project && project.featured;
+                  const isLogoOnly = !("preview" in project);
+                  const visualSrc = "preview" in project ? project.preview : "logo" in project ? project.logo : null;
                   return (
-                  <li className={"image" in project ? "project-card is-featured" : "project-card"} key={project.id}>
+                  <li className={isFeatured ? "project-card is-featured" : "project-card"} key={project.id}>
+                    {!isFeatured && visualSrc ? (
+                      <figure className={isLogoOnly ? "project-thumb is-logo" : "project-thumb"}>
+                        <Image alt="" className="project-thumb-glow" fill sizes="(max-width: 960px) calc(100vw - 64px), 520px" src={visualSrc} />
+                        <Image alt={text.imageAlt ?? ""} className="project-thumb-img" fill sizes="(max-width: 960px) calc(100vw - 64px), 520px" src={visualSrc} />
+                      </figure>
+                    ) : null}
                     <div className="project-body">
-                    <p className="project-kind">
-                      <span>#{String(index + 1).padStart(2, "0")}</span> {text.kind}
-                    </p>
+                    <div className="project-meta">
+                      <p className="project-kind">
+                        <span>#{String(index + 1).padStart(2, "0")}</span> {text.kind}
+                      </p>
+                      <span className={`project-status status-${project.status}`}>{t.projects.status[project.status]}</span>
+                    </div>
                     <h3 className="project-title">
                       {"logo" in project ? <Image alt="" className="project-logo" height={40} src={project.logo} width={40} /> : null}
                       {"name" in project ? project.name : text.name}
@@ -220,10 +232,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                       {text.note ? <span className="project-note">{text.note}</span> : null}
                     </div>
                     </div>
-                    {"image" in project ? (
+                    {isFeatured && visualSrc ? (
                       <figure className="project-visual">
-                        <Image alt="" className="project-visual-glow" fill sizes="(max-width: 960px) 80vw, 420px" src={project.image} />
-                        <Image alt={text.imageAlt ?? ""} className="project-visual-img" fill sizes="(max-width: 960px) 80vw, 420px" src={project.image} />
+                        <Image alt="" className="project-visual-glow" fill sizes="(max-width: 960px) 80vw, 420px" src={visualSrc} />
+                        <Image alt={text.imageAlt ?? ""} className="project-visual-img" fill sizes="(max-width: 960px) 80vw, 420px" src={visualSrc} />
                       </figure>
                     ) : null}
                   </li>
