@@ -421,6 +421,7 @@ body.menu-open { overflow: hidden; }
 .tl-body h3 { font-size: 1.16rem; font-weight: 760; line-height: 1.28; transition: color 180ms ease; }
 .tl-body p { color: var(--muted); line-height: 1.45; }
 .tl-area { color: var(--pen) !important; font-family: var(--mono); font-size: 0.72rem; }
+.tl-body p.job-win { max-width: 62ch; margin-top: 2px; padding-left: 12px; border-left: 2px solid rgba(var(--pen-rgb), 0.45); color: var(--ink, inherit); }
 .timeline li:hover .tl-body::before { background: var(--pen); transform: scale(1.15); }
 .timeline li:hover .tl-body h3 { color: var(--pen); }
 .timeline li.is-current .tl-date { color: var(--pen); font-weight: 500; }

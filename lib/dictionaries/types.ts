@@ -89,7 +89,7 @@ export type Dictionary = {
     months: [string, string, string, string, string, string, string, string, string, string, string, string];
     areas: Record<JobArea, string>;
     hospitality: string;
-    items: Record<JobId, { role: string; company: string }>;
+    items: Record<JobId, { role: string; company: string; achievement: string }>;
   };
   skills: {
     chapter: Chapter;

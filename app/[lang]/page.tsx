@@ -304,6 +304,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                       <p className="tl-area">{t.jobs.areas[job.area]}</p>
                       <h3>{t.jobs.items[job.id].role}</h3>
                       <p>{t.jobs.items[job.id].company}</p>
+                      <p className="job-win">{t.jobs.items[job.id].achievement}</p>
                     </div>
                   </li>
                 ))}
