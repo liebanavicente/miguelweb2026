@@ -83,9 +83,10 @@ export const SOFTWARE: Array<{ name: string; level: SoftwareLevel }> = [
 
 /** Featured work, picked from github.com/liebanavicente. Code links only for public repositories. */
 export type ProjectStatus = "live" | "public" | "private" | "learning";
-export type ProjectArt = "nfp" | "enerpro" | "bandmanager" | "htmlcss" | "upgrade" | "suscripscan";
+export type ProjectArt = "portfolio" | "nfp" | "enerpro" | "bandmanager" | "htmlcss" | "upgrade" | "suscripscan";
 
 export const PROJECTS = [
+  { id: "portfolio", name: "miguelliebana.com", status: "live", art: "portfolio", stack: ["Next.js 16", "TypeScript", "i18n", "Accesibilidad", "Vercel"], demo: "https://www.miguelliebana.com", code: "https://github.com/liebanavicente/miguelweb2026" },
   { id: "nfpshop", name: "NFP Clothing", status: "live", art: "nfp", featured: true, stack: ["Next.js 16", "Stripe", "Gelato API", "Tailwind CSS", "Vercel"], demo: "https://www.nfpclothing.com", preview: "/proyectos/nfp-clothing.webp" },
   { id: "enerpro", name: "ENERPRO", status: "public", art: "enerpro", logo: "/logos/enerpro.png", stack: ["JavaScript", "Supabase", "Resend", "Vercel"], demo: "https://enerpro.vercel.app", code: "https://github.com/liebanavicente/enerpro" },
   { id: "bandmanager", name: "BandManager", status: "public", art: "bandmanager", stack: ["Next.js 16", "TypeScript", "Prisma", "PostgreSQL", "shadcn/ui"], demo: "https://bandmanager-nine.vercel.app", code: "https://github.com/liebanavicente/bandmanager" },

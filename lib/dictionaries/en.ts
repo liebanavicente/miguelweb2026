@@ -28,7 +28,7 @@ export const en: Dictionary = {
     ctaWrite: "Email me",
     ctaCv: "CV as PDF (Spanish)",
     trainingAt: "training at",
-    portraitAlt: "Portrait of Miguel Liébana in a blue blazer with his arms crossed",
+    portraitAlt: "Professional portrait of Miguel Liébana in a blue suit with his arms crossed",
   },
   codeCard: {
     label: "Summary of my profile as JSON",
@@ -103,7 +103,7 @@ export const en: Dictionary = {
       title: "Published",
       accent: "projects",
       intro: "A selection of what I've built and published. The public code is on my GitHub.",
-      summary: "6 featured projects · 6 more published sites",
+      summary: "7 featured projects · 6 more published sites",
     },
     marginNote: "all live and working",
     photoAlt: "Miguel coding on a laptop by a window",
@@ -113,6 +113,12 @@ export const en: Dictionary = {
     status: { live: "In production", public: "Public code", private: "Private", learning: "Learning" },
     more: "more published sites",
     items: {
+      portfolio: {
+        kind: "Multilingual professional portfolio",
+        text: "This website: a bespoke portfolio designed and built from scratch, available in four languages, accessible, responsive and optimised to present every detail clearly.",
+        note: "Live · custom domain",
+        imageAlt: "The ml identity of miguelliebana.com over a blue grid",
+      },
       nfpshop: {
         kind: "The band's merch shop",
         text: "No Flag Patriots' online clothing store: catalogue, cart and Stripe checkout. Every paid order is sent via API to Gelato, which prints and ships it on demand, with no stock held.",

@@ -45,7 +45,7 @@ const ICONS: Record<(typeof OFFER_ICONS)[number], Icon> = { Code, Browser, Robot
 
 const GALLERY = ["/fotos/escenario.jpg", "/fotos/oficina.jpg", "/fotos/retrato-bn.jpg"];
 
-type IconProjectArt = Exclude<ProjectArt, "nfp" | "enerpro" | "upgrade">;
+type IconProjectArt = Exclude<ProjectArt, "portfolio" | "nfp" | "enerpro" | "upgrade">;
 
 const PROJECT_ART_ICONS: Record<IconProjectArt, [Icon, Icon]> = {
   bandmanager: [MusicNotesPlus, ListChecks],
@@ -73,16 +73,22 @@ function ProjectArtwork({ alt, art, featured = false, logo, preview }: { alt: st
     );
   }
 
+  const isPortfolioArt = art === "portfolio";
   const isLogoArt = art === "enerpro" || art === "upgrade";
   const logoSize = art === "enerpro" ? { height: 100, width: 100 } : { height: 1163, width: 5282 };
+  const symbol = isPortfolioArt ? (
+    <span className="project-art-monogram">
+      ml<i>_</i>
+    </span>
+  ) : isLogoArt && logo ? (
+    <Image alt="" className="project-art-logo" height={logoSize.height} src={logo} width={logoSize.width} />
+  ) : (
+    <ProjectIconPair art={art as IconProjectArt} />
+  );
   return (
     <figure aria-label={alt} className={`project-art art-${art}`} role="img">
-      <div aria-hidden className="project-art-layer project-art-glow">
-        {isLogoArt && logo ? <Image alt="" className="project-art-logo" height={logoSize.height} src={logo} width={logoSize.width} /> : <ProjectIconPair art={art as IconProjectArt} />}
-      </div>
-      <div aria-hidden className="project-art-layer project-art-symbol">
-        {isLogoArt && logo ? <Image alt="" className="project-art-logo" height={logoSize.height} src={logo} width={logoSize.width} /> : <ProjectIconPair art={art as IconProjectArt} />}
-      </div>
+      <div aria-hidden className="project-art-layer project-art-glow">{symbol}</div>
+      <div aria-hidden className="project-art-layer project-art-symbol">{symbol}</div>
     </figure>
   );
 }
@@ -168,7 +174,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
             <div className="hero-visual">
               <figure className="hero-photo">
-                <Image alt={t.hero.portraitAlt} height={1600} priority sizes="(max-width: 960px) 80vw, 400px" src="/fotos/retrato.jpg" width={1600} />
+                <Image alt={t.hero.portraitAlt} height={1800} priority sizes="(max-width: 960px) 80vw, 400px" src="/fotos/fw7.jpg" width={1800} />
               </figure>
               <CodeCard t={t.codeCard} />
             </div>

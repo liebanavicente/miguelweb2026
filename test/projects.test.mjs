@@ -5,7 +5,7 @@ import test from "node:test";
 import { PROJECTS } from "../lib/cv.ts";
 
 test("every project has a status and a unique art identity", () => {
-  assert.equal(PROJECTS.length, 6);
+  assert.equal(PROJECTS.length, 7);
 
   for (const project of PROJECTS) {
     assert.ok(project.status, `${project.id} is missing a status`);
@@ -14,6 +14,7 @@ test("every project has a status and a unique art identity", () => {
   assert.deepEqual(
     PROJECTS.map((project) => [project.id, project.art]),
     [
+      ["portfolio", "portfolio"],
       ["nfpshop", "nfp"],
       ["enerpro", "enerpro"],
       ["bandmanager", "bandmanager"],

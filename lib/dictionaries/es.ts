@@ -28,7 +28,7 @@ export const es: Dictionary = {
     ctaWrite: "Escríbeme",
     ctaCv: "CV en PDF",
     trainingAt: "me formo en",
-    portraitAlt: "Retrato de Miguel Liébana con americana azul y los brazos cruzados",
+    portraitAlt: "Retrato profesional de Miguel Liébana con traje azul y los brazos cruzados",
   },
   codeCard: {
     label: "Resumen de mi perfil en formato JSON",
@@ -103,7 +103,7 @@ export const es: Dictionary = {
       title: "Proyectos",
       accent: "publicados",
       intro: "Una selección de lo que he construido y publicado. El código público está en mi GitHub.",
-      summary: "6 proyectos destacados · 6 webs más publicadas",
+      summary: "7 proyectos destacados · 6 webs más publicadas",
     },
     marginNote: "todo en línea y funcionando",
     photoAlt: "Miguel programando con un portátil junto a una ventana",
@@ -113,6 +113,12 @@ export const es: Dictionary = {
     status: { live: "En producción", public: "Código público", private: "Privado", learning: "Formación" },
     more: "más webs publicadas",
     items: {
+      portfolio: {
+        kind: "Portfolio profesional multilingüe",
+        text: "Esta web: un portfolio diseñado y desarrollado a medida, disponible en cuatro idiomas, accesible, responsive y optimizado para compartir cada detalle con claridad.",
+        note: "En producción · dominio propio",
+        imageAlt: "Identidad visual ml de miguelliebana.com sobre una cuadrícula azul",
+      },
       nfpshop: {
         kind: "Tienda de merchandising del grupo",
         text: "Tienda online de ropa de No Flag Patriots: catálogo, carrito y pago con Stripe. Cada pedido pagado se envía por API a Gelato, que lo imprime y lo manda al cliente sin stock propio.",

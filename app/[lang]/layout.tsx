@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   const { lang } = await params;
   if (!isLocale(lang)) return {};
   const t = getDictionary(lang).meta;
+  const socialImage = `/${lang}/opengraph-image`;
   return {
     metadataBase: new URL("https://www.miguelliebana.com"),
     title: t.title,
@@ -31,9 +32,15 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     openGraph: {
       title: t.title,
       description: t.ogDescription,
-      images: ["/fotos/retrato.jpg"],
+      images: [{ alt: "Miguel Liébana · Web, IA, administración y formación", height: 630, url: socialImage, width: 1200 }],
       locale: t.ogLocale,
       type: "profile",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t.title,
+      description: t.ogDescription,
+      images: [socialImage],
     },
   };
 }
