@@ -139,7 +139,7 @@ export const de: Dictionary = {
     moreItems: {
       llar: { kind: "Website für Geschenkkörbe und -sets" },
       nfp: { kind: "Offizielle Website der Band" },
-      nfpshop: { kind: "Modeshop, per API an Gelato angebunden" },
+      nfpshop: { kind: "Modeshop mit Stripe-Zahlungen, per API an Gelato angebunden" },
       dario: { kind: "Website eines Gitarristen und Produzenten" },
       florystan: { kind: "Unternehmenswebsite" },
       reas0nance: { kind: "DJ-Website" },

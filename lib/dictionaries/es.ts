@@ -139,7 +139,7 @@ export const es: Dictionary = {
     moreItems: {
       llar: { kind: "Web de lotes y packs regalo" },
       nfp: { kind: "Web oficial del grupo" },
-      nfpshop: { kind: "Tienda de ropa conectada a Gelato por API" },
+      nfpshop: { kind: "Tienda de ropa con pagos Stripe, conectada a Gelato por API" },
       dario: { kind: "Web de guitarrista y productor" },
       florystan: { kind: "Web corporativa" },
       reas0nance: { kind: "Web de DJ" },
