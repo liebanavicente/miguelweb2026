@@ -103,7 +103,7 @@ export const es: Dictionary = {
       title: "Proyectos",
       accent: "publicados",
       intro: "Una selección de lo que he construido y publicado. El código público está en mi GitHub.",
-      summary: "5 proyectos destacados · 6 webs más publicadas",
+      summary: "5 proyectos destacados · 7 webs más publicadas",
     },
     marginNote: "todo en línea y funcionando",
     photoAlt: "Miguel programando con un portátil junto a una ventana",
@@ -138,7 +138,8 @@ export const es: Dictionary = {
     },
     moreItems: {
       llar: { kind: "Web de lotes y packs regalo" },
-      nfp: { kind: "Tienda online con pagos Stripe" },
+      nfp: { kind: "Web oficial del grupo" },
+      nfpshop: { kind: "Tienda de ropa conectada a Gelato por API" },
       dario: { kind: "Web de guitarrista y productor" },
       florystan: { kind: "Web corporativa" },
       reas0nance: { kind: "Web de DJ" },

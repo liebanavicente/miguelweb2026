@@ -103,7 +103,7 @@ export const en: Dictionary = {
       title: "Published",
       accent: "projects",
       intro: "A selection of what I've built and published. The public code is on my GitHub.",
-      summary: "5 featured projects · 6 more published sites",
+      summary: "5 featured projects · 7 more published sites",
     },
     marginNote: "all live and working",
     photoAlt: "Miguel coding on a laptop by a window",
@@ -138,7 +138,8 @@ export const en: Dictionary = {
     },
     moreItems: {
       llar: { kind: "Gift hampers and boxes site" },
-      nfp: { kind: "Online shop with Stripe payments" },
+      nfp: { kind: "Official band website" },
+      nfpshop: { kind: "Clothing shop connected to Gelato via API" },
       dario: { kind: "Guitarist and producer site" },
       florystan: { kind: "Corporate website" },
       reas0nance: { kind: "DJ website" },

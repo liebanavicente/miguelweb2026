@@ -95,6 +95,7 @@ export type ProjectId = (typeof PROJECTS)[number]["id"];
 export const MORE_PROJECTS = [
   { id: "llar", name: "La Llar del Dolç", url: "https://lallardeldolc.vercel.app" },
   { id: "nfp", name: "No Flag Patriots", url: "https://www.noflagpatriots.com" },
+  { id: "nfpshop", name: "NFP Clothing", url: "https://nfpclothing.vercel.app" },
   { id: "dario", name: "Darío Campos", url: "https://dariocampos.vercel.app" },
   { id: "florystan", name: "Construcciones Florystan", url: "https://florystan-web.vercel.app" },
   { id: "reas0nance", name: "Reas0nance", url: "https://danielsommm.vercel.app" },

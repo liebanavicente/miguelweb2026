@@ -103,7 +103,7 @@ export const ca: Dictionary = {
       title: "Projectes",
       accent: "publicats",
       intro: "Una selecció del que he construït i publicat. El codi públic és al meu GitHub.",
-      summary: "5 projectes destacats · 6 webs més publicades",
+      summary: "5 projectes destacats · 7 webs més publicades",
     },
     marginNote: "tot en línia i funcionant",
     photoAlt: "En Miguel programant amb un portàtil al costat d'una finestra",
@@ -138,7 +138,8 @@ export const ca: Dictionary = {
     },
     moreItems: {
       llar: { kind: "Web de lots i paquets de regal" },
-      nfp: { kind: "Botiga en línia amb pagaments Stripe" },
+      nfp: { kind: "Web oficial del grup" },
+      nfpshop: { kind: "Botiga de roba connectada a Gelato per API" },
       dario: { kind: "Web de guitarrista i productor" },
       florystan: { kind: "Web corporativa" },
       reas0nance: { kind: "Web de DJ" },
