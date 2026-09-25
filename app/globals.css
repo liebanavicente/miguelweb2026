@@ -421,7 +421,10 @@ body.menu-open { overflow: hidden; }
 .tl-body h3 { font-size: 1.16rem; font-weight: 760; line-height: 1.28; transition: color 180ms ease; }
 .tl-body p { color: var(--muted); line-height: 1.45; }
 .tl-area { color: var(--pen) !important; font-family: var(--mono); font-size: 0.72rem; }
-.tl-body p.job-win { max-width: 62ch; margin-top: 2px; padding-left: 12px; border-left: 2px solid rgba(var(--pen-rgb), 0.45); color: var(--ink, inherit); }
+.job-win { display: grid; justify-items: start; gap: 6px; max-width: 64ch; margin-top: 6px; padding: 12px 14px; border: 1px solid rgba(var(--pen-rgb), 0.22); border-left: 3px solid var(--pen); border-radius: 10px; background: rgba(var(--pen-rgb), 0.07); }
+.job-win-label { display: inline-flex; align-items: center; gap: 6px; color: var(--pen); font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.tl-body .job-win p { color: var(--ink); font-size: 1rem; line-height: 1.5; }
+.job-win strong { color: var(--pen); font-weight: 750; }
 .timeline li:hover .tl-body::before { background: var(--pen); transform: scale(1.15); }
 .timeline li:hover .tl-body h3 { color: var(--pen); }
 .timeline li.is-current .tl-date { color: var(--pen); font-weight: 500; }

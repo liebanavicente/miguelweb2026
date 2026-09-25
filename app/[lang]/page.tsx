@@ -16,6 +16,7 @@ import {
   MicrosoftExcelLogo,
   Phone,
   Robot,
+  Trophy,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -278,7 +279,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           {/* Experience */}
           <section aria-labelledby="trayectoria-titulo" className="section" id="trayectoria">
             <Chapter {...t.jobs.chapter} id="trayectoria" index="06" />
-            <Collapsible id="trayectoria" labels={t.fold} summary={t.jobs.chapter.summary}>
+            <Collapsible defaultOpen id="trayectoria" labels={t.fold} summary={t.jobs.chapter.summary}>
               <ol className="timeline jobs">
                 {JOBS.map((job) => (
                   <li key={job.id}>
@@ -304,7 +305,15 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                       <p className="tl-area">{t.jobs.areas[job.area]}</p>
                       <h3>{t.jobs.items[job.id].role}</h3>
                       <p>{t.jobs.items[job.id].company}</p>
-                      <p className="job-win">{t.jobs.items[job.id].achievement}</p>
+                      <div className="job-win">
+                        <span className="job-win-label">
+                          <Trophy aria-hidden size={14} weight="fill" />
+                          {t.jobs.achievement}
+                        </span>
+                        <p>
+                          <Rich text={t.jobs.items[job.id].achievement} />
+                        </p>
+                      </div>
                     </div>
                   </li>
                 ))}
