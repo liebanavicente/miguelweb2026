@@ -394,6 +394,8 @@ body.menu-open { overflow: hidden; }
 .art-bandmanager { --art-primary: #e7645e; --art-secondary: #f2a19c; }
 .art-htmlcss { --art-primary: #e44d26; --art-secondary: #1572b6; }
 .art-suscripscan { --art-primary: #7c5cff; --art-secondary: #3ec7c2; }
+.art-bandmanager .project-art-logo, .art-htmlcss .project-art-logo, .art-suscripscan .project-art-logo { width: min(76%, 230px); max-height: 230px; filter: drop-shadow(0 16px 22px rgba(8, 21, 58, 0.24)); }
+.art-suscripscan .project-art-logo { width: min(54%, 260px); max-height: 240px; }
 .art-upgrade { --art-primary: var(--pen); --art-secondary: var(--sky); }
 .project-card:hover .project-art-glow { filter: blur(22px) saturate(190%); opacity: 0.58; transform: scale(1.28); }
 .project-card:hover .project-art-symbol { filter: drop-shadow(0 22px 32px rgba(18, 40, 96, 0.28)); transform: rotate(0deg) scale(1.055); }
@@ -743,6 +745,7 @@ body::after {
   .project-art-primary { width: 104px; height: 104px; }
   .project-art-secondary { width: 52px; height: 52px; margin-top: 46px; }
   .art-enerpro .project-art-logo { width: 112px; height: 112px; border-width: 8px; border-radius: 26px; }
+  .art-bandmanager .project-art-logo, .art-htmlcss .project-art-logo, .art-suscripscan .project-art-logo { width: 168px; max-height: 168px; }
   .project-card:not(.is-featured) .project-body { padding: 20px; }
   .contact-list a { font-size: 0.9rem; gap: 12px; }
 }

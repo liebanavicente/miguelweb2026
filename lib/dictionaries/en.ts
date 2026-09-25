@@ -133,14 +133,14 @@ export const en: Dictionary = {
       bandmanager: {
         kind: "Management SaaS",
         text: "Platform for running a band: gigs, repertoire, setlists, tasks, files and merchandise, backed by a relational database.",
-        imageAlt: "BandManager music symbol and task list",
+        imageAlt: "BandManager electric guitar, checklist and drumstick",
       },
       htmlcss: {
         name: "HTML y CSS desde cero",
         kind: "Interactive learning material",
         text: "Web course in Spanish for learning the basics of HTML and CSS from scratch, with step-by-step guided activities.",
         tags: ["Teaching"],
-        imageAlt: "HTML and CSS code symbols",
+        imageAlt: "Open book transformed into an HTML and CSS code window",
       },
       apuntes: {
         kind: "AI web app · bootcamp",
@@ -151,7 +151,7 @@ export const en: Dictionary = {
       suscripscan: {
         kind: "Personal finance tool",
         text: "Tracks what subscriptions really cost: monthly, yearly and daily dashboard, renewal alerts, charts and PDF export.",
-        imageAlt: "Suscripscan donut chart and euro symbol",
+        imageAlt: "Magnifying glass scanning a receipt with renewal arrows and a euro symbol",
       },
     },
     moreItems: {

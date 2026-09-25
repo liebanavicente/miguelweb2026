@@ -3,22 +3,17 @@ import {
   ArrowDown,
   ArrowRight,
   ArrowUpRight,
-  BracketsAngle,
   Briefcase,
   Browser,
   ChalkboardTeacher,
-  ChartDonut,
   Code,
   Coffee,
-  CurrencyEur,
   DownloadSimple,
   EnvelopeSimple,
   GithubLogo,
   LinkSimple,
-  ListChecks,
   LinkedinLogo,
   MicrosoftExcelLogo,
-  MusicNotesPlus,
   Phone,
   Robot,
   Trophy,
@@ -45,24 +40,6 @@ const ICONS: Record<(typeof OFFER_ICONS)[number], Icon> = { Code, Browser, Robot
 
 const GALLERY = ["/fotos/escenario.jpg", "/fotos/oficina.jpg", "/fotos/retrato-bn.jpg"];
 
-type IconProjectArt = Exclude<ProjectArt, "portfolio" | "nfp" | "enerpro" | "upgrade">;
-
-const PROJECT_ART_ICONS: Record<IconProjectArt, [Icon, Icon]> = {
-  bandmanager: [MusicNotesPlus, ListChecks],
-  htmlcss: [BracketsAngle, Code],
-  suscripscan: [ChartDonut, CurrencyEur],
-};
-
-function ProjectIconPair({ art }: { art: IconProjectArt }) {
-  const [Primary, Secondary] = PROJECT_ART_ICONS[art];
-  return (
-    <>
-      <Primary className="project-art-primary" size={128} weight="duotone" />
-      <Secondary className="project-art-secondary" size={72} weight="bold" />
-    </>
-  );
-}
-
 function ProjectArtwork({ alt, art, featured = false, logo, preview }: { alt: string; art: ProjectArt; featured?: boolean; logo?: string; preview?: string }) {
   if (featured && preview) {
     return (
@@ -74,17 +51,14 @@ function ProjectArtwork({ alt, art, featured = false, logo, preview }: { alt: st
   }
 
   const isPortfolioArt = art === "portfolio";
-  const isLogoArt = art === "enerpro" || art === "upgrade";
-  const logoSize = art === "enerpro" ? { height: 100, width: 100 } : { height: 1163, width: 5282 };
+  const logoSize = art === "enerpro" ? { height: 100, width: 100 } : art === "upgrade" ? { height: 1163, width: 5282 } : { height: 900, width: 900 };
   const symbol = isPortfolioArt ? (
     <span className="project-art-monogram">
       ml<i>_</i>
     </span>
-  ) : isLogoArt && logo ? (
+  ) : logo ? (
     <Image alt="" className="project-art-logo" height={logoSize.height} src={logo} width={logoSize.width} />
-  ) : (
-    <ProjectIconPair art={art as IconProjectArt} />
-  );
+  ) : null;
   return (
     <figure aria-label={alt} className={`project-art art-${art}`} role="img">
       <div aria-hidden className="project-art-layer project-art-glow">{symbol}</div>

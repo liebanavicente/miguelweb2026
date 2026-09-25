@@ -133,14 +133,14 @@ export const es: Dictionary = {
       bandmanager: {
         kind: "SaaS de gestión",
         text: "Plataforma para gestionar una banda: eventos, repertorio, setlists, tareas, archivos y merchandising, con base de datos relacional.",
-        imageAlt: "Símbolo musical y lista de tareas de BandManager",
+        imageAlt: "Guitarra eléctrica, lista de tareas y baqueta de BandManager",
       },
       htmlcss: {
         name: "HTML y CSS desde cero",
         kind: "Material didáctico interactivo",
         text: "Curso web en español para aprender los fundamentos de HTML y CSS partiendo de cero, con actividades guiadas paso a paso.",
         tags: ["Didáctica"],
-        imageAlt: "Símbolos de código HTML y CSS",
+        imageAlt: "Libro abierto convertido en ventana de código HTML y CSS",
       },
       apuntes: {
         kind: "App web con IA · bootcamp",
@@ -151,7 +151,7 @@ export const es: Dictionary = {
       suscripscan: {
         kind: "Herramienta de finanzas personales",
         text: "Controla el gasto real en suscripciones: panel mensual, anual y diario, avisos de renovación, gráficas y exportación a PDF.",
-        imageAlt: "Gráfico circular y símbolo de euro de Suscripscan",
+        imageAlt: "Lupa escaneando un recibo con flechas de renovación y símbolo de euro",
       },
     },
     moreItems: {

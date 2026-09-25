@@ -32,6 +32,17 @@ test("only the featured illustration uses a preview image", () => {
   );
 });
 
+test("projects with an iconic identity use their own artwork asset", () => {
+  assert.deepEqual(
+    PROJECTS.filter((project) => ["bandmanager", "htmlcss", "suscripscan"].includes(project.id)).map((project) => [project.id, "logo" in project ? project.logo : null]),
+    [
+      ["bandmanager", "/logos/bandmanager-emblem.png"],
+      ["htmlcss", "/logos/html-css-emblem.png"],
+      ["suscripscan", "/logos/suscripscan-emblem.png"],
+    ],
+  );
+});
+
 test("project image assets match their file extensions", async () => {
   for (const project of PROJECTS) {
     const assets = ["preview" in project ? project.preview : null, "logo" in project ? project.logo : null].filter(Boolean);

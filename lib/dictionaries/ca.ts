@@ -133,14 +133,14 @@ export const ca: Dictionary = {
       bandmanager: {
         kind: "SaaS de gestió",
         text: "Plataforma per gestionar una banda: esdeveniments, repertori, setlists, tasques, arxius i marxandatge, amb base de dades relacional.",
-        imageAlt: "Símbol musical i llista de tasques de BandManager",
+        imageAlt: "Guitarra elèctrica, llista de tasques i baqueta de BandManager",
       },
       htmlcss: {
         name: "HTML i CSS des de zero",
         kind: "Material didàctic interactiu",
         text: "Curs web en castellà per aprendre els fonaments d'HTML i CSS partint de zero, amb activitats guiades pas a pas.",
         tags: ["Didàctica"],
-        imageAlt: "Símbols de codi HTML i CSS",
+        imageAlt: "Llibre obert convertit en finestra de codi HTML i CSS",
       },
       apuntes: {
         kind: "App web amb IA · bootcamp",
@@ -151,7 +151,7 @@ export const ca: Dictionary = {
       suscripscan: {
         kind: "Eina de finances personals",
         text: "Controla la despesa real en subscripcions: tauler mensual, anual i diari, avisos de renovació, gràfics i exportació a PDF.",
-        imageAlt: "Gràfic circular i símbol de l'euro de Suscripscan",
+        imageAlt: "Lupa escanejant un rebut amb fletxes de renovació i símbol de l'euro",
       },
     },
     moreItems: {
