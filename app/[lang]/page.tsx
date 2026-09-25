@@ -20,7 +20,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 
 import { CodeCard } from "../../components/CodeCard";
 import { Collapsible } from "../../components/Collapsible";
@@ -282,7 +282,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <Collapsible defaultOpen id="trayectoria" labels={t.fold} summary={t.jobs.chapter.summary}>
               <ol className="timeline jobs">
                 {JOBS.map((job) => (
-                  <li key={job.id}>
+                  <li className={job.to ? undefined : "is-current"} key={job.id}>
                     {/* Desktop: the company logo drifts in large and soft from the right while the row is hovered. */}
                     <span aria-hidden className="job-mark">
                       {"logos" in job ? (
@@ -291,7 +291,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                         <Coffee size={120} weight="thin" />
                       )}
                     </span>
-                    <span className="tl-date">{`${month(job.from)} — ${month(job.to)}`}</span>
+                    <span className="tl-date">{`${month(job.from)} — ${job.to ? month(job.to) : t.jobs.present}`}</span>
                     <div className="tl-body">
                       <div className="job-logos">
                         {"logos" in job ? (
@@ -304,7 +304,22 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                       </div>
                       <p className="tl-area">{t.jobs.areas[job.area]}</p>
                       <h3>{t.jobs.items[job.id].role}</h3>
-                      <p>{t.jobs.items[job.id].company}</p>
+                      <p>
+                        {"link" in job
+                          ? t.jobs.items[job.id].company.split(job.link.name).map((part, index) =>
+                              index ? (
+                                <Fragment key={index}>
+                                  <a className="job-link" href={job.link.href} rel="noopener noreferrer" target="_blank">
+                                    {job.link.name}
+                                  </a>
+                                  {part}
+                                </Fragment>
+                              ) : (
+                                part
+                              ),
+                            )
+                          : t.jobs.items[job.id].company}
+                      </p>
                       <div className="job-win">
                         <span className="job-win-label">
                           <Trophy aria-hidden size={14} weight="fill" />

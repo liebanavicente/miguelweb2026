@@ -425,6 +425,8 @@ body.menu-open { overflow: hidden; }
 .job-win-label { display: inline-flex; align-items: center; gap: 6px; color: var(--pen); font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
 .tl-body .job-win p { color: var(--ink); font-size: 1rem; line-height: 1.5; }
 .job-win strong { color: var(--pen); font-weight: 750; }
+.job-link { color: var(--pen); font-weight: 650; text-decoration: underline; text-decoration-color: rgba(var(--pen-rgb), 0.4); text-underline-offset: 3px; transition: text-decoration-color 160ms ease; }
+.job-link:hover { text-decoration-color: var(--pen); }
 .timeline li:hover .tl-body::before { background: var(--pen); transform: scale(1.15); }
 .timeline li:hover .tl-body h3 { color: var(--pen); }
 .timeline li.is-current .tl-date { color: var(--pen); font-weight: 500; }

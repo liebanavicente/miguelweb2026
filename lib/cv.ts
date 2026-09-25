@@ -34,16 +34,17 @@ export type JobArea = "edu" | "admin" | "tech" | "music" | "service";
 /** Dates are [year, month]; the month name comes from the dictionary. */
 export type YearMonth = [number, number];
 
+/** `to: null` marks a role still ongoing; `link` turns that name inside the company line into a link. */
 export const JOBS = [
+  { id: "nfp", from: [2010, 1], to: null, area: "music", link: { name: "No Flag Patriots", href: "https://www.noflagpatriots.com" }, logos: [{ src: "/logos/nfp.png", alt: "No Flag Patriots", width: 298, height: 300 }] },
   { id: "ctti", from: [2025, 11], to: [2026, 7], area: "admin", logos: [GENCAT] },
-  { id: "nfp", from: [2022, 1], to: [2024, 1], area: "music", logos: [{ src: "/logos/nfp.png", alt: "No Flag Patriots", width: 298, height: 300 }] },
   { id: "konecta", from: [2023, 1], to: [2023, 9], area: "service", logos: [{ src: "/logos/ambici.svg", alt: "AMBici", width: 450, height: 50 }, { src: "/logos/securitas-direct.png", alt: "Securitas Direct", width: 380, height: 300 }] },
   { id: "polo", from: [2022, 1], to: [2022, 10], area: "admin", logos: [{ src: "/logos/polo-ampurdan.png", alt: "Club de Polo Ampurdán", width: 61, height: 66 }] },
   { id: "tic", from: [2017, 9], to: [2020, 6], area: "edu", logos: [GENCAT] },
   { id: "teacher", from: [2006, 9], to: [2020, 6], area: "edu", logos: [GENCAT] },
   { id: "bar", from: [2003, 6], to: [2005, 9], area: "service", icon: "cafe" },
   { id: "sales", from: [2003, 1], to: [2005, 1], area: "service", logos: [{ src: "/logos/el-corte-ingles.svg", alt: "El Corte Inglés", width: 1040, height: 586 }] },
-] as const satisfies ReadonlyArray<{ id: string; from: YearMonth; to: YearMonth; area: JobArea; logos?: Logo[]; icon?: "cafe" }>;
+] as const satisfies ReadonlyArray<{ id: string; from: YearMonth; to: YearMonth | null; area: JobArea; link?: { name: string; href: string }; logos?: Logo[]; icon?: "cafe" }>;
 
 export type JobId = (typeof JOBS)[number]["id"];
 

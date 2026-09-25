@@ -344,6 +344,7 @@ export const en: Dictionary = {
     months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     areas: { edu: "education", admin: "administration", tech: "technology", music: "music", service: "customer service" },
     hospitality: "Hospitality",
+    present: "Present",
     achievement: "Achievement",
     items: {
       ctti: { role: "Receptionist / administrative assistant", company: "CTTI · Generalitat de Catalunya", achievement: "Handled **200 visitors a day** with fast, organised reception: every visitor and every document reached the right person without delay." },

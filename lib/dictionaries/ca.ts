@@ -344,6 +344,7 @@ export const ca: Dictionary = {
     months: ["Gen", "Febr", "Març", "Abr", "Maig", "Juny", "Jul", "Ag", "Set", "Oct", "Nov", "Des"],
     areas: { edu: "educació", admin: "administració", tech: "tecnologia", music: "música", service: "atenció al públic" },
     hospitality: "Hostaleria",
+    present: "Actualitat",
     achievement: "Assoliment",
     items: {
       ctti: { role: "Recepcionista / administratiu", company: "CTTI · Generalitat de Catalunya", achievement: "Atenia **200 visites al dia** amb una recepció àgil i ordenada: cada visita i cada document arribaven a la persona adequada sense esperes." },
