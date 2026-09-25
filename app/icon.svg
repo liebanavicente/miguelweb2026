@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .tile { fill: #f7f8fa; stroke: #0e1116; }
+    .ml { fill: #0e1116; }
+    .caret { fill: #2458d6; }
+    @media (prefers-color-scheme: dark) {
+      .tile { fill: #0b0f17; stroke: #e7ebf2; }
+      .ml { fill: #e7ebf2; }
+      .caret { fill: #7ea6ff; }
+    }
+  </style>
+  <rect class="tile" x="2" y="2" width="60" height="60" rx="15" stroke-width="3" />
+  <text x="31" y="41" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="27" font-weight="700" letter-spacing="-1"><tspan class="ml">ml</tspan><tspan class="caret">_</tspan></text>
+</svg>
