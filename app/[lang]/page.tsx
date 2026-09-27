@@ -229,6 +229,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 <figcaption>{t.projects.photoCaption}</figcaption>
               </figure>
             </div>
+            {/* Reel of the project emblems, taped into the notebook; loops while on screen. */}
+            <figure className="project-reel">
+              <InkVideo poster="/video/carrusel-proyectos.jpg" src="/video/carrusel-proyectos.mp4" />
+            </figure>
             <Collapsible id="proyectos" labels={t.fold} summary={t.projects.chapter.summary}>
               <ol className="project-grid">
                 {PROJECTS.map((project, index) => {
