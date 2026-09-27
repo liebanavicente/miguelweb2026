@@ -58,6 +58,8 @@ export type Dictionary = {
   };
   marquee: { label: string; title: string };
   gallery: { label: string; photos: [{ alt: string; word: string }, { alt: string; word: string }, { alt: string; word: string }] };
+  /** Handwritten captions under the short silent clips that sit beside some chapter headings. */
+  clips: { offers: string; education: string; jobs: string };
   roles: {
     chapter: Chapter;
     marginNote: string;

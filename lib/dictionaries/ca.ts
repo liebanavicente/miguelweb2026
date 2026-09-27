@@ -172,6 +172,7 @@ export const ca: Dictionary = {
       { alt: "Retrat d'en Miguel en blanc i negre", word: "escoltar" },
     ],
   },
+  clips: { offers: "de la tinta al codi", education: "segueixo aprenent", jobs: "cada etapa deixa empremta" },
   roles: {
     chapter: {
       label: "llocs",

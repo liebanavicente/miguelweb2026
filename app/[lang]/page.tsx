@@ -26,6 +26,7 @@ import { CodeCard } from "../../components/CodeCard";
 import { Collapsible } from "../../components/Collapsible";
 import { DiplomaWall } from "../../components/DiplomaWall";
 import { EducationExplorer } from "../../components/EducationExplorer";
+import { InkVideo } from "../../components/InkVideo";
 import { Header } from "../../components/Header";
 import { OfferRotator } from "../../components/OfferRotator";
 import { Rich } from "../../components/Rich";
@@ -80,6 +81,18 @@ function Chapter({ id, index, label, title, accent, intro, aside }: { id: string
       {intro ? <p className="lede">{intro}</p> : null}
       {aside}
     </div>
+  );
+}
+
+/** A polaroid whose picture is a short silent clip, looping while it is on screen. */
+function ClipPolaroid({ name, caption }: { name: string; caption: string }) {
+  return (
+    <figure className="polaroid side-polaroid">
+      <div className="polaroid-img">
+        <InkVideo loop poster={`/video/${name}.jpg`} sources={[{ src: `/video/${name}.mp4` }]} />
+      </div>
+      <figcaption>{caption}</figcaption>
+    </figure>
   );
 }
 
@@ -154,6 +167,18 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             </div>
           </header>
 
+          {/* Signature: my name written in ink on the notebook, which then lights up and turns into code. Plays once. */}
+          <figure className="signature-sheet">
+            <InkVideo
+              poster="/video/firma.jpg"
+              sources={[
+                { src: "/video/firma-movil.mp4", media: "(max-width: 700px)" },
+                { src: "/video/firma.mp4" },
+              ]}
+              still="/video/firma-final.jpg"
+            />
+          </figure>
+
           {/* Key numbers */}
           <dl className="stats">
             {t.stats.map((stat) => (
@@ -171,7 +196,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
           {/* What I offer */}
           <section aria-labelledby="ofrezco-titulo" className="section" id="ofrezco">
-            <Chapter {...t.offers.chapter} id="ofrezco" index="01" />
+            <div className="chapter-split">
+              <Chapter {...t.offers.chapter} id="ofrezco" index="01" />
+              <ClipPolaroid caption={t.clips.offers} name="tinta-codigo" />
+            </div>
             <Collapsible id="ofrezco" labels={t.fold} summary={t.offers.chapter.summary}>
               <ol className="offer-grid">
                 {t.offers.items.map((offer, index) => {
@@ -302,7 +330,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
           {/* Education */}
           <section aria-labelledby="formacion-titulo" className="section" id="formacion">
-            <Chapter {...t.education.chapter} id="formacion" index="04" />
+            <div className="chapter-split">
+              <Chapter {...t.education.chapter} id="formacion" index="04" />
+              <ClipPolaroid caption={t.clips.education} name="pluma" />
+            </div>
             <Collapsible id="formacion" labels={t.fold} summary={t.education.chapter.summary}>
               <EducationExplorer t={t.education} />
             </Collapsible>
@@ -318,7 +349,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
           {/* Experience */}
           <section aria-labelledby="trayectoria-titulo" className="section" id="trayectoria">
-            <Chapter {...t.jobs.chapter} id="trayectoria" index="06" />
+            <div className="chapter-split">
+              <Chapter {...t.jobs.chapter} id="trayectoria" index="06" />
+              <ClipPolaroid caption={t.clips.jobs} name="gota" />
+            </div>
             <Collapsible defaultOpen id="trayectoria" labels={t.fold} summary={t.jobs.chapter.summary}>
               <ol className="timeline jobs">
                 {JOBS.map((job) => (

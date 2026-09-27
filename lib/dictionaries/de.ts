@@ -172,6 +172,7 @@ export const de: Dictionary = {
       { alt: "Schwarzweißporträt von Miguel", word: "zuhören" },
     ],
   },
+  clips: { offers: "von Tinte zu Code", education: "ich lerne weiter", jobs: "jede Etappe hinterlässt Spuren" },
   roles: {
     chapter: {
       label: "stellen",

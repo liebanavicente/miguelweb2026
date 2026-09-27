@@ -172,6 +172,7 @@ export const es: Dictionary = {
       { alt: "Retrato de Miguel en blanco y negro", word: "escuchar" },
     ],
   },
+  clips: { offers: "de la tinta al código", education: "sigo aprendiendo", jobs: "cada etapa deja huella" },
   roles: {
     chapter: {
       label: "puestos",

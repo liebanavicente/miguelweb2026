@@ -172,6 +172,7 @@ export const en: Dictionary = {
       { alt: "Black and white portrait of Miguel", word: "listen" },
     ],
   },
+  clips: { offers: "from ink to code", education: "still learning", jobs: "every stage leaves a mark" },
   roles: {
     chapter: {
       label: "roles",
