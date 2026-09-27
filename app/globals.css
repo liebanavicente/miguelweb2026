@@ -368,10 +368,6 @@ body.menu-open { overflow: hidden; }
 .polaroid-img video, .polaroid-img > img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 800ms var(--ease-out); }
 .polaroid:hover .polaroid-img video { transform: scale(1.04); }
 
-/* Signature sheet under the hero: a taped page of the notebook where my name is written and turns into code. */
-.signature-sheet { position: relative; margin: 0 0 72px; }
-.signature-sheet::before { position: absolute; z-index: 1; top: -13px; left: 18%; width: 110px; height: 28px; background: rgba(var(--accent-rgb), 0.55); content: ""; transform: rotate(-3deg); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
-.signature-sheet video, .signature-sheet img { display: block; width: 100%; aspect-ratio: 2.35 / 1; border-radius: 22px; background: #f3f4f1; object-fit: cover; object-position: 50% 45%; box-shadow: var(--shadow-soft); }
 .photo-band { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px; margin-top: 88px; padding: 0 12px; }
 .photo-band .polaroid:nth-child(1) { --r: -2.5deg; }
 .photo-band .polaroid:nth-child(2) { --r: 1.8deg; margin-top: 34px; }
@@ -737,8 +733,6 @@ body::after {
   .hero-meta { flex-direction: column; align-items: flex-start; }
   .offer-grid, .skills-grid { grid-template-columns: minmax(0, 1fr); }
   .stat-value { font-size: 3.6rem; }
-  .signature-sheet { margin-bottom: 56px; }
-  .signature-sheet video, .signature-sheet img { aspect-ratio: 16 / 9; border-radius: 16px; }
   .terminal { margin-top: 40px; }
   .term-body { padding: 18px; }
   .photo-band { display: flex; overflow-x: auto; gap: 22px; margin-right: -16px; padding: 18px 16px 18px 6px; scroll-snap-type: x mandatory; }
@@ -760,6 +754,24 @@ body::after {
   .art-bandmanager .project-art-logo, .art-htmlcss .project-art-logo, .art-suscripscan .project-art-logo { width: 168px; max-height: 168px; }
   .project-card:not(.is-featured) .project-body { padding: 20px; }
   .contact-list a { font-size: 0.9rem; gap: 12px; }
+}
+
+/* ---------- Welcome film ----------
+ * Full-screen on the first visit of a session (see lib/intro.ts): my name is written on the notebook and turns into
+ * code, then the sheet dissolves into the hero. The hero's entrance animations wait, paused, until it leaves.
+ */
+.welcome { display: none; }
+html[data-intro="play"], html[data-intro="leaving"] { overflow: hidden; }
+html[data-intro="play"] .welcome, html[data-intro="leaving"] .welcome { position: fixed; z-index: 1000; inset: 0; display: block; overflow: hidden; background: #f3f4ef url("/video/firma.jpg") 68% 50% / cover no-repeat; cursor: pointer; }
+html[data-intro="leaving"] .welcome { opacity: 0; filter: blur(10px); pointer-events: none; transform: scale(1.06); transition: opacity 1100ms var(--ease-out), transform 1100ms var(--ease-out), filter 1100ms var(--ease-out); }
+html[data-intro="play"] .hero *, html[data-intro="play"] .hero *::before, html[data-intro="play"] .hero *::after { animation-play-state: paused !important; }
+.welcome-film { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 68% 50%; }
+.welcome-skip { position: absolute; right: 24px; bottom: 24px; border: 1px solid var(--glass-edge); border-radius: 999px; background: var(--glass); box-shadow: var(--glass-shadow); color: var(--text-2); cursor: pointer; font-family: var(--mono); font-size: 0.78rem; padding: 9px 16px; -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); }
+.welcome-skip:hover { color: var(--pen); }
+/* Portrait screens get the vertical cut, with the name on two lines. */
+@media (max-aspect-ratio: 1 / 1) {
+  html[data-intro="play"] .welcome, html[data-intro="leaving"] .welcome { background-image: url("/video/firma-vertical.jpg"); background-position: center; }
+  .welcome-film { object-position: 50% 50%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -811,7 +823,7 @@ body::after {
   color-scheme: dark;
 }
 :root[data-theme="dark"] .aurora span { opacity: 0.32; }
-:root[data-theme="dark"] .signature-sheet video, :root[data-theme="dark"] .signature-sheet img, :root[data-theme="dark"] .polaroid-img video { filter: brightness(0.86); }
+:root[data-theme="dark"] .polaroid-img video { filter: brightness(0.86); }
 :root[data-theme="dark"] body::after { mix-blend-mode: soft-light; opacity: 0.08; }
 :root[data-theme="dark"] body::before { opacity: 0.7; }
 :root[data-theme="dark"] .topbar { border-bottom-color: rgba(255, 255, 255, 0.06); background: linear-gradient(180deg, rgba(11, 15, 23, 0.62), rgba(11, 15, 23, 0.38)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04); }

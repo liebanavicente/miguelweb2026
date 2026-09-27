@@ -60,6 +60,7 @@ export type Dictionary = {
   gallery: { label: string; photos: [{ alt: string; word: string }, { alt: string; word: string }, { alt: string; word: string }] };
   /** Handwritten captions under the short silent clips that sit beside some chapter headings. */
   clips: { offers: string; education: string; jobs: string };
+  intro: { skip: string };
   roles: {
     chapter: Chapter;
     marginNote: string;

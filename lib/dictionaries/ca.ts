@@ -173,6 +173,7 @@ export const ca: Dictionary = {
     ],
   },
   clips: { offers: "de la tinta al codi", education: "segueixo aprenent", jobs: "cada etapa deixa empremta" },
+  intro: { skip: "Salta la intro" },
   roles: {
     chapter: {
       label: "llocs",

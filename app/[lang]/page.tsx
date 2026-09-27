@@ -33,6 +33,7 @@ import { Rich } from "../../components/Rich";
 import { RoleExplorer } from "../../components/RoleExplorer";
 import { MarginNote, Scribble } from "../../components/Scribble";
 import { TechMarquee } from "../../components/TechMarquee";
+import { WelcomeIntro } from "../../components/WelcomeIntro";
 import { CONTACT, JOBS, LANGUAGES, MORE_PROJECTS, OFFER_ICONS, PROJECTS, SOFTWARE, type ProjectArt, type YearMonth } from "../../lib/cv";
 import { fill, getDictionary } from "../../lib/dictionaries";
 import { isLocale } from "../../lib/i18n";
@@ -89,7 +90,7 @@ function ClipPolaroid({ name, caption }: { name: string; caption: string }) {
   return (
     <figure className="polaroid side-polaroid">
       <div className="polaroid-img">
-        <InkVideo loop poster={`/video/${name}.jpg`} sources={[{ src: `/video/${name}.mp4` }]} />
+        <InkVideo poster={`/video/${name}.jpg`} src={`/video/${name}.mp4`} />
       </div>
       <figcaption>{caption}</figcaption>
     </figure>
@@ -104,6 +105,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
   return (
     <div className="app-shell" id="inicio">
+      <WelcomeIntro skipLabel={t.intro.skip} />
       <Header locale={lang} t={t.header} />
       <main className="main" id="contenido" tabIndex={-1}>
         <div className="container">
@@ -166,18 +168,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               <CodeCard t={t.codeCard} />
             </div>
           </header>
-
-          {/* Signature: my name written in ink on the notebook, which then lights up and turns into code. Plays once. */}
-          <figure className="signature-sheet">
-            <InkVideo
-              poster="/video/firma.jpg"
-              sources={[
-                { src: "/video/firma-movil.mp4", media: "(max-width: 700px)" },
-                { src: "/video/firma.mp4" },
-              ]}
-              still="/video/firma-final.jpg"
-            />
-          </figure>
 
           {/* Key numbers */}
           <dl className="stats">

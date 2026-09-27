@@ -173,6 +173,7 @@ export const en: Dictionary = {
     ],
   },
   clips: { offers: "from ink to code", education: "still learning", jobs: "every stage leaves a mark" },
+  intro: { skip: "Skip intro" },
   roles: {
     chapter: {
       label: "roles",

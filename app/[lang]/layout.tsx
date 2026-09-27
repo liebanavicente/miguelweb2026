@@ -9,6 +9,7 @@ import "../globals.css";
 
 import { getDictionary } from "../../lib/dictionaries";
 import { isLocale, localePath, LOCALES } from "../../lib/i18n";
+import { INTRO_SCRIPT } from "../../lib/intro";
 import { THEME_SCRIPT } from "../../lib/theme";
 
 // Only the four languages exist; any other first segment is a 404.
@@ -60,6 +61,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     <html lang={lang} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: INTRO_SCRIPT }} />
       </head>
       <body>
         {/* Aurora: soft colour fields under the notebook grid, so the glass surfaces have something to frost. */}
