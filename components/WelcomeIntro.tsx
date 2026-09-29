@@ -24,7 +24,7 @@ export function WelcomeIntro({ skipLabel }: { skipLabel: string }) {
 
   useEffect(() => {
     if (document.documentElement.dataset.intro !== "play") return;
-    setFilm(window.matchMedia(PORTRAIT).matches ? "firma-vertical" : "firma");
+    setFilm("introcrystal");
   }, []);
 
   useEffect(() => {
