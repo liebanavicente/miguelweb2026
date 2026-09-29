@@ -4,7 +4,7 @@ import type { Icon } from "@phosphor-icons/react";
 import { ArrowUpRight, ChalkboardTeacher, Code, Files, Headset } from "@phosphor-icons/react";
 import { useState } from "react";
 
-import { ROLE_AREAS, type RoleAreaId } from "../lib/cv";
+import { CONTACT, ROLE_AREAS, type RoleAreaId } from "../lib/cv";
 import type { Dictionary } from "../lib/dictionaries";
 
 const ICONS: Record<string, Icon> = { Code, ChalkboardTeacher, Headset, Files };
@@ -50,14 +50,20 @@ export function RoleExplorer({ t }: { t: Dictionary["roles"] }) {
               </header>
               <ul className="role-list">
                 {text.roles.map((role, index) => (
-                  <li className="role-card" key={role.title} style={{ animationDelay: `${index * 50}ms` }}>
-                    <div className="role-card-top">
-                      <span className={`fit fit-${role.fit}`}>{t.fit[role.fit]}</span>
-                      <ArrowUpRight aria-hidden className="role-arrow" size={18} weight="bold" />
-                    </div>
-                    <h4>{role.title}</h4>
-                    <p>{role.why}</p>
-                    {role.note ? <p className="role-note">{role.note}</p> : null}
+                  <li key={role.title}>
+                    <a
+                      className="role-card"
+                      href={`mailto:${CONTACT.email}?subject=${encodeURIComponent(`${text.name}: ${role.title}`)}`}
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      <div className="role-card-top">
+                        <span className={`fit fit-${role.fit}`}>{t.fit[role.fit]}</span>
+                        <ArrowUpRight aria-hidden className="role-arrow" size={18} weight="bold" />
+                      </div>
+                      <h4>{role.title}</h4>
+                      <p>{role.why}</p>
+                      {role.note ? <p className="role-note">{role.note}</p> : null}
+                    </a>
                   </li>
                 ))}
               </ul>

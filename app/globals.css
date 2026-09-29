@@ -870,3 +870,62 @@ html[data-intro="play"] .hero *, html[data-intro="play"] .hero *::before, html[d
   .topbar-tools { gap: 6px; }
   .lang-caret { display: none; }
 }
+
+/* ---------- Print stylesheet: clean paper CV, all chapters unfolded ---------- */
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    scroll-behavior: auto !important;
+  }
+  body::before, body::after, .aurora, .reading-progress, .topbar, .welcome,
+  .menu-toggle, .mobile-menu, .theme-toggle, .lang, .fold-bar, video,
+  .side-polaroid, .photo-band, .project-reel, .btn-arrow {
+    display: none !important;
+  }
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .main {
+    padding: 0 !important;
+  }
+  .fold {
+    display: block !important;
+    grid-template-rows: 1fr !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+  .fold-inner {
+    overflow: visible !important;
+  }
+  .section {
+    padding: 24px 0 !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .chapter {
+    margin-bottom: 16px !important;
+  }
+  .project-card, .offer-card, .role-card, .diploma, .sheet, .stat {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    background: #fafafa !important;
+  }
+  .btn, .btn-ink {
+    box-shadow: none !important;
+    border: 1px solid #aaa !important;
+    color: #111 !important;
+    background: transparent !important;
+  }
+  a {
+    color: #111 !important;
+    text-decoration: underline !important;
+  }
+}
+

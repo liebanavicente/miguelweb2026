@@ -16,7 +16,7 @@ export const es: Dictionary = {
     write: "Escríbeme",
     languageLabel: "Idioma",
     darkMode: "Modo oscuro",
-    nav: { ofrezco: "Qué ofrezco", proyectos: "Proyectos", puestos: "Puestos", formacion: "Formación", titulos: "Títulos", trayectoria: "Trayectoria", contacto: "Contacto" },
+    nav: { ofrezco: "Qué ofrezco", proyectos: "Proyectos", puestos: "Puestos", formacion: "Formación", titulos: "Títulos", trayectoria: "Trayectoria", competencias: "Competencias", contacto: "Contacto" },
   },
   fold: { open: "Desplegar", close: "Plegar" },
   hero: {

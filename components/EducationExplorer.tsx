@@ -44,7 +44,7 @@ export function EducationExplorer({ t }: { t: Dictionary["education"] }) {
             <li className={`${item.year ? "" : "is-current"}${open ? " is-open" : ""}`} key={item.id}>
               <span className="tl-date">{item.year ?? t.inProgress}</span>
               <div className="tl-body">
-                <button aria-controls={`edu-${item.id}`} aria-expanded={open} className="edu-toggle" onClick={() => setSelected(item.id)} type="button">
+                <button aria-controls={`edu-${item.id} edu-${item.id}-inline`} aria-expanded={open} className="edu-toggle" onClick={() => setSelected(item.id)} type="button">
                   <Image alt={item.logo.alt} className="edu-logo" height={item.logo.height} src={item.logo.src} unoptimized width={item.logo.width} />
                   <span className="edu-title">{text.title}</span>
                   <span className="edu-area">{text.area}</span>
@@ -55,7 +55,7 @@ export function EducationExplorer({ t }: { t: Dictionary["education"] }) {
                 {/* Phones: the contents open in place, under the entry. */}
                 {open ? (
                   <div className="edu-inline sheet">
-                    <Detail detail={text.detail} />
+                    <Detail detail={text.detail} id={`edu-${item.id}-inline`} />
                   </div>
                 ) : null}
               </div>

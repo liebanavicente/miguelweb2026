@@ -7,6 +7,7 @@ import "@fontsource/jetbrains-mono/400.css";
 import "@fontsource/jetbrains-mono/500.css";
 import "../globals.css";
 
+import { CONTACT } from "../../lib/cv";
 import { getDictionary } from "../../lib/dictionaries";
 import { isLocale, localePath, LOCALES } from "../../lib/i18n";
 import { INTRO_SCRIPT } from "../../lib/intro";
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     openGraph: {
       title: t.title,
       description: t.ogDescription,
-      images: [{ alt: "Miguel Liébana · Web, IA, administración y formación", height: 630, url: socialImage, width: 1200 }],
+      images: [{ alt: t.title, height: 630, url: socialImage, width: 1200 }],
       locale: t.ogLocale,
       type: "profile",
     },
@@ -56,12 +57,62 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
+  const t = getDictionary(lang).meta;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://www.miguelliebana.com/#person",
+        name: CONTACT.name,
+        jobTitle: "Full-Stack Web Developer & Educator",
+        url: "https://www.miguelliebana.com",
+        image: "https://www.miguelliebana.com/fotos/fw7.jpg",
+        sameAs: [CONTACT.linkedin, CONTACT.github, CONTACT.linktree],
+        alumniOf: [
+          { "@type": "CollegeOrUniversity", name: "Universitat de Barcelona" },
+          { "@type": "EducationalOrganization", name: "Upgrade Hub" },
+          { "@type": "EducationalOrganization", name: "Centro de Formación Coliseum" },
+          { "@type": "CollegeOrUniversity", name: "Universidad Internacional de Valencia" },
+        ],
+        knowsLanguage: ["es", "ca", "de", "en"],
+        knowsAbout: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "JavaScript",
+          "Node.js",
+          "Supabase",
+          "PostgreSQL",
+          "HTML5",
+          "CSS3",
+          "Artificial Intelligence",
+          "Prompt Engineering",
+        ],
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": `https://www.miguelliebana.com${localePath(lang)}`,
+        url: `https://www.miguelliebana.com${localePath(lang)}`,
+        name: t.title,
+        description: t.description,
+        inLanguage: lang,
+        mainEntity: { "@id": "https://www.miguelliebana.com/#person" },
+      },
+    ],
+  };
+
   return (
     // data-theme is set by the head script before React hydrates, so it differs from the server HTML on purpose.
     <html lang={lang} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <script dangerouslySetInnerHTML={{ __html: INTRO_SCRIPT }} />
+        <script
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          type="application/ld+json"
+        />
       </head>
       <body>
         {/* Aurora: soft colour fields under the notebook grid, so the glass surfaces have something to frost. */}

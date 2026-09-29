@@ -1,10 +1,15 @@
 import { ImageResponse } from "next/og";
 
+import { getDictionary } from "../../lib/dictionaries";
+import { isLocale } from "../../lib/i18n";
+
 export const alt = "Miguel Liébana · Web, IA, administración y formación";
 export const contentType = "image/png";
 export const size = { height: 630, width: 1200 };
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const t = isLocale(lang) ? getDictionary(lang) : getDictionary("es");
   return new ImageResponse(
     <div
       style={{
@@ -71,7 +76,7 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", fontSize: 58, fontWeight: 800, letterSpacing: 0, lineHeight: 1.02 }}>Miguel Liébana</div>
         <div style={{ color: "#3a4049", display: "flex", fontSize: 28, lineHeight: 1.35, marginTop: 22 }}>
-          Desarrollo web · IA · formación digital · administración
+          {t.hero.kicker}
         </div>
         <div style={{ background: "#2458d6", display: "flex", height: 5, marginTop: 34, width: 168 }} />
       </div>

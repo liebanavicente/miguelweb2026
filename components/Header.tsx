@@ -3,6 +3,7 @@
 import { List, X } from "@phosphor-icons/react";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
 
+import { CONTACT } from "../lib/cv";
 import type { Dictionary } from "../lib/dictionaries";
 import type { Locale } from "../lib/i18n";
 import { OPEN_SECTION_EVENT } from "./Collapsible";
@@ -10,7 +11,7 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
 
 // Section anchors stay the same in every language, so shared links keep working.
-const SECTION_IDS = ["ofrezco", "proyectos", "puestos", "formacion", "titulos", "trayectoria", "contacto"] as const;
+const SECTION_IDS = ["ofrezco", "proyectos", "puestos", "formacion", "titulos", "trayectoria", "competencias", "contacto"] as const;
 
 /** Sticky header: an ink underline slides to the hovered link and rests on the section in view. */
 export function Header({ t, locale }: { t: Dictionary["header"]; locale: Locale }) {
@@ -129,7 +130,7 @@ export function Header({ t, locale }: { t: Dictionary["header"]; locale: Locale 
               </li>
             ))}
           </ul>
-          <a className="button primary mobile-cta" href="mailto:mlieban3@gmail.com">
+          <a className="btn btn-ink mobile-cta" href={`mailto:${CONTACT.email}`}>
             {t.write}
           </a>
         </nav>

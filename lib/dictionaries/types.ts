@@ -21,7 +21,7 @@ export type Dictionary = {
     write: string;
     languageLabel: string;
     darkMode: string;
-    nav: { ofrezco: string; proyectos: string; puestos: string; formacion: string; titulos: string; trayectoria: string; contacto: string };
+    nav: { ofrezco: string; proyectos: string; puestos: string; formacion: string; titulos: string; trayectoria: string; competencias: string; contacto: string };
   };
   fold: { open: string; close: string };
   hero: {
