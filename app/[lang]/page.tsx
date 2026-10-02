@@ -179,8 +179,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             </div>
 
             <div className="hero-visual">
+              {/* Cut out from the studio backdrop, standing in front of a disc of pen-blue ink ruled like the notebook. */}
               <figure className="hero-photo">
-                <Image alt={t.hero.portraitAlt} height={1800} preload sizes="(max-width: 960px) 90vw, 520px" src="/fotos/fw7.jpg" width={1800} />
+                <span aria-hidden className="hero-disc" />
+                <Image alt={t.hero.portraitAlt} height={1200} preload sizes="(max-width: 960px) 90vw, 420px" src="/fotos/fw7-recorte.webp" width={1200} />
               </figure>
               <CodeCard t={t.codeCard} />
             </div>

@@ -80,7 +80,7 @@ export function Motion() {
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       const root = document.documentElement;
 
-      // ---- Hero: the title rises word group by word group, the portrait surfaces from the paper, the editor slides in.
+      // ---- Hero: the title rises word group by word group, the ink disc swells and the portrait rises into it, the editor slides in.
       const heroPaths = gsap.utils.toArray<SVGPathElement>(".hero-title .scribble path");
       gsap.set(heroPaths, { animation: "none", strokeDashoffset: 1 });
       const hero = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
@@ -92,7 +92,9 @@ export function Motion() {
         .from(".hero .lede", { y: 18, autoAlpha: 0, duration: 0.6 }, "-=0.7")
         .from(".hero .actions > *", { y: 16, autoAlpha: 0, duration: 0.5, stagger: 0.08, clearProps: "transform" }, "-=0.4")
         .from(".hero-meta", { autoAlpha: 0, duration: 0.6 }, "-=0.2")
-        .from(".hero-photo", { autoAlpha: 0, scale: 1.06, filter: "blur(14px)", duration: 1.3, clearProps: "filter,transform" }, 0.1)
+        .from(".hero-disc", { scale: 0.4, autoAlpha: 0, duration: 1.1, ease: "back.out(1.4)", clearProps: "transform" }, 0.1)
+        // y, not yPercent: yPercent belongs to the scroll drift below.
+        .from(".hero-photo img", { y: 60, autoAlpha: 0, duration: 1.1 }, 0.3)
         .from(".code-card", { y: 40, autoAlpha: 0, duration: 0.8 }, 0.6);
 
       // On a first visit the welcome film covers the page: start as it begins to dissolve, like the CSS animations do.

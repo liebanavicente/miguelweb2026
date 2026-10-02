@@ -283,10 +283,11 @@ body.menu-open { overflow: hidden; }
 .social-link:hover { color: var(--pen); transform: translateY(-2px); }
 
 .hero-visual { position: relative; justify-self: end; width: min(100%, 410px); padding-bottom: 70px; }
-/* The portrait has no frame: it surfaces from the paper, its edges dissolving into the grid and under the editor. */
-.hero-photo { position: relative; margin: 0 -40px 0 -20px; overflow: hidden; -webkit-mask-image: radial-gradient(ellipse closest-side at 50% 46%, #000 58%, transparent 100%); mask-image: radial-gradient(ellipse closest-side at 50% 46%, #000 58%, transparent 100%); animation: settle 1100ms var(--ease-out) 150ms both; }
-.hero-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 14%; scale: 1.08; }
-@keyframes settle { from { opacity: 0; filter: blur(12px); } }
+/* The portrait, cut out, stands in front of a disc of pen-blue ink ruled like the notebook; the head rises above it. */
+.hero-photo { position: relative; margin: 0; isolation: isolate; animation: settle 1000ms var(--ease-out) 150ms both; }
+.hero-disc { position: absolute; z-index: -1; top: 14%; left: 7%; width: 86%; aspect-ratio: 1; border-radius: 50%; background: linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px) 0 0 / 28px 28px, radial-gradient(circle at 30% 25%, #4d7ef5, #2458d6 55%, #1a44ad); box-shadow: 0 30px 70px rgba(36, 88, 214, 0.35); }
+.hero-photo img { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; object-position: 50% 100%; -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 98%); mask-image: linear-gradient(180deg, #000 72%, transparent 98%); }
+@keyframes settle { from { opacity: 0; transform: translateY(16px); } }
 
 /* ---------- Code card ---------- */
 .code-card { position: absolute; bottom: 0; left: -74px; width: min(360px, 92%); margin: 0; overflow: hidden; border-radius: 16px; animation: rise 700ms var(--ease-out) 350ms both; }
@@ -737,7 +738,6 @@ html[data-motion] .timeline.jobs::before { position: absolute; top: 6px; bottom:
   .backdrop { position: relative; z-index: -1; inset: auto; width: auto; height: clamp(220px, 48vw, 340px); margin: 0 -32px; }
   .backdrop-media { -webkit-mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent), linear-gradient(180deg, transparent, #000 22%, #000 58%, transparent 92%); mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent), linear-gradient(180deg, transparent, #000 22%, #000 58%, transparent 92%); }
   .backdrop figcaption { right: 32px; bottom: 30%; font-size: 1.15rem; }
-  .hero-photo { margin: 0 -24px; }
   .contact-backdrop { position: relative; order: -1; width: auto; height: 300px; margin: calc(-1 * clamp(28px, 5vw, 56px)) calc(-1 * clamp(28px, 5vw, 56px)) -40px; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); }
   .timeline li, .edu-layout .timeline li { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .tl-date { padding: 0 0 6px 30px; border-left: 1px dashed rgba(var(--pen-rgb), 0.35); text-align: left; }
@@ -765,7 +765,7 @@ html[data-motion] .timeline.jobs::before { position: absolute; top: 6px; bottom:
   .fold-action { align-self: stretch; justify-content: center; }
   .backdrop { margin: 0 -16px; }
   .backdrop figcaption { right: 16px; }
-  .hero-photo { margin: 0 -16px; }
+
   .project-art { height: 190px; }
   .project-art::after { inset: 10px; }
   .project-art-primary { width: 104px; height: 104px; }

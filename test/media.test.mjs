@@ -4,13 +4,13 @@ import test from "node:test";
 
 const read = (path) => readFile(new URL(`../${path}`, import.meta.url), "utf8");
 
-test("the hero uses the optimized fw7 portrait", async () => {
+test("the hero uses the cut-out fw7 portrait", async () => {
   const page = await read("app/[lang]/page.tsx");
 
-  assert.match(page, /src="\/fotos\/fw7\.jpg"/);
+  assert.match(page, /src="\/fotos\/fw7-recorte\.webp"/);
   assert.doesNotMatch(page, /src="\/fotos\/retrato\.jpg"/);
 
-  const portrait = await stat(new URL("../public/fotos/fw7.jpg", import.meta.url));
+  const portrait = await stat(new URL("../public/fotos/fw7-recorte.webp", import.meta.url));
   assert.ok(portrait.size < 1_000_000, "the hero portrait should stay below 1 MB");
 });
 
