@@ -28,6 +28,7 @@ import { DiplomaWall } from "../../components/DiplomaWall";
 import { EducationExplorer } from "../../components/EducationExplorer";
 import { InkVideo } from "../../components/InkVideo";
 import { Header } from "../../components/Header";
+import { Motion } from "../../components/Motion";
 import { OfferRotator } from "../../components/OfferRotator";
 import { Rich } from "../../components/Rich";
 import { RoleExplorer } from "../../components/RoleExplorer";
@@ -85,17 +86,32 @@ function Chapter({ id, index, label, title, accent, intro, aside }: { id: string
   );
 }
 
-/** A polaroid whose picture is a short silent clip, looping while it is on screen. */
-function ClipPolaroid({ name, caption }: { name: string; caption: string }) {
+/**
+ * A photo or a short clip behind a chapter heading: no frame, it fades into the paper on every side and drifts
+ * slower than the text as the page scrolls. The caption is pencilled over it.
+ */
+function Backdrop({ caption, children }: { caption: string; children: ReactNode }) {
   return (
-    <figure className="polaroid side-polaroid">
-      <div className="polaroid-img">
-        <InkVideo poster={`/video/${name}.jpg`} src={`/video/${name}.mp4`} />
+    <figure className="backdrop">
+      <div className="backdrop-media" data-speed="7">
+        {children}
       </div>
       <figcaption>{caption}</figcaption>
     </figure>
   );
 }
+
+/** A chapter heading with its backdrop. */
+function Scene({ children, backdrop }: { children: ReactNode; backdrop: ReactNode }) {
+  return (
+    <div className="chapter-scene">
+      {children}
+      {backdrop}
+    </div>
+  );
+}
+
+const clip = (name: string) => <InkVideo poster={`/video/${name}.jpg`} src={`/video/${name}.mp4`} />;
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -106,6 +122,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   return (
     <div className="app-shell" id="inicio">
       <WelcomeIntro skipLabel={t.intro.skip} />
+      <Motion />
       <Header locale={lang} t={t.header} />
       <main className="main" id="contenido" tabIndex={-1}>
         <div className="container">
@@ -163,7 +180,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
             <div className="hero-visual">
               <figure className="hero-photo">
-                <Image alt={t.hero.portraitAlt} height={1800} priority sizes="(max-width: 960px) 80vw, 400px" src="/fotos/fw7.jpg" width={1800} />
+                <Image alt={t.hero.portraitAlt} height={1800} preload sizes="(max-width: 960px) 90vw, 520px" src="/fotos/fw7.jpg" width={1800} />
               </figure>
               <CodeCard t={t.codeCard} />
             </div>
@@ -186,10 +203,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
           {/* What I offer */}
           <section aria-labelledby="ofrezco-titulo" className="section" id="ofrezco">
-            <div className="chapter-split">
+            <Scene backdrop={<Backdrop caption={t.clips.offers}>{clip("tinta-codigo")}</Backdrop>}>
               <Chapter {...t.offers.chapter} id="ofrezco" index="01" />
-              <ClipPolaroid caption={t.clips.offers} name="tinta-codigo" />
-            </div>
+            </Scene>
             <Collapsible id="ofrezco" labels={t.fold} summary={t.offers.chapter.summary}>
               <ol className="offer-grid">
                 {t.offers.items.map((offer, index) => {
@@ -220,16 +236,16 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
           {/* Projects */}
           <section aria-labelledby="proyectos-titulo" className="section" id="proyectos">
-            <div className="chapter-split">
+            <Scene
+              backdrop={
+                <Backdrop caption={t.projects.photoCaption}>
+                  <Image alt={t.projects.photoAlt} fill sizes="(max-width: 960px) 100vw, 60vw" src="/fotos/portatil.jpg" />
+                </Backdrop>
+              }
+            >
               <Chapter {...t.projects.chapter} aside={<MarginNote arrow="down">{t.projects.marginNote}</MarginNote>} id="proyectos" index="02" />
-              <figure className="polaroid side-polaroid">
-                <div className="polaroid-img">
-                  <Image alt={t.projects.photoAlt} fill sizes="(max-width: 960px) 90vw, 340px" src="/fotos/portatil.jpg" />
-                </div>
-                <figcaption>{t.projects.photoCaption}</figcaption>
-              </figure>
-            </div>
-            {/* Reel of the project emblems, taped into the notebook; loops while on screen. */}
+            </Scene>
+            {/* Reel of the project emblems, printed on the page itself and fading into it; loops while on screen. */}
             <figure className="project-reel">
               <InkVideo poster="/video/carrusel-proyectos.jpg" src="/video/carrusel-proyectos.mp4" />
             </figure>
@@ -302,12 +318,12 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
           <TechMarquee t={t.marquee} />
 
-          {/* Photos pinned to the notebook */}
+          {/* Three photos across the whole width, dissolving into the paper and into each other, each at its own depth. */}
           <div aria-label={t.gallery.label} className="photo-band" role="group">
             {GALLERY.map((src, index) => (
-              <figure className="polaroid" key={src}>
-                <div className="polaroid-img">
-                  <Image alt={t.gallery.photos[index].alt} fill sizes="(max-width: 620px) 70vw, 30vw" src={src} />
+              <figure className="band-photo" key={src}>
+                <div className="band-photo-media" data-speed={[6, 11, 4][index]}>
+                  <Image alt={t.gallery.photos[index].alt} fill sizes="(max-width: 620px) 85vw, 40vw" src={src} />
                 </div>
                 <figcaption>{t.gallery.photos[index].word}</figcaption>
               </figure>
@@ -324,10 +340,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
           {/* Education */}
           <section aria-labelledby="formacion-titulo" className="section" id="formacion">
-            <div className="chapter-split">
+            <Scene backdrop={<Backdrop caption={t.clips.education}>{clip("pluma")}</Backdrop>}>
               <Chapter {...t.education.chapter} id="formacion" index="04" />
-              <ClipPolaroid caption={t.clips.education} name="pluma" />
-            </div>
+            </Scene>
             <Collapsible id="formacion" labels={t.fold} summary={t.education.chapter.summary}>
               <EducationExplorer t={t.education} />
             </Collapsible>
@@ -343,10 +358,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
           {/* Experience */}
           <section aria-labelledby="trayectoria-titulo" className="section" id="trayectoria">
-            <div className="chapter-split">
+            <Scene backdrop={<Backdrop caption={t.clips.jobs}>{clip("gota")}</Backdrop>}>
               <Chapter {...t.jobs.chapter} id="trayectoria" index="06" />
-              <ClipPolaroid caption={t.clips.jobs} name="gota" />
-            </div>
+            </Scene>
             <Collapsible defaultOpen id="trayectoria" labels={t.fold} summary={t.jobs.chapter.summary}>
               <ol className="timeline jobs">
                 {JOBS.map((job) => (
@@ -515,9 +529,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                   </a>
                 </div>
               </div>
-              <figure className="polaroid contact-polaroid">
-                <div className="polaroid-img">
-                  <Image alt={t.contact.photoAlt} fill sizes="(max-width: 960px) 90vw, 380px" src="/fotos/ciudad.jpg" />
+              {/* The city at dusk fills the right side of the card and fades into the glass under the text. */}
+              <figure className="contact-backdrop">
+                <div className="backdrop-media" data-speed="5">
+                  <Image alt={t.contact.photoAlt} fill sizes="(max-width: 960px) 100vw, 55vw" src="/fotos/ciudad.jpg" />
                 </div>
                 <figcaption>{t.contact.photoCaption}</figcaption>
               </figure>

@@ -11,6 +11,7 @@ import { CONTACT } from "../../lib/cv";
 import { getDictionary } from "../../lib/dictionaries";
 import { isLocale, localePath, LOCALES } from "../../lib/i18n";
 import { INTRO_SCRIPT } from "../../lib/intro";
+import { MOTION_SCRIPT } from "../../lib/motion";
 import { THEME_SCRIPT } from "../../lib/theme";
 
 // Only the four languages exist; any other first segment is a 404.
@@ -109,6 +110,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <script dangerouslySetInnerHTML={{ __html: INTRO_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: MOTION_SCRIPT }} />
         <script
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           type="application/ld+json"

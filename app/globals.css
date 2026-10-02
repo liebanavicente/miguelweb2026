@@ -40,7 +40,6 @@
   /* Solid pen for surfaces that carry white text; stays deep in both themes. */
   --pen-solid: #2458d6;
   --neutral-rgb: 14, 17, 22;
-  --polaroid: white;
   color-scheme: light;
 }
 
@@ -119,8 +118,9 @@ h1, h2, h3, h4 { line-height: 1.05; }
 .section { padding-top: 96px; }
 .section-title { font-size: clamp(2.2rem, 4.4vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; }
 .chapter { position: relative; max-width: 760px; margin-bottom: 40px; }
-.chapter-split { display: grid; grid-template-columns: minmax(0, 1fr) 300px; align-items: end; gap: 48px; margin-bottom: 40px; }
-.chapter-split .chapter { margin-bottom: 0; }
+/* Chapter with a photo or clip behind it (see Backdrop in the page): the heading keeps the left, the picture the right. */
+.chapter-scene { position: relative; display: flex; min-height: clamp(300px, 30vw, 400px); align-items: center; isolation: isolate; }
+.chapter-scene .chapter { margin-bottom: 0; }
 
 /* Folded chapters: a glass bar with a summary; the body slides open underneath. */
 .fold-bar {
@@ -155,7 +155,7 @@ h1, h2, h3, h4 { line-height: 1.05; }
 .fold-inner { min-height: 0; overflow: hidden; margin: 0 -24px; padding: 28px 24px 8px; }
 .fold[data-open="false"] .fold-inner { padding-top: 0; padding-bottom: 0; }
 .fold[data-settled="true"] .fold-inner { overflow: visible; }
-.chapter, .chapter-split { margin-bottom: 26px; }
+.chapter, .chapter-scene { margin-bottom: 26px; }
 
 /* Hand-drawn pen stroke under a serif word. */
 .scribble { position: relative; display: inline-block; font-family: var(--serif); font-size: 1.1em; font-style: italic; font-weight: 400; letter-spacing: 0; white-space: nowrap; }
@@ -283,11 +283,10 @@ body.menu-open { overflow: hidden; }
 .social-link:hover { color: var(--pen); transform: translateY(-2px); }
 
 .hero-visual { position: relative; justify-self: end; width: min(100%, 410px); padding-bottom: 70px; }
-.hero-photo { position: relative; margin: 0; animation: settle 900ms var(--ease-out) 150ms both; }
-.hero-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; border-radius: 22px; object-fit: cover; object-position: 50% 12%; box-shadow: var(--shadow-soft); }
-/* A strip of sky-blue tape holding the photo to the page. */
-.hero-photo::before { position: absolute; z-index: 1; top: -14px; right: 22%; width: 104px; height: 28px; background: rgba(var(--accent-rgb), 0.55); content: ""; transform: rotate(4deg); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
-@keyframes settle { from { opacity: 0; transform: translateY(16px) rotate(-2deg); } }
+/* The portrait has no frame: it surfaces from the paper, its edges dissolving into the grid and under the editor. */
+.hero-photo { position: relative; margin: 0 -40px 0 -20px; overflow: hidden; -webkit-mask-image: radial-gradient(ellipse closest-side at 50% 46%, #000 58%, transparent 100%); mask-image: radial-gradient(ellipse closest-side at 50% 46%, #000 58%, transparent 100%); animation: settle 1100ms var(--ease-out) 150ms both; }
+.hero-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 14%; scale: 1.08; }
+@keyframes settle { from { opacity: 0; filter: blur(12px); } }
 
 /* ---------- Code card ---------- */
 .code-card { position: absolute; bottom: 0; left: -74px; width: min(360px, 92%); margin: 0; overflow: hidden; border-radius: 16px; animation: rise 700ms var(--ease-out) 350ms both; }
@@ -352,30 +351,32 @@ body.menu-open { overflow: hidden; }
 .offer-card:hover h3, .project-card:hover h3 { background-size: 100% 2px; }
 .offer-card p { color: var(--text-3); font-size: 0.95rem; line-height: 1.58; }
 
-/* ---------- Polaroids ---------- */
-.polaroid { position: relative; margin: 0; background: var(--polaroid); box-shadow: 0 2px 4px rgba(14, 17, 22, 0.05), 0 16px 36px rgba(14, 17, 22, 0.12); padding: 12px 12px 0; transform: rotate(var(--r, 0deg)); transition: transform 500ms var(--ease-out), box-shadow 400ms ease; }
-.polaroid::before { position: absolute; z-index: 1; top: -13px; left: 50%; width: 92px; height: 26px; background: rgba(var(--accent-rgb), 0.55); content: ""; transform: translateX(-50%) rotate(-3deg); }
-.polaroid-img { position: relative; overflow: hidden; aspect-ratio: 4 / 5; background: var(--sky-soft); }
-.polaroid-img img { object-fit: cover; transition: transform 800ms var(--ease-out); }
-.polaroid figcaption { color: var(--ink); font-family: var(--serif); font-size: 1.45rem; font-style: italic; padding: 10px 4px 14px; text-align: center; }
-.polaroid:hover { box-shadow: 0 4px 8px rgba(14, 17, 22, 0.06), 0 26px 50px rgba(14, 17, 22, 0.16); transform: rotate(0deg) translateY(-4px); }
-.polaroid:hover .polaroid-img img { transform: scale(1.04); }
-.side-polaroid { --r: 2.5deg; }
-.side-polaroid .polaroid-img { aspect-ratio: 5 / 4; }
-/* Project reel: the emblem carousel as a wide sheet taped into the notebook. */
-.project-reel { position: relative; margin: 0 0 32px; }
-.project-reel::before { position: absolute; z-index: 1; top: -13px; left: 14%; width: 104px; height: 28px; background: rgba(var(--accent-rgb), 0.55); content: ""; transform: rotate(-3deg); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
-.project-reel video, .project-reel img { display: block; width: 100%; aspect-ratio: 2 / 1; border-radius: 22px; background: var(--sky-soft); object-fit: cover; box-shadow: var(--shadow-soft); }
-#ofrezco .side-polaroid { --r: -2deg; }
-#trayectoria .side-polaroid { --r: 1.5deg; }
-/* Clip polaroids: the video (or its still frame) fills the picture like a photo would. */
-.polaroid-img video, .polaroid-img > img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 800ms var(--ease-out); }
-.polaroid:hover .polaroid-img video { transform: scale(1.04); }
+/* ---------- Photos as backdrops ----------
+ * No frames, tape or shadows: every picture is part of the page. Masks dissolve its edges into the paper and
+ * GSAP drifts it slower than the text ([data-speed]), so it reads as depth rather than as something stuck on.
+ */
+.backdrop { position: absolute; z-index: -1; top: -32px; right: calc((100% - 100vw) / 2); bottom: -32px; width: min(64vw, 900px); margin: 0; pointer-events: none; }
+.backdrop-media { position: absolute; inset: -9% 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 55%), linear-gradient(180deg, transparent, #000 28%, #000 70%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent, #000 55%), linear-gradient(180deg, transparent, #000 28%, #000 70%, transparent); mask-composite: intersect; }
+.backdrop-media img, .backdrop-media video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.backdrop figcaption { position: absolute; right: max(32px, calc((100vw - 1160px) / 2 + 8px)); bottom: 14%; color: var(--pen); font-family: var(--serif); font-size: 1.35rem; font-style: italic; text-shadow: 0 0 18px var(--paper), 0 0 4px var(--paper); }
+.backdrop figcaption::before { margin-right: 8px; content: "—"; }
 
-.photo-band { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px; margin-top: 88px; padding: 0 12px; }
-.photo-band .polaroid:nth-child(1) { --r: -2.5deg; }
-.photo-band .polaroid:nth-child(2) { --r: 1.8deg; margin-top: 34px; }
-.photo-band .polaroid:nth-child(3) { --r: -1.2deg; }
+/* Project reel: the emblem carousel printed straight onto the page, fading out at the edges. */
+.project-reel { position: relative; margin: 0 0 32px; }
+.project-reel video, .project-reel img { display: block; width: 100%; aspect-ratio: 2 / 1; object-fit: cover; -webkit-mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent), linear-gradient(180deg, transparent, #000 16%, #000 84%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent), linear-gradient(180deg, transparent, #000 16%, #000 84%, transparent); mask-composite: intersect; }
+
+/* Three photos across the whole width: they overlap and melt into each other and into the paper above and below. */
+.photo-band { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100vw; height: clamp(440px, 50vw, 700px); margin: 72px 0 0 calc((100% - 100vw) / 2); }
+.band-photo { position: relative; margin: 0 -7vw; }
+.band-photo:first-child { margin-left: 0; }
+.band-photo:last-child { margin-right: 0; }
+.band-photo-media { position: absolute; inset: -6% 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent), linear-gradient(180deg, transparent, #000 22%, #000 62%, transparent 92%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent), linear-gradient(180deg, transparent, #000 22%, #000 62%, transparent 92%); mask-composite: intersect; }
+.band-photo:first-child .band-photo-media { -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent), linear-gradient(180deg, transparent, #000 22%, #000 62%, transparent 92%); mask-image: linear-gradient(90deg, #000 70%, transparent), linear-gradient(180deg, transparent, #000 22%, #000 62%, transparent 92%); }
+.band-photo:last-child .band-photo-media { -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%), linear-gradient(180deg, transparent, #000 22%, #000 62%, transparent 92%); mask-image: linear-gradient(90deg, transparent, #000 30%), linear-gradient(180deg, transparent, #000 22%, #000 62%, transparent 92%); }
+.band-photo-media img { object-fit: cover; filter: saturate(0.78); transition: filter 700ms ease; }
+.band-photo:hover .band-photo-media img { filter: saturate(1.05); }
+.band-photo:nth-child(2) { z-index: 1; }
+.band-photo figcaption { position: absolute; z-index: 2; right: 0; bottom: 8%; left: 0; color: var(--ink); font-family: var(--serif); font-size: clamp(2rem, 3.6vw, 3.2rem); font-style: italic; text-align: center; text-shadow: 0 0 28px var(--paper), 0 0 10px var(--paper), 0 0 2px var(--paper); }
 
 /* ---------- Projects ---------- */
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
@@ -643,13 +644,18 @@ body.menu-open { overflow: hidden; }
 .level-medio { color: var(--faint); }
 
 /* ---------- Contact ---------- */
-.contact-card { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); align-items: center; gap: 56px; border-radius: 28px; padding: clamp(28px, 5vw, 56px); }
+.contact-card { position: relative; display: grid; overflow: hidden; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: center; gap: 56px; border-radius: 28px; isolation: isolate; padding: clamp(28px, 5vw, 56px); }
+.contact-copy { position: relative; z-index: 1; }
 .contact-list { display: grid; margin: 30px 0 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
 .contact-list li { border-bottom: 1px dashed var(--line); }
 .contact-list a { display: flex; align-items: center; gap: 14px; font-size: clamp(0.98rem, 1.8vw, 1.12rem); font-weight: 650; overflow-wrap: anywhere; padding: 15px 2px; transition: color 180ms ease, padding 250ms var(--ease-out); }
 .contact-list a svg:first-child { flex: none; color: var(--pen); }
 .contact-list a:hover { color: var(--pen); padding-left: 8px; }
-.contact-polaroid { --r: -2deg; justify-self: center; width: min(100%, 340px); }
+/* The city at dusk behind the right half of the card, fading into the glass towards the text. */
+.contact-backdrop { position: absolute; z-index: 0; top: 0; right: 0; bottom: 0; width: 56%; margin: 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 42%); mask-image: linear-gradient(90deg, transparent 0%, #000 42%); }
+.contact-backdrop .backdrop-media { -webkit-mask-image: none; mask-image: none; }
+.contact-backdrop img { object-position: 60% 30%; }
+.contact-backdrop figcaption { position: absolute; right: 28px; bottom: 24px; color: white; font-family: var(--serif); font-size: 1.5rem; font-style: italic; text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55); }
 
 .site-footer { border-top: 1px solid var(--hairline); }
 .site-footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: var(--muted); font-family: var(--mono); font-size: 0.74rem; padding: 26px 0; }
@@ -686,15 +692,17 @@ body::after {
   pointer-events: none;
 }
 
-/* Cards rise in as they scroll into view, where the browser supports scroll-driven animation. */
-@supports (animation-timeline: view()) {
-  .offer-card, .project-card, .timeline li, .sheet, .stat, .contact-card {
-    animation: reveal linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 35%;
-  }
-  @keyframes reveal { from { opacity: 0; transform: translateY(22px); } }
-}
+/* ---------- GSAP (components/Motion.tsx) ----------
+ * <html data-motion> is set before first paint when GSAP will animate. The hero waits hidden for it, and its CSS
+ * entrances step aside; if the script never runs, it shows itself after a moment anyway.
+ */
+html[data-motion] .hero-copy, html[data-motion] .hero-visual { visibility: hidden; animation: motion-fallback 0s 2.5s forwards; }
+html[data-motion] .hero .rise, html[data-motion] .hero-photo, html[data-motion] .code-card { animation: none; }
+@keyframes motion-fallback { to { visibility: visible; } }
+/* Experience: ink fills the dashed line as it is read (--progress), and each stop lights up when reached. */
+html[data-motion] .timeline.jobs { position: relative; }
+html[data-motion] .timeline.jobs::before { position: absolute; top: 6px; bottom: 0; left: 197px; width: 2px; border-radius: 2px; background: linear-gradient(var(--pen), var(--sky)); content: ""; transform: scaleY(var(--progress, 0)); transform-origin: top; }
+.timeline.jobs li.is-reached .tl-body::before { background: var(--pen); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1180px) {
@@ -722,10 +730,18 @@ body::after {
   .project-card.is-featured::before { inset: -15% -25% 45% -25%; }
   .project-card.is-featured .project-visual { order: -1; min-height: 240px; margin: 0 -24px; }
   .project-visual-img { padding: 18px 0 0; -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%); mask-image: linear-gradient(180deg, #000 70%, transparent 100%); }
-  .chapter-split, .edu-layout, .contact-card { grid-template-columns: minmax(0, 1fr); }
-  .side-polaroid { width: min(100%, 320px); }
+  .edu-layout, .contact-card { grid-template-columns: minmax(0, 1fr); }
+  /* Phones and tablets: the backdrop becomes a band above the heading, fading down into it. */
+  .chapter-scene { display: flex; min-height: 0; flex-direction: column-reverse; align-items: stretch; }
+  .chapter-scene .chapter { margin-top: -64px; }
+  .backdrop { position: relative; z-index: -1; inset: auto; width: auto; height: clamp(220px, 48vw, 340px); margin: 0 -32px; }
+  .backdrop-media { -webkit-mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent), linear-gradient(180deg, transparent, #000 22%, #000 58%, transparent 92%); mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent), linear-gradient(180deg, transparent, #000 22%, #000 58%, transparent 92%); }
+  .backdrop figcaption { right: 32px; bottom: 30%; font-size: 1.15rem; }
+  .hero-photo { margin: 0 -24px; }
+  .contact-backdrop { position: relative; order: -1; width: auto; height: 300px; margin: calc(-1 * clamp(28px, 5vw, 56px)) calc(-1 * clamp(28px, 5vw, 56px)) -40px; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); }
   .timeline li, .edu-layout .timeline li { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .tl-date { padding: 0 0 6px 30px; border-left: 1px dashed rgba(var(--pen-rgb), 0.35); text-align: left; }
+  html[data-motion] .timeline.jobs::before { left: -0.5px; }
   .margin-note { margin-left: 18%; }
 }
 
@@ -737,20 +753,19 @@ body::after {
   .hero-meta { flex-direction: column; align-items: flex-start; }
   .offer-grid, .skills-grid { grid-template-columns: minmax(0, 1fr); }
   .stat-value { font-size: 3.6rem; }
-  .project-reel video, .project-reel img { aspect-ratio: 16 / 9; border-radius: 16px; }
+  .project-reel video, .project-reel img { aspect-ratio: 16 / 9; }
   .terminal { margin-top: 40px; }
   .term-body { padding: 18px; }
-  .photo-band { display: flex; overflow-x: auto; gap: 22px; margin-right: -16px; padding: 18px 16px 18px 6px; scroll-snap-type: x mandatory; }
-  .photo-band .polaroid { flex: 0 0 72%; scroll-snap-align: center; }
-  .photo-band .polaroid:nth-child(2) { margin-top: 0; }
+  .photo-band { display: flex; height: 460px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .band-photo, .band-photo:first-child, .band-photo:last-child { flex: 0 0 82vw; margin: 0 -6vw 0 0; scroll-snap-align: center; }
+  .band-photo .band-photo-media, .band-photo:first-child .band-photo-media, .band-photo:last-child .band-photo-media { -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent), linear-gradient(180deg, transparent, #000 18%, #000 64%, transparent 94%); mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent), linear-gradient(180deg, transparent, #000 18%, #000 64%, transparent 94%); }
   .code-card { margin-left: -6px; }
   .code-body { font-size: 0.68rem; }
   .fold-bar { flex-direction: column; align-items: flex-start; padding: 14px 16px; }
   .fold-action { align-self: stretch; justify-content: center; }
-  .chapter-split { gap: 24px; }
-  .chapter-split .side-polaroid { justify-self: end; width: min(62%, 196px); margin-top: -4px; padding: 8px 8px 0; }
-  .chapter-split .side-polaroid::before { top: -10px; width: 72px; height: 20px; }
-  .chapter-split .side-polaroid figcaption { font-size: 1.08rem; padding: 7px 4px 9px; }
+  .backdrop { margin: 0 -16px; }
+  .backdrop figcaption { right: 16px; }
+  .hero-photo { margin: 0 -16px; }
   .project-art { height: 190px; }
   .project-art::after { inset: 10px; }
   .project-art-primary { width: 104px; height: 104px; }
@@ -767,14 +782,15 @@ body::after {
  */
 .welcome { display: none; }
 html[data-intro="play"], html[data-intro="leaving"] { overflow: hidden; }
-html[data-intro="play"] .welcome, html[data-intro="leaving"] .welcome { position: fixed; z-index: 1000; inset: 0; display: block; overflow: hidden; background: #070a0e url("/video/introcrystal.jpg") center / cover no-repeat; cursor: pointer; }
+html[data-intro="play"] .welcome, html[data-intro="leaving"] .welcome { position: fixed; z-index: 1000; inset: 0; display: block; overflow: hidden; background: #e7e1dd url("/video/firma.jpg") center / cover no-repeat; cursor: pointer; }
 html[data-intro="leaving"] .welcome { opacity: 0; filter: blur(10px); pointer-events: none; transform: scale(1.06); transition: opacity 1100ms var(--ease-out), transform 1100ms var(--ease-out), filter 1100ms var(--ease-out); }
 html[data-intro="play"] .hero *, html[data-intro="play"] .hero *::before, html[data-intro="play"] .hero *::after { animation-play-state: paused !important; }
 .welcome-film { display: block; width: 100%; height: 100%; object-fit: cover; }
-.welcome-skip { position: absolute; right: 24px; bottom: 24px; border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 999px; background: rgba(15, 20, 30, 0.65); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); color: #f0f3f8; cursor: pointer; font-family: var(--mono); font-size: 0.78rem; padding: 9px 16px; -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); transition: color 150ms ease, border-color 150ms ease; }
-.welcome-skip:hover { color: var(--pen); border-color: var(--pen); }
+.welcome-skip { position: absolute; right: 24px; bottom: 24px; border: 1px solid var(--glass-edge); border-radius: 999px; background: var(--glass); box-shadow: var(--glass-shadow); color: var(--text-2); cursor: pointer; font-family: var(--mono); font-size: 0.78rem; padding: 9px 16px; -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); }
+.welcome-skip:hover { color: var(--pen); }
+/* Portrait screens get the vertical cut: the film sits in the middle of a taller page of its own paper. */
 @media (max-aspect-ratio: 1 / 1) {
-  html[data-intro="play"] .welcome, html[data-intro="leaving"] .welcome { background-image: url("/video/introcrystal.jpg"); }
+  html[data-intro="play"] .welcome, html[data-intro="leaving"] .welcome { background-image: url("/video/firma-vertical.jpg"); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -822,11 +838,12 @@ html[data-intro="play"] .hero *, html[data-intro="play"] .hero *::before, html[d
   --tag-ink: #bcd2ff;
   --pen-solid: #3566e3;
   --neutral-rgb: 231, 235, 242;
-  --polaroid: #1b2130;
   color-scheme: dark;
 }
 :root[data-theme="dark"] .aurora span { opacity: 0.32; }
-:root[data-theme="dark"] .polaroid-img video, :root[data-theme="dark"] .project-reel video { filter: brightness(0.86); }
+:root[data-theme="dark"] .backdrop-media, :root[data-theme="dark"] .project-reel video { filter: brightness(0.8); }
+:root[data-theme="dark"] .band-photo-media img { filter: saturate(0.7) brightness(0.82); }
+:root[data-theme="dark"] .band-photo:hover .band-photo-media img { filter: saturate(1) brightness(0.92); }
 :root[data-theme="dark"] body::after { mix-blend-mode: soft-light; opacity: 0.08; }
 :root[data-theme="dark"] body::before { opacity: 0.7; }
 :root[data-theme="dark"] .topbar { border-bottom-color: rgba(255, 255, 255, 0.06); background: linear-gradient(180deg, rgba(11, 15, 23, 0.62), rgba(11, 15, 23, 0.38)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04); }
@@ -880,7 +897,7 @@ html[data-intro="play"] .hero *, html[data-intro="play"] .hero *::before, html[d
   }
   body::before, body::after, .aurora, .reading-progress, .topbar, .welcome,
   .menu-toggle, .mobile-menu, .theme-toggle, .lang, .fold-bar, video,
-  .side-polaroid, .photo-band, .project-reel, .btn-arrow {
+  .backdrop, .contact-backdrop, .photo-band, .project-reel, .btn-arrow {
     display: none !important;
   }
   .container {

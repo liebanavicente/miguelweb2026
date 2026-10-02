@@ -3,6 +3,8 @@
 import { CaretDown } from "@phosphor-icons/react";
 import { type ReactNode, useEffect, useRef, useState } from "react";
 
+import { riseIn } from "./Motion";
+
 /** Event the header fires when one of its links is clicked, so that chapter opens even if the hash did not change. */
 export const OPEN_SECTION_EVENT = "open-section";
 
@@ -15,6 +17,14 @@ export function Collapsible({ id, summary, labels, children, defaultOpen = false
   // Only once fully open may the content overflow (hover lifts, shadows, sticky panels).
   const [settled, setSettled] = useState(defaultOpen);
   const barRef = useRef<HTMLButtonElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
+  const wasOpen = useRef(open);
+
+  // Unfolding (not the chapters already open on load): the blocks inside rise in one after another.
+  useEffect(() => {
+    if (open && !wasOpen.current) riseIn(innerRef.current);
+    wasOpen.current = open;
+  }, [open]);
 
   useEffect(() => {
     const fromHash = () => {
@@ -61,7 +71,9 @@ export function Collapsible({ id, summary, labels, children, defaultOpen = false
           if (event.target === event.currentTarget && event.propertyName === "grid-template-rows" && open) setSettled(true);
         }}
       >
-        <div className="fold-inner">{children}</div>
+        <div className="fold-inner" ref={innerRef}>
+          {children}
+        </div>
       </div>
     </>
   );
