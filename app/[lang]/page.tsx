@@ -3,6 +3,7 @@ import {
   ArrowDown,
   ArrowRight,
   ArrowUpRight,
+  BookOpenText,
   Briefcase,
   Browser,
   ChalkboardTeacher,
@@ -35,7 +36,7 @@ import { RoleExplorer } from "../../components/RoleExplorer";
 import { MarginNote, Scribble } from "../../components/Scribble";
 import { TechMarquee } from "../../components/TechMarquee";
 import { WelcomeIntro } from "../../components/WelcomeIntro";
-import { CONTACT, JOBS, LANGUAGES, MORE_PROJECTS, OFFER_ICONS, PROJECTS, SOFTWARE, type ProjectArt, type YearMonth } from "../../lib/cv";
+import { CONTACT, JOBS, LANGUAGES, MORE_PROJECTS, OFFER_ICONS, PROJECTS, SOFTWARE, VENTURES, type ProjectArt, type YearMonth } from "../../lib/cv";
 import { fill, getDictionary } from "../../lib/dictionaries";
 import { isLocale } from "../../lib/i18n";
 
@@ -200,6 +201,29 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               </div>
             ))}
           </dl>
+
+          {/* Teaching projects: the vibecodingcoach site and the free course catalog. */}
+          <section aria-label={t.ventures.label} className="ventures">
+            {VENTURES.map(({ id, href }) => {
+              const VentureIcon = id === "cursos" ? BookOpenText : ChalkboardTeacher;
+              const item = t.ventures.items[id];
+              return (
+                <a className="offer-card venture-card" href={href} key={id} rel="noreferrer" target="_blank">
+                  <div className="offer-top">
+                    <span className="offer-icon">
+                      <VentureIcon aria-hidden size={22} weight="regular" />
+                    </span>
+                    <span className="offer-num">{href.replace("https://", "")}</span>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                  <span className="venture-cta">
+                    {item.cta} <ArrowUpRight aria-hidden className="btn-arrow" size={16} weight="bold" />
+                  </span>
+                </a>
+              );
+            })}
+          </section>
 
           <OfferRotator t={t.rotator} />
 

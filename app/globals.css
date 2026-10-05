@@ -347,6 +347,12 @@ body.menu-open { overflow: hidden; }
 .offer-icon { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid var(--glass-edge); border-radius: 12px; background: var(--well); box-shadow: inset 0 1px 0 var(--highlight), 0 4px 12px rgba(33, 62, 128, 0.08); color: var(--pen); transition: background-color 250ms ease, color 250ms ease, transform 300ms var(--ease-out); }
 .offer-card:hover .offer-icon { background: var(--pen-solid); color: white; transform: rotate(-6deg); }
 .offer-num { color: var(--faint); font-family: var(--mono); font-size: 0.75rem; }
+/* Teaching projects (vibecodingcoach and the free courses), right below the key numbers. */
+.ventures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.venture-card { color: inherit; text-decoration: none; }
+.venture-card .offer-num { text-transform: none; }
+.venture-cta { display: inline-flex; align-items: center; gap: 6px; color: var(--pen); font-weight: 700; }
+.venture-card:hover .btn-arrow { transform: translate(2px, -2px); }
 .offer-card h3, .project-card h3 { width: fit-content; background: linear-gradient(var(--pen), var(--pen)) no-repeat 0 100% / 0 2px; padding-bottom: 3px; transition: background-size 400ms var(--ease-out); }
 .offer-card h3 { font-size: 1.18rem; font-weight: 780; }
 .offer-card:hover h3, .project-card:hover h3 { background-size: 100% 2px; }
@@ -726,6 +732,7 @@ html[data-motion] .timeline.jobs::before { position: absolute; top: 6px; bottom:
   .stat, .stat + .stat { padding: 22px 0; border-left: 0; }
   .stat + .stat { border-top: 1px dashed var(--line); }
   .offer-grid, .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ventures { grid-template-columns: minmax(0, 1fr); }
   .project-grid { grid-template-columns: minmax(0, 1fr); }
   .project-card.is-featured { grid-template-columns: minmax(0, 1fr); padding: 0 24px 26px; }
   .project-card.is-featured::before { inset: -15% -25% 45% -25%; }

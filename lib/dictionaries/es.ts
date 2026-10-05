@@ -41,6 +41,13 @@ export const es: Dictionary = {
     { value: "+20", unit: "años", label: "de experiencia laboral en administración, atención al público y educación" },
     { value: "4", unit: "idiomas", label: "Español y catalán nativos, alemán C2 e inglés B2" },
   ],
+  ventures: {
+    label: "Mis proyectos de formación",
+    items: {
+      vibecodingcoach: { title: "vibecodingcoach", text: "Enseño a principiantes a construir su primera web con IA, sin jerga. Clases 1:1 y, si lo prefieres, te hago yo la web.", cta: "Ir a vibecodingcoach" },
+      cursos: { title: "Cursos gratis", text: "Tres cursos gratuitos y sin registro: competencias digitales básicas, HTML y CSS desde cero y Vibe Coding desde Cero.", cta: "Ver los cursos" },
+    },
+  },
   rotator: {
     path: "~/tu-equipo",
     comment: "# en tu equipo puedo…",

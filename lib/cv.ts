@@ -81,6 +81,14 @@ export const SOFTWARE: Array<{ name: string; level: SoftwareLevel }> = [
   { name: "Canva", level: "experto" },
 ];
 
+/** Miguel's teaching projects, linked right below the key numbers. */
+export const VENTURES = [
+  { id: "vibecodingcoach", href: "https://vibecoding.miguelliebana.com" },
+  { id: "cursos", href: "https://cursos.miguelliebana.com" },
+] as const;
+
+export type VentureId = (typeof VENTURES)[number]["id"];
+
 /** Featured work, picked from github.com/liebanavicente. Code links only for public repositories. */
 export type ProjectStatus = "live" | "public" | "private" | "learning";
 export type ProjectArt = "portfolio" | "nfp" | "enerpro" | "bandmanager" | "htmlcss" | "upgrade" | "suscripscan";
@@ -90,7 +98,7 @@ export const PROJECTS = [
   { id: "nfpshop", name: "NFP Clothing", status: "live", art: "nfp", featured: true, stack: ["Next.js 16", "Stripe", "Gelato API", "Tailwind CSS", "Vercel"], demo: "https://www.nfpclothing.com", preview: "/proyectos/nfp-clothing.webp" },
   { id: "enerpro", name: "ENERPRO", status: "public", art: "enerpro", logo: "/logos/enerpro.png", stack: ["JavaScript", "Supabase", "Resend", "Vercel"], demo: "https://enerpro.vercel.app", code: "https://github.com/liebanavicente/enerpro" },
   { id: "bandmanager", name: "BandManager", status: "public", art: "bandmanager", logo: "/logos/bandmanager-emblem.png", stack: ["Next.js 16", "TypeScript", "Prisma", "PostgreSQL", "shadcn/ui"], demo: "https://bandmanager-nine.vercel.app", code: "https://github.com/liebanavicente/bandmanager" },
-  { id: "htmlcss", status: "learning", art: "htmlcss", logo: "/logos/html-css-emblem.png", stack: ["HTML", "CSS"], demo: "https://materialdidacticocpweb.vercel.app" },
+  { id: "htmlcss", status: "learning", art: "htmlcss", logo: "/logos/html-css-emblem.png", stack: ["HTML", "CSS"], demo: "https://html-css.miguelliebana.com" },
   { id: "apuntes", name: "Apuntes Upgrade", status: "private", art: "upgrade", logo: "/logos/upgrade-hub.svg", stack: ["Next.js", "AI SDK", "Vercel Blob", "TypeScript"] },
   { id: "suscripscan", name: "Suscripscan", status: "public", art: "suscripscan", logo: "/logos/suscripscan-emblem.png", stack: ["Next.js", "Recharts", "jsPDF"], demo: "https://suscripscan.vercel.app", code: "https://github.com/liebanavicente/suscripscan" },
 ] as const satisfies ReadonlyArray<{ id: string; name?: string; status: ProjectStatus; art: ProjectArt; featured?: boolean; stack: string[]; demo?: string; code?: string; preview?: string; logo?: string }>;

@@ -41,6 +41,13 @@ export const ca: Dictionary = {
     { value: "+20", unit: "anys", label: "d'experiència laboral en administració, atenció al públic i educació" },
     { value: "4", unit: "idiomes", label: "Castellà i català nadius, alemany C2 i anglès B2" },
   ],
+  ventures: {
+    label: "Els meus projectes de formació",
+    items: {
+      vibecodingcoach: { title: "vibecodingcoach", text: "Ensenyo a principiants a construir la seva primera web amb IA, sense argot. Classes 1:1 i, si ho prefereixes, et faig jo la web.", cta: "Anar a vibecodingcoach" },
+      cursos: { title: "Cursos gratuïts", text: "Tres cursos gratuïts i sense registre, en castellà: competències digitals bàsiques, HTML i CSS des de zero i Vibe Coding des de zero.", cta: "Veure els cursos" },
+    },
+  },
   rotator: {
     path: "~/el-teu-equip",
     comment: "# al teu equip puc…",

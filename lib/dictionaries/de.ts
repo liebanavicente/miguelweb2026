@@ -41,6 +41,13 @@ export const de: Dictionary = {
     { value: "20+", unit: "Jahre", label: "Berufserfahrung in Verwaltung, Kundenservice und Bildung" },
     { value: "4", unit: "Sprachen", label: "Spanisch und Katalanisch als Muttersprachen, Deutsch C2 und Englisch B2" },
   ],
+  ventures: {
+    label: "Meine Lernprojekte",
+    items: {
+      vibecodingcoach: { title: "vibecodingcoach", text: "Ich bringe Anfängern bei, ihre erste Website mit KI zu bauen – ohne Fachjargon. Einzelunterricht und, wenn du magst, baue ich dir die Website.", cta: "Zu vibecodingcoach" },
+      cursos: { title: "Kostenlose Kurse", text: "Drei kostenlose Kurse ohne Anmeldung, auf Spanisch: digitale Grundkompetenzen, HTML und CSS von null und Vibe Coding von null.", cta: "Zu den Kursen" },
+    },
+  },
   rotator: {
     path: "~/dein-team",
     comment: "# in deinem Team kann ich…",
