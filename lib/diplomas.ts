@@ -18,7 +18,6 @@ type DiplomaFacts = {
 // Titles, issuers and notes are translated in lib/dictionaries, keyed by id.
 export const DIPLOMAS = [
   { id: "ub", seal: "UB", year: "2007", category: "oficial", featured: true },
-  { id: "master", seal: "VIU", year: "2023", category: "oficial", featured: true },
   { id: "adgd0308", seal: "SOC", year: "2022", category: "oficial", featured: true },
   { id: "zop", seal: "GI", year: "2010", category: "idiomas", featured: true },
   { id: "abitur", seal: "DSB", year: "", category: "oficial" },

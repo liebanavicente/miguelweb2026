@@ -99,7 +99,7 @@ export const en: Dictionary = {
       },
       {
         title: "Digital skills training for adults",
-        text: "14 years of teaching experience and a master's degree in ICT in education. I teach office software, digital skills, HTML, CSS and AI patiently, starting from real cases.",
+        text: "14 years of teaching experience and a master's in ICT in education (final project pending). I teach office software, digital skills, HTML, CSS and AI patiently, starting from real cases.",
         tags: ["Digital skills", "Office software", "AI"],
       },
     ],
@@ -209,7 +209,7 @@ export const en: Dictionary = {
         name: "Digital training",
         intro: "Training for adults: my teaching experience put to work for digital skills, office software and the web.",
         roles: [
-          { title: "Digital skills trainer for adults", fit: "alta", why: "14 years of teaching, a master's in educational ICT and ACTIC level 2." },
+          { title: "Digital skills trainer for adults", fit: "alta", why: "14 years of teaching, a master's in educational ICT (final project pending) and ACTIC level 2." },
           { title: "Office software trainer", fit: "alta", why: "Word, Excel, Outlook and PowerPoint at expert level, and experience explaining them." },
           { title: "ICT centre and community tech hub facilitator", fit: "alta", why: "I guide people with no digital experience clearly and without rushing." },
           { title: "HTML, CSS and AI trainer for beginners", fit: "media", why: "I've already created my own learning material for HTML and CSS from scratch.", note: "Teaching Spanish professional certificates requires holding the corresponding certificate." },
@@ -240,7 +240,7 @@ export const en: Dictionary = {
     },
   },
   education: {
-    chapter: { label: "education", title: "Studies and", accent: "credentials", summary: "4 programmes · 1 in progress · expandable contents" },
+    chapter: { label: "education", title: "Studies and", accent: "credentials", summary: "4 programmes · 2 in progress · expandable contents" },
     inProgress: "In progress",
     view: "see contents",
     viewing: "viewing contents",
@@ -262,7 +262,7 @@ export const en: Dictionary = {
       },
       master: {
         title: "Master's degree in Information and Communication Technologies in Education",
-        area: "Universidad Internacional de Valencia (VIU)",
+        area: "Universidad Internacional de Valencia (VIU) · coursework completed, master's thesis pending",
         detail: {
           heading: "Master's areas",
           groups: [{ items: ["Integrating ICT in the classroom", "Teachers' digital competence", "Designing digital learning materials and environments", "Educational innovation and research with technology"] }],
@@ -311,7 +311,7 @@ export const en: Dictionary = {
       title: "Archive of",
       accent: "diplomas",
       intro: "Everything I've had certified along the way: official qualifications, languages, technology, marketing and teacher training.",
-      summary: "27 diplomas and certificates · 1,100+ certified hours",
+      summary: "26 diplomas and certificates · 1,100+ certified hours",
     },
     count: "**{n}** diplomas and certificates",
     hours: "**1,100+** hours of certified training",
@@ -321,7 +321,6 @@ export const en: Dictionary = {
     verify: "Verify",
     items: {
       ub: { title: "Teacher, specialising in Music Education", issuer: "Universitat de Barcelona", meta: "Bachelor's level · MECES 2 · EQF 6" },
-      master: { title: "Master's degree in ICT in Education", issuer: "Universidad Internacional de Valencia", meta: "Official master's degree" },
       adgd0308: { title: "Professional certificate ADGD0308 · Administrative Management Activities", issuer: "Servei Públic d'Ocupació de Catalunya", meta: "Level 2 · Administration and Management" },
       zop: { title: "Zentrale Oberstufenprüfung (ZOP)", issuer: "Goethe-Institut Barcelona", meta: "German C2" },
       abitur: { title: "Abitur · German school-leaving certificate", issuer: "Deutsche Schule Barcelona", meta: "Official German upper secondary qualification" },

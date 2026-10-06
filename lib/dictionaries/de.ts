@@ -99,7 +99,7 @@ export const de: Dictionary = {
       },
       {
         title: "Digitale Erwachsenenbildung",
-        text: "14 Jahre Unterrichtserfahrung und ein Master in IKT in der Bildung. Ich unterrichte Office, digitale Kompetenzen, HTML und CSS sowie KI mit Geduld und anhand echter Fälle.",
+        text: "14 Jahre Unterrichtserfahrung und ein Master in IKT in der Bildung (Masterarbeit ausstehend). Ich unterrichte Office, digitale Kompetenzen, HTML und CSS sowie KI mit Geduld und anhand echter Fälle.",
         tags: ["Digitale Kompetenzen", "Office", "KI"],
       },
     ],
@@ -209,7 +209,7 @@ export const de: Dictionary = {
         name: "Digitale Weiterbildung",
         intro: "Erwachsenenbildung: meine Unterrichtserfahrung im Dienst digitaler Kompetenzen, Office und Web.",
         roles: [
-          { title: "Trainer für digitale Kompetenzen (Erwachsene)", fit: "alta", why: "14 Jahre Unterricht, Master in Bildungs-IKT und ACTIC Stufe 2." },
+          { title: "Trainer für digitale Kompetenzen (Erwachsene)", fit: "alta", why: "14 Jahre Unterricht, Master in Bildungs-IKT (Masterarbeit ausstehend) und ACTIC Stufe 2." },
           { title: "Office-Trainer", fit: "alta", why: "Word, Excel, Outlook und PowerPoint auf Expertenniveau und Erfahrung darin, sie zu erklären." },
           { title: "Betreuer von IKT-Räumen und Computertreffs", fit: "alta", why: "Ich begleite Menschen ohne digitale Erfahrung verständlich und ohne Eile." },
           { title: "Trainer für HTML, CSS und KI für Einsteiger", fit: "media", why: "Ich habe bereits eigenes Lernmaterial für HTML und CSS von null an erstellt.", note: "Für spanische Berufszertifikate muss man das jeweilige Zertifikat selbst besitzen." },
@@ -240,7 +240,7 @@ export const de: Dictionary = {
     },
   },
   education: {
-    chapter: { label: "ausbildung", title: "Ausbildung und", accent: "Nachweise", summary: "4 Ausbildungen · 1 laufend · Inhalte aufklappbar" },
+    chapter: { label: "ausbildung", title: "Ausbildung und", accent: "Nachweise", summary: "4 Ausbildungen · 2 laufend · Inhalte aufklappbar" },
     inProgress: "Laufend",
     view: "Inhalte ansehen",
     viewing: "Inhalte geöffnet",
@@ -262,7 +262,7 @@ export const de: Dictionary = {
       },
       master: {
         title: "Universitärer Master in Informations- und Kommunikationstechnologien in der Bildung",
-        area: "Universidad Internacional de Valencia (VIU)",
+        area: "Universidad Internacional de Valencia (VIU) · Studium abgeschlossen, Masterarbeit ausstehend",
         detail: {
           heading: "Schwerpunkte des Masters",
           groups: [{ items: ["IKT im Unterricht einsetzen", "Digitale Kompetenz von Lehrkräften", "Gestaltung digitaler Lernmaterialien und -umgebungen", "Bildungsinnovation und -forschung mit Technologie"] }],
@@ -311,7 +311,7 @@ export const de: Dictionary = {
       title: "Archiv der",
       accent: "Zeugnisse",
       intro: "Alles, was ich mir unterwegs habe bescheinigen lassen: offizielle Abschlüsse, Sprachen, Technik, Marketing und Lehrerfortbildung.",
-      summary: "27 Zeugnisse und Zertifikate · über 1.100 nachgewiesene Stunden",
+      summary: "26 Zeugnisse und Zertifikate · über 1.100 nachgewiesene Stunden",
     },
     count: "**{n}** Zeugnisse und Zertifikate",
     hours: "**1.100+** Stunden nachgewiesene Weiterbildung",
@@ -321,7 +321,6 @@ export const de: Dictionary = {
     verify: "Prüfen",
     items: {
       ub: { title: "Lehrer mit Schwerpunkt Musikerziehung", issuer: "Universitat de Barcelona", meta: "Bachelorniveau · MECES 2 · EQR 6" },
-      master: { title: "Universitärer Master in IKT in der Bildung", issuer: "Universidad Internacional de Valencia", meta: "Universitärer Master" },
       adgd0308: { title: "Berufszertifikat ADGD0308 · Tätigkeiten der Verwaltungsführung", issuer: "Servei Públic d'Ocupació de Catalunya", meta: "Stufe 2 · Verwaltung und Management" },
       zop: { title: "Zentrale Oberstufenprüfung (ZOP)", issuer: "Goethe-Institut Barcelona", meta: "Deutsch C2" },
       abitur: { title: "Abitur", issuer: "Deutsche Schule Barcelona", meta: "Deutsche allgemeine Hochschulreife" },

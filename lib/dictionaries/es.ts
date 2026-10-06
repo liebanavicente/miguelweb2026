@@ -99,7 +99,7 @@ export const es: Dictionary = {
       },
       {
         title: "Formación digital para adultos",
-        text: "14 años de experiencia docente y un máster en TIC aplicadas a la educación. Enseño ofimática, competencias digitales, HTML y CSS e IA con paciencia y a partir de casos reales.",
+        text: "14 años de experiencia docente y un máster en TIC aplicadas a la educación (me falta el trabajo final). Enseño ofimática, competencias digitales, HTML y CSS e IA con paciencia y a partir de casos reales.",
         tags: ["Competencias digitales", "Ofimática", "IA"],
       },
     ],
@@ -209,7 +209,7 @@ export const es: Dictionary = {
         name: "Formación digital",
         intro: "Formación para personas adultas: mi experiencia docente al servicio de las competencias digitales, la ofimática y la web.",
         roles: [
-          { title: "Formador de competencias digitales para adultos", fit: "alta", why: "14 años de docencia, máster en TIC educativas y ACTIC nivel 2." },
+          { title: "Formador de competencias digitales para adultos", fit: "alta", why: "14 años de docencia, máster en TIC educativas (pendiente del trabajo final) y ACTIC nivel 2." },
           { title: "Formador de ofimática", fit: "alta", why: "Word, Excel, Outlook y PowerPoint a nivel experto, y experiencia explicándolos." },
           { title: "Dinamizador de espacios TIC y telecentros", fit: "alta", why: "Acompaño a personas sin experiencia digital con claridad y sin prisas." },
           { title: "Formador de HTML, CSS e IA para principiantes", fit: "media", why: "Ya he creado material didáctico propio para aprender HTML y CSS desde cero.", note: "Para impartir certificados de profesionalidad se exige acreditar el certificado correspondiente." },
@@ -240,7 +240,7 @@ export const es: Dictionary = {
     },
   },
   education: {
-    chapter: { label: "formación", title: "Estudios y", accent: "acreditaciones", summary: "4 formaciones · 1 en curso · contenido desplegable" },
+    chapter: { label: "formación", title: "Estudios y", accent: "acreditaciones", summary: "4 formaciones · 2 en curso · contenido desplegable" },
     inProgress: "En curso",
     view: "ver contenido",
     viewing: "viendo contenido",
@@ -262,7 +262,7 @@ export const es: Dictionary = {
       },
       master: {
         title: "Máster universitario en Tecnologías de la Información y la Comunicación aplicadas a la Educación",
-        area: "Universidad Internacional de Valencia (VIU)",
+        area: "Universidad Internacional de Valencia (VIU) · cursado, pendiente del trabajo final de máster (TFM)",
         detail: {
           heading: "Áreas del máster",
           groups: [{ items: ["Integración de las TIC en el aula", "Competencia digital docente", "Diseño de materiales y entornos digitales de aprendizaje", "Innovación e investigación educativa con tecnología"] }],
@@ -311,7 +311,7 @@ export const es: Dictionary = {
       title: "Archivo de",
       accent: "títulos",
       intro: "Todo lo que he ido acreditando por el camino: títulos oficiales, idiomas, tecnología, marketing y formación docente.",
-      summary: "27 títulos y certificados · +1.100 horas acreditadas",
+      summary: "26 títulos y certificados · +1.100 horas acreditadas",
     },
     count: "**{n}** títulos y certificados",
     hours: "**+1.100** horas de formación acreditada",
@@ -321,7 +321,6 @@ export const es: Dictionary = {
     verify: "Verificar",
     items: {
       ub: { title: "Maestro, especialidad de Educación Musical", issuer: "Universitat de Barcelona", meta: "Nivel de Grado · MECES 2 · EQF 6" },
-      master: { title: "Máster universitario en TIC aplicadas a la Educación", issuer: "Universidad Internacional de Valencia", meta: "Máster universitario" },
       adgd0308: { title: "Certificado de profesionalidad ADGD0308 · Actividades de gestión administrativa", issuer: "Servei Públic d'Ocupació de Catalunya", meta: "Nivel 2 · familia Administración y Gestión" },
       zop: { title: "Zentrale Oberstufenprüfung (ZOP)", issuer: "Goethe-Institut Barcelona", meta: "Alemán C2" },
       abitur: { title: "Abitur · bachillerato alemán", issuer: "Colegio Alemán de Barcelona", meta: "Bachillerato oficial alemán" },

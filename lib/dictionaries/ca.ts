@@ -99,7 +99,7 @@ export const ca: Dictionary = {
       },
       {
         title: "Formació digital per a adults",
-        text: "14 anys d'experiència docent i un màster en TIC aplicades a l'educació. Ensenyo ofimàtica, competències digitals, HTML i CSS i IA amb paciència i a partir de casos reals.",
+        text: "14 anys d'experiència docent i un màster en TIC aplicades a l'educació (em falta el treball final). Ensenyo ofimàtica, competències digitals, HTML i CSS i IA amb paciència i a partir de casos reals.",
         tags: ["Competències digitals", "Ofimàtica", "IA"],
       },
     ],
@@ -209,7 +209,7 @@ export const ca: Dictionary = {
         name: "Formació digital",
         intro: "Formació per a persones adultes: la meva experiència docent al servei de les competències digitals, l'ofimàtica i el web.",
         roles: [
-          { title: "Formador de competències digitals per a adults", fit: "alta", why: "14 anys de docència, màster en TIC educatives i ACTIC nivell 2." },
+          { title: "Formador de competències digitals per a adults", fit: "alta", why: "14 anys de docència, màster en TIC educatives (pendent del treball final) i ACTIC nivell 2." },
           { title: "Formador d'ofimàtica", fit: "alta", why: "Word, Excel, Outlook i PowerPoint a nivell expert, i experiència explicant-los." },
           { title: "Dinamitzador d'espais TIC i telecentres", fit: "alta", why: "Acompanyo persones sense experiència digital amb claredat i sense presses." },
           { title: "Formador d'HTML, CSS i IA per a principiants", fit: "media", why: "Ja he creat material didàctic propi per aprendre HTML i CSS des de zero.", note: "Per impartir certificats de professionalitat cal acreditar el certificat corresponent." },
@@ -240,7 +240,7 @@ export const ca: Dictionary = {
     },
   },
   education: {
-    chapter: { label: "formació", title: "Estudis i", accent: "acreditacions", summary: "4 formacions · 1 en curs · contingut desplegable" },
+    chapter: { label: "formació", title: "Estudis i", accent: "acreditacions", summary: "4 formacions · 2 en curs · contingut desplegable" },
     inProgress: "En curs",
     view: "veure contingut",
     viewing: "veient contingut",
@@ -262,7 +262,7 @@ export const ca: Dictionary = {
       },
       master: {
         title: "Màster universitari en Tecnologies de la Informació i la Comunicació aplicades a l'Educació",
-        area: "Universidad Internacional de Valencia (VIU)",
+        area: "Universidad Internacional de Valencia (VIU) · cursat, pendent del treball final de màster (TFM)",
         detail: {
           heading: "Àrees del màster",
           groups: [{ items: ["Integració de les TIC a l'aula", "Competència digital docent", "Disseny de materials i entorns digitals d'aprenentatge", "Innovació i recerca educativa amb tecnologia"] }],
@@ -311,7 +311,7 @@ export const ca: Dictionary = {
       title: "Arxiu de",
       accent: "títols",
       intro: "Tot el que he anat acreditant pel camí: títols oficials, idiomes, tecnologia, màrqueting i formació docent.",
-      summary: "27 títols i certificats · +1.100 hores acreditades",
+      summary: "26 títols i certificats · +1.100 hores acreditades",
     },
     count: "**{n}** títols i certificats",
     hours: "**+1.100** hores de formació acreditada",
@@ -321,7 +321,6 @@ export const ca: Dictionary = {
     verify: "Verificar",
     items: {
       ub: { title: "Mestre, especialitat d'Educació Musical", issuer: "Universitat de Barcelona", meta: "Nivell de grau · MECES 2 · EQF 6" },
-      master: { title: "Màster universitari en TIC aplicades a l'Educació", issuer: "Universidad Internacional de Valencia", meta: "Màster universitari" },
       adgd0308: { title: "Certificat de professionalitat ADGD0308 · Activitats de gestió administrativa", issuer: "Servei Públic d'Ocupació de Catalunya", meta: "Nivell 2 · família Administració i Gestió" },
       zop: { title: "Zentrale Oberstufenprüfung (ZOP)", issuer: "Goethe-Institut Barcelona", meta: "Alemany C2" },
       abitur: { title: "Abitur · batxillerat alemany", issuer: "Escola Alemanya de Barcelona", meta: "Batxillerat oficial alemany" },

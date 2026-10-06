@@ -51,7 +51,7 @@ export type JobId = (typeof JOBS)[number]["id"];
 /** `year: null` marks a course still in progress. */
 export const EDUCATION = [
   { id: "bootcamp", year: null, logo: { src: "/logos/upgrade-hub.svg", alt: "Upgrade Hub", width: 5282, height: 1163 } },
-  { id: "master", year: "2023", logo: { src: "/logos/viu.svg", alt: "Universidad Internacional de Valencia", width: 1508, height: 208 } },
+  { id: "master", year: null, logo: { src: "/logos/viu.svg", alt: "Universidad Internacional de Valencia", width: 1508, height: 208 } },
   { id: "cp-admin", year: "2022", logo: { src: "/logos/thecorner.png", alt: "The Corner, centre d'estudis", width: 380, height: 366 } },
   { id: "ub", year: "2007", logo: { src: "/logos/ub.png", alt: "Universitat de Barcelona", width: 984, height: 250 } },
 ] as const satisfies ReadonlyArray<{ id: string; year: string | null; logo: Logo }>;
