@@ -164,9 +164,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                   <a href="https://www.upgrade-hub.com" rel="noreferrer" target="_blank">
                     <Image alt="Upgrade Hub" height={1163} src="/logos/upgrade-hub.svg" unoptimized width={5282} />
                   </a>
-                  <a href="https://centrocoliseum.com" rel="noreferrer" target="_blank">
-                    <Image alt="Centro de Formación Coliseum" height={65} src="/logos/coliseum.svg" unoptimized width={282} />
-                  </a>
                 </div>
                 <div className="social-row">
                   <a className="social-link" href={CONTACT.linkedin} rel="noreferrer" target="_blank">

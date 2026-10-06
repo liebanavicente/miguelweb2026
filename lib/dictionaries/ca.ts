@@ -23,7 +23,7 @@ export const ca: Dictionary = {
     kicker: "desenvolupament web · ia · formació digital · administració",
     title: ["Construeixo webs", "i ordeno processos", "amb IA."],
     lede:
-      "Sóc en Miguel Liébana. M'estic formant com a **desenvolupador full-stack amb IA a Upgrade Hub** i en **Confecció i publicació de pàgines web** al Centre Coliseum de Cornellà. A més, sóc mestre titulat per la Universitat de Barcelona, tinc el certificat de professionalitat de gestió administrativa i fa 14 anys que ensenyo, experiència que avui aplico a la formació digital d'adults.",
+      "Sóc en Miguel Liébana. M'estic formant com a **desenvolupador full-stack amb IA a Upgrade Hub**. A més, sóc mestre titulat per la Universitat de Barcelona, tinc el certificat de professionalitat de gestió administrativa i fa 14 anys que ensenyo, experiència que avui aplico a la formació digital d'adults.",
     ctaRoles: "Llocs que encaixen",
     ctaWrite: "Escriu-me",
     ctaCv: "CV en PDF (castellà)",
@@ -37,7 +37,7 @@ export const ca: Dictionary = {
     also: ["Administració", "Docència"],
   },
   stats: [
-    { value: "2", unit: "formacions en curs", label: "Bootcamp Full Stack amb IA a Upgrade Hub i certificat de Confecció i publicació de pàgines web" },
+    { value: "+5", unit: "projectes publicats", label: "Botiga en línia amb Stripe, portal de l'empleat, SaaS de gestió i webs en producció" },
     { value: "+20", unit: "anys", label: "d'experiència laboral en administració, atenció al públic i educació" },
     { value: "4", unit: "idiomes", label: "Castellà i català nadius, alemany C2 i anglès B2" },
   ],
@@ -79,7 +79,7 @@ export const ca: Dictionary = {
       },
       {
         title: "Maquetació i publicació web",
-        text: "Curso el certificat de professionalitat Confecció i publicació de pàgines web: HTML, CSS, disseny responsive, accessibilitat, usabilitat i posada en producció.",
+        text: "HTML, CSS, disseny responsive, accessibilitat, usabilitat i posada en producció: webs que es veuen bé a qualsevol pantalla.",
         tags: ["HTML i CSS", "Responsive", "Accessibilitat"],
       },
       {
@@ -196,11 +196,11 @@ export const ca: Dictionary = {
     areas: {
       web: {
         name: "Desenvolupament web",
-        intro: "El meu objectiu principal: Bootcamp Full Stack amb IA a Upgrade Hub i certificat de Confecció i publicació de pàgines web al Centre Coliseum de Cornellà.",
+        intro: "El meu objectiu principal: el Bootcamp Full Stack amb IA a Upgrade Hub i els projectes que ja tinc publicats.",
         roles: [
-          { title: "Maquetador / desenvolupador front-end júnior", fit: "alta", why: "HTML, CSS i JavaScript amb disseny responsive i accessible: el nucli de les meves dues formacions." },
+          { title: "Maquetador / desenvolupador front-end júnior", fit: "alta", why: "HTML, CSS i JavaScript amb disseny responsive i accessible: el nucli del bootcamp i dels meus projectes." },
           { title: "Desenvolupador web full-stack júnior", fit: "alta", why: "Projectes publicats amb base de dades, autenticació i desplegament continu.", note: "Disponible en acabar el bootcamp." },
-          { title: "Gestor de continguts i publicació web", fit: "alta", why: "Publicar, mantenir i actualitzar webs és just el que acredita el meu certificat." },
+          { title: "Gestor de continguts i publicació web", fit: "alta", why: "Publico, mantinc i actualitzo les meves pròpies webs amb desplegament continu." },
           { title: "Desenvolupador d'automatitzacions i IA", fit: "media", why: "Automatitzo notificacions i fluxos amb APIs externes i assistents d'IA." },
           { title: "Tester / QA júnior", fit: "media", why: "Ull per al detall, orientació a l'usuari i base tècnica per reproduir errors." },
         ],
@@ -240,7 +240,7 @@ export const ca: Dictionary = {
     },
   },
   education: {
-    chapter: { label: "formació", title: "Estudis i", accent: "acreditacions", summary: "5 formacions · 2 en curs · contingut desplegable" },
+    chapter: { label: "formació", title: "Estudis i", accent: "acreditacions", summary: "4 formacions · 1 en curs · contingut desplegable" },
     inProgress: "En curs",
     view: "veure contingut",
     viewing: "veient contingut",
@@ -257,19 +257,6 @@ export const ca: Dictionary = {
             { title: "Back-end i dades", items: ["Bases de dades SQL i MongoDB", "Node.js"] },
             { title: "Front-end", items: ["HTML i CSS", "JavaScript: DOM, esdeveniments, asincronia i Fetch", "React"] },
             { title: "Tancament", items: ["Automatització i desplegament", "Projectes finals", "Competències professionals i talent"] },
-          ],
-        },
-      },
-      ifcd0110: {
-        title: "Certificat de professionalitat: Confecció i publicació de pàgines web (IFCD0110)",
-        area: "Centre Coliseum · Cornellà de Llobregat",
-        detail: {
-          heading: "Mòduls del certificat IFCD0110",
-          groups: [
-            { title: "MF0950_2 · Construcció de pàgines web", items: ["Creació de pàgines web amb llenguatges de marques", "Elaboració de fulls d'estil", "Elaboració de plantilles i formularis"] },
-            { title: "MF0951_2 · Integració de components de programari", items: ["Programació amb llenguatges de guió en pàgines web", "Proves de funcionalitats i optimització de pàgines web"] },
-            { title: "MF0952_2 · Publicació de pàgines web", items: ["Publicació i manteniment de llocs web"] },
-            { title: "MP0278", items: ["Mòdul de pràctiques professionals no laborals"] },
           ],
         },
       },

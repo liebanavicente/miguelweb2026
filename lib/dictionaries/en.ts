@@ -23,7 +23,7 @@ export const en: Dictionary = {
     kicker: "web development · ai · digital training · administration",
     title: ["I build websites", "and streamline processes", "with AI."],
     lede:
-      "I'm Miguel Liébana. I'm training as a **full-stack developer with AI at Upgrade Hub** and in **Web Page Design and Publishing** at Centro Coliseum in Cornellà. I'm also a qualified teacher from the Universitat de Barcelona, hold a Spanish professional certificate in administrative management, and have 14 years of teaching behind me, experience I now bring to digital skills training for adults.",
+      "I'm Miguel Liébana. I'm training as a **full-stack developer with AI at Upgrade Hub**. I'm also a qualified teacher from the Universitat de Barcelona, hold a Spanish professional certificate in administrative management, and have 14 years of teaching behind me, experience I now bring to digital skills training for adults.",
     ctaRoles: "Roles that fit",
     ctaWrite: "Email me",
     ctaCv: "CV as PDF (Spanish)",
@@ -37,7 +37,7 @@ export const en: Dictionary = {
     also: ["Administration", "Teaching"],
   },
   stats: [
-    { value: "2", unit: "courses in progress", label: "Full Stack with AI bootcamp at Upgrade Hub and a professional certificate in Web Page Design and Publishing" },
+    { value: "+5", unit: "projects live", label: "Online shop with Stripe, employee portal, management SaaS and websites in production" },
     { value: "20+", unit: "years", label: "of work experience in administration, customer service and education" },
     { value: "4", unit: "languages", label: "Native Spanish and Catalan, German C2 and English B2" },
   ],
@@ -79,7 +79,7 @@ export const en: Dictionary = {
       },
       {
         title: "Front-end coding and web publishing",
-        text: "I'm taking the professional certificate in Web Page Design and Publishing: HTML, CSS, responsive design, accessibility, usability and going live.",
+        text: "HTML, CSS, responsive design, accessibility, usability and going live: websites that look good on any screen.",
         tags: ["HTML & CSS", "Responsive", "Accessibility"],
       },
       {
@@ -196,11 +196,11 @@ export const en: Dictionary = {
     areas: {
       web: {
         name: "Web development",
-        intro: "My main goal: the Full Stack with AI bootcamp at Upgrade Hub and the Web Page Design and Publishing certificate at Centro Coliseum in Cornellà.",
+        intro: "My main goal: the Full Stack with AI bootcamp at Upgrade Hub and the projects I already have live.",
         roles: [
-          { title: "Junior front-end developer", fit: "alta", why: "HTML, CSS and JavaScript with responsive, accessible design: the core of both my courses." },
+          { title: "Junior front-end developer", fit: "alta", why: "HTML, CSS and JavaScript with responsive, accessible design: the core of the bootcamp and my projects." },
           { title: "Junior full-stack web developer", fit: "alta", why: "Published projects with a database, authentication and continuous deployment.", note: "Available once the bootcamp ends." },
-          { title: "Web content and publishing manager", fit: "alta", why: "Publishing, maintaining and updating websites is exactly what my certificate covers." },
+          { title: "Web content and publishing manager", fit: "alta", why: "I publish, maintain and update my own websites with continuous deployment." },
           { title: "Automation and AI developer", fit: "media", why: "I automate notifications and workflows with external APIs and AI assistants." },
           { title: "Junior tester / QA", fit: "media", why: "An eye for detail, a user-first mindset and the technical grounding to reproduce bugs." },
         ],
@@ -240,7 +240,7 @@ export const en: Dictionary = {
     },
   },
   education: {
-    chapter: { label: "education", title: "Studies and", accent: "credentials", summary: "5 programmes · 2 in progress · expandable contents" },
+    chapter: { label: "education", title: "Studies and", accent: "credentials", summary: "4 programmes · 1 in progress · expandable contents" },
     inProgress: "In progress",
     view: "see contents",
     viewing: "viewing contents",
@@ -257,19 +257,6 @@ export const en: Dictionary = {
             { title: "Back end and data", items: ["SQL and MongoDB databases", "Node.js"] },
             { title: "Front end", items: ["HTML and CSS", "JavaScript: DOM, events, async and Fetch", "React"] },
             { title: "Wrap-up", items: ["Automation and deployment", "Final projects", "Professional skills and talent"] },
-          ],
-        },
-      },
-      ifcd0110: {
-        title: "Professional certificate: Web Page Design and Publishing (IFCD0110)",
-        area: "Centro Coliseum · Cornellà de Llobregat",
-        detail: {
-          heading: "IFCD0110 certificate modules",
-          groups: [
-            { title: "MF0950_2 · Building web pages", items: ["Creating web pages with markup languages", "Writing style sheets", "Building templates and forms"] },
-            { title: "MF0951_2 · Integrating software components", items: ["Scripting languages in web pages", "Functional testing and optimisation of web pages"] },
-            { title: "MF0952_2 · Publishing web pages", items: ["Publishing and maintaining websites"] },
-            { title: "MP0278", items: ["Unpaid work placement module"] },
           ],
         },
       },

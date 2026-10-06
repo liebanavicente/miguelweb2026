@@ -23,7 +23,7 @@ export const de: Dictionary = {
     kicker: "webentwicklung · ki · digitale weiterbildung · verwaltung",
     title: ["Ich baue Websites", "und ordne Prozesse", "mit KI."],
     lede:
-      "Ich bin Miguel Liébana. Ich bilde mich gerade zum **Full-Stack-Entwickler mit KI bei Upgrade Hub** weiter und mache am Centro Coliseum in Cornellà das Berufszertifikat **Erstellung und Veröffentlichung von Webseiten**. Außerdem bin ich ausgebildeter Lehrer (Universitat de Barcelona), habe ein Berufszertifikat in Verwaltung und 14 Jahre Unterrichtserfahrung, die ich heute in die digitale Erwachsenenbildung einbringe.",
+      "Ich bin Miguel Liébana. Ich bilde mich gerade zum **Full-Stack-Entwickler mit KI bei Upgrade Hub** weiter. Außerdem bin ich ausgebildeter Lehrer (Universitat de Barcelona), habe ein Berufszertifikat in Verwaltung und 14 Jahre Unterrichtserfahrung, die ich heute in die digitale Erwachsenenbildung einbringe.",
     ctaRoles: "Passende Stellen",
     ctaWrite: "Schreib mir",
     ctaCv: "Lebenslauf als PDF (Spanisch)",
@@ -37,7 +37,7 @@ export const de: Dictionary = {
     also: ["Verwaltung", "Lehre"],
   },
   stats: [
-    { value: "2", unit: "laufende Weiterbildungen", label: "Full-Stack-Bootcamp mit KI bei Upgrade Hub und Berufszertifikat Erstellung und Veröffentlichung von Webseiten" },
+    { value: "+5", unit: "veröffentlichte Projekte", label: "Onlineshop mit Stripe, Mitarbeiterportal, Verwaltungs-SaaS und Websites im Live-Betrieb" },
     { value: "20+", unit: "Jahre", label: "Berufserfahrung in Verwaltung, Kundenservice und Bildung" },
     { value: "4", unit: "Sprachen", label: "Spanisch und Katalanisch als Muttersprachen, Deutsch C2 und Englisch B2" },
   ],
@@ -79,7 +79,7 @@ export const de: Dictionary = {
       },
       {
         title: "Frontend-Umsetzung und Veröffentlichung",
-        text: "Ich mache das Berufszertifikat Erstellung und Veröffentlichung von Webseiten: HTML, CSS, Responsive Design, Barrierefreiheit, Usability und Go-live.",
+        text: "HTML, CSS, Responsive Design, Barrierefreiheit, Usability und Go-live: Websites, die auf jedem Bildschirm gut aussehen.",
         tags: ["HTML und CSS", "Responsive", "Barrierefreiheit"],
       },
       {
@@ -196,11 +196,11 @@ export const de: Dictionary = {
     areas: {
       web: {
         name: "Webentwicklung",
-        intro: "Mein Hauptziel: Full-Stack-Bootcamp mit KI bei Upgrade Hub und Berufszertifikat Erstellung und Veröffentlichung von Webseiten am Centro Coliseum in Cornellà.",
+        intro: "Mein Hauptziel: das Full-Stack-Bootcamp mit KI bei Upgrade Hub und die Projekte, die ich bereits veröffentlicht habe.",
         roles: [
-          { title: "Junior Frontend-Entwickler", fit: "alta", why: "HTML, CSS und JavaScript mit responsivem, barrierefreiem Design: der Kern meiner beiden Weiterbildungen." },
+          { title: "Junior Frontend-Entwickler", fit: "alta", why: "HTML, CSS und JavaScript mit responsivem, barrierefreiem Design: der Kern des Bootcamps und meiner Projekte." },
           { title: "Junior Full-Stack-Webentwickler", fit: "alta", why: "Veröffentlichte Projekte mit Datenbank, Authentifizierung und Continuous Deployment.", note: "Verfügbar nach Abschluss des Bootcamps." },
-          { title: "Content-Manager für Websites", fit: "alta", why: "Websites veröffentlichen, pflegen und aktualisieren ist genau das, was mein Zertifikat bescheinigt." },
+          { title: "Content-Manager für Websites", fit: "alta", why: "Ich veröffentliche, pflege und aktualisiere meine eigenen Websites mit Continuous Deployment." },
           { title: "Entwickler für Automatisierung und KI", fit: "media", why: "Ich automatisiere Benachrichtigungen und Abläufe mit externen APIs und KI-Assistenten." },
           { title: "Junior Tester / QA", fit: "media", why: "Blick fürs Detail, Nutzerorientierung und technisches Grundwissen, um Fehler nachzustellen." },
         ],
@@ -240,7 +240,7 @@ export const de: Dictionary = {
     },
   },
   education: {
-    chapter: { label: "ausbildung", title: "Ausbildung und", accent: "Nachweise", summary: "5 Ausbildungen · 2 laufend · Inhalte aufklappbar" },
+    chapter: { label: "ausbildung", title: "Ausbildung und", accent: "Nachweise", summary: "4 Ausbildungen · 1 laufend · Inhalte aufklappbar" },
     inProgress: "Laufend",
     view: "Inhalte ansehen",
     viewing: "Inhalte geöffnet",
@@ -257,19 +257,6 @@ export const de: Dictionary = {
             { title: "Backend und Daten", items: ["SQL- und MongoDB-Datenbanken", "Node.js"] },
             { title: "Frontend", items: ["HTML und CSS", "JavaScript: DOM, Events, Asynchronität und Fetch", "React"] },
             { title: "Abschluss", items: ["Automatisierung und Deployment", "Abschlussprojekte", "Berufliche Kompetenzen und Talent"] },
-          ],
-        },
-      },
-      ifcd0110: {
-        title: "Berufszertifikat: Erstellung und Veröffentlichung von Webseiten (IFCD0110)",
-        area: "Centro Coliseum · Cornellà de Llobregat",
-        detail: {
-          heading: "Module des Zertifikats IFCD0110",
-          groups: [
-            { title: "MF0950_2 · Aufbau von Webseiten", items: ["Webseiten mit Auszeichnungssprachen erstellen", "Stylesheets erstellen", "Vorlagen und Formulare erstellen"] },
-            { title: "MF0951_2 · Einbindung von Softwarekomponenten", items: ["Programmierung mit Skriptsprachen in Webseiten", "Funktionstests und Optimierung von Webseiten"] },
-            { title: "MF0952_2 · Veröffentlichung von Webseiten", items: ["Veröffentlichung und Pflege von Websites"] },
-            { title: "MP0278", items: ["Unbezahltes Betriebspraktikum"] },
           ],
         },
       },

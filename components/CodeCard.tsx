@@ -14,7 +14,7 @@ function linesFor({ keys, role, also }: Dictionary["codeCard"]): Token[][] {
     [p("{")],
     [{ t: "  " }, k(`"${keys.name}"`), p(": "), s('"Miguel Liébana"'), p(",")],
     [{ t: "  " }, k(`"${keys.role}"`), p(": "), s(`"${role}"`), p(",")],
-    [{ t: "  " }, k(`"${keys.training}"`), p(": ["), s('"Upgrade Hub"'), p(", "), s('"Coliseum"'), p("],")],
+    [{ t: "  " }, k(`"${keys.training}"`), p(": ["), s('"Upgrade Hub"'), p("],")],
     [{ t: "  " }, k('"stack"'), p(": ["), s('"JS"'), p(", "), s('"React"'), p(", "), s('"Node"'), p(", "), s('"SQL"'), p("],")],
     [{ t: "  " }, k(`"${keys.also}"`), p(": ["), s(`"${also[0]}"`), p(", "), s(`"${also[1]}"`), p("],")],
     [{ t: "  " }, k(`"${keys.languages}"`), p(": "), s('"es · ca · de · en"'), p(",")],

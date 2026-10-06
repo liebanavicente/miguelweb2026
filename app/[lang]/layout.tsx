@@ -74,7 +74,6 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
         alumniOf: [
           { "@type": "CollegeOrUniversity", name: "Universitat de Barcelona" },
           { "@type": "EducationalOrganization", name: "Upgrade Hub" },
-          { "@type": "EducationalOrganization", name: "Centro de Formación Coliseum" },
           { "@type": "CollegeOrUniversity", name: "Universidad Internacional de Valencia" },
         ],
         knowsLanguage: ["es", "ca", "de", "en"],
