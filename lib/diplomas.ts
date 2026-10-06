@@ -24,6 +24,7 @@ export const DIPLOMAS = [
   { id: "abitur", seal: "DSB", year: "", category: "oficial" },
   { id: "catala", seal: "UB", year: "2007", category: "idiomas" },
   { id: "linguaskill", seal: "CE", year: "2023", category: "idiomas" },
+  { id: "claude-code", seal: "AI", year: "2026", category: "tech", verify: "https://academy.claude.com/verify/5d19de20b0954f81da7d6fe4f060e5ec" },
   { id: "actic", seal: "ACTIC", year: "2017 · 2022", category: "tech" },
   { id: "ibm-ai", seal: "IBM", year: "2023", category: "tech", verify: "https://www.credly.com/go/QGdC3GH3" },
   { id: "ibm-watson", seal: "IBM", year: "2023", category: "tech", badge: "/diplomas/watson-ai-essentials.png", verify: "https://www.credly.com/go/aGyyu5HG" },
