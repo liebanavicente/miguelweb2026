@@ -23,7 +23,7 @@ export const en: Dictionary = {
     kicker: "web development · ai · digital training · administration",
     title: ["I build websites", "and streamline processes", "with AI."],
     lede:
-      "I'm Miguel Liébana. I'm training as a **full-stack developer with AI at Upgrade Hub**. I'm also a qualified teacher from the Universitat de Barcelona, hold a Spanish professional certificate in administrative management, and have 14 years of teaching behind me, experience I now bring to digital skills training for adults.",
+      "I'm Miguel Liébana. I'm training as a **full-stack developer with AI at Upgrade Hub**. I'm also a qualified teacher from the Universitat de Barcelona, hold a Spanish professional certificate in administrative management, and have 13 years of teaching behind me, experience I now bring to digital skills training for adults.",
     ctaRoles: "Roles that fit",
     ctaWrite: "Email me",
     ctaCv: "CV as PDF (Spanish)",
@@ -38,7 +38,7 @@ export const en: Dictionary = {
   },
   stats: [
     { value: "+5", unit: "projects live", label: "Online shop with Stripe, employee portal, management SaaS and websites in production" },
-    { value: "20+", unit: "years", label: "of work experience in administration, customer service and education" },
+    { value: "13", unit: "years", label: "as a teacher, plus experience in administration and customer service" },
     { value: "4", unit: "languages", label: "Native Spanish and Catalan, German C2 and English B2" },
   ],
   ventures: {
@@ -99,7 +99,7 @@ export const en: Dictionary = {
       },
       {
         title: "Digital skills training for adults",
-        text: "14 years of teaching experience and a master's in ICT in education (final project pending). I teach office software, digital skills, HTML, CSS and AI patiently, starting from real cases.",
+        text: "13 years of teaching experience and a master's in ICT in education (final project pending). I teach office software, digital skills, HTML, CSS and AI patiently, starting from real cases.",
         tags: ["Digital skills", "Office software", "AI"],
       },
     ],
@@ -209,7 +209,7 @@ export const en: Dictionary = {
         name: "Digital training",
         intro: "Training for adults: my teaching experience put to work for digital skills, office software and the web.",
         roles: [
-          { title: "Digital skills trainer for adults", fit: "alta", why: "14 years of teaching, a master's in educational ICT (final project pending) and ACTIC level 2." },
+          { title: "Digital skills trainer for adults", fit: "alta", why: "13 years of teaching, a master's in educational ICT (final project pending) and ACTIC level 2." },
           { title: "Office software trainer", fit: "alta", why: "Word, Excel, Outlook and PowerPoint at expert level, and experience explaining them." },
           { title: "ICT centre and community tech hub facilitator", fit: "alta", why: "I guide people with no digital experience clearly and without rushing." },
           { title: "HTML, CSS and AI trainer for beginners", fit: "media", why: "I've already created my own learning material for HTML and CSS from scratch.", note: "Teaching Spanish professional certificates requires holding the corresponding certificate." },
@@ -300,7 +300,7 @@ export const en: Dictionary = {
             { title: "Primary education", items: ["Teaching methods and school organisation", "Developmental and learning psychology", "Subject-specific teaching for primary"] },
             { title: "Music education", items: ["Music theory and instrumental training", "Music teaching methods", "Music pedagogy"] },
           ],
-          note: "The foundation of my 14 years as a primary and music teacher.",
+          note: "The foundation of my 13 years as a primary and music teacher.",
         },
       },
     },
@@ -354,7 +354,7 @@ export const en: Dictionary = {
       title: "Professional",
       accent: "experience",
       intro: "Administration, customer service and education: over twenty years learning to organise, communicate and solve problems.",
-      summary: "8 roles · 14 years teaching · one achievement per role",
+      summary: "8 roles · 13 years teaching · one achievement per role",
     },
     months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     areas: { edu: "education", admin: "administration", tech: "technology", music: "music", service: "customer service" },
@@ -362,10 +362,10 @@ export const en: Dictionary = {
     present: "Present",
     achievement: "Achievement",
     items: {
-      ctti: { role: "Receptionist / administrative assistant", company: "CTTI · Generalitat de Catalunya", achievement: "Handled **200 visitors a day** with fast, organised reception: every visitor and every document reached the right person without delay." },
+      ctti: { role: "Receptionist / administrative assistant", company: "CTTI · Generalitat de Catalunya · via Triangle Catalunya", achievement: "Handled **200 visitors a day** with fast, organised reception: every visitor and every document reached the right person without delay." },
       nfp: { role: "Songwriter, musician and singer", company: "Band No Flag Patriots", achievement: "Took our songs **into the studio and onto the stage**, coordinating the band from first idea to live show." },
-      konecta: { role: "Call centre agent", company: "Konecta · AMBici · Securitas Direct", achievement: "Handled **3 calls per minute**, resolving customer issues calmly and in a friendly tone." },
-      polo: { role: "Administrative assistant", company: "Club de Polo Ampurdán", achievement: "Kept the **club's administration up to date**: members, invoicing and correspondence always in order." },
+      konecta: { role: "Call centre agent (campaigns)", company: "Securitas Direct · AMBici", achievement: "Handled **3 calls per minute**, resolving customer issues calmly and in a friendly tone." },
+      polo: { role: "Administrative work placement and collaboration (CP ADGD0308)", company: "Club de Polo Ampurdán", achievement: "Kept the **club's administration up to date**: members, invoicing and correspondence always in order." },
       tic: { role: "Teaching methods specialist (ICT coordinator)", company: "Escola Joan Maragall", achievement: "Brought technology into the classroom for a **full staff of 20 teachers**, who now use it confidently every day." },
       teacher: { role: "Primary school teacher", company: "Escoles Gornal · Bernat Metge · Torre de la Miranda · Joan Maragall", achievement: "Optimised learning for **25 pupils per class**, adapting teaching to each child's pace and needs." },
       bar: { role: "Waiter", company: "Bar La Concha", achievement: "Delivered **fast, attentive service at peak times** and built a loyal base of regulars." },

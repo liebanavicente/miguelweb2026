@@ -23,7 +23,7 @@ export const ca: Dictionary = {
     kicker: "desenvolupament web · ia · formació digital · administració",
     title: ["Construeixo webs", "i ordeno processos", "amb IA."],
     lede:
-      "Sóc en Miguel Liébana. M'estic formant com a **desenvolupador full-stack amb IA a Upgrade Hub**. A més, sóc mestre titulat per la Universitat de Barcelona, tinc el certificat de professionalitat de gestió administrativa i fa 14 anys que ensenyo, experiència que avui aplico a la formació digital d'adults.",
+      "Sóc en Miguel Liébana. M'estic formant com a **desenvolupador full-stack amb IA a Upgrade Hub**. A més, sóc mestre titulat per la Universitat de Barcelona, tinc el certificat de professionalitat de gestió administrativa i fa 13 anys que ensenyo, experiència que avui aplico a la formació digital d'adults.",
     ctaRoles: "Llocs que encaixen",
     ctaWrite: "Escriu-me",
     ctaCv: "CV en PDF (castellà)",
@@ -38,7 +38,7 @@ export const ca: Dictionary = {
   },
   stats: [
     { value: "+5", unit: "projectes publicats", label: "Botiga en línia amb Stripe, portal de l'empleat, SaaS de gestió i webs en producció" },
-    { value: "+20", unit: "anys", label: "d'experiència laboral en administració, atenció al públic i educació" },
+    { value: "13", unit: "anys", label: "com a mestre, a més d'experiència en administració i atenció al públic" },
     { value: "4", unit: "idiomes", label: "Castellà i català nadius, alemany C2 i anglès B2" },
   ],
   ventures: {
@@ -99,7 +99,7 @@ export const ca: Dictionary = {
       },
       {
         title: "Formació digital per a adults",
-        text: "14 anys d'experiència docent i un màster en TIC aplicades a l'educació (em falta el treball final). Ensenyo ofimàtica, competències digitals, HTML i CSS i IA amb paciència i a partir de casos reals.",
+        text: "13 anys d'experiència docent i un màster en TIC aplicades a l'educació (em falta el treball final). Ensenyo ofimàtica, competències digitals, HTML i CSS i IA amb paciència i a partir de casos reals.",
         tags: ["Competències digitals", "Ofimàtica", "IA"],
       },
     ],
@@ -209,7 +209,7 @@ export const ca: Dictionary = {
         name: "Formació digital",
         intro: "Formació per a persones adultes: la meva experiència docent al servei de les competències digitals, l'ofimàtica i el web.",
         roles: [
-          { title: "Formador de competències digitals per a adults", fit: "alta", why: "14 anys de docència, màster en TIC educatives (pendent del treball final) i ACTIC nivell 2." },
+          { title: "Formador de competències digitals per a adults", fit: "alta", why: "13 anys de docència, màster en TIC educatives (pendent del treball final) i ACTIC nivell 2." },
           { title: "Formador d'ofimàtica", fit: "alta", why: "Word, Excel, Outlook i PowerPoint a nivell expert, i experiència explicant-los." },
           { title: "Dinamitzador d'espais TIC i telecentres", fit: "alta", why: "Acompanyo persones sense experiència digital amb claredat i sense presses." },
           { title: "Formador d'HTML, CSS i IA per a principiants", fit: "media", why: "Ja he creat material didàctic propi per aprendre HTML i CSS des de zero.", note: "Per impartir certificats de professionalitat cal acreditar el certificat corresponent." },
@@ -300,7 +300,7 @@ export const ca: Dictionary = {
             { title: "Educació primària", items: ["Didàctica i organització escolar", "Psicologia del desenvolupament i de l'aprenentatge", "Didàctiques específiques de les àrees de primària"] },
             { title: "Educació musical", items: ["Llenguatge musical i formació instrumental", "Didàctica de la música", "Pedagogia musical"] },
           ],
-          note: "La base dels meus 14 anys com a mestre i especialista de música.",
+          note: "La base dels meus 13 anys com a mestre i especialista de música.",
         },
       },
     },
@@ -354,7 +354,7 @@ export const ca: Dictionary = {
       title: "Experiència",
       accent: "professional",
       intro: "Administració, atenció al públic i educació: més de vint anys aprenent a organitzar, comunicar i resoldre.",
-      summary: "8 llocs · 14 anys ensenyant · un assoliment a cada lloc",
+      summary: "8 llocs · 13 anys ensenyant · un assoliment a cada lloc",
     },
     months: ["Gen", "Febr", "Març", "Abr", "Maig", "Juny", "Jul", "Ag", "Set", "Oct", "Nov", "Des"],
     areas: { edu: "educació", admin: "administració", tech: "tecnologia", music: "música", service: "atenció al públic" },
@@ -362,10 +362,10 @@ export const ca: Dictionary = {
     present: "Actualitat",
     achievement: "Assoliment",
     items: {
-      ctti: { role: "Recepcionista / administratiu", company: "CTTI · Generalitat de Catalunya", achievement: "Atenia **200 visites al dia** amb una recepció àgil i ordenada: cada visita i cada document arribaven a la persona adequada sense esperes." },
+      ctti: { role: "Recepcionista / administratiu", company: "CTTI · Generalitat de Catalunya · contracte de Triangle Catalunya", achievement: "Atenia **200 visites al dia** amb una recepció àgil i ordenada: cada visita i cada document arribaven a la persona adequada sense esperes." },
       nfp: { role: "Compositor, músic i cantant", company: "Grup musical No Flag Patriots", achievement: "Vaig portar les nostres cançons **a l'estudi i a l'escenari**, coordinant el grup des de la idea fins al concert." },
-      konecta: { role: "Teleoperador", company: "Konecta · AMBici · Securitas Direct", achievement: "Gestionava **3 trucades per minut**, resolent les incidències dels clients amb calma i un tracte proper." },
-      polo: { role: "Administratiu", company: "Club de Polo Ampurdán", achievement: "Vaig tenir **al dia la gestió del club**: socis, facturació i correspondència sempre en ordre." },
+      konecta: { role: "Teleoperador (campanyes)", company: "Securitas Direct · AMBici", achievement: "Gestionava **3 trucades per minut**, resolent les incidències dels clients amb calma i un tracte proper." },
+      polo: { role: "Pràctiques i col·laboració administrativa (CP ADGD0308)", company: "Club de Polo Ampurdán", achievement: "Vaig tenir **al dia la gestió del club**: socis, facturació i correspondència sempre en ordre." },
       tic: { role: "Especialista en mètodes didàctics (coordinador TIC)", company: "Escola Joan Maragall", achievement: "Vaig integrar la tecnologia a les aules amb una **plantilla completa de 20 docents**, que la fan servir amb confiança en el dia a dia." },
       teacher: { role: "Mestre d'educació primària", company: "Escoles Gornal · Bernat Metge · Torre de la Miranda · Joan Maragall", achievement: "Vaig optimitzar l'aprenentatge de **25 alumnes per curs**, adaptant l'ensenyament al ritme i les necessitats de cadascú." },
       bar: { role: "Cambrer", company: "Bar La Concha", achievement: "Vaig oferir un **servei ràpid i atent a les hores punta**, fidelitzant la clientela habitual." },

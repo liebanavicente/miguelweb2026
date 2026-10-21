@@ -23,7 +23,7 @@ export const es: Dictionary = {
     kicker: "desarrollo web · ia · formación digital · administración",
     title: ["Construyo webs", "y ordeno procesos", "con IA."],
     lede:
-      "Soy Miguel Liébana. Me estoy formando como **desarrollador full-stack con IA en Upgrade Hub**. Además soy maestro titulado por la Universitat de Barcelona, tengo el certificado de profesionalidad de gestión administrativa y llevo 14 años enseñando, experiencia que hoy aplico a la formación digital de adultos.",
+      "Soy Miguel Liébana. Me estoy formando como **desarrollador full-stack con IA en Upgrade Hub**. Además soy maestro titulado por la Universitat de Barcelona, tengo el certificado de profesionalidad de gestión administrativa y llevo 13 años enseñando, experiencia que hoy aplico a la formación digital de adultos.",
     ctaRoles: "Puestos que encajan",
     ctaWrite: "Escríbeme",
     ctaCv: "CV en PDF",
@@ -38,7 +38,7 @@ export const es: Dictionary = {
   },
   stats: [
     { value: "+5", unit: "proyectos publicados", label: "Tienda online con Stripe, portal del empleado, SaaS de gestión y webs en producción" },
-    { value: "+20", unit: "años", label: "de experiencia laboral en administración, atención al público y educación" },
+    { value: "13", unit: "años", label: "como maestro, además de experiencia en administración y atención al público" },
     { value: "4", unit: "idiomas", label: "Español y catalán nativos, alemán C2 e inglés B2" },
   ],
   ventures: {
@@ -99,7 +99,7 @@ export const es: Dictionary = {
       },
       {
         title: "Formación digital para adultos",
-        text: "14 años de experiencia docente y un máster en TIC aplicadas a la educación (me falta el trabajo final). Enseño ofimática, competencias digitales, HTML y CSS e IA con paciencia y a partir de casos reales.",
+        text: "13 años de experiencia docente y un máster en TIC aplicadas a la educación (me falta el trabajo final). Enseño ofimática, competencias digitales, HTML y CSS e IA con paciencia y a partir de casos reales.",
         tags: ["Competencias digitales", "Ofimática", "IA"],
       },
     ],
@@ -209,7 +209,7 @@ export const es: Dictionary = {
         name: "Formación digital",
         intro: "Formación para personas adultas: mi experiencia docente al servicio de las competencias digitales, la ofimática y la web.",
         roles: [
-          { title: "Formador de competencias digitales para adultos", fit: "alta", why: "14 años de docencia, máster en TIC educativas (pendiente del trabajo final) y ACTIC nivel 2." },
+          { title: "Formador de competencias digitales para adultos", fit: "alta", why: "13 años de docencia, máster en TIC educativas (pendiente del trabajo final) y ACTIC nivel 2." },
           { title: "Formador de ofimática", fit: "alta", why: "Word, Excel, Outlook y PowerPoint a nivel experto, y experiencia explicándolos." },
           { title: "Dinamizador de espacios TIC y telecentros", fit: "alta", why: "Acompaño a personas sin experiencia digital con claridad y sin prisas." },
           { title: "Formador de HTML, CSS e IA para principiantes", fit: "media", why: "Ya he creado material didáctico propio para aprender HTML y CSS desde cero.", note: "Para impartir certificados de profesionalidad se exige acreditar el certificado correspondiente." },
@@ -300,7 +300,7 @@ export const es: Dictionary = {
             { title: "Educación primaria", items: ["Didáctica y organización escolar", "Psicología del desarrollo y del aprendizaje", "Didácticas específicas de las áreas de primaria"] },
             { title: "Educación musical", items: ["Lenguaje musical y formación instrumental", "Didáctica de la música", "Pedagogía musical"] },
           ],
-          note: "La base de mis 14 años como maestro y especialista de música.",
+          note: "La base de mis 13 años como maestro y especialista de música.",
         },
       },
     },
@@ -354,7 +354,7 @@ export const es: Dictionary = {
       title: "Experiencia",
       accent: "profesional",
       intro: "Administración, atención al público y educación: más de veinte años aprendiendo a organizar, comunicar y resolver.",
-      summary: "8 puestos · 14 años enseñando · un logro en cada puesto",
+      summary: "8 puestos · 13 años enseñando · un logro en cada puesto",
     },
     months: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
     areas: { edu: "educación", admin: "administración", tech: "tecnología", music: "música", service: "atención al público" },
@@ -362,10 +362,10 @@ export const es: Dictionary = {
     present: "Actualidad",
     achievement: "Logro",
     items: {
-      ctti: { role: "Recepcionista / administrativo", company: "CTTI · Generalitat de Catalunya", achievement: "Atendía **200 visitas al día** con una recepción ágil y ordenada: cada visita y cada documento llegaban a la persona adecuada sin esperas." },
+      ctti: { role: "Recepcionista / administrativo", company: "CTTI · Generalitat de Catalunya · contrato de Triangle Catalunya", achievement: "Atendía **200 visitas al día** con una recepción ágil y ordenada: cada visita y cada documento llegaban a la persona adecuada sin esperas." },
       nfp: { role: "Compositor, músico y cantante", company: "Grupo musical No Flag Patriots", achievement: "Llevé nuestras canciones **al estudio y al escenario**, coordinando al grupo desde la idea hasta el concierto." },
-      konecta: { role: "Teleoperador", company: "Konecta · AMBici · Securitas Direct", achievement: "Gestionaba **3 llamadas por minuto**, resolviendo las incidencias de los clientes con calma y un trato cercano." },
-      polo: { role: "Administrativo", company: "Club de Polo Ampurdán", achievement: "Tuve **al día la gestión del club**: socios, facturación y correspondencia siempre en orden." },
+      konecta: { role: "Teleoperador (campañas)", company: "Securitas Direct · AMBici", achievement: "Gestionaba **3 llamadas por minuto**, resolviendo las incidencias de los clientes con calma y un trato cercano." },
+      polo: { role: "Prácticas y colaboración administrativa (CP ADGD0308)", company: "Club de Polo Ampurdán", achievement: "Tuve **al día la gestión del club**: socios, facturación y correspondencia siempre en orden." },
       tic: { role: "Especialista en métodos didácticos (Coordinador T.I.C.)", company: "Escola Joan Maragall", achievement: "Integré la tecnología en las aulas con una **plantilla completa de 20 docentes**, que la usan con confianza en su día a día." },
       teacher: { role: "Profesor de educación primaria", company: "Escoles Gornal · Bernat Metge · Torre de la Miranda · Joan Maragall", achievement: "Optimicé el aprendizaje de **25 alumnos por curso**, adaptando la enseñanza al ritmo y las necesidades de cada uno." },
       bar: { role: "Camarero", company: "Bar La Concha", achievement: "Di un **servicio rápido y atento en las horas punta**, fidelizando a la clientela habitual." },

@@ -23,7 +23,7 @@ export const de: Dictionary = {
     kicker: "webentwicklung · ki · digitale weiterbildung · verwaltung",
     title: ["Ich baue Websites", "und ordne Prozesse", "mit KI."],
     lede:
-      "Ich bin Miguel Liébana. Ich bilde mich gerade zum **Full-Stack-Entwickler mit KI bei Upgrade Hub** weiter. Außerdem bin ich ausgebildeter Lehrer (Universitat de Barcelona), habe ein Berufszertifikat in Verwaltung und 14 Jahre Unterrichtserfahrung, die ich heute in die digitale Erwachsenenbildung einbringe.",
+      "Ich bin Miguel Liébana. Ich bilde mich gerade zum **Full-Stack-Entwickler mit KI bei Upgrade Hub** weiter. Außerdem bin ich ausgebildeter Lehrer (Universitat de Barcelona), habe ein Berufszertifikat in Verwaltung und 13 Jahre Unterrichtserfahrung, die ich heute in die digitale Erwachsenenbildung einbringe.",
     ctaRoles: "Passende Stellen",
     ctaWrite: "Schreib mir",
     ctaCv: "Lebenslauf als PDF (Spanisch)",
@@ -38,7 +38,7 @@ export const de: Dictionary = {
   },
   stats: [
     { value: "+5", unit: "veröffentlichte Projekte", label: "Onlineshop mit Stripe, Mitarbeiterportal, Verwaltungs-SaaS und Websites im Live-Betrieb" },
-    { value: "20+", unit: "Jahre", label: "Berufserfahrung in Verwaltung, Kundenservice und Bildung" },
+    { value: "13", unit: "Jahre", label: "als Lehrer, dazu Erfahrung in Verwaltung und Kundenservice" },
     { value: "4", unit: "Sprachen", label: "Spanisch und Katalanisch als Muttersprachen, Deutsch C2 und Englisch B2" },
   ],
   ventures: {
@@ -99,7 +99,7 @@ export const de: Dictionary = {
       },
       {
         title: "Digitale Erwachsenenbildung",
-        text: "14 Jahre Unterrichtserfahrung und ein Master in IKT in der Bildung (Masterarbeit ausstehend). Ich unterrichte Office, digitale Kompetenzen, HTML und CSS sowie KI mit Geduld und anhand echter Fälle.",
+        text: "13 Jahre Unterrichtserfahrung und ein Master in IKT in der Bildung (Masterarbeit ausstehend). Ich unterrichte Office, digitale Kompetenzen, HTML und CSS sowie KI mit Geduld und anhand echter Fälle.",
         tags: ["Digitale Kompetenzen", "Office", "KI"],
       },
     ],
@@ -209,7 +209,7 @@ export const de: Dictionary = {
         name: "Digitale Weiterbildung",
         intro: "Erwachsenenbildung: meine Unterrichtserfahrung im Dienst digitaler Kompetenzen, Office und Web.",
         roles: [
-          { title: "Trainer für digitale Kompetenzen (Erwachsene)", fit: "alta", why: "14 Jahre Unterricht, Master in Bildungs-IKT (Masterarbeit ausstehend) und ACTIC Stufe 2." },
+          { title: "Trainer für digitale Kompetenzen (Erwachsene)", fit: "alta", why: "13 Jahre Unterricht, Master in Bildungs-IKT (Masterarbeit ausstehend) und ACTIC Stufe 2." },
           { title: "Office-Trainer", fit: "alta", why: "Word, Excel, Outlook und PowerPoint auf Expertenniveau und Erfahrung darin, sie zu erklären." },
           { title: "Betreuer von IKT-Räumen und Computertreffs", fit: "alta", why: "Ich begleite Menschen ohne digitale Erfahrung verständlich und ohne Eile." },
           { title: "Trainer für HTML, CSS und KI für Einsteiger", fit: "media", why: "Ich habe bereits eigenes Lernmaterial für HTML und CSS von null an erstellt.", note: "Für spanische Berufszertifikate muss man das jeweilige Zertifikat selbst besitzen." },
@@ -300,7 +300,7 @@ export const de: Dictionary = {
             { title: "Grundschulpädagogik", items: ["Didaktik und Schulorganisation", "Entwicklungs- und Lernpsychologie", "Fachdidaktik der Grundschulfächer"] },
             { title: "Musikerziehung", items: ["Musiktheorie und Instrumentalausbildung", "Musikdidaktik", "Musikpädagogik"] },
           ],
-          note: "Die Grundlage meiner 14 Jahre als Grundschul- und Musiklehrer.",
+          note: "Die Grundlage meiner 13 Jahre als Grundschul- und Musiklehrer.",
         },
       },
     },
@@ -354,7 +354,7 @@ export const de: Dictionary = {
       title: "Beruflicher",
       accent: "Werdegang",
       intro: "Verwaltung, Kundenservice und Bildung: über zwanzig Jahre, in denen ich gelernt habe zu organisieren, zu kommunizieren und Probleme zu lösen.",
-      summary: "8 Stellen · 14 Jahre Unterricht · ein Erfolg pro Stelle",
+      summary: "8 Stellen · 13 Jahre Unterricht · ein Erfolg pro Stelle",
     },
     months: ["Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sep.", "Okt.", "Nov.", "Dez."],
     areas: { edu: "Bildung", admin: "Verwaltung", tech: "Technik", music: "Musik", service: "Kundenservice" },
@@ -362,10 +362,10 @@ export const de: Dictionary = {
     present: "Heute",
     achievement: "Erfolg",
     items: {
-      ctti: { role: "Empfang / Verwaltung", company: "CTTI · Generalitat de Catalunya", achievement: "**200 Besuche am Tag** empfangen, reibungslos und geordnet: Jeder Besuch und jedes Dokument kam ohne Wartezeit bei der richtigen Person an." },
+      ctti: { role: "Empfang / Verwaltung", company: "CTTI · Generalitat de Catalunya · über Triangle Catalunya", achievement: "**200 Besuche am Tag** empfangen, reibungslos und geordnet: Jeder Besuch und jedes Dokument kam ohne Wartezeit bei der richtigen Person an." },
       nfp: { role: "Komponist, Musiker und Sänger", company: "Band No Flag Patriots", achievement: "Unsere Songs **ins Studio und auf die Bühne** gebracht und die Band von der Idee bis zum Konzert koordiniert." },
-      konecta: { role: "Callcenter-Agent", company: "Konecta · AMBici · Securitas Direct", achievement: "**3 Anrufe pro Minute** bearbeitet und Kundenanliegen ruhig und mit freundlichem Ton gelöst." },
-      polo: { role: "Verwaltungsangestellter", company: "Club de Polo Ampurdán", achievement: "Die **Verwaltung des Clubs stets aktuell** gehalten: Mitglieder, Rechnungen und Korrespondenz immer in Ordnung." },
+      konecta: { role: "Callcenter-Agent (Kampagnen)", company: "Securitas Direct · AMBici", achievement: "**3 Anrufe pro Minute** bearbeitet und Kundenanliegen ruhig und mit freundlichem Ton gelöst." },
+      polo: { role: "Verwaltungspraktikum und Mitarbeit (CP ADGD0308)", company: "Club de Polo Ampurdán", achievement: "Die **Verwaltung des Clubs stets aktuell** gehalten: Mitglieder, Rechnungen und Korrespondenz immer in Ordnung." },
       tic: { role: "Fachkraft für Unterrichtsmethoden (IKT-Koordinator)", company: "Escola Joan Maragall", achievement: "Technik in den Unterricht integriert – für ein **komplettes Kollegium von 20 Lehrkräften**, das sie heute sicher im Alltag nutzt." },
       teacher: { role: "Grundschullehrer", company: "Escoles Gornal · Bernat Metge · Torre de la Miranda · Joan Maragall", achievement: "Das Lernen von **25 Kindern pro Klasse** optimiert, indem ich den Unterricht an Tempo und Bedürfnisse jedes Kindes angepasst habe." },
       bar: { role: "Kellner", company: "Bar La Concha", achievement: "**Auch zu Stoßzeiten schnell und aufmerksam** bedient und so Stammgäste gewonnen." },
